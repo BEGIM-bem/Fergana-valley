@@ -1,0 +1,19 @@
+.navbar {
+    position: absolute;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(7.5px);
+    width: 100%;
+
+    .navbar__conteiner {
+        margin-left: 100px;
+        margin-top: 17px;
+        margin-bottom: 13px;
+        margin-bottom: 100px;
+    }
+
+    .navbar_item {
+        // background: rebeccapurple;
+    }
+
+}
