@@ -8,6 +8,9 @@ import iconKyrgyzstan from './Языки (1)Ryrgyz.svg'
 import iconOzbekstan from './Языки (2)Ozbekstan.svg'
 import imgAbout from './imgAbout.svg'
 import imgAbout2 from './imgAbout2.svg'
+import imgAbout3 from './imgAbout3.svg'
+import imgAbout4 from './imgAbout4.svg'
+import imgAbout2banner from './imgAbout2banner.svg'
 
 export {
     ArrowsWhitsLeft,
@@ -20,4 +23,7 @@ export {
     MainImages,
     imgAbout,
     imgAbout2,
+    imgAbout3,
+    imgAbout2banner,
+    imgAbout4,
 }

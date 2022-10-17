@@ -3,13 +3,27 @@
     padding: 0;
     font-family: 'Verdana';
     font-style: normal;
+    box-sizing: border-box;
 }
 
 .container {
-    width: 1220px;
+    max-width: 1220px;
     margin: 0 auto;
 }
 .flex_between {
     display: flex;
     justify-content:space-between;
+}
+
+@media screen and (max-width: 955px) {
+    .flex_between {
+        display: initial;
+        //justify-content:center;
+    }
+    .container {
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
 }
