@@ -1,4 +1,5 @@
 import React from "react";
+import LanguagesBar from "../LanguagesBar";
 import styles from './slider.module.css'
 
 
@@ -8,6 +9,9 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
 
     return (
         <section className={styles.slideshow}>
+
+
+
             {sliderImage.map((slide, index) => (
                 <div
                     key={index}
@@ -38,6 +42,8 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
                 </div>
 
             ))}
+
+
         </section>
     );
 }
