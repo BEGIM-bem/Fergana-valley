@@ -8,6 +8,7 @@ import Cours from "./pages/cours";
 import Events from "./pages/Events";
 import Contacts from "./pages/Contacts";
 import About from "./pages/About";
+import LanguagesBar from "./components/LanguagesBar";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
 
       <Navbar />
+      <LanguagesBar />
       <Routes>
         <Route path='/*' element={<Home />} />
         <Route path='/about' element={<About />} />
