@@ -173,3 +173,11 @@
         top: 65%;
     }
 }
+
+
+.LanguagesBar {
+    /* background: rebeccapurple; */
+    position: relative;
+    top: 50px;
+    z-index: 5;
+}
