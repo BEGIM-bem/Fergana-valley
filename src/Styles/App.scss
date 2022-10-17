@@ -2,3 +2,26 @@
     margin: 0;
     padding: 0;
 }
+
+
+body::-webkit-scrollbar {
+    width: 5px;
+
+
+}
+
+/*Стили чтобы уменьшить вертикальный скрол в body  */
+
+body {
+    background: #F5F5F5;
+
+
+
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+
+    border-radius: 4px;
+}
