@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className='navbar' >
 
             <div className='navbar__conteiner'>
-                <img src={LogoTip} alt='not find' />
+                <NavLink to='/*'> <img src={LogoTip} alt='not find' />  </NavLink>
 
                 <div className='navbar_item'>
                     <nav>

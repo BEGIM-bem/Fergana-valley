@@ -14,8 +14,10 @@ import iconFacbook from './facbook.svg'
 import iconWatsap from './warsap.svg'
 import paginationsArrows1 from './SliderArrows1.svg'
 import paginationsArrows2 from './SliderArrows2.svg'
+import mainAboutImg from './About.svg'
 
 export {
+    mainAboutImg,
     paginationsArrows1,
     paginationsArrows2,
     iconInstagram,

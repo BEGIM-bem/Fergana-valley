@@ -5,35 +5,35 @@ import {
     iconFacbook,
     iconTelegram
 } from '../../images/index.js'
-import { Routes, Route, NavLink } from 'react-router-dom';
+
 import '../../Styles/SocialNetworkIcon.scss'
 
 
-
+// Иконки и ссылки на СоцСети
 
 export default function SocialNetworkIcon() {
     return (
         <div className='conteiner__icon' >
 
-            <NavLink to='' target='_blank' >
+            <a href='https://t.me/Begim_bem' target='_blank' rel='noreferrer' >
                 <img src={iconInstagram} alt='not find icon' className='icon' />
-            </NavLink>
+            </a>
 
 
 
-            <NavLink to='' target='_blank' >
+            <a href='https://t.me/Begim_bem' target='_blank' rel='noreferrer'  >
                 <img src={iconTelegram} alt='not find icon' className='icon' />
-            </NavLink>
+            </a>
 
-            <NavLink to='' target='_blank' >
+            <a href='https://t.me/Begim_bem' target='_blank' rel='noreferrer'  >
                 <img src={iconFacbook} alt='not find icon' className='icon' />
-            </NavLink>
+            </a>
 
 
 
-            <NavLink to='' target='_blank' >
+            <a href='https://t.me/Begim_bem' target='_blank' rel='noreferrer'  >
                 <img src={iconWatsap} alt='not find icon' className='icon' />
-            </NavLink>
+            </a>
 
 
         </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
 import './Styles/App.scss'
 import { Routes, Route } from 'react-router-dom';
 import Product from "./pages/Product";
@@ -8,7 +7,8 @@ import Cours from "./pages/cours";
 import Events from "./pages/Events";
 import Contacts from "./pages/Contacts";
 import About from "./pages/About";
-import LanguagesBar from "./components/LanguagesBar";
+import Home from "./pages/Home";
+
 
 
 function App() {
