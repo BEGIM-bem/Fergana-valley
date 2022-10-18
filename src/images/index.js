@@ -15,8 +15,17 @@ import iconWatsap from './warsap.svg'
 import paginationsArrows1 from './SliderArrows1.svg'
 import paginationsArrows2 from './SliderArrows2.svg'
 import mainAboutImg from './About.svg'
+import blokMain1 from './Бизнес  Управление карточка.svg'
+import blokMain2 from './Финансирование карточка.svg'
+import blockMain3 from './Экпорт карточка.svg'
+import blockMain4 from './Мероприятие карточка.svg'
 
 export {
+    blokMain1,
+    blokMain2,
+    blockMain3,
+    blockMain4,
+
     mainAboutImg,
     paginationsArrows1,
     paginationsArrows2,
