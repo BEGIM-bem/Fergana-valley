@@ -30,7 +30,7 @@ export default function SocialNetworkIcon() {
 
 
 
-            <a href='https://wa.me/996996777777549' target='_blank' rel='noreferrer'  >
+            <a href='https://wa.me/996996777777549' target='_blank' rel='noreferrer'>
                 <img src={iconWatsap} alt='not find icon' className='icon' />
             </a>
 

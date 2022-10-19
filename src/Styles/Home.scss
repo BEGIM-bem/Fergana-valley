@@ -79,30 +79,30 @@
 .services {
     background: rebeccapurple;
     width: 90%;
+    padding: 0;
     margin: 0 auto;
-    // padding: 0;
-    // display: flex;
+
 
 
     .services__title {
         font-family: $fontFamily;
         font-style: normal;
-        // font-weight: 700;
-        // font-size: 36px;
         line-height: 44px;
         font-size: 2rem;
-
         color: $colorText;
         margin-top: 60px;
-        margin-bottom: 32;
+        margin-bottom: 32px;
         display: flex;
-
     }
 
+    .f {
 
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
 
-    .services_img {
-        padding-left: 0;
+        justify-content: center;
     }
+
 
 }

@@ -8,7 +8,7 @@ import { useState } from 'react'
 import LanguagesBar from '../LanguagesBar/index'
 
 export default function Navbar() {
-    console.log(nameBar)
+
     const [isOpenLanguages, setIsOpenLanguages] = useState(false)
 
     const handleIsOpen = () => {
@@ -22,20 +22,19 @@ export default function Navbar() {
                 <NavLink to='/*'> <img src={LogoTip} alt='not find' />  </NavLink>
 
                 <div className='navbar_item'>
-                    <nav>
+                    <nav  >
                         {
                             nameBar.map(item =>
-                                <NavLink key={item.id} className='navbar_item_to'
+                                <NavLink key={item.id}
+                                    // className='navbar_item_to'
+                                    className={(navDate) => navDate.isActive ? 'active' : 'navbar_item_to'}
                                     to={item.to}>{item.name}
                                 </NavLink>
                             )
                         }
                     </nav>
                 </div>
-
-
                 <img src={iconLangusges} alt='not icon' onClick={handleIsOpen} />
-
             </div>
 
             {
@@ -44,7 +43,6 @@ export default function Navbar() {
                 <div className='languagesBar' >
                     <LanguagesBar />
                 </div>
-
             }
 
         </div >

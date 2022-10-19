@@ -40,13 +40,19 @@ export default function Home() {
 
                 <h1 className='services__title'>Продукты и Услуги</h1>
 
+                <div className='f'>
 
-                <img src={blokMain1} alt='not find' className='services_img' />
-                <img src={blokMain2} alt='not find' className='services_img' />
-                <img src={blockMain3} alt='not find' className='services_img' />
-                <img src={blockMain4} alt='not find' className='services_img' />
+                    <img src={blokMain1} alt='not find' className='services_img' />
+                    <img src={blokMain2} alt='not find' className='services_img' />
+                    <img src={blockMain3} alt='not find' className='services_img' />
+                    <img src={blockMain4} alt='not find' className='services_img' />
+                </div>
+                <a href='https://wa.me/996996777777549' target='_blank'
+                    style={{ textDecoration: 'none' }}
+                    rel='noreferrer' >
+                    <Button text={'Главное действие '} />
+                </a>
 
-                <Button text={'Главное действие '} />
             </div>
 
 

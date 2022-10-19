@@ -19,8 +19,12 @@ import blokMain1 from './Бизнес  Управление карточка.svg
 import blokMain2 from './Финансирование карточка.svg'
 import blockMain3 from './Экпорт карточка.svg'
 import blockMain4 from './Мероприятие карточка.svg'
+import productImages from './ProductImg.svg'
+import imageTextForProducts from './textImagesProducts.svg'
 
 export {
+    imageTextForProducts,
+    productImages,
     blokMain1,
     blokMain2,
     blockMain3,
