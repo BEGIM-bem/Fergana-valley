@@ -1,0 +1,24 @@
+@import '../Variables/index.scss';
+
+.btn_1 {
+    background: #61B857;
+
+    box-shadow: 3px 3px 6px rgba(51, 51, 51, 0.25);
+    border-radius: 5px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border: 0;
+
+    margin: 0 auto;
+    display: block;
+
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 19px;
+    color: $bacrountConteiner;
+
+}

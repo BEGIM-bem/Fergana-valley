@@ -1,37 +1,39 @@
 
-import { ArrowsWhitsLeft, ArrowsWhitsRight, MainImages } from '../../images/index'
+import {
+    MainImages, imageSlider2,
+    imagesSlider3, paginationsArrows1,
+    paginationsArrows2,
+} from '../../images/index'
 
 
 const g = [
     {
-        title: 'Химия цветов',
-        color: '#FFFFFF',
-        description: 'Жизнь прекраснее,',
-        description1: 'когда она ароматна',
+
         urls: MainImages,
-        arrows1: ArrowsWhitsLeft,
-        arrows2: ArrowsWhitsRight,
+        arrows1: paginationsArrows1,
+        arrows2: paginationsArrows2,
+
 
     },
     {
-        title: 'Химия цветов',
-        description: 'Букеты с душой ',
-        color: '#000000',
-        urls: MainImages,
-        arrows1: ArrowsWhitsLeft,
-        arrows2: ArrowsWhitsRight,
+
+        urls: imageSlider2,
+        arrows1: paginationsArrows1,
+        arrows2: paginationsArrows2,
+        textImages: 'Главное действие',
+        top: '55%',
 
     },
     {
-        title: 'Химия цветов',
-        description: 'Химия цветов - аромат, ',
-        description1: 'который соединяет сердца',
 
 
-        color: '#000000',
-        urls: MainImages,
-        arrows1: ArrowsWhitsLeft,
-        arrows2: ArrowsWhitsRight,
+
+
+        urls: imagesSlider3,
+        arrows1: paginationsArrows1,
+        arrows2: paginationsArrows2,
+        textImages: 'Подробнее',
+        top: '55%'
 
     }
 

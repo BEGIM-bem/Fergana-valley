@@ -3,6 +3,23 @@
     padding: 0;
     font-family: 'Verdana';
     font-style: normal;
+}
+
+
+
+body::-webkit-scrollbar {
+    width: 5px;
+
+
+}
+
+/*Стили чтобы уменьшить вертикальный скрол в body  */
+
+
+body::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+
+    border-radius: 4px;
     box-sizing: border-box;
 }
 
@@ -10,9 +27,10 @@
     max-width: 76.25rem;
     margin: 0 auto;
 }
+
 .flex_between {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 .block_padding {
@@ -31,6 +49,7 @@
         display: initial;
         //justify-content:center;
     }
+
     .container {
         max-width: 1220px;
         margin: 0 auto;
