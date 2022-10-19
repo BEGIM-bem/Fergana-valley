@@ -11,6 +11,9 @@ import imgAbout2 from './imgAbout2.svg'
 import imgAbout3 from './imgAbout3.svg'
 import imgAbout4 from './imgAbout4.svg'
 import imgAbout2banner from './imgAbout2banner.svg'
+import imgFounders1 from './imgFonders1.png'
+import imgFounders2 from './imgFonders1.png'
+import imgFounders3 from './imgFonders1.png'
 
 export {
     ArrowsWhitsLeft,
@@ -26,4 +29,7 @@ export {
     imgAbout3,
     imgAbout2banner,
     imgAbout4,
+    imgFounders1,
+    imgFounders2,
+    imgFounders3,
 }
