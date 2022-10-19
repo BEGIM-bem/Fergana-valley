@@ -4,6 +4,9 @@ import {imgAbout, imgAbout2, imgAbout2banner, imgAbout3, imgAbout4} from "../ima
 import mainStyles from "./../components/Slider/slider.module.css"
 import aboutStyles from "./../Styles/About.module.scss"
 import Cards from "../components/Cards";
+import Founders from "../components/Founders";
+import OurPartners from "../components/OurPartners";
+import Footer from "../components/Footer";
 
 export default function About() {
     return (
@@ -87,9 +90,11 @@ export default function About() {
                     <div className={aboutStyles.img_block}>
                         <img className={aboutStyles.img} src={imgAbout4} alt="/"/>
                     </div>
-
                 </div>
             </div>
+            <Founders/>
+            <OurPartners/>
+            <Footer/>
         </div>
     )
 }

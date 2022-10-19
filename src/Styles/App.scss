@@ -7,12 +7,23 @@
 }
 
 .container {
-    max-width: 1220px;
+    max-width: 76.25rem;
     margin: 0 auto;
 }
 .flex_between {
     display: flex;
     justify-content:space-between;
+}
+
+.block_padding {
+    padding: 4rem 0;
+}
+.white_text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
 }
 
 @media screen and (max-width: 955px) {
@@ -23,7 +34,7 @@
     .container {
         max-width: 1220px;
         margin: 0 auto;
-        padding: 0 10px;
+        padding: 0 0.625px;
     }
 
 }
