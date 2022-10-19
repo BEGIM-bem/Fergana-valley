@@ -21,6 +21,11 @@ import blockMain3 from './Экпорт карточка.svg'
 import blockMain4 from './Мероприятие карточка.svg'
 import productImages from './ProductImg.svg'
 import imageTextForProducts from './textImagesProducts.svg'
+import imgAbout from './imgAbout.svg'
+import imgAbout2 from './imgAbout2.svg'
+import imgAbout3 from './imgAbout3.svg'
+import imgAbout4 from './imgAbout4.svg'
+import imgAbout2banner from './imgAbout2banner.svg'
 
 export {
     imageTextForProducts,
@@ -43,5 +48,13 @@ export {
     iconRussions,
     iconKyrgyzstan,
     iconOzbekstan,
-    iconLangusges, LogoTip, ArrowsWhitsRight, MainImages
+    iconLangusges,
+    LogoTip,
+    ArrowsWhitsRight,
+    MainImages,
+    imgAbout,
+    imgAbout2,
+    imgAbout3,
+    imgAbout2banner,
+    imgAbout4,
 }

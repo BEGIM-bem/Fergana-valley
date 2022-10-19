@@ -20,4 +20,29 @@ body::-webkit-scrollbar-thumb {
     background: #c4c4c4;
 
     border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+.flex_between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 955px) {
+    .flex_between {
+        display: initial;
+        //justify-content:center;
+    }
+
+    .container {
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
 }
