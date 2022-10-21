@@ -15,9 +15,11 @@
 
     z-index: 5;
 
+    margin-bottom: 50px;
+
     .about_img {
         position: relative;
-        top: -55px;
+        top: -42px;
     }
 
     .about__content {
@@ -77,32 +79,68 @@
 }
 
 .services {
-    background: rebeccapurple;
     width: 90%;
-    padding: 0;
     margin: 0 auto;
 
 
-
     .services__title {
+
         font-family: $fontFamily;
         font-style: normal;
         line-height: 44px;
         font-size: 2rem;
         color: $colorText;
-        margin-top: 60px;
-        margin-bottom: 32px;
+        // margin-top: 60px;
+        // margin-bottom: 32px;
+        // margin-left: 47px;
+
         display: flex;
     }
 
-    .f {
+    .services__conteiner {
 
         display: flex;
         flex-wrap: wrap;
-        margin: 0 auto;
 
-        justify-content: center;
+        justify-content: space-between;
+
+
+    }
+
+    .services_img {
+        width: 286px;
+        height: 500px;
+
+
     }
 
 
+
+}
+
+
+
+.events {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    // height: 441px;
+    object-fit: cover;
+    background-image: url(../images/FonEvents.svg);
+    // padding-bottom: 20px;
+
+    .events1 {
+
+        width: 90%;
+        // max-width: 76.25rem;
+        // background: rebeccapurple;
+        margin: 0 auto;
+
+    }
+
+    .events__title {
+        color: $bacrountConteiner;
+        padding-top: 64px;
+    }
 }

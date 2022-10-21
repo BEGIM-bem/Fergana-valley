@@ -35,8 +35,14 @@ import imgPartnersLogo2 from './imgPartnersLogo2.svg'
 import imgPartnersLogo3 from './imgPartnersLogo3.svg'
 import imgPartnersLogo4 from './imgPartnersLogo4.svg'
 import imgPartnersLogo5 from './imgPartnersLogo5.svg'
+import newsImage1 from './NewsImg1.svg'
+import newsImage2 from './NewsImg2.svg'
+import fonEvents from './FonEvents.svg'
 
 export {
+    newsImage1,
+    newsImage2,
+    fonEvents,
     imageTextForProducts,
     productImages,
     blokMain1,
