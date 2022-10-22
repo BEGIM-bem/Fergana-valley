@@ -3,6 +3,8 @@
     padding: 0;
     font-family: 'Verdana';
     font-style: normal;
+
+    overflow-x: hidden;
 }
 
 
@@ -36,6 +38,7 @@ body::-webkit-scrollbar-thumb {
 .block_padding {
     padding: 4rem 0;
 }
+
 .white_text {
     font-weight: 400;
     font-size: 18px;

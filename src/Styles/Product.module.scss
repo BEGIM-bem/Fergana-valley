@@ -1,0 +1,157 @@
+@import '../Variables/index.scss';
+
+.conteiners {
+
+    margin-top: 151px;
+
+
+    .conteiner_fon {
+
+        margin-top: 32px;
+        background-image: url(../images/ProductImg.svg);
+
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        width: 100%;
+        // height: 441px;
+        object-fit: cover;
+
+
+    }
+
+    .conteiner__content {
+        display: flex;
+
+
+        width: 90%;
+
+        margin: 0 auto;
+        padding-top: 32px;
+        padding-bottom: 64px;
+    }
+
+    .conteiner__title {
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFFFFF;
+        padding-bottom: 16px;
+    }
+
+
+}
+
+
+
+.conteiners_services {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 32px;
+
+}
+
+.conteiners_wrappers {
+
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #1959AB;
+}
+
+
+.conteiners_services_img {
+    width: 286px;
+    height: 500px;
+    margin: 0 auto;
+
+
+}
+
+.conteiners_services_linkBtn {
+    margin: 0 auto;
+    text-decoration: none;
+
+}
+
+
+.conteiners__finans {
+    background-image: url(../images/ProductFinans.svg);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 64px;
+    width: 100%;
+    // height: 441px;
+    object-fit: cover;
+
+
+
+
+    .conteiner__contentsFinans {
+        width: 90%;
+        margin: auto;
+
+        display: flex;
+        justify-content: center;
+        margin-top: 64px;
+        flex-wrap: wrap;
+    }
+
+    .conteiner__finans_img {
+        width: 380px;
+        height: 450px;
+
+    }
+
+}
+
+
+
+
+hr {
+    width: 90%;
+    margin: 64px auto;
+
+    border-bottom: 1px solid #1959AB;
+}
+
+.export__conteiner {
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.export__conteiner_img {
+
+    width: 370px;
+    height: 450px;
+}
+
+
+.events {
+    background-image: url(../images/FonEvents.svg);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 64px;
+    width: 100%;
+
+    object-fit: cover;
+
+
+    .events__contents {
+        width: 90%;
+
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 54px;
+    }
+
+
+
+}

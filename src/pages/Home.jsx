@@ -20,7 +20,7 @@ import Footer from '../components/Footer/index.jsx'
 
 export default function Home() {
     return (
-        <div>
+        <div >
 
             <Slider />
 

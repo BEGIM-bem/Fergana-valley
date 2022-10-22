@@ -1,8 +1,12 @@
 import React from 'react'
-import '../../Styles/LineHeaders.scss'
+import styles from '../../Styles/LineHeaders.module.scss'
 
-export default function LineHeaders({ text }) {
+export default function LineHeaders({ text, stylesContent, stylesContent1 }) {
+
+
   return (
-    <span>{text} </span>
+    <p style={{ paddingLeft: stylesContent, paddingRight: stylesContent1 }}
+      className={styles.span} >{text} </p>
+
   )
 }

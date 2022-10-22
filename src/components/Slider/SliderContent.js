@@ -30,7 +30,6 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
 
 
                     <div className={styles.paginations}>
-
                         <p className={activeIndex === 0 ? styles.paginations__numberActive : styles.paginations__number} > 1</p>
                         <p className={activeIndex === 1 ? styles.paginations__numberActive : styles.paginations__number} >2</p>
                         <p className={activeIndex === 2 ? styles.paginations__numberActive : styles.paginations__number}>3</p>
