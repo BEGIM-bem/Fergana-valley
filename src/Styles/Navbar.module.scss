@@ -7,24 +7,37 @@
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(7.5px);
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 8px;
+    // height: 70px;
+    white-space: nowrap;
+    padding-top: 0.625rem;
+    padding-bottom: 0.5rem;
+    // background: red;
 
+    .navbar_item {
 
-    .navbar__conteiner {
-        // margin-left: 100px;
-        // margin-top: 17px;
-        // margin-bottom: 13px;
-        // margin-bottom: 100px;
-        display: flex;
-        justify-content: space-around;
+        margin-left: 10px;
+        margin-right: 10px;
     }
+
+    .navbar__conteinerss {
+        max-width: 90%;
+
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    .navbar__logo {
+        width: 11.25rem;
+    }
+
+
 
     .navbar_item {
         // width: 740px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        // flex-direction: row;
+        // justify-content: space-between;
         align-items: center;
         // background: rebeccapurple;
     }
@@ -34,8 +47,9 @@
         font-family: $fontFamily;
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 1.125rem;
+
+        line-height: 1.375rem;
         color: #1959AB;
         text-decoration: none;
     }
@@ -46,8 +60,9 @@
         font-family: $fontFamily;
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 1.125rem;
+        // font-size: 12px;
+        line-height: 1.375rem;
         color: $colorText;
         text-decoration: none;
 
@@ -59,7 +74,7 @@
 .languagesBar {
     position: absolute;
 
-    top: 100%;
+    top: 14%;
     left: 81%;
 
     z-index: 5;

@@ -14,7 +14,7 @@ import iconFacbook from './facbook.svg'
 import iconWatsap from './warsap.svg'
 import paginationsArrows1 from './SliderArrows1.svg'
 import paginationsArrows2 from './SliderArrows2.svg'
-import mainAboutImg from './About.svg'
+import mainAboutImg from './imagesMainAbouts.svg'
 import blokMain1 from './Бизнес  Управление карточка.svg'
 import blokMain2 from './Финансирование карточка.svg'
 import blockMain3 from './Экпорт карточка.svg'
@@ -35,8 +35,59 @@ import imgPartnersLogo2 from './imgPartnersLogo2.svg'
 import imgPartnersLogo3 from './imgPartnersLogo3.svg'
 import imgPartnersLogo4 from './imgPartnersLogo4.svg'
 import imgPartnersLogo5 from './imgPartnersLogo5.svg'
+import newsImage1 from './NewsImg1.svg'
+import newsImage2 from './NewsImg2.svg'
+import fonEvents from './FonEvents.svg'
+import productImg1 from './ProductServises2.svg'
+import productImg2 from './ProductImg1.svg'
+import productImg3 from './ProductImg3.svg'
+import productImg4 from './ProductImg4.svg'
+import productFinancImg1 from './Financ1.svg'
+import productFinancImg2 from './Finans2.svg'
+import productFinancImg3 from './Finans3.svg'
+import productFinancImg4 from './Finans4.svg'
+import productFinancImg5 from './Finans5.svg'
+
+import productxport1 from './export1.svg'
+import productxport2 from './export2.svg'
+import productxport3 from './export3.svg'
+import productxport4 from './export4.svg'
+import productxport5 from './export5.svg'
+import productxport6 from './export5.svg'
+
+import productEvents1 from './eventsImages1.svg'
+import productEvents2 from './eventsImages2.svg'
+import productEvents3 from './eventsImages3.svg'
+import productEvents4 from './eventsImages4.svg'
+
 
 export {
+    productEvents1,
+    productEvents2,
+    productEvents3,
+    productEvents4,
+
+    productxport1,
+    productxport2,
+    productxport3,
+    productxport4,
+    productxport5,
+    productxport6,
+
+    productFinancImg1,
+    productFinancImg3,
+    productFinancImg4,
+    productFinancImg5,
+    productFinancImg2,
+
+    productImg1,
+    productImg2,
+    productImg3,
+    productImg4,
+
+    newsImage1,
+    newsImage2,
+    fonEvents,
     imageTextForProducts,
     productImages,
     blokMain1,

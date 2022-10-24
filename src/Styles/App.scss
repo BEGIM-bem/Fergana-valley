@@ -4,6 +4,8 @@
     font-family: 'Verdana';
     font-style: normal;
     box-sizing: border-box;
+
+    overflow-x: hidden;
 }
 
 
@@ -37,6 +39,7 @@ body::-webkit-scrollbar-thumb {
 .block_padding {
     padding: 4rem 0;
 }
+
 .white_text {
     font-weight: 400;
     font-size: 18px;
@@ -56,6 +59,7 @@ body::-webkit-scrollbar-thumb {
         margin: 0 auto;
         padding: 0 24px;
     }
+
     .white_text {
         font-weight: 400;
         font-size: 18px;
@@ -63,6 +67,7 @@ body::-webkit-scrollbar-thumb {
         text-align: center;
         color: #FFFFFF;
     }
+
     .white_text {
         font-size: 17px;
         line-height: 21px;

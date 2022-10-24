@@ -1,23 +1,25 @@
 @import '../Variables/index.scss';
 
-span {
+
+
+
+.span {
+    // width: 526px;
     padding-top: 16px;
+    padding-left: 5%;
     padding-bottom: 16px;
     padding-right: 16px;
-    padding-left: 100px;
     background: #1959AB;
-    border-radius: 0px 5px 5px 0px;
-
+    border-radius: 0px 5px 5px 0;
+    display: inline-block;
     font-family: $fontFamily;
     font-style: normal;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     line-height: 2.75rem;
-    /* identical to box height */
 
-    text-align: center;
 
-    /* Белый */
+    // text-align: center;
 
     color: #FFFFFF;
 }

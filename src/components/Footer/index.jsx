@@ -8,7 +8,7 @@ const Footer = () => {
         <div className={footerStyles.footer}>
             <div className={`${footerStyles.footer_cont} container`} >
                 <div className={`${footerStyles.text_block} white_text`}>
-                    <p style={{fontWeight: 700}}>Навигация</p>
+                    <p style={{ fontWeight: 700 }}>Навигация</p>
                     <p>О нас</p>
                     <p>Продукты и Услуги</p>
                     <p>Курс “Бизнес с 0”</p>
@@ -16,7 +16,7 @@ const Footer = () => {
                     <p>Контакты</p>
                 </div>
                 <div className={`${footerStyles.text_block} white_text`}>
-                    <p style={{fontWeight: 700}}>Контактная Информация</p>
+                    <p style={{ fontWeight: 700 }}>Контактная Информация</p>
                     <p>Кыргызстан</p>
                     <p>г.Ош ул.Ленина 121</p>
                     <p>Эл.почта: info@fergana.valley</p>
