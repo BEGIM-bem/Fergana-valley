@@ -2,9 +2,28 @@
   padding: 4rem 0;
   background-color: #1959AB;
 }
-.text_block {
+%block {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   text-align: start;
+}
+.text_block {
+  @extend %block;
+}
+.icon_block {
+  @extend %block;
+}
+.footer_cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer {
+    padding: 2rem 0;
+  }
+  .icon_block {
+    gap: 0.5rem;
+  }
 }

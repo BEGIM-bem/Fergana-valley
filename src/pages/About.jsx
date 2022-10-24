@@ -19,7 +19,7 @@ export default function About() {
                 </h1>
             </div>
             <div className="container">
-                <div className="flex_between">
+                <div className={aboutStyles.desc_cont}>
                     <div style={{marginRight: "10px"}} className={aboutStyles.text_container}>
                         <h2 className={aboutStyles.title}>Hac maecenas</h2>
 
@@ -49,11 +49,10 @@ export default function About() {
                 </div>
             </div>
             <div className="container">
-                <div className="flex_between">
+                <div className='flex_between'>
                     <img className={aboutStyles.img2} src={imgAbout3} alt="/"/>
                     <div style={{marginLeft: "10px"}} className={aboutStyles.text_container}>
                         <h2 className={aboutStyles.title}>Hac maecenas</h2>
-
                         <p className={aboutStyles.text}>Есть над чем задуматься: некоторыео собенности внутренней политики
                             призваны к ответу. Для современного мира социально-экономическое
                             развитие выявляет срочную потребность глубокомысленных
@@ -70,7 +69,7 @@ export default function About() {
                 </div>
             </div>
             <div className="container">
-                <div style={{marginTop: "20px"}} className="flex_between">
+                <div style={{marginTop: "20px"}} className={aboutStyles.desc_cont}>
                     <div style={{marginRight: "10px"}} className={aboutStyles.text_container}>
                         <h2 className={aboutStyles.title}>Hac maecenas</h2>
 

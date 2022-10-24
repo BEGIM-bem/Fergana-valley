@@ -56,6 +56,11 @@
     object-fit: cover;
     margin-bottom: 4rem;
 }
+.desc_cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .white_title {
     font-weight: 700;
     font-size: 36px;
@@ -120,7 +125,21 @@
     width: 636px;
 }
 
+// partners
+.icons_cont {
+    padding: 130px 0 66px
+}
+
 @media screen and (max-width: 1000px) {
+    .mainTitle {
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 41px;
+        bottom: 64px;
+    }
+    .banner {
+        height: 280px;
+    }
     .text_container {
         width: 100%;
         padding: 34px 0 34px;
@@ -131,14 +150,15 @@
     }
     .text {
         font-weight: 400;
-        font-size: 13px;
-        line-height: 130%;
+        font-size: 14px;
+        line-height: 150%;
     }
     .title {
         font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 10px;
+        font-size: 27px;
+        line-height: 33px;
+        text-align: start;
+        padding: 1rem 0;
     }
     .img {
         position: initial;
@@ -148,39 +168,53 @@
         width: 100%;
     }
 
+    .desc_cont{
+      flex-direction: column-reverse;
+    }
+
+
 // Cards
     .second_section {
         margin: 24px 0;
     }
     .white_title {
         font-weight: 700;
-        font-size: 20px;
-        line-height: 30px;
-        text-align: center;
-        padding: 30px 0 20px;
+        font-size: 27px;
+        line-height: 33px;
+        text-align: start;
+        padding: 32px 0 ;
     }
     .card_container {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         gap: 15px;
     }
     %card {
-        width: 130px;
-        height: 105px;
+        width: 250px;
+        height: 225px;
         padding: 0 7px;
         margin: 0 0 30px 0;
     }
     .blue_card {
-        margin-top: 20px;
-    }
-    %num {
-        font-size: 20px;
-        line-height: 25px;
+        margin-top: 0;
     }
     %card_text {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 21px;
+        line-height: 26px;
     }
 
+    // partners
+
+    .icons_cont {
+        padding: 53px 0 53px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .img_none {
+        display: none;
+    }
+    .partner_logo {
+        width: 25%;
+    }
 }

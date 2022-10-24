@@ -9,9 +9,9 @@ const Founders = () => {
             <div className='container'>
                 <h2 className={AboutStyles.white_title}>Основатели</h2>
                 <div className={`${foundersStyles.cards_container} {/*flex_between*/}`}>
-                    <img src={imgFounders1} alt="/"/>
-                    <img src={imgFounders2} alt="/"/>
-                    <img src={imgFounders3} alt="/"/>
+                    <img className={foundersStyles.img} src={imgFounders1} alt="/"/>
+                    <img className={foundersStyles.img} src={imgFounders2} alt="/"/>
+                    <img className={foundersStyles.img} src={imgFounders3} alt="/"/>
                 </div>
             </div>
         </div>
