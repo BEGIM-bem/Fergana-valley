@@ -24,8 +24,10 @@ export default function Home() {
 
             <Slider />
 
-            <div className={styles.about} >
-                <div className={styles.about__content}>
+            <div className={styles.allAbouts} >
+
+                <div className={styles.about__contents}>
+
                     <h1 className={styles.about__content_title} >Кто мы?</h1>
                     <p className={styles.about__content_text}  >Предварительные выводы
                         неутешительны: перспективное
@@ -41,7 +43,11 @@ export default function Home() {
                         <button className={styles.about_btn}>Подробнее о нас</button>
                     </NavLink>
                 </div>
-                <img src={mainAboutImg} alt='not find' className={styles.about_img} />
+
+                <div className={styles.about__contents_images}  >
+                    <img src={mainAboutImg} alt='not find'
+                        className={styles.about_img} />
+                </div>
             </div>
 
 

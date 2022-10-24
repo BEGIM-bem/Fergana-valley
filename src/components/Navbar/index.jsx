@@ -16,29 +16,35 @@ export default function Navbar() {
     }
 
     return (
-        <div className={styles.navbar} >
-            <div className={styles.navbar__conteinerss}>
+        <div>
+            <div className={styles.navbar} >
+                <div className={styles.navbar__conteinerss}>
 
-                {/* <div className={styles.navbar__conteiner}> */}
-                <NavLink to='/*'> <img src={LogoTip} alt='not find'
-                    className={styles.navbar__log} />  </NavLink>
 
-                <div className={styles.navbar_item}>
+                    <NavLink to='/*'> <img src={LogoTip} alt='not find'
+                        className={styles.navbar__log} />  </NavLink>
 
-                    <nav>
-                        {
-                            nameBar.map(item =>
-                                <NavLink key={item.id}
-                                    // className='navbar_item_to'
-                                    className={(navDate) => navDate.isActive ? styles.active : styles.navbar_item_to}
-                                    to={item.to}>{item.name}
-                                </NavLink>
-                            )
-                        }
-                    </nav>
+                    <div className={styles.navbar_item}>
+
+                        <nav>
+                            {
+                                nameBar.map(item =>
+                                    <NavLink key={item.id}
+                                        // className='navbar_item_to'
+                                        className={(navDate) => navDate.isActive ? styles.active : styles.navbar_item_to}
+                                        to={item.to}>{item.name}
+                                    </NavLink>
+                                )
+                            }
+                        </nav>
+                    </div>
+                    <img src={iconLangusges} alt='not icon' onClick={handleIsOpen} />
                 </div>
-                <img src={iconLangusges} alt='not icon' onClick={handleIsOpen} />
-            </div>
+
+
+            </div >
+
+
 
             {
                 // Что бы открывать  окошки для смены языка
@@ -47,8 +53,6 @@ export default function Navbar() {
                     <LanguagesBar />
                 </div>
             }
-
-
         </div >
     )
 }
