@@ -106,18 +106,18 @@
     margin: 0 auto;
 
 
+
     .services__title {
+
+
 
         font-family: $fontFamily;
         font-style: normal;
         line-height: 44px;
         font-size: 2rem;
         color: $colorText;
-        // margin-top: 60px;
-        // margin-bottom: 32px;
-        // margin-left: 47px;
+        text-align: start;
 
-        display: flex;
     }
 
     .services__conteiner {
@@ -125,7 +125,7 @@
         display: flex;
         flex-wrap: wrap;
 
-        justify-content: space-between;
+        // justify-content: center;
 
 
     }

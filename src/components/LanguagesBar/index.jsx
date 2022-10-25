@@ -5,13 +5,12 @@ import { iconRussions, iconKyrgyzstan, iconOzbekstan } from '../../images/index.
 
 export default function LanguagesBar() {
 
+
     /*
     Здесь написанно radio кнопки для смены языка
     */
     return (
-        <div className={styles.conteiner} >
-
-
+        <div className={styles.conteiner}>
             <div className={styles.conteiner__blok}>
                 <input className={styles.switch_texst} name='selection'
                     value='RussionLanguages' defaultChecked='RussionLanguages'

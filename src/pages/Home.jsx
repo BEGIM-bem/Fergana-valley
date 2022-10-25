@@ -44,7 +44,7 @@ export default function Home() {
                     </NavLink>
                 </div>
 
-                <div className={styles.about__contents_images}  >
+                <div className={styles.about__contents_img}  >
                     <img src={mainAboutImg} alt='not find'
                         className={styles.about_img} />
                 </div>
@@ -63,14 +63,17 @@ export default function Home() {
 
             <div className={styles.services}>
 
-                <h1 className={styles.services__title}>Продукты и Услуги</h1>
+                <div className='container'>
 
-                <div className={styles.services__conteiner}>
+                    <h1 className={styles.services__title}>Продукты и Услуги</h1>
+                    <div className={styles.services__conteiner}>
 
-                    <img src={blokMain1} alt='not find' className={styles.services_img} />
-                    <img src={blokMain2} alt='not find' className={styles.services_img} />
-                    <img src={blockMain3} alt='not find' className={styles.services_img} />
-                    <img src={blockMain4} alt='not find' className={styles.services_img} />
+                        <img src={blokMain1} alt='not find' className={styles.services_img} />
+                        <img src={blokMain2} alt='not find' className={styles.services_img} />
+                        <img src={blockMain3} alt='not find' className={styles.services_img} />
+                        <img src={blockMain4} alt='not find' className={styles.services_img} />
+
+                    </div>
                 </div>
 
                 <a href='https://wa.me/996996777777549' target='_blank'
@@ -87,8 +90,12 @@ export default function Home() {
             <div className={styles.events}>
 
                 <div className={styles.events1} >
-                    <h1 className={styles.events__title} >Мероприятия</h1>
-                    <NewsConteiner />
+
+                    <div className='container' >
+                        <h1 className={styles.events__title} >Мероприятия</h1>
+                        <NewsConteiner />
+
+                    </div>
                 </div>
 
                 <NavLink to='/events' style={{ textDecoration: 'none' }} >

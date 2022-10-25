@@ -1,13 +1,13 @@
 import ArrowsWhitsLeft from './стрелки (1).svg';
 import ArrowsWhitsRight from './стрелки.svg'
-import MainImages from './imagesMain.svg'
+import MainImages from './фото1 (2).svg'
 import LogoTip from './LogoTip.svg'
 import iconLangusges from './iconLangusges.svg'
 import iconRussions from './ЯзыкиRusion.svg'
 import iconKyrgyzstan from './Языки (1)Ryrgyz.svg'
 import iconOzbekstan from './Языки (2)Ozbekstan.svg'
-import imageSlider2 from './sliderImages2222.svg'
-import imagesSlider3 from './SliderImg2.svg'
+import imageSlider2 from './фото1.svg'
+import imagesSlider3 from './фото1 (1).svg'
 import iconInstagram from './instagram.svg'
 import iconTelegram from './telegram.svg'
 import iconFacbook from './facbook.svg'
@@ -59,9 +59,15 @@ import productEvents1 from './eventsImages1.svg'
 import productEvents2 from './eventsImages2.svg'
 import productEvents3 from './eventsImages3.svg'
 import productEvents4 from './eventsImages4.svg'
+import close from './Close_SM.svg'
+import open from './3line.svg';
+
 
 
 export {
+    close,
+    open,
+
     productEvents1,
     productEvents2,
     productEvents3,

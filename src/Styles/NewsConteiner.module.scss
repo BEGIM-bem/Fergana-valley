@@ -5,40 +5,62 @@
     flex-wrap: wrap;
     // justify-content: space-between;
     justify-content: space-around;
+    // background: red;
 }
 
 
 
 .wrapper {
-
-    width: 588px;
-    height: 588px;
+    // min-width: 588px;
+    // min-height: 588px;
+    width: 100%;
+    // height: 588px;
+    margin: 0;
+    max-width: 588px;
+    // background: #1959AB;
     margin-top: 64px;
-
-
+    overflow: hidden;
     position: relative;
 
-    img {
-        height: 100%;
-        width: auto;
+
+    .wrapper__imgFon {
+
+        // background-repeat: no-repeat;
+        // width: 588px;
+        // height: 588px;
+        // height: 588px;
+        width: 100%;
+        // height: auto;
+
+
+        // margin: -10% 0 0 0;
+        // background-size: cover;
+        // height: 588px;
+        // display: block;
+
     }
 
     .wrapper__conteiner {
-        // width: 100%;
-        width: 588px;
+        // z-index: 5;
 
-        height: 50%;
+        // width: 100%;
+        // width: 588px;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 50%;
 
 
+
         background: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(7.5px);
-
+        // background: red;
 
 
         .wrapper__conteiner__date {
-            display: inline;
+            // overflow: hidden;
+
+            // display: inline;
             background: #1959AB;
             position: absolute;
             left: 8px;
@@ -54,20 +76,23 @@
             color: $bacrountConteiner;
 
             font-weight: 700;
-            font-size: 2.15rem;
+            font-size: 36px;
             line-height: 2.47rem;
 
         }
 
         .wrapper__conteiner__title {
+            // display: inline;
+            // width: ;
             color: $colorText;
             text-align: center;
             position: absolute;
             top: 76px;
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 24px;
             line-height: 29px;
-
+            background: red;
+            white-space: normal;
         }
 
 
@@ -76,5 +101,15 @@
 
 
 
+
+}
+
+
+
+@media screen and (max-width: 599px) {
+
+    .wrapper__conteiner__title {
+        font-size: 15px;
+    }
 
 }

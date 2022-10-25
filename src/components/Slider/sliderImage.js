@@ -9,18 +9,22 @@ import {
 const g = [
     {
 
-        urls: MainImages,
-        arrows1: paginationsArrows1,
-        arrows2: paginationsArrows2,
-
-
-    },
-    {
-
         urls: imageSlider2,
         arrows1: paginationsArrows1,
         arrows2: paginationsArrows2,
+        title: 'От идеи к результату',
+        titleSmoll: 'Добро пожаловать в',
+        titleBig: 'Fergana Valley Business Academy'
+    },
+    {
+
+        urls: imagesSlider3,
+        arrows1: paginationsArrows1,
+        arrows2: paginationsArrows2,
+        // title: ''
+        titleSmoll: 'Случайный текст похож на ласковый перезвон вертикали власти',
         textImages: 'Главное действие',
+        titleBig2: 'Мы создаём легкие решения сложных задач и проблем',
         top: '55%',
 
     },
@@ -29,11 +33,13 @@ const g = [
 
 
 
-        urls: imagesSlider3,
+        urls: MainImages,
         arrows1: paginationsArrows1,
         arrows2: paginationsArrows2,
-        textImages: 'Подробнее',
-        top: '55%'
+        events: 'Только сложившаяся структура организации сделала своё дело',
+        titleEvents: 'События',
+        btnText: 'Подробнее',
+        data: '29 сентября 2022'
 
     }
 

@@ -11,12 +11,12 @@ export default function NewsConteiner() {
       title: 'Только сложившаяся структура организации сделала своё дело',
       date: '29 сен'
     },
-    {
-      id: 1,
-      images: newsImage2,
-      title: 'В провинции никого не пугает полуночный пёсий вой',
-      date: '15 окт'
-    }
+    // {
+    //   id: 1,
+    //   images: newsImage2,
+    //   title: 'В провинции никого не пугает полуночный пёсий вой',
+    //   date: '15 окт'
+    // }
 
   ]
 
@@ -24,9 +24,10 @@ export default function NewsConteiner() {
     <div className={styles.content} >
       {
         date.map(item => (
-          <div className={styles.wrapper} key={item.id}>
+          <div className={styles.wrapper}
+            key={item.id}>
 
-            <img src={item.images} alt='/' />
+            <img src={item.images} alt='/' className={styles.wrapper__imgFon} />
 
             <div className={styles.wrapper__conteiner}>
               <p className={styles.wrapper__conteiner__date} >{item.date}</p>

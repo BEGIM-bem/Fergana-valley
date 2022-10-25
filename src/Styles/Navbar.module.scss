@@ -1,17 +1,16 @@
 @import '../Variables/index.scss';
 
 
-.navbar {
+
+.Navbar1 {
     position: absolute;
-    z-index: 1;
+    z-index: 5;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(7.5px);
     width: 100%;
-    // height: 70px;
-    white-space: nowrap;
-    padding-top: 0.625rem;
-    padding-bottom: 0.5rem;
-    // background: red;
+    padding-top: 15px;
+    padding-bottom: 10px;
+
 
     .navbar_item {
 
@@ -21,8 +20,9 @@
 
     .navbar__conteinerss {
         max-width: 90%;
-
+        // background: red;
         display: flex;
+
         margin: 0 auto;
         justify-content: space-between;
     }
@@ -71,6 +71,15 @@
 }
 
 
+
+.menuIcon {
+    display: none;
+
+    margin-top: -1.4vh;
+    margin-right: -20px;
+}
+
+
 .languagesBar {
     position: absolute;
 
@@ -78,11 +87,152 @@
     left: 81%;
 
     z-index: 5;
-    // background: rebeccapurple;
-
-
     padding: 16px;
     background: $bacrountConteiner;
     border-radius: 5px;
     padding: 16px;
+}
+
+.Navbar__navMenu {
+
+    display: flex;
+
+
+
+    align-items: center;
+
+}
+
+
+.languagesBarOpacity {
+    display: block;
+}
+
+
+@media screen and (max-width: 500px) {
+    .Navbar {
+        position: relative;
+        // z-index: 5;
+        background: white;
+        position: absolute;
+        z-index: 5;
+        height: 100%;
+
+        padding-top: 15px;
+        padding-bottom: 10px;
+
+
+
+        z-index: 5;
+
+        width: 100%;
+        // padding-top: 5px;
+        // padding-bottom: 5px;
+
+
+    }
+
+
+    .languagesBar {
+        position: absolute;
+
+        top: 70%;
+        left: 3%;
+
+        z-index: 5;
+        padding: 16px;
+        background: $bacrountConteiner;
+        border-radius: 5px;
+        padding: 16px;
+
+    }
+
+    .navbar__conteinerss {
+
+        margin: auto;
+        width: 90%;
+
+    }
+
+
+    .iconLan {
+        visibility: hidden;
+
+    }
+
+
+
+    .Navbar__navMenu {
+
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 500px;
+
+        position: absolute;
+        // top: 100px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .navbar_item_to {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: #000000;
+        text-decoration: none;
+        padding-bottom: 32px;
+    }
+
+
+
+    .Navbar__active {
+        position: absolute;
+        top: 60px;
+
+
+        // background: #e73d53;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 50px;
+
+        display: grid;
+
+        opacity: 1;
+        // grid-gap: 8vmax;
+        grid-gap: -2vmax;
+        // position: relative;
+        z-index: 5;
+
+        color: black;
+    }
+
+    .active {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+
+        color: #1959AB;
+        text-decoration: none;
+        padding-bottom: 32px;
+
+    }
+
+    .Navbar__title {
+        text-align: center;
+    }
+
+    .menuIcon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+
+    }
+
 }

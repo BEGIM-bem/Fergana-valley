@@ -30,6 +30,7 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
 
 
                     <div className={styles.paginations}>
+
                         <p className={activeIndex === 0 ? styles.paginations__numberActive : styles.paginations__number} > 1</p>
                         <p className={activeIndex === 1 ? styles.paginations__numberActive : styles.paginations__number} >2</p>
                         <p className={activeIndex === 2 ? styles.paginations__numberActive : styles.paginations__number}>3</p>
@@ -54,13 +55,32 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
                         key={index}
                         className={index === activeIndex ? [styles.slides, styles.active] : styles.inactive}>
 
-                        <div className={styles.d} >
-                            {
-                                slide.textImages && <button className={styles.btn}  >{slide.textImages} </button>
-                            }
-                            <img className={styles.slideImage} src={slide.urls} alt="not find" />
+                        <img className={styles.slideImage} src={slide.urls} alt="not find" />
+
+                        <div className={styles.contentSlider} >
+                            {slide.title && <h1 className={styles.tiitleOne}>{slide.title}</h1>}
+                            {slide.titleSmoll && <p className={styles.titleSmoll}>{slide.titleSmoll} </p>}
+                            {slide.titleBig && <p className={styles.titleBig}>{slide.titleBig} </p>}
+                            {slide.titleBig2 && <p className={styles.tiitleOne}>{slide.titleBig2}</p>}
+                            {slide.textImages && <button className={styles.btn}  >{slide.textImages} </button>}
                         </div>
 
+
+                        {
+                            slide.events && (
+                                <div className={styles.events__block}>
+                                    <h1 className={styles.events__title}>{slide.titleEvents}</h1>
+
+                                    <div className={styles.events_contents}>
+                                        <h1 className={styles.events_contents_title}>
+                                            {slide.events}
+                                        </h1>
+
+                                        <button className={styles.events__btn} >{slide.btnText} </button>
+                                    </div>
+                                    <button className={styles.events_data}>{slide.data}</button>
+                                </div>)
+                        }
 
 
 
