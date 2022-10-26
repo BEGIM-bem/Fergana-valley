@@ -6,12 +6,12 @@
 }
 
 .allAbouts {
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    // background: #61B857;
-    margin-bottom: 64px;
-    justify-content: space-between;
+    //display: flex;
+    //width: 90%;
+    //margin: 0 auto;
+    //// background: #61B857;
+    //margin-bottom: 64px;
+    //justify-content: space-between;
 
 
     .about__contents_images {
@@ -22,7 +22,7 @@
     .about_img {
         position: relative;
         z-index: 5;
-        // top: -80px
+         top: -80px
     }
 
 
@@ -124,8 +124,7 @@
 
         display: flex;
         flex-wrap: wrap;
-
-        // justify-content: center;
+         justify-content: center;
 
 
     }
@@ -165,5 +164,71 @@
     .events__title {
         color: $bacrountConteiner;
         padding-top: 64px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .allAbouts {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+
+        .about__contents_images {
+
+        }
+        .about__contents {
+            align-self: center;
+            width: 100%;
+        }
+        .about_img {
+            width: 100%;
+            top: -24px
+        }
+        .about__content_title {
+            font-family: $fontFamily;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 44px;
+            color: $colorTeaxtBlue;
+        }
+
+        .about__content_text {
+            font-family: $fontFamily;
+            padding-top: 16px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            /* or 24px */
+
+            text-align: justify;
+            margin-bottom: 32px;
+            /* Черный */
+
+            color: #333333;
+        }
+
+        .about_btn {
+            background: #61B857;
+            /* тень базовая */
+
+            box-shadow: 3px 3px 6px rgba(51, 51, 51, 0.25);
+            border-radius: 5px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-left: 32px;
+            padding-right: 32px;
+
+            font-family: $fontFamily;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            border: 0;
+            color: #FFFFFF;
+            margin: 0 auto;
+            display: block;
+        }
     }
 }

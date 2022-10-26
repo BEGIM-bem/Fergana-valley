@@ -5,6 +5,8 @@ import mainStyles from "./../components/Slider/slider.module.css"
 import aboutStyles from "./../Styles/About.module.scss"
 import Cards from "../components/Cards";
 import Footer from '../components/Footer/index.jsx'
+import OurPartners from "../components/OurPartners";
+import Founders from "../components/Founders";
 
 
 export default function About() {
@@ -12,13 +14,13 @@ export default function About() {
         <div>
             {/* <Navbar /> */}
             <div className={aboutStyles.banner}>
-                <img className={mainStyles.slideImage} src={imgAbout} alt="/"></img>
+                <img className={aboutStyles.banner_image} src={imgAbout} alt="/"></img>
                 <h1 className={aboutStyles.mainTitle}>Нет звука приятнее,<br />
                     чем шёпот бессменных лидеров
                 </h1>
             </div>
             <div className="container">
-                <div className="flex_between">
+                <div className={aboutStyles.desc_cont}>
                     <div style={{ marginRight: "10px" }} className={aboutStyles.text_container}>
                         <h2 className={aboutStyles.title}>Hac maecenas</h2>
 
@@ -90,9 +92,10 @@ export default function About() {
                     <div className={aboutStyles.img_block}>
                         <img className={aboutStyles.img} src={imgAbout4} alt="/" />
                     </div>
-
                 </div>
             </div>
+            <Founders/>
+            <OurPartners/>
             <Footer />
         </div>
     )

@@ -9,7 +9,10 @@
     text-align: center;
     bottom: 120px;
 }
-
+.banner_image {
+    object-fit: cover;
+    width: 100%;
+}
 .banner {
     display: flex;
     justify-content: center;
@@ -54,6 +57,11 @@
     position: absolute;
     top: -19px;
     width: 100%;
+}
+
+.desc_cont {
+    display: flex;
+    justify-content: space-between;
 }
 
 // second section
@@ -153,18 +161,18 @@
         bottom: 64px;
     }
 
-    .banner {
+    .banner_image {
         height: 280px;
     }
 
     .text_container {
         width: 100%;
-        padding: 34px 0 34px;
+        padding: 0 0 34px;
+        margin: auto;
     }
 
     .img_block {
         position: relative;
-        width: 100%;
     }
 
     .text {
@@ -182,12 +190,18 @@
     }
 
     .img {
-        position: initial;
-        //padding-bottom: 34px;
+        position: inherit;
+        top: -24px;
+        max-width: 100%;
     }
 
     .img2 {
-        width: 100%;
+        max-width: 100%;
+    }
+
+    .desc_cont {
+        flex-direction: column-reverse;
+        align-items: end;
     }
 
     // Cards
@@ -211,19 +225,15 @@
     }
 
     %card {
-        width: 250px;
-        height: 225px;
-        padding: 0 7px;
+        width: 300px;
+        height: 260px;
+        padding: 0 16px;
         margin: 0 0 30px 0;
     }
 
-    .blue_card {
-        margin-top: 20px;
-    }
-
     %num {
-        font-size: 20px;
-        line-height: 25px;
+        font-size: 27px;
+        line-height: 33px;
     }
 
     %card_text {

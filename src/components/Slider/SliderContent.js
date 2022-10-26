@@ -39,7 +39,7 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
 
 
                     <div className={styles.arrows__next} onClick={nextSlide}>
-                        <img src={paginationsArrows2} className={styles.arrows__next_icon}
+                        <img src={paginationsArrows2} className={styles.arrows__prev_icon}
                             alt='Not find RightArrow' />
                     </div>
 

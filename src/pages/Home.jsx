@@ -24,7 +24,7 @@ export default function Home() {
 
             <Slider />
 
-            <div className={styles.allAbouts} >
+            <div className={`${styles.allAbouts} ${aboutStyles.desc_cont} container`} >
 
                 <div className={styles.about__contents}>
 

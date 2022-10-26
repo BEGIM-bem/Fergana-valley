@@ -61,6 +61,9 @@ import productEvents3 from './eventsImages3.svg'
 import productEvents4 from './eventsImages4.svg'
 import close from './Close_SM.svg'
 import open from './3line.svg';
+import imgFounders11 from './imgFounders11.png'
+import imgFounders22 from './imgFounders22.png'
+import imgFounders33 from './imgFounders33.png'
 
 
 
@@ -132,4 +135,7 @@ export {
     imgPartnersLogo3,
     imgPartnersLogo4,
     imgPartnersLogo5,
+    imgFounders11,
+    imgFounders22,
+    imgFounders33,
 }
