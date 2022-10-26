@@ -32,8 +32,11 @@ export default function Product() {
     return (
         <div className={styles.conteiners}>
 
-            <LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />
+            {/*<LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />*/}
+            <div className={styles.f}>
+                <LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />
 
+            </div>
             <div className={styles.conteiner_fon}>
                 <div className={styles.conteiner__content}>
                     <div style={{ marginRight: '7.5rem' }}>

@@ -1,13 +1,11 @@
 @import '../Variables/index.scss';
 
-.conteiners {
+//.conteiners {
 
-    margin-top: 151px;
 
 
     .conteiner_fon {
 
-        margin-top: 32px;
         background-image: url(../images/ProductImg.svg);
 
         background-size: cover;
@@ -18,6 +16,10 @@
         object-fit: cover;
 
 
+    }
+    .f {
+        // background: red;
+        padding-top: 150px;
     }
 
     .conteiner__content {
@@ -39,7 +41,7 @@
     }
 
 
-}
+//}
 
 
 
