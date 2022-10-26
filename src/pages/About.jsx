@@ -8,7 +8,6 @@ import Footer from '../components/Footer/index.jsx'
 import OurPartners from "../components/OurPartners";
 import Founders from "../components/Founders";
 
-
 export default function About() {
     return (
         <div>

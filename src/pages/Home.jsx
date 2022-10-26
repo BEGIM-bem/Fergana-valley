@@ -19,6 +19,10 @@ import Footer from '../components/Footer/index.jsx'
 
 
 export default function Home() {
+
+
+    const screenWidth = window.screen.width
+    console.log(screenWidth)
     return (
         <div >
 
@@ -76,11 +80,22 @@ export default function Home() {
                     </div>
                 </div>
 
-                <a href='https://wa.me/996996777777549' target='_blank'
-                    style={{ textDecoration: 'none' }}
-                    rel='noreferrer'>
-                    <Button text={'Главное действие '} />
-                </a>
+                {
+                    screenWidth <= 324 ?
+                        <a href='https://wa.me/996996777777549' target='_blank'
+                            style={{ textDecoration: 'none' }}
+                            rel='noreferrer'>
+                            <button className={styles.btnNews}>Подробнее </button>
+                        </a>
+                        :
+                        <a href='https://wa.me/996996777777549' target='_blank'
+                            style={{ textDecoration: 'none' }}
+                            rel='noreferrer'>
+                            <Button text={'Главное действие '} />
+                        </a>
+
+
+                }
 
             </div>
 
@@ -98,9 +113,15 @@ export default function Home() {
                     </div>
                 </div>
 
-                <NavLink to='/events' style={{ textDecoration: 'none' }} >
-                    <Button text={'Все новости'} />
-                </NavLink>
+
+                    <NavLink to='/events' style={{ textDecoration: 'none' }} >
+                        {
+                            screenWidth <= 500 ?
+                                <button className={styles.btnNews}>Подробнее </button>
+                                : <Button text={'Все новости'} />
+                        }
+
+                    </NavLink>
 
                 <Footer />
             </div>
