@@ -19,36 +19,44 @@ import Footer from '../components/Footer/index.jsx'
 
 
 export default function Home() {
+
+
+    const screenWidth = window.screen.width
+    console.log(screenWidth)
     return (
         <div >
 
             <Slider />
 
-            <div className={styles.allAbouts} >
+            <div className="container">
+                <div className={styles.flex_between}>
+                    <div style={{ marginRight: "10px" }} className={styles.text_container}>
+                        <h2 className={styles.title}>Кто мы?</h2>
 
-                <div className={styles.about__contents}>
+                        <p className={styles.text}>Предварительные выводы неутешительны: перспективное
+                            планирование позволяет оценить значение вывода текущих активов.
+                            Ясность нашей позиции очевидна: современная методология
+                            разработки играет определяющее значение для системы массового
+                            участия. Внезапно, акционеры крупнейших компаний, вне зависимости
+                            от их уровня, должны быть призваны к ответу. Современные
+                            технологии достигли такого уровня, что убеждённость некоторых
+                            оппонентов является качественно новой ступенью соответствующих
+                            условий активизации.
+                        </p>
+                        <Button text={'Подробнее о нас'} />
+                        <br />
 
-                    <h1 className={styles.about__content_title} >Кто мы?</h1>
-                    <p className={styles.about__content_text}  >Предварительные выводы
-                        неутешительны: перспективное
-                        планирование позволяет оценить значение вывода текущих активов.
-                        Ясность нашей позиции очевидна: современная методология
-                        разработки играет определяющее значение для системы массового
-                        участия. Внезапно, акционеры крупнейших компаний, вне зависимости
-                        от их уровня, должны быть призваны к ответу. Современные
-                        технологии достигли такого уровня, что убеждённость некоторых
-                        оппонентов является качественно новой ступенью соответствующих
-                        условий активизации.</p>
-                    <NavLink style={{ textDecoration: 'none' }} to='/about'>
-                        <button className={styles.about_btn}>Подробнее о нас</button>
-                    </NavLink>
+                    </div>
+
+                    <div className={styles.img_block}>
+                        <img className={styles.img} src={mainAboutImg} alt="/" />
+                    </div>
                 </div>
 
-                <div className={styles.about__contents_img}  >
-                    <img src={mainAboutImg} alt='not find'
-                        className={styles.about_img} />
-                </div>
+
             </div>
+
+
 
 
             <div className={aboutStyles.second_section}>
@@ -76,11 +84,22 @@ export default function Home() {
                     </div>
                 </div>
 
-                <a href='https://wa.me/996996777777549' target='_blank'
-                    style={{ textDecoration: 'none' }}
-                    rel='noreferrer'>
-                    <Button text={'Главное действие '} />
-                </a>
+                {
+                    screenWidth <= 324 ?
+                        <a href='https://wa.me/996996777777549' target='_blank'
+                            style={{ textDecoration: 'none' }}
+                            rel='noreferrer'>
+                            <button className={styles.btnNews}>Подробнее </button>
+                        </a>
+                        :
+                        <a href='https://wa.me/996996777777549' target='_blank'
+                            style={{ textDecoration: 'none' }}
+                            rel='noreferrer'>
+                            <Button text={'Главное действие '} />
+                        </a>
+
+
+                }
 
             </div>
 
@@ -96,11 +115,20 @@ export default function Home() {
                         <NewsConteiner />
 
                     </div>
+
+
+                    <NavLink to='/events' style={{ textDecoration: 'none' }} >
+                        {
+                            screenWidth <= 500 ?
+                                <button className={styles.btnNews}>Подробнее </button>
+                                : <Button text={'Все новости'} />
+                        }
+
+                    </NavLink>
+
                 </div>
 
-                <NavLink to='/events' style={{ textDecoration: 'none' }} >
-                    <Button text={'Все новости'} />
-                </NavLink>
+
 
                 <Footer />
             </div>

@@ -6,7 +6,6 @@ import aboutStyles from "./../Styles/About.module.scss"
 import Cards from "../components/Cards";
 import Footer from '../components/Footer/index.jsx'
 
-
 export default function About() {
     return (
         <div>
