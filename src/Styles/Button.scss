@@ -20,7 +20,17 @@
     font-size: 1rem;
     line-height: 19px;
     color: $bacrountConteiner;
-
+    white-space: nowrap;
     margin-top: 60px;
     margin-bottom: 64px;
+
+
+}
+
+
+@media screen and (max-width: 953px) {
+    .btn_1 {
+        font-size: 14px;
+        line-height: 17px;
+    }
 }

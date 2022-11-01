@@ -24,40 +24,90 @@ import {
     productEvents1,
     productEvents2,
     productEvents3,
-    productEvents4
+    productEvents4,
+    iconPr1,
+    iconPr2,
+    iconPr3,
+    iconPr4
 } from '../images/index.js'
 import Footer from '../components/Footer'
+import ConteinerSlider from '../components/ConteinerSliders'
 
 export default function Product() {
+
+    let oneInfo = [
+        { images: iconPr1 },
+        { images: iconPr2 },
+        { images: iconPr3 },
+        { images: iconPr4 }
+    ]
+
+
+
+    const screenWidth = window.screen.width
+
     return (
         <div className={styles.conteiners}>
 
             {/*<LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />*/}
-            <div className={styles.f}>
+            <div className={styles.conteiner__lines}>
                 <LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />
 
             </div>
             <div className={styles.conteiner_fon}>
                 <div className={styles.conteiner__content}>
-                    <div style={{ marginRight: '7.5rem' }}>
+
+                    <div className={styles.conteiner__Margin} >
+
                         <h1 className={styles.conteiner__title}> Курс “Бизнес с 0”</h1>
-                        <img src={imageTextForProducts} alt='not find'
-                            className={styles.conteiner__content_img} />
+
+                        <div className={styles.conteiner__block}>
+                            <p className={styles.conteiner__block_text} >Следует отметить, что укрепление и развитие внутренней
+                                структуры однозначно определяет каждого участника как
+                                способного принимать собственные решения касаемо
+                                системы массового участия.</p>
+                        </div>
+                        {/* <img src={imageTextForProducts} alt='not find'
+                            className={styles.conteiner__content_img} /> */}
                     </div>
-                    <Button
-                        text={'Приступить к курсу “Бизнес с 0”'} />
+
+                    <div className={styles.conteiner__btnBlock}>
+                        <Button
+                            text={'Приступить к курсу “Бизнес с 0”'}
+                            width={'100%'}
+                            top={'16px'}
+                            bottom={'0px'}
+                        />
+                    </div>
                 </div>
             </div>
 
+
             <div className={styles.conteiners_wrappers} >
-                <div className={styles.conteiners_services}>
-                    <img src={productImg1} alt='/' className={styles.conteiners_services_img} />
-                    <img src={productImg2} alt='/' className={styles.conteiners_services_img} />
-                    <img src={productImg3} alt='/' className={styles.conteiners_services_img} />
-                    <img src={productImg4} alt='/' className={styles.conteiners_services_img} />
+
+                {(screenWidth <= 600 && <ConteinerSlider arrImg={oneInfo} />)
+
+                    // || screenWidth <= 1006 ?
+                    // <div className={styles.conteiners_services}>
+                    //     <figure>   <img src={iconPr1} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                    //     <figure>  <img src={iconPr2} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                    //     <figure>   <img src={iconPr3} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                    //     <figure>    <img src={iconPr4} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                    // </div>
+                    // :
+                    // <div className={styles.conteiners_services}>
+                    //     <figure>   <img src={productImg1} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                    //     <figure>  <img src={productImg2} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                    //     <figure>   <img src={productImg3} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                    //     <figure>    <img src={productImg4} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                    // </div>
 
 
-                </div>
+
+                }
+
+
+
                 <a href='https://wa.me/996996777777549' target="_blank"
                     rel="noreferrer"
                     className={styles.conteiners_services_linkBtn}>
@@ -65,7 +115,6 @@ export default function Product() {
                 </a>
 
             </div>
-
             <div className={styles.conteiners__finans}>
                 <LineHeaders text={'Финансирование'} stylesContent={'9%'} stylesContent1={'4%'} />
 
@@ -125,6 +174,6 @@ export default function Product() {
             </div>
             <Footer />
 
-        </div>
+        </div >
     )
 }

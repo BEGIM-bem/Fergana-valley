@@ -64,13 +64,28 @@ import open from './3line.svg';
 import imgFounders11 from './imgFounders11.png'
 import imgFounders22 from './imgFounders22.png'
 import imgFounders33 from './imgFounders33.png'
+import fonProductText from './productFon.svg'
+
+import iconPr1 from './conPr1.svg'
+import iconPr2 from './conPr2.svg'
+import iconPr3 from './conPr3.svg'
+import iconPr4 from './conPr4.svg'
+import Move_Horizontal from './Move_Horizontal.svg'
 
 
 
 export {
+    Move_Horizontal,
+
+    iconPr1,
+    iconPr2,
+    iconPr3,
+    iconPr4,
+
+
     close,
     open,
-
+    fonProductText,
     productEvents1,
     productEvents2,
     productEvents3,
