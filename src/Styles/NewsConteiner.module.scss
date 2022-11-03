@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     // justify-content: space-between;
     justify-content: space-around;
-    // background: red;
+    margin-top: 64px;
 }
 
 
@@ -18,7 +18,7 @@
     margin: 0;
     max-width: 588px;
     // background: #1959AB;
-    margin-top: 64px;
+    margin-bottom: 30px;
     //overflow: hidden;
     position: relative;
 }
@@ -100,6 +100,9 @@
 
 @media screen and (max-width: 500px) {
 
+
+
+
     .wrapper__conteiner__date {
         font-size: 20px;
         line-height: 29px;
@@ -118,6 +121,17 @@
 
     }
 
+    .content {
+
+        margin-top: 10px;
+    }
+
+
+    .wrapper {
+
+        margin-top: 12px;
+
+    }
 
 
 }

@@ -28,20 +28,96 @@ import {
     iconPr1,
     iconPr2,
     iconPr3,
-    iconPr4
+    iconPr4,
+    events1,
+    switchsWhite,
+    switchsBlack
+
 } from '../images/index.js'
 import Footer from '../components/Footer'
-import ConteinerSlider from '../components/ConteinerSliders'
+import SliderAdaptability from '../components/ConteinerAdaptability'
+// import ConteinerSlider from '../components/ConteinerSliders'
 
 export default function Product() {
 
-    let oneInfo = [
-        { images: iconPr1 },
-        { images: iconPr2 },
-        { images: iconPr3 },
-        { images: iconPr4 }
+
+    let sliderImageBusness = [
+        {
+            id: 1,
+            images: iconPr1,
+        },
+        {
+            id: 2,
+            images: iconPr2,
+        },
+        {
+            id: 3,
+            images: iconPr3,
+        },
+        {
+            id: 4,
+            images: iconPr4,
+        }
     ]
 
+
+    let sliderImageFinans = [
+        {
+            id: 1,
+            images: productFinancImg1,
+        },
+        {
+            id: 2,
+            images: productFinancImg2,
+        },
+        {
+            id: 3,
+            images: productFinancImg3,
+        },
+        {
+            id: 4,
+            images: productFinancImg4,
+        }
+    ]
+
+    let sliderImageExport = [
+        {
+            id: 1,
+            images: productxport1,
+        },
+        {
+            id: 2,
+            images: productxport2,
+        },
+        {
+            id: 3,
+            images: productxport3,
+        },
+        {
+            id: 4,
+            images: productxport4,
+        }
+    ]
+
+
+    let sliderImageEvents = [
+        {
+            id: 1,
+            images: events1,
+        },
+        {
+            id: 2,
+            images: events1,
+        },
+        {
+            id: 3,
+            images: events1,
+        },
+        {
+            id: 4,
+            images: events1,
+        }
+    ]
 
 
     const screenWidth = window.screen.width
@@ -85,22 +161,25 @@ export default function Product() {
 
             <div className={styles.conteiners_wrappers} >
 
-                {(screenWidth <= 600 && <ConteinerSlider arrImg={oneInfo} />)
+                {
+                    (screenWidth <= 600 && <SliderAdaptability
+                        sliderImage={sliderImageBusness} />)
+                    ||
 
-                    // || screenWidth <= 1006 ?
-                    // <div className={styles.conteiners_services}>
-                    //     <figure>   <img src={iconPr1} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                    //     <figure>  <img src={iconPr2} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                    //     <figure>   <img src={iconPr3} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                    //     <figure>    <img src={iconPr4} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                    // </div>
-                    // :
-                    // <div className={styles.conteiners_services}>
-                    //     <figure>   <img src={productImg1} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                    //     <figure>  <img src={productImg2} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                    //     <figure>   <img src={productImg3} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                    //     <figure>    <img src={productImg4} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                    // </div>
+                    (screenWidth <= 1006 ?
+                        <div className={styles.conteiners_services}>
+                            <figure>   <img src={iconPr1} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                            <figure>  <img src={iconPr2} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                            <figure>   <img src={iconPr3} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                            <figure>    <img src={iconPr4} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                        </div>
+                        :
+                        <div className={styles.conteiners_services}>
+                            <figure>   <img src={productImg1} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                            <figure>  <img src={productImg2} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                            <figure>   <img src={productImg3} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                            <figure>    <img src={productImg4} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
+                        </div>)
 
 
 
@@ -111,22 +190,35 @@ export default function Product() {
                 <a href='https://wa.me/996996777777549' target="_blank"
                     rel="noreferrer"
                     className={styles.conteiners_services_linkBtn}>
-                    <Button text={"Получить подробную информацию"} />
+                    <Button text={"Получить подробную информацию"}
+                    />
+
+
                 </a>
 
             </div>
+
             <div className={styles.conteiners__finans}>
                 <LineHeaders text={'Финансирование'} stylesContent={'9%'} stylesContent1={'4%'} />
 
+                {
+                    screenWidth <= 600 ?
 
-                <div className={styles.conteiner__contentsFinans}>
-                    <img src={productFinancImg1} alt='/' className={styles.conteiner__finans_img} />
-                    <img src={productFinancImg2} alt='/' className={styles.conteiner__finans_img} />
-                    <img src={productFinancImg3} alt='/' className={styles.conteiner__finans_img} />
-                    <img src={productFinancImg4} alt='/' className={styles.conteiner__finans_img} />
-                    <img src={productFinancImg5} alt='/' className={styles.conteiner__finans_img} />
+                        <SliderAdaptability
+                            sliderImage={sliderImageFinans} />
 
-                </div>
+
+                        :
+                        <div className={styles.conteiner__contentsFinans}>
+                            <img src={productFinancImg1} alt='/' className={styles.conteiner__finans_img} />
+                            <img src={productFinancImg2} alt='/' className={styles.conteiner__finans_img} />
+                            <img src={productFinancImg3} alt='/' className={styles.conteiner__finans_img} />
+                            <img src={productFinancImg4} alt='/' className={styles.conteiner__finans_img} />
+                            <img src={productFinancImg5} alt='/' className={styles.conteiner__finans_img} />
+                        </div>
+
+                }
+
                 <a href='https://wa.me/996996777777549' target="_blank"
                     rel="noreferrer"
                     className={styles.conteiners_services_linkBtn}>
@@ -139,15 +231,32 @@ export default function Product() {
 
             <hr />
             <div>
-                <LineHeaders text={'Экспорт'} stylesContent={'15%'} stylesContent1={'8rem'} />
-                <div className={styles.export__conteiner}>
-                    <img src={productxport1} alt='/' className={styles.export__conteiner_img} />
-                    <img src={productxport2} alt='/' className={styles.export__conteiner_img} />
-                    <img src={productxport3} alt='/' className={styles.export__conteiner_img} />
-                    <img src={productxport4} alt='/' className={styles.export__conteiner_img} />
-                    <img src={productxport5} alt='/' className={styles.export__conteiner_img} />
-                    <img src={productxport6} alt='/' className={styles.export__conteiner_img} />
-                </div>
+                {
+                    screenWidth <= 600 ?
+                        <LineHeaders text={'Экспорт'}
+                            stylesContent={'9%'}
+                            stylesContent1={'35%'} />
+                        :
+                        <LineHeaders text={'Экспорт'}
+                            stylesContent={'15%'}
+                            stylesContent1={'8rem'} />
+                }
+                {
+                    screenWidth <= 600 ?
+                        <SliderAdaptability
+                            sliderImage={sliderImageExport} />
+                        :
+                        <div className={styles.export__conteiner}>
+                            <img src={productxport1} alt='/' className={styles.export__conteiner_img} />
+                            <img src={productxport2} alt='/' className={styles.export__conteiner_img} />
+                            <img src={productxport3} alt='/' className={styles.export__conteiner_img} />
+                            <img src={productxport4} alt='/' className={styles.export__conteiner_img} />
+                            <img src={productxport5} alt='/' className={styles.export__conteiner_img} />
+                            <img src={productxport6} alt='/' className={styles.export__conteiner_img} />
+                        </div>
+                }
+
+
                 <a href='https://wa.me/996996777777549' target="_blank"
                     rel="noreferrer"
                     className={styles.conteiners_services_linkBtn}>
@@ -158,21 +267,44 @@ export default function Product() {
             <hr />
 
             <div className={styles.events}>
-                <LineHeaders text={'Мероприятие'} stylesContent={'12%'} stylesContent1={'8%'} />
 
-                <div className={styles.events__contents}>
-                    <img className={styles.events__contents_img} src={productEvents4} alt='/' />
-                    <img className={styles.events__contents_img} src={productEvents3} alt='/' />
-                    <img className={styles.events__contents_img} src={productEvents2} alt='/' />
-                    <img className={styles.events__contents_img} src={productEvents1} alt='/' />
-                </div>
+                {
+                    screenWidth <= 600 ?
+                        <LineHeaders text={'Мероприятие'}
+                            stylesContent={'6%'}
+                            stylesContent1={'8%'} />
+                        :
+                        <LineHeaders text={'Мероприятие'}
+                            stylesContent={'12%'}
+                            stylesContent1={'8%'} />
+                }
+
+
+                {
+                    screenWidth <= 600 ?
+                        <SliderAdaptability
+
+                            sliderImage={sliderImageEvents}
+                        />
+                        :
+                        <div className={styles.events__contents}>
+                            <img className={styles.events__contents_img} src={productEvents4} alt='/' />
+                            <img className={styles.events__contents_img} src={productEvents3} alt='/' />
+                            <img className={styles.events__contents_img} src={productEvents2} alt='/' />
+                            <img className={styles.events__contents_img} src={productEvents1} alt='/' />
+                        </div>
+
+                }
+
                 <NavLink to='/events'
-
                     className={styles.conteiners_services_linkBtn}>
                     <Button text={"Узнать о Последних Новостях"} />
                 </NavLink>
+
+                <Footer />
+
             </div>
-            <Footer />
+
 
         </div >
     )

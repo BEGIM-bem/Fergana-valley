@@ -71,11 +71,35 @@ import iconPr2 from './conPr2.svg'
 import iconPr3 from './conPr3.svg'
 import iconPr4 from './conPr4.svg'
 import Move_Horizontal from './Move_Horizontal.svg'
-
-
+import switchsWhite from './whiteZnak.svg'
+import switchsBlack from './blackZnak.svg'
+import events1 from './events2.svg'
+import adaptivProductImg from './AdaptivPtoduct.svg'
+import eventMain from './eventMain.svg'
+import eventsCalendar from './Календарь.svg'
+import contactsFon from './ContactsFon.svg'
+import testNews from './testNew.svg'
+import contactInstagram from './contact Instagram.svg'
+import contactTelegram from './contact Telegram.svg'
+import contactFacbook from './contact Facbook.svg'
+import contactWatsapp from './contact Watsapp.svg'
 
 export {
+    contactInstagram,
+    contactTelegram,
+    contactFacbook,
+    contactWatsapp,
+
+
+    contactsFon,
+    testNews,
+    eventMain,
+    eventsCalendar,
+    adaptivProductImg,
+    switchsWhite,
+    switchsBlack,
     Move_Horizontal,
+    events1,
 
     iconPr1,
     iconPr2,

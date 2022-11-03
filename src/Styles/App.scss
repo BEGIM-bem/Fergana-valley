@@ -4,10 +4,9 @@
     font-family: 'Verdana';
     font-style: normal;
     box-sizing: border-box;
-
+    text-decoration: none;
     // overflow-x: hidden;
 }
-
 
 
 body::-webkit-scrollbar {
@@ -29,6 +28,26 @@ body::-webkit-scrollbar-thumb {
 .container {
     max-width: 76.25rem;
     margin: 0 auto;
+}
+
+
+
+.containerFor {
+    max-width: 76.25rem;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 64px;
+
+}
+
+@media screen and (max-width: 1000px) {
+
+    .containerFor {
+
+        margin-bottom: 20px;
+
+    }
+
 }
 
 .flex_between {

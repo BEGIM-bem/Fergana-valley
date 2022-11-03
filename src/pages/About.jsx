@@ -13,11 +13,14 @@ export default function About() {
         <div>
             {/* <Navbar /> */}
             <div className={aboutStyles.banner}>
-                <img className={aboutStyles.banner_image} src={imgAbout} alt="/"></img>
+                <img className={aboutStyles.banner_image}
+                    src={imgAbout} alt="/"></img>
                 <h1 className={aboutStyles.mainTitle}>Нет звука приятнее,<br />
                     чем шёпот бессменных лидеров
                 </h1>
             </div>
+
+
             <div className="container">
                 <div className={aboutStyles.desc_cont}>
                     <div style={{ marginRight: "10px" }} className={aboutStyles.text_container}>
@@ -93,8 +96,8 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <Founders/>
-            <OurPartners/>
+            <Founders />
+            <OurPartners />
             <Footer />
         </div>
     )
