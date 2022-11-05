@@ -65,6 +65,8 @@ import imgFounders11 from './imgFounders11.png'
 import imgFounders22 from './imgFounders22.png'
 import imgFounders33 from './imgFounders33.png'
 
+import imgCourseBanner from './imgCourseBanner.png'
+
 
 
 export {
@@ -138,4 +140,6 @@ export {
     imgFounders11,
     imgFounders22,
     imgFounders33,
+
+    imgCourseBanner,
 }

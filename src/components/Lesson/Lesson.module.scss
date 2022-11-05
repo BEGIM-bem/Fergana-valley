@@ -1,0 +1,53 @@
+.card {
+  width: 370px;
+  height: 370px;
+  background: #1959AB;
+  border-radius: 5px;
+  color: white;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.number {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #1959AB;
+  background: white;
+  width: 125px;
+  height: 61px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%text {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+}
+
+.text1 {
+  @extend %text;
+  margin-bottom: 16px;
+}
+
+.text2 {
+  @extend %text;
+}
+.time_cont {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+.time_icon {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+    width: 48.7%;
+  }
+}

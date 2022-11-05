@@ -1,0 +1,71 @@
+.banner {
+  background-image: url(../images/imgCourseBanner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 420px;
+}
+
+.text_cont{
+  background: #FFFFFF;
+  box-shadow: 3px 5px 20px rgb(51 51 51 / 10%);
+  border-radius: 5px;
+  margin: 64px 0;
+  padding: 47px;
+}
+
+.lessons_cont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 55px;
+}
+
+.comments_cont {
+  margin: 120px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.comments_title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+}
+.comments_input {
+  background: #FFFFFF;
+  border-radius: 5px;
+  padding: 16px;
+}
+.comments_input::placeholder {
+  font-size: 16px;
+  line-height: 150%;
+  text-align: justify;
+  color: #BDBDBD;
+}
+
+.all_comments_cont {
+  margin: 32px 0 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+@media screen and (max-width: 1200px) {
+  .lessons_cont {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    //flex-basis: 100%;
+  }
+  .banner {
+    height: 240px;
+  }
+  .text_cont{
+    margin: 16px 0 32px;
+    padding: 47px;
+  }
+  .comments_cont {
+    margin: 64px 0 0;
+    gap: 32px;
+  }
+}
