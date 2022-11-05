@@ -18,6 +18,7 @@ import Founders from '../components/Founders';
 import NewsConteiner from '../components/NewsConteiner';
 import Footer from '../components/Footer/index.jsx'
 import SliderAdaptability from '../components/ConteinerAdaptability';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Home() {
@@ -41,6 +42,8 @@ export default function Home() {
         },
 
     ]
+    const { allEvents, status, error } = useSelector(state => state.events)
+    let sliceEvent = allEvents.slice(0, 2)
 
     const screenWidth = window.screen.width
 
@@ -136,7 +139,7 @@ export default function Home() {
 
                     <div className='container' >
                         <h1 className={styles.events__title} >Мероприятия</h1>
-                        <NewsConteiner />
+                        <NewsConteiner date={sliceEvent} />
 
                     </div>
                 </div>

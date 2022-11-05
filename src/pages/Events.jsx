@@ -12,8 +12,6 @@ export default function Events() {
 
     const dispatch = useDispatch()
 
-    console.log("allEvents: ", allEvents)
-    console.log("status: ", status)
 
     return (
         <div  >
@@ -33,7 +31,7 @@ export default function Events() {
             }
 
 
-            <div className='container' >
+            <div className='containerFor' >
                 {
                     allEvents && <NewsConteiner date={allEvents} />
                 }

@@ -83,8 +83,8 @@
 
     position: absolute;
     top: 27%;
-    /* top: 10%; */
-    /* width: 60%; */
+
+
     left: 17%;
     right: 17%;
     background: rgba(255, 255, 255, 0.5);
@@ -176,11 +176,7 @@
     -o-background-size: 100%;
     /* Opera 9.6+ */
     background-size: 100%;
-    /* Современные браузеры */
 
-    /* height: 500px; */
-    height: 100vh;
-    /* height: auto; */
     object-fit: cover;
     animation: zoom 20s infinite;
     object-fit: cover;
@@ -197,7 +193,7 @@
 
     /* background: rebeccapurple; */
     position: absolute;
-    top: 65%;
+    /* top: 65%; */
     bottom: 5%;
     /* z-index: 5; */
 
@@ -208,6 +204,8 @@
 .operations__icon {
     margin-left: 70px;
     margin-right: 188px;
+    /* background: red; */
+    /* margin-bottom: 0; */
 }
 
 .LanguagesBar {

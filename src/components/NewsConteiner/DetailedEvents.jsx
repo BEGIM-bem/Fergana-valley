@@ -96,7 +96,7 @@ export default function DetailedEvents() {
                 <div className={styles.event__detailed_images}>
                     {
                         idEvents.imagesAll.slice(0, 6).map(item => (
-                            <div className={styles.blockimg} >
+                            <div className={styles.blockimg} key={item.id} >
 
                                 <img className={styles.event__detailed_imag}
                                     src={item.images} key={item.id} alt='/' />

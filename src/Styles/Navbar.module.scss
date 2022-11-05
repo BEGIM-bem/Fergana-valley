@@ -47,6 +47,13 @@
         // background: rebeccapurple;
     }
 
+
+
+    .navbar__log {
+        // background: rebeccapurple;
+        margin-right: 15px;
+    }
+
     .active {
         margin-right: 32px;
         font-family: $fontFamily;
@@ -63,6 +70,7 @@
 
 
     .navbar_item_to {
+        white-space: nowrap;
         margin-right: 32px;
         font-family: $fontFamily;
         font-style: normal;
@@ -154,7 +162,7 @@
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
     .Navbar {
         position: relative;
         // z-index: 5;

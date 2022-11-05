@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styles from '../Styles/Contacts.module.scss'
 import {
@@ -7,6 +7,14 @@ import {
     contactFacbook,
     contactWatsapp,
 } from '../images/index.js'
+
+
+
+
+
+
+
+
 
 export default function Contacts() {
     const { status, error, contacts } = useSelector(state => state.contacts)
@@ -76,6 +84,9 @@ export default function Contacts() {
             images: contactWatsapp
         },
     ]
+
+
+
 
 
     return (
@@ -155,7 +166,12 @@ export default function Contacts() {
                 }
             </div>
 
-
         </div>
     )
 }
+
+
+
+
+
+

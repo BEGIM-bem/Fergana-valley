@@ -38,14 +38,29 @@
 .contents__text {
     // font-weight: 400;
     font-size: 29px;
-    padding-left: 15px;
+    // padding-left: 15px;
     line-height: 44px;
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 20px;
+    // padding-bottom: 64px;
     color: #000000;
 
 }
 
+@media screen and (max-width: 1000px) {
+
+    .containerFor {
+
+        margin-bottom: 20px;
+
+    }
+
+    .contents__text {
+
+        padding-top: 5px;
+
+    }
+
+}
 
 @media screen and (max-width: 765px) {
 
