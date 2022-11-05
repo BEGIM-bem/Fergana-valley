@@ -1,0 +1,298 @@
+// opacity: 0.55;
+
+
+.detailes {
+    padding-top: 100px;
+}
+
+.mainTitle {
+    position: absolute;
+
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    max-width: 481px;
+    color: #333333;
+
+
+
+}
+
+.banner_image {
+    opacity: 0.55;
+    object-fit: cover;
+    width: 100%;
+    height: 298px;
+}
+
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.dates {
+    // background: red;
+    position: relative;
+    z-index: 5;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: -56px;
+
+
+}
+
+.banner__data {
+    // position: relative;
+    // top: 60%;
+    // position: fixed;
+
+    width: 167px;
+    background: rebeccapurple;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+
+    background: #1959AB;
+    border-radius: 5px;
+
+}
+
+.banner__data_number {
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    margin-left: 10px;
+    color: #FFFFFF;
+
+
+}
+
+
+.contents {
+    display: flex;
+    margin-top: 64px;
+    width: 90%;
+    max-width: 76.25rem;
+
+    // background: rebeccapurple;
+    margin-bottom: 64px;
+    margin: 64px auto;
+}
+
+
+.contents__text__title {
+
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 16px;
+    color: #000000;
+}
+
+.contents__textP {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333333;
+}
+
+
+.contents__imgBlock {
+    min-width: 590px;
+    height: 466px;
+    // background: rebeccapurple;
+    position: relative;
+    border-radius: 5px;
+}
+
+.contents__text {
+    margin-left: 15px;
+    // background: rebeccapurple;
+}
+
+.contents__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 5px;
+    box-shadow: 12px 12px 2px 1px #1959AB;
+
+}
+
+.detailes__title {
+    font-size: 16px;
+    line-height: 19px;
+
+    /* Черный */
+
+    color: #333333;
+    padding-bottom: 32px;
+}
+
+
+.event__detailed_images {
+    display: flex;
+    flex-wrap: wrap;
+    // background: red;
+
+    justify-content: center;
+    // align-items: center;
+}
+
+
+.blockimg {
+    position: relative;
+    width: 380px;
+    height: 280px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+
+
+.event__detailed_imag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+
+}
+
+
+.detailes__text_Title {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 16px;
+    color: #000000;
+}
+
+.detailes__text1 {
+    // font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    padding-bottom: 24px;
+    text-align: justify;
+    color: #000000;
+}
+
+.detailes__text_link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration-line: underline;
+    color: #1959AB;
+}
+
+.Other {
+    font-size: 36px;
+    line-height: 44px;
+    color: #1959AB;
+}
+
+
+
+//Планшет
+@media screen and (max-width: 1000px) {
+
+
+    .contents {
+        margin-top: 32px;
+        flex-direction: column-reverse;
+        align-items: end;
+        margin-bottom: 20px;
+
+    }
+
+
+    .contents__imgBlock {
+        // align-items: end;
+        min-width: 343px;
+        min-height: 188px;
+        background: rebeccapurple;
+        width: 80%;
+        height: 310px;
+        margin-bottom: 30px;
+        // margin: 0 auto;
+
+    }
+
+
+}
+
+
+//Мобилька 
+@media screen and (max-width: 688px) {
+    .mainTitle {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .Other {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .banner__data_number {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+
+    .contents__text__title {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .contents__textP {
+        font-size: 14px;
+    }
+
+    .detailes__title {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+
+    .contents__imgBlock {
+
+        min-width: 260px;
+        min-height: 188px;
+        background: rebeccapurple;
+        width: 100%;
+        height: 310px;
+        margin-bottom: 30px;
+
+    }
+
+    .detailes__text_Title {
+        font-size: 16px;
+        line-height: 19px;
+
+    }
+
+    .detailes__text1 {
+        font-size: 14px;
+    }
+
+    .detailes__text_link {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+
+}

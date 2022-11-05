@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     // justify-content: space-between;
     justify-content: space-around;
-    // background: red;
+    margin-top: 64px;
 }
 
 
@@ -18,7 +18,7 @@
     margin: 0;
     max-width: 588px;
     // background: #1959AB;
-    margin-top: 64px;
+    margin-bottom: 30px;
     //overflow: hidden;
     position: relative;
 }
@@ -118,6 +118,18 @@
 
     }
 
+    .content {
+
+        margin-top: 10px;
+    }
+
+
+    .wrapper {
+
+        margin-top: 12px;
+        margin-bottom: 8px;
+
+    }
 
 
 }

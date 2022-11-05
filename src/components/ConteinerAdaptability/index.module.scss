@@ -1,0 +1,45 @@
+.slideshow {
+    width: 90%;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 8px;
+
+    z-index: 1;
+    // background: rebeccapurple;
+}
+
+
+.slideImage {
+
+
+    margin: 0 auto;
+
+
+
+}
+
+
+.slideshow__icon {
+
+    margin-top: 25px;
+    // margin-bottom: 15px;
+
+    text-align: center;
+
+}
+
+.slides {
+    background: red;
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+}
+
+.active {
+    display: inline-block;
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+}
+
+.inactive {
+    display: none;
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+}

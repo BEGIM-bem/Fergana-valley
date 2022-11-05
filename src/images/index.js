@@ -64,15 +64,55 @@ import open from './3line.svg';
 import imgFounders11 from './imgFounders11.png'
 import imgFounders22 from './imgFounders22.png'
 import imgFounders33 from './imgFounders33.png'
+import fonProductText from './productFon.svg'
 
+import iconPr1 from './conPr1.svg'
+import iconPr2 from './conPr2.svg'
+import iconPr3 from './conPr3.svg'
+import iconPr4 from './conPr4.svg'
+import Move_Horizontal from './Move_Horizontal.svg'
+import switchsWhite from './whiteZnak.svg'
+import switchsBlack from './blackZnak.svg'
+import events1 from './events2.svg'
+import adaptivProductImg from './AdaptivPtoduct.svg'
+import eventMain from './eventMain.svg'
+import eventsCalendar from './Календарь.svg'
+import contactsFon from './ContactsFon.svg'
+import testNews from './testNew.svg'
+import contactInstagram from './contact Instagram.svg'
+import contactTelegram from './contact Telegram.svg'
+import contactFacbook from './contact Facbook.svg'
+import contactWatsapp from './contact Watsapp.svg'
 import imgCourseBanner from './imgCourseBanner.png'
 
 
 
 export {
+    contactInstagram,
+    contactTelegram,
+    contactFacbook,
+    contactWatsapp,
+
+
+    contactsFon,
+    testNews,
+    eventMain,
+    eventsCalendar,
+    adaptivProductImg,
+    switchsWhite,
+    switchsBlack,
+    Move_Horizontal,
+    events1,
+
+    iconPr1,
+    iconPr2,
+    iconPr3,
+    iconPr4,
+
+
     close,
     open,
-
+    fonProductText,
     productEvents1,
     productEvents2,
     productEvents3,

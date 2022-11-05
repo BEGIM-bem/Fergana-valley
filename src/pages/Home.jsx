@@ -6,7 +6,8 @@ import {
     blokMain1,
     blokMain2,
     blockMain3,
-    blockMain4
+    blockMain4,
+    adaptivProductImg
 } from '../images/index.js'
 import Slider from '../components/Slider/Slider';
 import Button from '../components/Button';
@@ -16,13 +17,36 @@ import OurPartners from '../components/OurPartners';
 import Founders from '../components/Founders';
 import NewsConteiner from '../components/NewsConteiner';
 import Footer from '../components/Footer/index.jsx'
+import SliderAdaptability from '../components/ConteinerAdaptability';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Home() {
 
+    let sliderImageProduct = [
+        {
+            id: 1,
+            images: blokMain1,
+        },
+        {
+            id: 2,
+            images: blokMain2,
+        },
+        {
+            id: 3,
+            images: blockMain3,
+        },
+        {
+            id: 4,
+            images: blockMain4,
+        },
+
+    ]
+    const { allEvents, status, error } = useSelector(state => state.events)
+    let sliceEvent = allEvents.slice(0, 2)
 
     const screenWidth = window.screen.width
-    console.log(screenWidth)
+
     return (
         <div >
 
@@ -70,22 +94,31 @@ export default function Home() {
                 <div className='container'>
 
                     <h1 className={styles.services__title}>Продукты и Услуги</h1>
-                    <div className={styles.services__conteiner}>
+                    {
+                        screenWidth <= 688 ? <SliderAdaptability
+                            sliderImage={sliderImageProduct} /> :
 
-                        <img src={blokMain1} alt='not find' className={styles.services_img} />
-                        <img src={blokMain2} alt='not find' className={styles.services_img} />
-                        <img src={blockMain3} alt='not find' className={styles.services_img} />
-                        <img src={blockMain4} alt='not find' className={styles.services_img} />
 
-                    </div>
+                            <div className={styles.services__conteiner}>
+
+                                <img src={blokMain1} alt='not find' className={styles.services_img} />
+                                <img src={blokMain2} alt='not find' className={styles.services_img} />
+                                <img src={blockMain3} alt='not find' className={styles.services_img} />
+                                <img src={blockMain4} alt='not find' className={styles.services_img} />
+
+                            </div>
+                    }
+
                 </div>
 
                 {
-                    screenWidth <= 324 ?
+                    screenWidth <= 688 ?
                         <a href='https://wa.me/996996777777549' target='_blank'
                             style={{ textDecoration: 'none' }}
                             rel='noreferrer'>
-                            <button className={styles.btnNews}>Подробнее </button>
+                            <Button text={'Подробнее'}
+                                width={'70%'}
+                            />
                         </a>
                         :
                         <a href='https://wa.me/996996777777549' target='_blank'
@@ -93,8 +126,6 @@ export default function Home() {
                             rel='noreferrer'>
                             <Button text={'Главное действие '} />
                         </a>
-
-
                 }
 
             </div>
@@ -108,20 +139,21 @@ export default function Home() {
 
                     <div className='container' >
                         <h1 className={styles.events__title} >Мероприятия</h1>
-                        <NewsConteiner />
+                        <NewsConteiner date={sliceEvent} />
 
                     </div>
                 </div>
 
 
-                    <NavLink to='/events' style={{ textDecoration: 'none' }} >
-                        {
-                            screenWidth <= 500 ?
-                                <button className={styles.btnNews}>Подробнее </button>
-                                : <Button text={'Все новости'} />
-                        }
+                <NavLink to='/events' style={{ textDecoration: 'none' }} >
+                    {
+                        screenWidth <= 500 ?
+                            <Button width={'82%'}
+                                text={'Подробнее'} />
+                            : <Button text={'Все новости'} />
+                    }
 
-                    </NavLink>
+                </NavLink>
 
                 <Footer />
             </div>

@@ -27,13 +27,13 @@ export default function Navbar() {
     }
 
 
-    console.log("clicked: ", clicked)
+
     return (
         <div>
             <div className={clicked === true ? styles.Navbar : styles.Navbar1} >
                 <div className={styles.navbar__conteinerss}>
 
-                    {/* <div className={styles.d} > */}
+
 
                     <NavLink to='/*'> <img src={LogoTip} alt='not find'
                         className={styles.navbar__log} />  </NavLink>
@@ -78,14 +78,22 @@ export default function Navbar() {
 
 
 
-            {
-                // Что бы открывать  окошки для смены языка
+
+
+
+            {  // Что бы открывать  окошки для смены языка
                 (clicked ||
                     isOpenLanguages) &&
+
                 <div className={styles.languagesBar} >
                     <LanguagesBar />
                 </div>
+
+
             }
+
+
+
         </div >
     )
 }

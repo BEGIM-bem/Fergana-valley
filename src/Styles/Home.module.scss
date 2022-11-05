@@ -1,32 +1,11 @@
 @import '../Variables/index.scss';
+
 .flex_between {
     display: flex;
     justify-content: space-between;
 }
 
-.sliderHome {
-    // position: relative;
-    // z-index: 0;
-}
 
-.img {
-    //position: absolute;
-    //top: -25px;
-    //width: 100%;
-    //z-index: 5;
-}
-
-.allAbouts {
-    //display: flex;
-    //width: 90%;
-    //margin: 0 auto;
-    //// background: #61B857;
-    //margin-bottom: 64px;
-    //justify-content: space-between;
-.img_block {
-    position: relative;
-    //width: 39.75rem;
-}
 
 .text {
     font-weight: 400;
@@ -62,51 +41,51 @@
 
 
 
-    .about__contents_images {
-        position: relative;
-        // background: rebeccapurple;
-    }
+.about__contents_images {
+    position: relative;
+    // background: rebeccapurple;
+}
 
-    .about_img {
-        position: relative;
-        z-index: 5;
-         top: -40px
-    }
+.about_img {
+    position: relative;
+    z-index: 5;
+    top: -40px
+}
 
-    .about_img {
+.about_img {
 
-        // z-index: 5;
-        object-fit: contain;
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-        width: auto;
-        // height: auto;
-    }
+    // z-index: 5;
+    object-fit: contain;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    width: auto;
+    // height: auto;
+}
 
 
-    .about__contents {
-        align-self: center;
-        width: 45%;
-        // background: red;
-    }
+.about__contents {
+    align-self: center;
+    width: 45%;
+    // background: red;
+}
 
-    // .about__contents {
-    //     // width: 60%;
-    //     // align-self: center;
-    //     margin-right: 80px;
-    //     margin-top: 20px;
-    //     background: red;
-    // }
+// .about__contents {
+//     // width: 60%;
+//     // align-self: center;
+//     margin-right: 80px;
+//     margin-top: 20px;
+//     background: red;
+// }
 
-    .about__content_title {
-        font-family: $fontFamily;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 44px;
-        color: $colorTeaxtBlue;
-    }
+.about__content_title {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: $colorTeaxtBlue;
+}
 
 .about__content_text {
     font-family: $fontFamily;
@@ -145,18 +124,6 @@
     display: block;
 }
 
-// }
-
- }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -179,7 +146,7 @@
     .services__conteiner {
         display: flex;
         flex-wrap: wrap;
-         justify-content: center;
+        justify-content: center;
     }
 
     .services_img {
@@ -191,35 +158,35 @@
 
 }
 
-    .btnNews {
-        background: #61B857;
+.btnNews {
+    background: #61B857;
 
-        box-shadow: 3px 3px 6px rgba(51, 51, 51, 0.25);
-        border-radius: 5px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        padding-left: 32px;
-        padding-right: 32px;
-        border: 0;
+    box-shadow: 3px 3px 6px rgba(51, 51, 51, 0.25);
+    border-radius: 5px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border: 0;
 
-        margin: 0 auto;
-        display: block;
-        width: 90%;
-        font-family: $fontFamily;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 19px;
-        color: $bacrountConteiner;
+    margin: 0 auto;
+    display: block;
+    width: 90%;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 19px;
+    color: $bacrountConteiner;
 
-        margin-top: 60px;
-        margin-bottom: 64px;
-    }
-
-
+    margin-top: 60px;
+    margin-bottom: 64px;
+}
 
 
-    .events {
+
+
+.events {
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -247,13 +214,14 @@
 @media screen and (max-width: 1000px) {
     .allAbouts {
         display: flex;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
 
         .about_img {
             width: 100%;
             top: -24px
         }
+
         .about__content_title {
             font-family: $fontFamily;
             font-style: normal;
@@ -278,10 +246,12 @@
 
             color: #333333;
         }
+
         .about__contents {
             align-self: center;
             width: 100%;
         }
+
         .about_btn {
             background: #61B857;
             /* тень базовая */

@@ -23,3 +23,21 @@
 
     color: #FFFFFF;
 }
+
+@media screen and (max-width: 953px) {
+    .span {
+        font-size: 27px;
+        line-height: 33px;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    .span {
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+
+}
