@@ -9,7 +9,7 @@ import Contacts from "./pages/Contacts";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import { getEvents } from "./api/events";
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import DetailedEvents from "./components/NewsConteiner/DetailedEvents";
 import { getAdress } from "./api/contacts";
 
@@ -20,14 +20,10 @@ function App() {
   useEffect(() => {
     dispatch(getEvents())
     dispatch(getAdress())
-
-
-
   }, [dispatch])
 
   return (
     <div className="App">
-
       <Navbar />
       <Routes>
         <Route path='/*' element={<Home />} />
