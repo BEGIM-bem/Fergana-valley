@@ -83,6 +83,9 @@ import contactInstagram from './contact Instagram.svg'
 import contactTelegram from './contact Telegram.svg'
 import contactFacbook from './contact Facbook.svg'
 import contactWatsapp from './contact Watsapp.svg'
+import imgCourseBanner from './imgCourseBanner.png'
+
+
 
 export {
     contactInstagram,
@@ -177,4 +180,6 @@ export {
     imgFounders11,
     imgFounders22,
     imgFounders33,
+
+    imgCourseBanner,
 }

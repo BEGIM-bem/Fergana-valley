@@ -11,7 +11,7 @@ export let nameBar = [
     },
     {
         id: 3,
-        to: '/cours',
+        to: '/course',
         name: 'Курс “Бизнес с 0”'
     },
     {
