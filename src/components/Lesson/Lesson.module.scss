@@ -1,6 +1,8 @@
 .card {
-  width: 370px;
+  //width: 370px;
   height: 370px;
+  width: 30.6%;
+  //flex: auto;
   background: #1959AB;
   border-radius: 5px;
   color: white;
@@ -48,6 +50,7 @@
 
 @media screen and (max-width: 1200px) {
   .card {
-    width: 48.7%;
+    width: 46%;
+    flex: auto;
   }
 }

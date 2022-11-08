@@ -1,0 +1,33 @@
+.title_blue_text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1959AB;
+  margin-bottom: 21px;
+}
+%text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 18px;
+}
+.text {
+  @extend %text;
+}
+
+.blue_text_cont {
+  margin-bottom: 10px;
+}
+
+.blue_text {
+  @extend %text;
+  color: #1959AB;
+  vertical-align: middle;
+}
+
+.icon {
+  color: #1959AB;
+  margin: 0 7px 0 37px;
+  font-size: 26px;
+  vertical-align: middle;
+}

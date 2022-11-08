@@ -11,7 +11,7 @@ const Lesson = ({number, time, topic}) => {
                     старческий скрип Амстердама</p>
                 <div className='flex_between'>
                     <p className={lessonStyles.text2}>В уроке:</p>
-                    <p>Сложно сказать, почему<br/>
+                    <p>Сложно сказать, почему
                         объемы выросли!</p>
                 </div>
             </div>

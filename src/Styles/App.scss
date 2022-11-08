@@ -5,6 +5,7 @@
     font-style: normal;
     box-sizing: border-box;
     text-decoration: none;
+    outline: none;
     // overflow-x: hidden;
 }
 
@@ -26,7 +27,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-    max-width: 76.25rem;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -38,6 +39,10 @@ body::-webkit-scrollbar-thumb {
     width: 90%;
     margin-bottom: 64px;
 
+}
+.ytp-pause-overlay-container {
+  display: none !important;
+  background: red !important;
 }
 
 @media screen and (max-width: 1000px) {
@@ -67,6 +72,29 @@ body::-webkit-scrollbar-thumb {
     color: #FFFFFF;
 }
 
+//.css-79ws1d-MuiModal-root {
+//    overflow: auto;
+//}
+.css-79ws1d-MuiModal-root {
+    position: fixed;
+    z-index: 0 !important;
+    margin-top: 100px;
+    //top: 100px !important;
+}
+
+.css-79ws1d-MuiModal-root::-webkit-scrollbar {
+    width: 0.1em;
+}
+
+.css-79ws1d-MuiModal-root::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.css-79ws1d-MuiModal-root::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
 @media screen and (max-width: 955px) {
     .flex_between {
         display: initial;
@@ -74,7 +102,7 @@ body::-webkit-scrollbar-thumb {
     }
 
     .container {
-        max-width: 1220px;
+        //max-width: 1220px;
         margin: 0 auto;
         padding: 0 24px;
     }

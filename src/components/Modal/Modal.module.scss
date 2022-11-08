@@ -1,0 +1,92 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.input_cont{
+  display: flex;
+  flex-direction: column;
+}
+%text {
+  font-size: 16px;
+  line-height: 19px;
+}
+.input {
+  width: 320px;
+  padding: 10px;
+  background: #FFFFFF;
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+  outline: none;
+  @extend %text;
+}
+.error_input {
+  width: 320px;
+  padding: 10px;
+  background: #FFFFFF;
+  border: 1px solid #EB5757;
+  border-radius: 5px;
+  outline: none;
+  @extend %text;
+}
+.error_input::placeholder {
+  @extend %text;
+  color: #EB5757;
+}
+.input::placeholder {
+  @extend %text;
+  color: #BDBDBD;
+}
+.label {
+  font-weight: 700;
+  @extend %text;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+.sub_label {
+  font-size: 13px;
+  line-height: 16px;
+  color: #BDBDBD;
+  margin-bottom: 8px;
+}
+.insta_input_cont {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.inst_icon {
+  position: absolute;
+  width: 60px;
+  border-right: 1px solid #BDBDBD;
+  padding: 0 13px;
+  height: 100%;
+}
+.phone_code {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  border-right: 1px solid #BDBDBD;
+  padding: 0 9px;
+  @extend %text;
+  color: #BDBDBD;
+  display: flex;
+  align-items: center;
+}
+.error {
+  @extend %text;
+  color: #EB5757;
+  font-size: 12px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance:textfield; /* Firefox */
+}
