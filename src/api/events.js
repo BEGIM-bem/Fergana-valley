@@ -71,7 +71,7 @@ export const getEvents = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
 
-            // const response = await API.get('/events');
+            // const response = await API.get('za');
             return dateEvents
         } catch (e) {
             return rejectWithValue(e.response.data.message);
