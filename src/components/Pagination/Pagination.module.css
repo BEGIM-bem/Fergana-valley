@@ -1,0 +1,14 @@
+.content_block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.arrow {
+    font-size: 45px;
+    border: none;
+    background: transparent;
+}
+.arrows_cont {
+    display: flex;
+    justify-content: space-around;
+}

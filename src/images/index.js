@@ -84,10 +84,14 @@ import contactTelegram from './contact Telegram.svg'
 import contactFacbook from './contact Facbook.svg'
 import contactWatsapp from './contact Watsapp.svg'
 import imgCourseBanner from './imgCourseBanner.png'
-
+import CoursesBanner from './CoursesBanner.png'
+import imgCourseBg from './imgCourseBg.png'
 
 
 export {
+    CoursesBanner,
+    imgCourseBg,
+
     contactInstagram,
     contactTelegram,
     contactFacbook,

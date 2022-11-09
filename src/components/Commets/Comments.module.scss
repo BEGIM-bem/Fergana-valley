@@ -7,7 +7,7 @@
   background: #FFFFFF;
   border-radius: 5px;
   padding: 32px;
-  border: 1px solid black;
+  //border: 1px solid black;
 }
 
 .usertext_cont {
@@ -33,4 +33,14 @@
 .comment_adminname {
   @extend %name;
   color: #1959AB;
+}
+
+@media screen and (max-width: 500px) {
+  .usertext_cont {
+    padding: 8px;
+  }
+  .admintext_cont {
+    padding: 8px;
+    border: 2px solid #1959AB;
+  }
 }

@@ -54,3 +54,23 @@
     flex: auto;
   }
 }
+@media screen and (max-width: 500px) {
+  .text1 {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .text2 {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .card {
+    padding: 8px;
+    height: 272px;
+  }
+  .number {
+    width: 108px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

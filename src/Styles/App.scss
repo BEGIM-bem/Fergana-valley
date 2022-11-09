@@ -104,7 +104,8 @@ body::-webkit-scrollbar-thumb {
     .container {
         //max-width: 1220px;
         margin: 0 auto;
-        padding: 0 24px;
+        //padding: 0 24px;
+        padding: 0;
     }
 
     .white_text {
@@ -118,5 +119,16 @@ body::-webkit-scrollbar-thumb {
     .white_text {
         font-size: 17px;
         line-height: 21px;
+    }
+
+
+    //modal
+    .MuiBox-root, .css-91gk30 {
+        width: 93% !important;
+        padding: 16px !important;
+    }
+    .css-a056yg-MuiTypography-root {
+        font-size: 16px;
+        line-height: 150%;
     }
 }

@@ -17,6 +17,8 @@
 
 .blue_text_cont {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .blue_text {
@@ -30,4 +32,17 @@
   margin: 0 7px 0 37px;
   font-size: 26px;
   vertical-align: middle;
+}
+
+@media screen and (max-width: 1000px) {
+  .icon {
+    margin: 0 7px 0 0;
+    width: 35px;
+  }
+  .blue_text {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+    width: 90%;
+  }
 }

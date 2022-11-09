@@ -137,19 +137,21 @@
     }
 
     .navbar_item_to {
-        margin-right: 16px;
-        font-size: 12px;
-        line-height: 15px;
+        margin-right: 16px !important;
+        font-size: 13px !important;
+        line-height: 15px !important;
     }
 
     .active {
-        margin-right: 16px;
-        font-size: 12px;
-        line-height: 15px;
-        white-space: nowrap;
+        margin-right: 16px !important;
+        font-size: 12px !important;
+        line-height: 15px !important;
+        white-space: nowrap !important;
     }
 
-
+    .navbar__log{
+        width: 120px;
+    }
 
 
     .Navbar__active {

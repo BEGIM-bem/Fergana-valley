@@ -22,11 +22,11 @@ const CurrentsLesson = () => {
                 <div>
                     <h5 className={currentStyles.title_blue_text}>Практическое задание после урока:</h5>
                     <div className={currentStyles.blue_text_cont}>
-                        <FaRegStar className={currentStyles.icon}/> <span className={currentStyles.blue_text}>Создайте свой страничный финансовый план</span>
+                        <FaRegStar className={currentStyles.icon}/> <p className={currentStyles.blue_text}>Создайте свой страничный финансовый план</p>
                     </div>
                     <div className={currentStyles.blue_text_cont}>
-                        <FaRegStar className={currentStyles.icon}/> <span className={currentStyles.blue_text}>Дурное дело нехитрое: коронованный герцог графства определил дальнейшее
-                        развитие</span>
+                        <FaRegStar className={currentStyles.icon}/> <p className={currentStyles.blue_text}>Дурное дело нехитрое: коронованный герцог графства определил дальнейшее
+                        развитие</p>
                     </div>
                 </div>
             </div>

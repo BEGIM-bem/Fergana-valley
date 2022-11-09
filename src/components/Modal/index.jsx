@@ -129,7 +129,7 @@ export default function AccessModal({open, handleClose}) {
                                     <input name='instagram' onChange={formik.handleChange} style={{paddingLeft: '70px'}} placeholder='введите ваш ник' className={(formik.errors.instagram) ? modalStyles.error_input : modalStyles.input} type="text"/>
                                 </div>
                             </div>
-                            <Button type='submit'  top='32px' bottom='0' text='Начать обучение'/>
+                            <Button type='submit' onClick={handleClose} top='32px' bottom='0' text='Начать обучение'/>
                         </form>
                     </Box>
                 </Fade>

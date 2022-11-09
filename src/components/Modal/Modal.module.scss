@@ -90,3 +90,18 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance:textfield; /* Firefox */
 }
+
+@media screen and (max-width: 500px) {
+  .label {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .sub_label {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .input::placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
