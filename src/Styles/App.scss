@@ -27,7 +27,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-    max-width: 90%;
+    max-width: 76.25rem;
+    // max-width: 90%;
     margin: 0 auto;
 }
 
@@ -40,9 +41,10 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 64px;
 
 }
+
 .ytp-pause-overlay-container {
-  display: none !important;
-  background: red !important;
+    display: none !important;
+    background: red !important;
 }
 
 @media screen and (max-width: 1000px) {

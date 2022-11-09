@@ -126,7 +126,7 @@ export default function Product() {
         <div className={styles.conteiners}>
 
             {/*<LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />*/}
-            <div className={styles.conteiner__lines}>
+            <div id="buzness" className={styles.conteiner__lines}>
                 <LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />
 
             </div>
@@ -198,7 +198,7 @@ export default function Product() {
 
             </div>
 
-            <div className={styles.conteiners__finans}>
+            <div id="finans" className={styles.conteiners__finans}>
                 <LineHeaders text={'Финансирование'} stylesContent={'9%'} stylesContent1={'4%'} />
 
                 {
@@ -230,7 +230,7 @@ export default function Product() {
 
 
             <hr />
-            <div>
+            <div id='exports' >
                 {
                     screenWidth <= 600 ?
                         <LineHeaders text={'Экспорт'}
@@ -266,7 +266,7 @@ export default function Product() {
 
             <hr />
 
-            <div className={styles.events}>
+            <div id='events' className={styles.events}>
 
                 {
                     screenWidth <= 600 ?
@@ -283,7 +283,6 @@ export default function Product() {
                 {
                     screenWidth <= 600 ?
                         <SliderAdaptability
-
                             sliderImage={sliderImageEvents}
                         />
                         :

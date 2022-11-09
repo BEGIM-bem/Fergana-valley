@@ -12,6 +12,7 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
 
 
     return (
+
         <section className={styles.slideshow}>
 
             <div className={styles.operations} >

@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import API from '../utils/axiosConfig';
 import { newsImage1, newsImage2 } from '../images/index.js'
+import axios from 'axios'
 
 let dateEvents = [
     {
@@ -71,7 +72,16 @@ export const getEvents = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
 
-            // const response = await API.get('za');
+            const response = await axios.get('https://fergana.pythonanywhere.com/api/lessons/',
+                {
+                    headers: {
+                        accept: 'application/json',
+                        // accept: 'application/json',
+                        // 'X-CSRFToken': 'pQyXb06V41cesfpcvOO3GFbW7aBgYTwPDS88P0F1k4ptXWEeMWQzE3wEPM0FdpQI'
+
+                    }
+                });
+            console.log("response: ", response)
             return dateEvents
         } catch (e) {
             return rejectWithValue(e.response.data.message);

@@ -1,90 +1,64 @@
 @import '../Variables/index.scss';
 
-.conteiner {
-    // background: red;
 
-    .switch_texst {
+.switch_texst {
 
-        // padding-right: 90px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        // background: rebeccapurple;
-    }
+    // padding-right: 90px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    // background: rebeccapurple;
+}
+
+.switch__radio {
+    // padding-left: 3rem;
+    position: relative;
+    z-index: 0;
+
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #000000;
+}
+
+
+
+
+.conteiner__blok {
+    // width: 166px;
+    // background: #1959AB;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-bottom: 16px;
+}
+
+
+.icon__countury {
+    padding-left: 20px;
+    padding-right: 16px;
+}
+
+.conteiner__blok_last {
+    // width: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+
+
+@media screen and (max-width: 500px) {
 
     .switch__radio {
-        // padding-left: 3rem;
-        position: relative;
-        z-index: 0;
 
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 22px;
-
-        color: #000000;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
+        color: #333333;
     }
-
-
-
-
-    .conteiner__blok {
-        // width: 166px;
-        // background: #1959AB;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        margin-bottom: 16px;
-    }
-
-
-    .icon__countury {
-        padding-left: 20px;
-        padding-right: 16px;
-    }
-
-    .conteiner__blok_last {
-        // width: 180px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-    }
-
-
-    // input[type="radio"],
-    // label {
-    //     cursor: pointer;
-
-    // }
-
-    // input[type="radio"] {
-    //     position: relative;
-    //     // height: 40px;
-    //     // width: 22px;
-
-    //     outline: none;
-    // }
-
-    // input[type="radio"]::before {
-    //     content: "";
-    //     position: absolute;
-    //     top: 60%;
-    //     left: 60%;
-    //     width: 22px;
-    //     height: 22px;
-    //     border-radius: 50%;
-    //     transform: translate(-50%, -50%);
-    //     border: 2px solid #1959AB;
-
-    // }
-
-
-
-
-
-
-
-
 
 }

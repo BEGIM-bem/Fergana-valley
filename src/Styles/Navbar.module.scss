@@ -2,6 +2,106 @@
 
 
 
+
+.d {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.navbar_item_to1 {
+    white-space: nowrap;
+    margin-right: 32px;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    // font-size: 12px;
+    line-height: 1.375rem;
+    color: $colorText;
+    text-decoration: none;
+
+
+
+}
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    // background: rebeccapurple;
+}
+
+
+.linkBar {
+    display: none;
+    position: absolute;
+    min-width: 220px;
+
+    z-index: 5;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+
+.dropdown:hover .linkBar {
+    display: block;
+}
+
+
+​ .Navbar__navMenu {
+    display: flex;
+
+
+}
+
+
+
+
+
+
+
+.languagesBar {
+    position: absolute;
+    top: 114%;
+    right: 15%;
+    z-index: 5;
+    padding: 16px;
+    background: $bacrountConteiner;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+
+
+
+
+
+
+.linkBar__link {
+    font-weight: 400;
+
+    font-size: 14px;
+    line-height: 17px;
+    color: #333333;
+
+}
+
+
+.linkBar__link:hover {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1959AB;
+
+}
+
+
+
 .Navbar1 {
     position: absolute;
     z-index: 5;
@@ -85,6 +185,10 @@
     }
 
 
+
+
+
+
 }
 
 
@@ -99,35 +203,33 @@
 
 
 
-.languagesBar {
-
-    position: absolute;
-
-    top: 16.5%;
-    left: 79%;
-
-
-    z-index: 5;
-    padding: 16px;
-    background: $bacrountConteiner;
-    border-radius: 5px;
-    padding: 16px;
-}
-
 .Navbar__navMenu {
-
     display: flex;
-
-
-
     align-items: center;
 
+}
+
+
+
+.modal {
+    // display: none;
+}
+
+
+.modal:hover {
+    display: block;
+    color: red;
+    background: #1959AB;
 }
 
 
 .languagesBarOpacity {
     display: block;
 }
+
+
+
+
 
 @media screen and (max-width: 1000px) {
 
@@ -173,15 +275,8 @@
 
         padding-top: 15px;
         padding-bottom: 10px;
-
-
-
         z-index: 5;
-
         width: 100%;
-        // padding-top: 5px;
-        // padding-bottom: 5px;
-
 
     }
 
@@ -189,9 +284,9 @@
     .languagesBar {
         position: absolute;
 
-        top: 70%;
-        left: 3%;
 
+        top: 950%;
+        left: -4%;
         z-index: 5;
         padding: 16px;
         background: $bacrountConteiner;
@@ -211,8 +306,6 @@
         visibility: hidden;
 
     }
-
-
 
     .Navbar__navMenu {
         white-space: nowrap;
@@ -236,6 +329,7 @@
         color: #000000;
         white-space: nowrap;
         padding-bottom: 32px;
+
     }
 
     .active {
