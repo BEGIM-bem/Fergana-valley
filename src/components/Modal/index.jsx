@@ -6,10 +6,10 @@ import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import modalStyles from './Modal.module.scss';
 import Button from "../Button";
-import {iconInstagram} from "../../images";
-import {useFormik} from "formik";
+import { iconInstagram } from "../../images";
+import { useFormik } from "formik";
 import * as Yup from "yup";
-import {useEffect} from "react";
+import { useEffect } from "react";
 
 const style = {
     position: 'absolute',
@@ -36,7 +36,7 @@ const title = {
     marginBottom: '16px',
 };
 
-export default function AccessModal({open, handleClose}) {
+export default function AccessModal({ open, handleClose }) {
 
     // useEffect(() => {
     //     document.body.style.overflow = 'hidden';
@@ -100,36 +100,40 @@ export default function AccessModal({open, handleClose}) {
                         </Typography>
                         <form onSubmit={formik.handleSubmit} className={modalStyles.form}>
                             <div className={modalStyles.input_cont}>
-                                <label className={modalStyles.label}>ФИО<span style={{color: '#EB5757'}}>*</span></label>
-                                <input name='fullname' onChange={formik.handleChange} placeholder='ФИО' className={(formik.errors.fullname) ? modalStyles.error_input : modalStyles.input} type="text"/>
+                                <label className={modalStyles.label}>ФИО<span style={{ color: '#EB5757' }}>*</span></label>
+                                <input name='fullname' onChange={formik.handleChange} placeholder='ФИО' className={(formik.errors.fullname) ? modalStyles.error_input : modalStyles.input} type="text" />
                             </div>
                             <div className={modalStyles.input_cont}>
-                                <label className={modalStyles.label}>Введите номер вашего телефона<span style={{color: '#EB5757'}}>*</span></label>
+                                <label className={modalStyles.label}>Введите номер вашего телефона<span style={{ color: '#EB5757' }}>*</span></label>
                                 <div className={modalStyles.insta_input_cont}>
                                     <p className={modalStyles.phone_code}>+996</p>
-                                    <input name='phone_number' onChange={formik.handleChange} style={{paddingLeft: '70px'}} placeholder='номер телефона' className={(formik.errors.phone_number) ? modalStyles.error_input : modalStyles.input} type="number"/>
+                                    <input name='phone_number' onChange={formik.handleChange} style={{ paddingLeft: '70px' }} placeholder='номер телефона' className={(formik.errors.phone_number) ? modalStyles.error_input : modalStyles.input} type="number" />
                                 </div>
                             </div>
                             <div className={modalStyles.input_cont}>
-                                <label style={{marginBottom: '4px'}} className={modalStyles.label}>Введите номер вашего WhatsApp<span style={{color: '#EB5757'}}>*</span></label>
+                                <label style={{ marginBottom: '4px' }} className={modalStyles.label}>Введите номер вашего WhatsApp<span style={{ color: '#EB5757' }}>*</span></label>
                                 <p className={modalStyles.sub_label}>Если его нет введите номер вашего телефона</p>
                                 <div className={modalStyles.insta_input_cont}>
                                     <p className={modalStyles.phone_code}>+996</p>
-                                    <input name='whatsapp_number' onChange={formik.handleChange} style={{paddingLeft: '70px'}} placeholder='номер телефона' className={(formik.errors.whatsapp_number) ? modalStyles.error_input : modalStyles.input} type="number"/>
+                                    <input name='whatsapp_number' onChange={formik.handleChange} style={{ paddingLeft: '70px' }} placeholder='номер телефона' className={(formik.errors.whatsapp_number) ? modalStyles.error_input : modalStyles.input} type="number" />
                                 </div>
                             </div>
                             <div className={modalStyles.input_cont}>
-                                <label className={modalStyles.label}>Email<span style={{color: '#EB5757'}}>*</span></label>
-                                <input name='email' onChange={formik.handleChange} placeholder='Ваша почта' className={(formik.errors.email) ? modalStyles.error_input : modalStyles.input} type="text"/>
+                                <label className={modalStyles.label}>Email<span style={{ color: '#EB5757' }}>*</span></label>
+                                <input name='email' onChange={formik.handleChange} placeholder='Ваша почта' className={(formik.errors.email) ? modalStyles.error_input : modalStyles.input} type="text" />
                             </div>
                             <div className={modalStyles.input_cont}>
                                 <label className={modalStyles.label}>Инстаграм</label>
                                 <div className={modalStyles.insta_input_cont}>
-                                    <img className={modalStyles.inst_icon} src={iconInstagram} alt="/"/>
-                                    <input name='instagram' onChange={formik.handleChange} style={{paddingLeft: '70px'}} placeholder='введите ваш ник' className={(formik.errors.instagram) ? modalStyles.error_input : modalStyles.input} type="text"/>
+                                    <img className={modalStyles.inst_icon} src={iconInstagram} alt="/" />
+                                    <input name='instagram' onChange={formik.handleChange} style={{ paddingLeft: '70px' }} placeholder='введите ваш ник' className={(formik.errors.instagram) ? modalStyles.error_input : modalStyles.input} type="text" />
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <Button type='submit' onClick={handleClose} top='32px' bottom='0' text='Начать обучение'/>
+=======
+                            <Button type='submit' top='32px' bottom='0' text='Начать обучение' />
+>>>>>>> 8bf516aa0aa087d92154f49e90061ab1e181d405
                         </form>
                     </Box>
                 </Fade>

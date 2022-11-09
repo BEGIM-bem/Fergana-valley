@@ -10,6 +10,7 @@ import Footer from '../components/Footer/index.jsx';
 export default function Events() {
     const { allEvents, status, error } = useSelector(state => state.events)
 
+    console.log("allEvents: ", allEvents)
     const dispatch = useDispatch()
 
 
