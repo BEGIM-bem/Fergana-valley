@@ -1,3 +1,4 @@
+
 import ArrowsWhitsLeft from './стрелки (1).svg';
 import ArrowsWhitsRight from './стрелки.svg'
 import MainImages from './фото1 (2).svg'
@@ -86,9 +87,10 @@ import contactWatsapp from './contact Watsapp.svg'
 import imgCourseBanner from './imgCourseBanner.png'
 import CoursesBanner from './CoursesBanner.png'
 import imgCourseBg from './imgCourseBg.png'
-
+import aboutImagess from './итьб.svg'
 
 export {
+    aboutImagess,
     CoursesBanner,
     imgCourseBg,
 

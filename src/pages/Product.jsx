@@ -126,10 +126,12 @@ export default function Product() {
         <div className={styles.conteiners}>
 
             {/*<LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />*/}
+
             <div id="buzness" className={styles.conteiner__lines}>
                 <LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />
-
             </div>
+
+
             <div className={styles.conteiner_fon}>
                 <div className={styles.conteiner__content}>
 
@@ -156,7 +158,9 @@ export default function Product() {
                         />
                     </div>
                 </div>
+
             </div>
+
 
 
             <div className={styles.conteiners_wrappers} >
@@ -184,50 +188,76 @@ export default function Product() {
 
 
                 }
+                {
+                    screenWidth <= 600 ?
 
+                        <a href='https://wa.me/996996777777549' target="_blank"
+                            rel="noreferrer"
+                            className={styles.conteiners_services_linkBtn}>
+                            <Button text={"Получить подробную информацию"}
+                                width={'83%'}
+                            />
+                        </a> :
 
+                        <a href='https://wa.me/996996777777549' target="_blank"
+                            rel="noreferrer"
+                            className={styles.conteiners_services_linkBtn}>
+                            <Button text={"Получить подробную информацию"}
+                            />
+                        </a>
+                }
 
-                <a href='https://wa.me/996996777777549' target="_blank"
-                    rel="noreferrer"
-                    className={styles.conteiners_services_linkBtn}>
-                    <Button text={"Получить подробную информацию"}
-                    />
-
-
-                </a>
 
             </div>
 
+
+            {/* <div className='container'> */}
             <div id="finans" className={styles.conteiners__finans}>
                 <LineHeaders text={'Финансирование'} stylesContent={'9%'} stylesContent1={'4%'} />
+
+                <div className='container'>
+                    {
+                        screenWidth <= 600 ?
+
+                            <SliderAdaptability
+                                sliderImage={sliderImageFinans} />
+
+
+                            :
+                            <div className={styles.conteiner__contentsFinans}>
+                                <img src={productFinancImg1} alt='/' className={styles.conteiner__finans_img} />
+                                <img src={productFinancImg2} alt='/' className={styles.conteiner__finans_img} />
+                                <img src={productFinancImg3} alt='/' className={styles.conteiner__finans_img} />
+                                <img src={productFinancImg4} alt='/' className={styles.conteiner__finans_img} />
+                                <img src={productFinancImg5} alt='/' className={styles.conteiner__finans_img} />
+                            </div>
+
+                    }
+                </div>
+
 
                 {
                     screenWidth <= 600 ?
 
-                        <SliderAdaptability
-                            sliderImage={sliderImageFinans} />
-
-
+                        <a href='https://wa.me/996996777777549' target="_blank"
+                            rel="noreferrer"
+                            className={styles.conteiners_services_linkBtn}>
+                            <Button text={"Получить подробную информацию"}
+                                width={'75%'}
+                            />
+                        </a>
                         :
-                        <div className={styles.conteiner__contentsFinans}>
-                            <img src={productFinancImg1} alt='/' className={styles.conteiner__finans_img} />
-                            <img src={productFinancImg2} alt='/' className={styles.conteiner__finans_img} />
-                            <img src={productFinancImg3} alt='/' className={styles.conteiner__finans_img} />
-                            <img src={productFinancImg4} alt='/' className={styles.conteiner__finans_img} />
-                            <img src={productFinancImg5} alt='/' className={styles.conteiner__finans_img} />
-                        </div>
-
+                        <a href='https://wa.me/996996777777549' target="_blank"
+                            rel="noreferrer"
+                            className={styles.conteiners_services_linkBtn}>
+                            <Button text={"Получить подробную информацию"} />
+                        </a>
                 }
-
-                <a href='https://wa.me/996996777777549' target="_blank"
-                    rel="noreferrer"
-                    className={styles.conteiners_services_linkBtn}>
-                    <Button text={"Получить подробную информацию"} />
-                </a>
 
             </div>
 
 
+            {/* </div> */}
 
             <hr />
             <div id='exports' >
@@ -241,27 +271,41 @@ export default function Product() {
                             stylesContent={'15%'}
                             stylesContent1={'8rem'} />
                 }
+                <div className='container'>
+                    {
+                        screenWidth <= 600 ?
+                            <SliderAdaptability
+                                sliderImage={sliderImageExport} />
+                            :
+                            <div className={styles.export__conteiner}>
+                                <img src={productxport1} alt='/' className={styles.export__conteiner_img} />
+                                <img src={productxport2} alt='/' className={styles.export__conteiner_img} />
+                                <img src={productxport3} alt='/' className={styles.export__conteiner_img} />
+                                <img src={productxport4} alt='/' className={styles.export__conteiner_img} />
+                                <img src={productxport5} alt='/' className={styles.export__conteiner_img} />
+                                <img src={productxport6} alt='/' className={styles.export__conteiner_img} />
+                            </div>
+                    }
+                </div>
+
+
                 {
                     screenWidth <= 600 ?
-                        <SliderAdaptability
-                            sliderImage={sliderImageExport} />
-                        :
-                        <div className={styles.export__conteiner}>
-                            <img src={productxport1} alt='/' className={styles.export__conteiner_img} />
-                            <img src={productxport2} alt='/' className={styles.export__conteiner_img} />
-                            <img src={productxport3} alt='/' className={styles.export__conteiner_img} />
-                            <img src={productxport4} alt='/' className={styles.export__conteiner_img} />
-                            <img src={productxport5} alt='/' className={styles.export__conteiner_img} />
-                            <img src={productxport6} alt='/' className={styles.export__conteiner_img} />
-                        </div>
+                        <a href='https://wa.me/996996777777549' target="_blank"
+                            rel="noreferrer"
+                            className={styles.conteiners_services_linkBtn}>
+                            <Button text={"Получить подробную информацию"}
+                                width={'73%'}
+                            />
+                        </a>
+                        : <a href='https://wa.me/996996777777549' target="_blank"
+                            rel="noreferrer"
+                            className={styles.conteiners_services_linkBtn}>
+                            <Button text={"Получить подробную информацию"} />
+                        </a>
                 }
 
 
-                <a href='https://wa.me/996996777777549' target="_blank"
-                    rel="noreferrer"
-                    className={styles.conteiners_services_linkBtn}>
-                    <Button text={"Получить подробную информацию"} />
-                </a>
             </div>
 
             <hr />
@@ -294,11 +338,20 @@ export default function Product() {
                         </div>
 
                 }
+                {
+                    screenWidth <= 600 ?
 
-                <NavLink to='/events'
-                    className={styles.conteiners_services_linkBtn}>
-                    <Button text={"Узнать о Последних Новостях"} />
-                </NavLink>
+                        <NavLink to='/events'
+                            className={styles.conteiners_services_linkBtn}>
+                            <Button width={'88%'} text={"Узнать о Последних Новостях"} />
+                        </NavLink>
+                        :
+
+                        <NavLink to='/events'
+                            className={styles.conteiners_services_linkBtn}>
+                            <Button text={"Узнать о Последних Новостях"} />
+                        </NavLink>
+                }
 
                 <Footer />
 

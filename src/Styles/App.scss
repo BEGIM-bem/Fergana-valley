@@ -27,15 +27,18 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container {
-    max-width: 76.25rem;
+    // max-width: 76.25rem;
+    max-width: 1300px;
     // max-width: 90%;
+    width: 90%;
     margin: 0 auto;
 }
 
 
 
 .containerFor {
-    max-width: 76.25rem;
+    // max-width: 76.25rem;
+    max-width: 1300px;
     margin: 0 auto;
     width: 90%;
     margin-bottom: 64px;
@@ -125,10 +128,12 @@ body::-webkit-scrollbar-thumb {
 
 
     //modal
-    .MuiBox-root, .css-91gk30 {
+    .MuiBox-root,
+    .css-91gk30 {
         width: 93% !important;
         padding: 16px !important;
     }
+
     .css-a056yg-MuiTypography-root {
         font-size: 16px;
         line-height: 150%;

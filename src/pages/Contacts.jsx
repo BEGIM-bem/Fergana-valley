@@ -8,7 +8,7 @@ import {
     contactWatsapp,
 } from '../images/index.js'
 
-
+import DG from '2gis-maps'
 
 
 
@@ -165,10 +165,31 @@ export default function Contacts() {
 
                 }
             </div>
+            {/* <Mapp /> */}
+
+
 
         </div>
     )
 }
+
+// const Mapp = () => {
+//     useEffect(() => {
+//         let map
+//         map = DG.map("map-container", {
+//             center: [55.31, 25.23],
+//             zoom: 5
+//         })
+//         DG.marker([55.31, 25.23]).addTo(map)
+//     }, [])
+
+//     return (
+//         <div id="map-container" style={{ width: '100%', height: '600px' }}>
+
+//         </div>
+
+//     )
+// }
 
 
 

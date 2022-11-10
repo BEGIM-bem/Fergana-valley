@@ -54,18 +54,18 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
                 sliderImage.map((slide, index) => (
                     <div
                         key={index}
-                        className={index === activeIndex ? [styles.slides, styles.active] : styles.inactive}>
+                        className={index === activeIndex ?
+                            [styles.slides, styles.active] : styles.inactive}>
 
                         <img className={styles.slideImage} src={slide.urls} alt="not find" />
 
-                        <div className={styles.contentSlider} >
+                        <div className={styles.contentSlider}>
                             {slide.title && <h1 className={styles.tiitleOne}>{slide.title}</h1>}
                             {slide.titleSmoll && <p className={styles.titleSmoll}>{slide.titleSmoll} </p>}
                             {slide.titleBig && <p className={styles.titleBig}>{slide.titleBig} </p>}
                             {slide.titleBig2 && <p className={styles.tiitleOne}>{slide.titleBig2}</p>}
                             {slide.textImages && <button className={styles.btn}  >{slide.textImages} </button>}
                         </div>
-
 
                         {
                             slide.events && (
@@ -82,9 +82,6 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
                                     <button className={styles.events_data}>{slide.data}</button>
                                 </div>)
                         }
-
-
-
                     </div>
 
                 ))
