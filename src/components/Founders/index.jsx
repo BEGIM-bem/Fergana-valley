@@ -1,7 +1,8 @@
 import React from 'react';
 import foundersStyles from './Founders.module.scss'
 import AboutStyles from './../../Styles/About.module.scss'
-import {imgFounders1, imgFounders2, imgFounders3} from "../../images";
+import {imgFounders11, imgFounders22, imgFounders33} from "../../images";
+import FoundersCard from "./foundersCard";
 
 const Founders = () => {
     return (
@@ -9,9 +10,9 @@ const Founders = () => {
             <div className='container'>
                 <h2 className={AboutStyles.white_title}>Основатели</h2>
                 <div className={`${foundersStyles.cards_container} {/*flex_between*/}`}>
-                    <img className={foundersStyles.img} src={imgFounders1} alt="/"/>
-                    <img className={foundersStyles.img} src={imgFounders2} alt="/"/>
-                    <img className={foundersStyles.img} src={imgFounders3} alt="/"/>
+                    <FoundersCard img={imgFounders11} name='Самидинова Файруза' position='Должность'/>
+                    <FoundersCard img={imgFounders22} name='Самидинова Файруза' position='Должность'/>
+                    <FoundersCard img={imgFounders33} name='Самидинова Файруза' position='Должность'/>
                 </div>
             </div>
         </div>

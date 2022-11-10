@@ -10,11 +10,27 @@
   //flex-direction: column;
   justify-content: space-around;
 }
-//.img {
-//  width: 100%;
-//}
+.img_cont {
+  position: relative;
+}
+.text_cont {
+  position: absolute;
+  bottom: 45px;
+  left: 40px;
+}
 
-@media screen and (max-width: 1000px) {
+.name_text{
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 10px;
+}
+
+.position_text{
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@media screen and (max-width: 1070px) {
   .img{
     width: 68%;
   }

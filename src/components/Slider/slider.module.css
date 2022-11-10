@@ -220,13 +220,10 @@
     display: flex;
     align-items: flex-end;
     padding-bottom: 22px;
-
 }
 
 .paginations {
-
     display: flex;
-
 }
 
 .paginations__number {
