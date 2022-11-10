@@ -72,16 +72,14 @@ export const getEvents = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
 
-            const response = await axios.get('https://fergana.pythonanywhere.com/api/lessons/',
-                {
-                    headers: {
-                        accept: 'application/json',
-                        // accept: 'application/json',
-                        // 'X-CSRFToken': 'pQyXb06V41cesfpcvOO3GFbW7aBgYTwPDS88P0F1k4ptXWEeMWQzE3wEPM0FdpQI'
-
-                    }
-                });
-            console.log("response: ", response)
+            // const response = await axios.get('https://fergana.pythonanywhere.com/api/lessons/',
+            //     {
+            //         headers: {
+            //             accept: 'application/json',
+            //            
+            //         }
+            //     });
+            console.log("response: ", dateEvents)
             return dateEvents
         } catch (e) {
             return rejectWithValue(e.response.data.message);

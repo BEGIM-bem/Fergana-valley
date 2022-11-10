@@ -24,15 +24,18 @@ function App() {
     dispatch(getAdress())
   }, [dispatch])
 
+
+  const screenWidth = window.screen.width
+
   return (
-    <div className="App">
+    <div className={screenWidth > 1700 ? 'container' : ''} >
       <Navbar />
       <Routes>
         <Route path='/*' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/products_services' element={<Product />} />
-          <Route path='/course' element={<Course />} />
-          <Route path='/comments' element={<AllComments />} />
+        <Route path='/course' element={<Course />} />
+        <Route path='/comments' element={<AllComments />} />
         <Route path='/events' element={<Events />} />
         <Route path='/contacts' element={<Contacts />} />
         <Route path='/evntsDetailed' element={<DetailedEvents />} />

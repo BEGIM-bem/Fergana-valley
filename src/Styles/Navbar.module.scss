@@ -30,15 +30,18 @@
 
 
 .dropdown {
+
     position: relative;
-    display: inline-block;
+    // display: inline-block;
     // background: rebeccapurple;
+    display: flex;
 }
 
 
 .linkBar {
     display: none;
     position: absolute;
+    top: 25px;
     min-width: 220px;
 
     z-index: 5;
@@ -107,89 +110,101 @@
     z-index: 5;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(7.5px);
+
+
     width: 100%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.Navbar3 {
+    position: absolute;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(7.5px);
 
     padding-top: 15px;
     padding-bottom: 10px;
+    min-width: 1300px;
+}
+
+.navbar_item {
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.navbar__conteinerss {
+
+    display: flex;
+
+    max-width: 1300px;
+    width: 90%;
+    margin: 0 auto;
+
+
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    width: 11.25rem;
+}
 
 
 
-    .navbar_item {
-
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .navbar__conteinerss {
-        // max-width: 1220px;
-        // background: red;
-        display: flex;
-        width: 90%;
-        margin: 0 auto;
-        // margin: 0 20px;
-        // background: red;
-
-        justify-content: space-between;
-    }
-
-    .navbar__logo {
-        width: 11.25rem;
-    }
+.navbar_item {
+    // width: 740px;
+    display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    align-items: center;
+    // background: rebeccapurple;
+}
 
 
 
-    .navbar_item {
-        // width: 740px;
-        display: flex;
-        // flex-direction: row;
-        // justify-content: space-between;
-        align-items: center;
-        // background: rebeccapurple;
-    }
+.navbar__log {
+    // background: rebeccapurple;
+    margin-right: 15px;
+}
+
+.active {
+    margin-right: 32px;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    // font-size: 12px;
+    line-height: 1.375rem;
+    white-space: nowrap;
+
+    color: #1959AB;
+    text-decoration: none;
+}
 
 
-
-    .navbar__log {
-        // background: rebeccapurple;
-        margin-right: 15px;
-    }
-
-    .active {
-        margin-right: 32px;
-        font-family: $fontFamily;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.125rem;
-        // font-size: 12px;
-        line-height: 1.375rem;
-        white-space: nowrap;
-
-        color: #1959AB;
-        text-decoration: none;
-    }
-
-
-    .navbar_item_to {
-        white-space: nowrap;
-        margin-right: 32px;
-        font-family: $fontFamily;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.125rem;
-        // font-size: 12px;
-        line-height: 1.375rem;
-        color: $colorText;
-        text-decoration: none;
-        // white-space: nowrap;
-
-    }
-
-
-
-
-
+.navbar_item_to {
+    white-space: nowrap;
+    margin-right: 32px;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    // font-size: 12px;
+    line-height: 1.375rem;
+    color: $colorText;
+    text-decoration: none;
+    // white-space: nowrap;
 
 }
+
+
+
+
+
+
+
 
 
 
@@ -251,8 +266,8 @@
         white-space: nowrap !important;
     }
 
-    .navbar__log{
-        width: 120px;
+    .navbar__log {
+        width: 150px;
     }
 
 
@@ -266,7 +281,7 @@
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 748px) {
     .Navbar {
         position: relative;
         // z-index: 5;
@@ -384,7 +399,8 @@
     .menuIcon {
         display: block;
         position: absolute;
-        top: -10px;
+        // background: rebeccapurple;
+        top: -15px;
         right: 0;
         transform: translate(-100%, 60%);
         font-size: 1.8rem;

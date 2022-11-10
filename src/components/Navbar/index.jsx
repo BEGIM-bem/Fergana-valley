@@ -29,7 +29,8 @@ export default function Navbar() {
     const [isOpenList, setIsOpenList] = useState(false)
 
     const handleIsOpen = () => {
-        isOpenLanguages ? setIsOpenLanguages(false) : setIsOpenLanguages(true)
+        isOpenLanguages ? setIsOpenLanguages(false)
+            : setIsOpenLanguages(true)
     }
 
     const screenWidth = window.screen.width
@@ -66,7 +67,7 @@ export default function Navbar() {
 
     return (
         <div>
-            <div className={clicked === true ? styles.Navbar : styles.Navbar1} >
+            <div className={clicked === true ? styles.Navbar : screenWidth > 1700 ? styles.Navbar3 : styles.Navbar1} >
                 <div className={styles.navbar__conteinerss}>
                     <NavLink to='/*'> <img src={LogoTip} alt='not find'
                         className={styles.navbar__log} />  </NavLink>
@@ -93,17 +94,16 @@ export default function Navbar() {
 
 
                             <div className={styles.dropdown} >
-
                                 {
-                                    screenWidth <= 500 ?
+                                    screenWidth <= 748 ?
                                         <NavLink onClick={handleList}
                                             className={(navDate) => navDate.isActive ?
-                                                styles.active : styles.navbar_item_to1}
+                                                styles.active : styles.navbar_item_to}
                                             to={'/products_services'}> Продукты и Услуги  </NavLink>
                                         :
                                         <NavLink
                                             className={(navDate) => navDate.isActive ?
-                                                styles.active : styles.navbar_item_to1}
+                                                styles.active : styles.navbar_item_to}
                                             to={'/products_services'} > Продукты и Услуги  </NavLink>
                                 }
 
@@ -112,11 +112,9 @@ export default function Navbar() {
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#buzness">Бизнес управление</a> </p>
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#finans">Финансирование </a> </p>
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#exports">Экспорт</a></p>
-                                    <p  ><a className={styles.linkBar__link} href="#events">Мероприятие</a></p>
+                                    <p><a className={styles.linkBar__link} href="#events">Мероприятие</a></p>
 
                                 </div>
-
-
                             </div>
 
 

@@ -7,7 +7,9 @@ import {
     blokMain2,
     blockMain3,
     blockMain4,
-    adaptivProductImg
+    adaptivProductImg,
+    aboutImagess,
+    imgAbout2
 } from '../images/index.js'
 import Slider from '../components/Slider/Slider';
 import Button from '../components/Button';
@@ -43,7 +45,9 @@ export default function Home() {
 
     ]
     const { allEvents, status, error } = useSelector(state => state.events)
+    console.log("allEvents: ", allEvents)
     let sliceEvent = allEvents.slice(0, 2)
+    // sliceEvent = []
 
     const screenWidth = window.screen.width
 
@@ -72,10 +76,12 @@ export default function Home() {
                     </NavLink>
                 </div>
 
-                <div className={styles.about__contents_img}  >
-                    <img src={mainAboutImg} alt='not find'
-                        className={styles.about_img} />
+                <div className={styles.contents__imgBlock}>
+                    <img src={aboutImagess} alt='/' className={styles.contents__img} />
                 </div>
+
+
+
             </div>
 
 
@@ -139,6 +145,7 @@ export default function Home() {
 
                     <div className='container' >
                         <h1 className={styles.events__title} >Мероприятия</h1>
+
                         <NewsConteiner date={sliceEvent} />
 
                     </div>
@@ -147,10 +154,12 @@ export default function Home() {
 
                 <NavLink to='/events' style={{ textDecoration: 'none' }} >
                     {
-                        screenWidth <= 500 ?
+                        screenWidth <= 600 ?
                             <Button width={'82%'}
                                 text={'Подробнее'} />
-                            : <Button text={'Все новости'} />
+                            : <Button
+                                // width={'82%'}
+                                text={'Все новости'} />
                     }
 
                 </NavLink>

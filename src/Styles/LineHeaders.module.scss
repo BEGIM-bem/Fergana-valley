@@ -24,9 +24,14 @@
     color: #FFFFFF;
 }
 
-@media screen and (max-width: 953px) {
+@media screen and (max-width: 1000px) {
     .span {
-        font-size: 27px;
+        padding-top: 10px;
+        padding-left: 5%;
+        padding-bottom: 10px;
+        padding-right: 16px;
+
+        font-size: 25px;
         line-height: 33px;
     }
 
