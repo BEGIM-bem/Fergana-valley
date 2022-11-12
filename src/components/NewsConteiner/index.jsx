@@ -12,10 +12,10 @@ import { setIdEvents } from '../../redux/eventsSlice.js'
 export default function NewsConteiner({ date }) {
 
   const dispatch = useDispatch()
+  const lang = useSelector(state => state.localization.language)
 
 
   const handleDetalis = (item) => {
-
     dispatch(getEventsId(item.id))
   }
 
@@ -33,7 +33,10 @@ export default function NewsConteiner({ date }) {
 
               <div className={styles.wrapper__conteiner}>
                 <p className={styles.wrapper__conteiner__date} >{item.date.split("").reverse().join('')}</p>
-                <p className={styles.wrapper__conteiner__title}>{item.first_text_ru}</p>
+                <p className={styles.wrapper__conteiner__title}>
+                  {lang === 'russian' && item.title_ru}
+                  {lang === 'kyrgyz' && item.title_kg}
+                  {lang === "o'zbekcha" && item.title_uz}</p>
               </div>
 
             </div>

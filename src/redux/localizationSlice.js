@@ -1,14 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    language: 'russian' | 'kyrgyz' | "o'zbekcha",
+    language: 'russian',
 }
 
+// 'russian' | 'kyrgyz' | "o'zbekcha",
+
 const localizationLangSlice = createSlice({
-    name: 'clubs',
+    name: 'localization',
     initialState,
     reducers: {
         changeLang: (state, action) => {
+
             state.language = action.payload
         }
     },

@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import contactsSlice from './contactsSlice'
 import eventsSlice from './eventsSlice'
-import {localizationSlice} from "./localizationSlice";
+import { localizationSlice } from "./localizationSlice";
 
 
 
