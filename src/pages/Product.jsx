@@ -4,6 +4,7 @@ import styles from '../Styles/Product.module.scss'
 import { productImages, imageTextForProducts } from '../images/index.js'
 import Button from '../components/Button'
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     productImg1,
     productImg2,
@@ -39,7 +40,8 @@ import SliderAdaptability from '../components/ConteinerAdaptability'
 // import ConteinerSlider from '../components/ConteinerSliders'
 
 export default function Product() {
-
+    const { status, error, contacts, LinkSocialNetwork } = useSelector(state => state.contacts)
+    let WatsapLink = LinkSocialNetwork[3]?.link
 
     let sliderImageBusness = [
         {
@@ -122,6 +124,7 @@ export default function Product() {
 
     const screenWidth = window.screen.width
 
+
     return (
         <div className={styles.conteiners}>
 
@@ -191,7 +194,7 @@ export default function Product() {
                 {
                     screenWidth <= 600 ?
 
-                        <a href='https://wa.me/996996777777549' target="_blank"
+                        <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={"Получить подробную информацию"}
@@ -199,7 +202,7 @@ export default function Product() {
                             />
                         </a> :
 
-                        <a href='https://wa.me/996996777777549' target="_blank"
+                        <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={"Получить подробную информацию"}
@@ -239,7 +242,7 @@ export default function Product() {
                 {
                     screenWidth <= 600 ?
 
-                        <a href='https://wa.me/996996777777549' target="_blank"
+                        <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={"Получить подробную информацию"}
@@ -247,7 +250,7 @@ export default function Product() {
                             />
                         </a>
                         :
-                        <a href='https://wa.me/996996777777549' target="_blank"
+                        <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={"Получить подробную информацию"} />
@@ -291,14 +294,14 @@ export default function Product() {
 
                 {
                     screenWidth <= 600 ?
-                        <a href='https://wa.me/996996777777549' target="_blank"
+                        <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={"Получить подробную информацию"}
                                 width={'73%'}
                             />
                         </a>
-                        : <a href='https://wa.me/996996777777549' target="_blank"
+                        : <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={"Получить подробную информацию"} />

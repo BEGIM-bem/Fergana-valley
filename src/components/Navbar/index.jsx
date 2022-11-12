@@ -21,7 +21,8 @@ export default function Navbar() {
 
         setPaths(window.location.pathname)
 
-    }, [window.location.pathname])
+    }, [window.location.pathname, paths])
+
 
     const [isOpenLanguages, setIsOpenLanguages] = useState(false)
     const [clicked, setClicked] = useState(false)
@@ -61,7 +62,7 @@ export default function Navbar() {
         setClicked(false)
     }
 
-    console.log("paths: ", paths)
+
 
 
 
@@ -107,7 +108,6 @@ export default function Navbar() {
                                             to={'/products_services'} > Продукты и Услуги  </NavLink>
                                 }
 
-
                                 <div className={styles.linkBar}>
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#buzness">Бизнес управление</a> </p>
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#finans">Финансирование </a> </p>
@@ -115,6 +115,9 @@ export default function Navbar() {
                                     <p><a className={styles.linkBar__link} href="#events">Мероприятие</a></p>
 
                                 </div>
+
+
+
                             </div>
 
 
@@ -173,32 +176,6 @@ export default function Navbar() {
                         </div>
                     }
                 </div>
-
-
-
-                {/* 
-                {
-                    paths === '/products_services' &&
-                    screenWidth <= 500 &&
-                    <nav className={clicked ?
-                        styles.Navbar__active
-                        : styles.Navbar__navMenu}>
-
-                        <div className={styles.linkBar}>
-                            <p style={{ paddingBottom: '32px' }}  > <a className={styles.linkBar__link} href="#buzness">Бизнес управление</a> </p>
-                            <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#finans">Финансирование </a> </p>
-                            <p style={{ paddingBottom: '32px' }} ><a className={styles.linkBar__link} href="#exports">Экспорт</a></p>
-                            <p  ><a className={styles.linkBar__link} href="#events">Мероприятие</a></p>
-                        </div>
-
-                    </nav>
-                }
- */}
-
-
-
-
-
 
             </div >
 

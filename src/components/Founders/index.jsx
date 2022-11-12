@@ -7,7 +7,7 @@ import FoundersCard from "./foundersCard";
 const Founders = () => {
     return (
         <div className={foundersStyles.founders}>
-            <div className='container'>
+            <div className='container1'>
                 <h2 className={AboutStyles.white_title}>Основатели</h2>
                 <div className={`${foundersStyles.cards_container} {/*flex_between*/}`}>
                     <FoundersCard img={imgFounders11} name='Самидинова Файруза' position='Должность'/>

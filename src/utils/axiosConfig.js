@@ -1,21 +1,12 @@
 import axios from "axios";
 
+console.log("REACT_APP_API ", process.env.REACT_APP_API_URL)
 const API = axios.create({
-    baseURL: process.env.REACT_APP_API,
+    baseURL: process.env.REACT_APP_API_URL,
     headers: {
-        ContentType: 'application/json',
-        accept: 'application/json',
-
-        'X-CSRFToken': 'pQyXb06V41cesfpcvOO3GFbW7aBgYTwPDS88P0F1k4ptXWEeMWQzE3wEPM0FdpQI'
+        'Content-Type': 'application/json',
     }
 })
 
-// Если нужен токе
-// API.interceptors.request.use(
-//     async req => {
-//         req.headers['Authorization'] = `Bearer ${localStorage.getItem('jwt-token')}`;
-//         return req;
-//     }
-// )
 
 export default API;

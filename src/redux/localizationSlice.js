@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    language: 'russian',
+    language: 'russian' | 'kyrgyz' | "o'zbekcha",
 }
 
 const localizationLangSlice = createSlice({

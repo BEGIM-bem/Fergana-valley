@@ -54,6 +54,7 @@ export default function About() {
                 </div>
             </div>
 
+
             <div className={aboutStyles.second_section}>
                 <div className="container">
                     <h2 className={aboutStyles.white_title}>Fergana Valley Business Academy в Цифрах</h2>

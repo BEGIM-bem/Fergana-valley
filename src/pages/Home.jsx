@@ -45,9 +45,11 @@ export default function Home() {
 
     ]
     const { allEvents, status, error } = useSelector(state => state.events)
-    console.log("allEvents: ", allEvents)
+    const { LinkSocialNetwork } = useSelector(state => state.contacts)
+
     let sliceEvent = allEvents.slice(0, 2)
-    // sliceEvent = []
+
+    let WatsapLink = LinkSocialNetwork[3]?.link
 
     const screenWidth = window.screen.width
 
@@ -56,7 +58,7 @@ export default function Home() {
 
             <Slider />
 
-            <div className={`${styles.allAbouts} ${aboutStyles.desc_cont} container`} >
+            <div className={`${styles.allAbouts} ${aboutStyles.desc_cont} container1`} >
 
                 <div className={styles.about__contents}>
 
@@ -86,7 +88,7 @@ export default function Home() {
 
 
             <div className={aboutStyles.second_section}>
-                <div className="container">
+                <div className="container1">
                     <h2 className={aboutStyles.white_title}>Fergana Valley Business Academy в Цифрах</h2>
                     <Cards />
                 </div>
@@ -97,7 +99,7 @@ export default function Home() {
 
             <div className={styles.services}>
 
-                <div className='container'>
+                <div className='container1'>
 
                     <h1 className={styles.services__title}>Продукты и Услуги</h1>
                     {
@@ -119,7 +121,7 @@ export default function Home() {
 
                 {
                     screenWidth <= 688 ?
-                        <a href='https://wa.me/996996777777549' target='_blank'
+                        <a href={WatsapLink} target='_blank'
                             style={{ textDecoration: 'none' }}
                             rel='noreferrer'>
                             <Button text={'Подробнее'}
@@ -127,7 +129,7 @@ export default function Home() {
                             />
                         </a>
                         :
-                        <a href='https://wa.me/996996777777549' target='_blank'
+                        <a href={WatsapLink} target='_blank'
                             style={{ textDecoration: 'none' }}
                             rel='noreferrer'>
                             <Button text={'Главное действие '} />
@@ -143,7 +145,7 @@ export default function Home() {
 
                 <div className={styles.events1} >
 
-                    <div className='container' >
+                    <div className='container1' >
                         <h1 className={styles.events__title} >Мероприятия</h1>
 
                         <NewsConteiner date={sliceEvent} />

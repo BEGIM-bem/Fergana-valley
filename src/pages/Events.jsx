@@ -10,9 +10,6 @@ import Footer from '../components/Footer/index.jsx';
 export default function Events() {
     const { allEvents, status, error } = useSelector(state => state.events)
 
-    console.log("allEvents: ", allEvents)
-    const dispatch = useDispatch()
-
 
     return (
         <div  >
@@ -27,7 +24,7 @@ export default function Events() {
             }
 
             {
-                status.getEventsErrors === 'Rejected geted event' &&
+                status.getEventStatus === 'Rejected geted event' &&
                 <Errors />
             }
 

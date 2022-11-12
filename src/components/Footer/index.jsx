@@ -1,12 +1,12 @@
 import React from 'react';
 import footerStyles from './Footer.module.scss'
-import {iconFacbook, iconInstagram, iconTelegram, iconWatsap} from "../../images";
+import { iconFacbook, iconInstagram, iconTelegram, iconWatsap } from "../../images";
 // import aboutStyles from './../../Styles/About.module.scss'
 
 const Footer = () => {
     return (
         <div className={footerStyles.footer}>
-            <div className={`${footerStyles.footer_cont} container`} >
+            <div className={`${footerStyles.footer_cont} container1`} >
                 <div className={`${footerStyles.text_block} white_text`}>
                     <p style={{ fontWeight: 700 }}>Навигация</p>
                     <p>О нас</p>
@@ -23,10 +23,10 @@ const Footer = () => {
                     <p>Тел.: +996(779)119806</p>
                 </div>
                 <div className={`${footerStyles.icon_block} white_text`}>
-                    <img src={iconInstagram} alt="/"/>
-                    <img src={iconTelegram} alt="/"/>
-                    <img src={iconFacbook} alt="/"/>
-                    <img src={iconWatsap} alt="/"/>
+                    <img src={iconInstagram} alt="/" />
+                    <img src={iconTelegram} alt="/" />
+                    <img src={iconFacbook} alt="/" />
+                    <img src={iconWatsap} alt="/" />
                 </div>
             </div>
         </div>
