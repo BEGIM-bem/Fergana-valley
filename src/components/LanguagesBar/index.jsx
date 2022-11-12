@@ -2,8 +2,15 @@ import React from 'react'
 import styles from '../../Styles/LanguagesBar.module.scss'
 import { Formik, Form, Field } from "formik";
 import { iconRussions, iconKyrgyzstan, iconOzbekstan } from '../../images/index.js'
+import { useDispatch } from 'react-redux';
+import {changeLang} from "../../redux/localizationSlice";
+
 
 export default function LanguagesBar() {
+
+    const dispatch = useDispatch()
+
+    const changeLocalization = (lang) => dispatch(changeLang(lang))
 
 
     /*
@@ -11,7 +18,7 @@ export default function LanguagesBar() {
     */
     return (
         <div className={styles.conteiner}>
-            <div className={styles.conteiner__blok}>
+            <div onClick={() => changeLocalization('russian')} className={styles.conteiner__blok}>
                 <input className={styles.switch_texst} name='selection'
                     value='RussionLanguages' defaultChecked='RussionLanguages'
                     id='NotСelebrate' type='radio' />
@@ -21,7 +28,7 @@ export default function LanguagesBar() {
                     Русский</label> <br />
             </div>
 
-            <div className={styles.conteiner__blok}>
+            <div onClick={() => changeLocalization('kyrgyz')} className={styles.conteiner__blok}>
                 <input className={styles.switch_texst} name='selection'
                     value='KygyztanLanguages' id='NotСelebrate' type='radio' />
                 <img src={iconKyrgyzstan} className={styles.icon__countury}
@@ -30,7 +37,7 @@ export default function LanguagesBar() {
                     Кыргызча</label> <br />
             </div>
 
-            <div className={styles.conteiner__blok_last}>
+            <div onClick={() => changeLocalization("o'zbekcha")} className={styles.conteiner__blok_last}>
 
                 <input className={styles.switch_texst} name='selection'
                     value='OzbekstanLanguages' id='NotСelebrate' type='radio' />

@@ -11,7 +11,6 @@ export const getCourse = createAsyncThunk(
     'clubs/getClubs',
     async () => {
         const response = await requests.getClubsApi();
-        // console.log("clubs: ", response.data)
         return response.data;
     }
 );
@@ -48,6 +47,7 @@ export const editClub = createAsyncThunk(
 );
 
 export const deleteClub = createAsyncThunk(
+
     'clubs/deleteClub',
     async (id) => {
         const response = await requests.deleteClubApi(id);

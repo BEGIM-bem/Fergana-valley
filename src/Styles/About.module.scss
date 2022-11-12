@@ -259,12 +259,13 @@
     .icons_cont {
         padding: 53px 0 53px;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        gap: 10px;
     }
 
-    .img_none {
-        display: none;
-    }
+    //.img_none {
+    //    display: none;
+    //}
 
     .partner_logo {
         width: 25%;
