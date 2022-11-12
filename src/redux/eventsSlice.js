@@ -9,6 +9,7 @@ const eventsSlice = createSlice({
     initialState: {
         allEvents: [],
         idEvents: {},
+        idEventsState: 0,
         status: {
             getEventStatus: null,
             getEventIdStatus: null
@@ -29,7 +30,6 @@ const eventsSlice = createSlice({
         },
 
         [getEvents.fulfilled]: (state, action) => {
-            console.log("action.payload: ", action.payload)
             state.status.getEventStatus = 'Geted event';
             state.allEvents = action.payload
         },
@@ -55,12 +55,18 @@ const eventsSlice = createSlice({
             state.status.getEventIdStatus = 'Rejected geted  id event';
             state.error.getEventsIdErrors = action.payload
         },
-
-
-
+    },
+    reducers: {
+        setIdEvents: (state, action) => {
+            state.idEventsState = action.payload
+        }
     }
 
 })
+
+export const {
+    setIdEvents
+} = eventsSlice.actions
 
 
 export default eventsSlice.reducer

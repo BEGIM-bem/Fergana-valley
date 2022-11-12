@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styles from '../Styles/Contacts.module.scss'
 import {
@@ -7,17 +7,19 @@ import {
     contactFacbook,
     contactWatsapp,
 } from '../images/index.js'
-
-import DG from '2gis-maps'
-
-
-
+import './Map/Map.scss'
+import Maps from './Map/defaultMarker';
+import Footer from '../components/Footer';
+import Address from './Address';
+import Spinner from '../components/Actions/Spinner';
+import Errors from '../components/Actions/Errors';
 
 
 
 
 export default function Contacts() {
-    const { status, error, contacts } = useSelector(state => state.contacts)
+    const { status, error, contacts, LinkSocialNetwork } = useSelector(state => state.contacts)
+
 
     let contactsWorkTime = [
         {
@@ -56,49 +58,34 @@ export default function Contacts() {
             time: 'Воскресенье'
         },
 
-    ]
-
-    let blockLink = [
-        {
-            id: 1,
-            title: 'Франция намерена исследовать, почему чистосердечное признание облегчает душу',
-            text: '(для перехода нажмите на иконку)',
-            images: contactInstagram
-        },
-        {
-            id: 2,
-            title: 'Франция намерена исследовать, почему чистосердечное признание облегчает душу',
-            text: '(для перехода нажмите на иконку)',
-            images: contactTelegram
-        },
-        {
-            id: 3,
-            title: 'Франция намерена исследовать, почему чистосердечное признание облегчает душу',
-            text: '(для перехода нажмите на иконку)',
-            images: contactFacbook
-        },
-        {
-            id: 4,
-            title: 'Франция намерена исследовать, почему чистосердечное признание облегчает душу',
-            text: '(для перехода нажмите на иконку)',
-            images: contactWatsapp
-        },
-    ]
+    ]  //График работы
 
 
+
+
+    let InstagramLink = LinkSocialNetwork[0]?.link
+    let TelegramLink = LinkSocialNetwork[1]?.link
+    let FacbookLink = LinkSocialNetwork[2]?.link
+    let WatsapLink = LinkSocialNetwork[3]?.link
 
 
 
     return (
+
         <div>
             <div className={styles.banner}>
                 <img src={contactsFon} alt='/' className={styles.banner_img} />
                 <div className={styles.mainAllText} >
                     <h1 className={styles.mainTitle}>КОНТАКТЫ</h1>
 
-                    <p className={styles.mainText}>МЫ рады услышать вас по телефону, а также привествовать вас в нашем офисе.</p>
+                    <p className={styles.mainText}>МЫ рады услышать вас по телефону,
+                        а также привествовать вас в нашем офисе.</p>
                 </div>
             </div>
+
+
+            {status.getContactsStatus === 'Gettining contacts' && <Spinner />}
+            {status.getContactsStatus === 'Rejected geted contacts' && <Errors />}
 
             <div className='containerFor'>
 
@@ -108,7 +95,7 @@ export default function Contacts() {
                         <h1 className={styles.adress__title}>График работы:</h1>
                         {
                             contactsWorkTime.map(item => (
-                                <div className={styles.adressWork} >
+                                <div className={styles.adressWork} key={item.id} >
 
                                     <div className={styles.adress__text}>
                                         <p className={styles.adress__text_number}>{item.day} </p>
@@ -122,24 +109,7 @@ export default function Contacts() {
                         }
 
                     </div>
-
-
-
-                    <div className={styles.adress}>
-                        <h1 className={styles.adress__title}>Наш адрес:</h1>
-                        {
-                            contacts.map(item => (
-                                <div className={styles.adress__text}>
-                                    <p className={styles.adress__text_number}>{item.adress} </p>
-                                    <p className={styles.adress__text_number}>{item.city} </p>
-                                    <p className={styles.adress__text_number}>Эл.почта: {item.adress} </p>
-                                    <p className={styles.adress__text_number}>Тел: {item.telephon} </p>
-
-                                </div>
-                            ))
-                        }
-                    </div>
-
+                    <Address />
                 </div>
 
             </div>
@@ -149,49 +119,63 @@ export default function Contacts() {
             <div className='containerFor'>
                 <h1 className={styles.link__title}>Связаться с нами через социальные сети </h1>
 
-                {
-                    blockLink.map(item => (
-                        <div className={styles.link__block}>
-                            <div className={styles.link__blocks} >
-                                <h1 className={styles.link__block_title}>{item.title} </h1>
-                                <p className={styles.link__block_text}>{item.text} </p>
-                            </div>
 
-                            <a href={item.link} target="_blank" rel="noreferrer" >
-                                <img src={item.images} alt='/' />
-                            </a>
-                        </div>
-                    ))
 
-                }
+
+
+                <div className={styles.link__block}>
+                    <div className={styles.link__blocks} >
+                        <h1 className={styles.link__block_title}>Франция намерена исследовать, почему чистосердечное признание облегчает душу </h1>
+                        <p className={styles.link__block_text}>(для перехода нажмите на иконку) </p>
+                    </div>
+
+                    <a href={InstagramLink} target="_blank" rel="noreferrer" >
+                        <img src={contactInstagram} alt='/' />
+                    </a>
+                </div>
+
+
+                <div className={styles.link__block}>
+                    <div className={styles.link__blocks} >
+                        <h1 className={styles.link__block_title}>Франция намерена исследовать, почему чистосердечное признание облегчает душу </h1>
+                        <p className={styles.link__block_text}>(для перехода нажмите на иконку) </p>
+                    </div>
+
+                    <a href={TelegramLink} target="_blank" rel="noreferrer" >
+                        <img src={contactTelegram} alt='/' />
+                    </a>
+                </div>
+
+                <div className={styles.link__block}>
+                    <div className={styles.link__blocks} >
+                        <h1 className={styles.link__block_title}>Франция намерена исследовать, почему чистосердечное признание облегчает душу </h1>
+                        <p className={styles.link__block_text}>(для перехода нажмите на иконку) </p>
+                    </div>
+
+                    <a href={FacbookLink} target="_blank" rel="noreferrer" >
+                        <img src={contactFacbook} alt='/' />
+                    </a>
+                </div>
+
+                <div className={styles.link__block}>
+                    <div className={styles.link__blocks} >
+                        <h1 className={styles.link__block_title}>Франция намерена исследовать, почему чистосердечное признание облегчает душу </h1>
+                        <p className={styles.link__block_text}>(для перехода нажмите на иконку) </p>
+                    </div>
+
+                    <a href={WatsapLink} target="_blank" rel="noreferrer" >
+                        <img src={contactWatsapp} alt='/' />
+                    </a>
+                </div>
+
+
             </div>
-            {/* <Mapp /> */}
-
-
-
+            <Maps />
+            <Footer />
         </div>
     )
+
 }
-
-// const Mapp = () => {
-//     useEffect(() => {
-//         let map
-//         map = DG.map("map-container", {
-//             center: [55.31, 25.23],
-//             zoom: 5
-//         })
-//         DG.marker([55.31, 25.23]).addTo(map)
-//     }, [])
-
-//     return (
-//         <div id="map-container" style={{ width: '100%', height: '600px' }}>
-
-//         </div>
-
-//     )
-// }
-
-
 
 
 

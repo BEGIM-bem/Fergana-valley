@@ -39,6 +39,7 @@ export default function About() {
                         <br />
                         <p className={aboutStyles.text}>Таким образом, социально-экономическое развитие требует определения и уточнения новых предложений. Значимость этих проблем настолько очевидна, что высокое качество позиционных исследований требует определения и уточнения поставленных обществом задач.</p>
                     </div>
+
                     <div className={aboutStyles.img_block}>
                         <img className={aboutStyles.img} src={imgAbout2} alt="/" />
                     </div>
@@ -46,13 +47,17 @@ export default function About() {
                 </div>
             </div>
 
+
             <div className={aboutStyles.second_section}>
                 <div className="container">
                     <h2 className={aboutStyles.white_title}>Fergana Valley Business Academy в Цифрах</h2>
                     <Cards />
                 </div>
-
             </div>
+
+
+
+
             <div className="container">
                 <div className="flex_between">
                     <img className={aboutStyles.img2} src={imgAbout3} alt="/" />

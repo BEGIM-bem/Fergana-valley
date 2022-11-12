@@ -49,12 +49,10 @@
 }
 
 .banner__data {
-    // position: relative;
-    // top: 60%;
-    // position: fixed;
 
-    width: 167px;
-    background: rebeccapurple;
+    width: 175px;
+
+    text-decoration: none;
     display: flex;
     align-items: center;
     padding: 8px;
@@ -65,6 +63,7 @@
 }
 
 .banner__data_number {
+
     font-size: 16px;
     line-height: 19px;
     text-align: center;
@@ -79,9 +78,10 @@
     display: flex;
     margin-top: 64px;
     width: 90%;
-    max-width: 76.25rem;
+    // max-width: 76.25rem;
+    justify-content: space-between;
 
-    // background: rebeccapurple;
+    background: rebeccapurple;
     margin-bottom: 64px;
     margin: 64px auto;
 }
@@ -95,11 +95,16 @@
     color: #000000;
 }
 
+.contents__text {
+    // background: red;
+}
+
 .contents__textP {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #333333;
+    background: rebeccapurple;
 }
 
 
@@ -112,7 +117,7 @@
 }
 
 .contents__text {
-    margin-left: 15px;
+    // margin-left: 15px;
     // background: rebeccapurple;
 }
 
