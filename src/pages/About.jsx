@@ -21,7 +21,9 @@ export default function About() {
                 <img className={aboutStyles.banner_image}
                     src={imgAbout} alt="/"></img>
                 <h1 className={aboutStyles.mainTitle}>Нет звука приятнее,<br />
-                    {lang == 'russian' ? 'чем шёпот бессменных лидеров' : "not russian text"}
+                    {lang == 'russian' && 'чем шёпот бессменных лидеров'}
+                    {lang == 'kyrgyz' && 'kyrgyz'}
+                    {lang == "o'zbekcha" && 'ozbek'}
                 </h1>
             </div>
 

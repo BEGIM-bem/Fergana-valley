@@ -104,6 +104,13 @@
   }
 }
 
+@media screen and (max-width: 700px) {
+  .banner {
+    background-position-y: 0;
+  }
+}
+
+
 @media screen and (max-width: 500px) {
   .banner {
     background-position-y: 0;

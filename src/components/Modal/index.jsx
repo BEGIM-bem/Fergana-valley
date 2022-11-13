@@ -9,7 +9,9 @@ import Button from "../Button";
 import { iconInstagram } from "../../images";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
+import {createUser} from "../../api/user";
 
 const style = {
     position: 'absolute',
@@ -38,10 +40,7 @@ const title = {
 
 export default function AccessModal({ open, handleClose }) {
 
-    // useEffect(() => {
-    //     document.body.style.overflow = 'hidden';
-    //     return () => document.body.style.overflow = 'auto';
-    // }, [])
+    const dispatch = useDispatch()
 
     const AccessSchema = Yup.object().shape({
         email: Yup.string()
@@ -50,12 +49,12 @@ export default function AccessModal({ open, handleClose }) {
         fullname: Yup.string()
             .required("Обязательное поле"),
         phone_number: Yup.string()
-            .min(9, "Номер должен состоять из 9 чисел")
-            .max(9, "Номер не должен превышать 9 чисел")
+            // .min(9, "Номер должен состоять из 9 чисел")
+            // .max(9, "Номер не должен превышать 9 чисел")
             .required("Обязательное поле"),
         whatsapp_number: Yup.string()
-            .min(9, "Номер должен состоять из 9 чисел")
-            .max(9, "Номер не должен превышать 9 чисел")
+            // .min(9, "Номер должен состоять из 9 чисел")
+            // .max(9, "Номер не должен превышать 9 чисел")
             .required("Обязательное поле"),
         instagram: Yup.string()
             .required("Обязательное поле"),
@@ -66,15 +65,16 @@ export default function AccessModal({ open, handleClose }) {
     const formik = useFormik({
         initialValues: {
             fullname: "",
-            phone_number: "",
-            whatsapp_number: "",
+            phone_number: '',
+            whatsapp_number: ``,
             email: "",
             instagram: "",
             password: ""
         },
         validationSchema: AccessSchema,
-        onSubmit: (data) => {
-            console.log(data)
+        onSubmit: (datas) => {
+            const data = {datas: datas, closeRegistrationModal: handleClose}
+            dispatch(createUser(data))
         }
     })
 
@@ -119,8 +119,12 @@ export default function AccessModal({ open, handleClose }) {
                                 </div>
                             </div>
                             <div className={modalStyles.input_cont}>
-                                <label className={modalStyles.label}>Email<span style={{ color: '#EB5757' }}>*</span></label>
+                                <label className={modalStyles.label}>Почта<span style={{ color: '#EB5757' }}>*</span></label>
                                 <input name='email' onChange={formik.handleChange} placeholder='Ваша почта' className={(formik.errors.email) ? modalStyles.error_input : modalStyles.input} type="text" />
+                            </div>
+                            <div className={modalStyles.input_cont}>
+                                <label className={modalStyles.label}>Пароль<span style={{ color: '#EB5757' }}>*</span></label>
+                                <input name='password' onChange={formik.handleChange} placeholder='Ваш пароль' className={(formik.errors.password) ? modalStyles.error_input : modalStyles.input} type="text" />
                             </div>
                             <div className={modalStyles.input_cont}>
                                 <label className={modalStyles.label}>Инстаграм</label>
@@ -129,7 +133,7 @@ export default function AccessModal({ open, handleClose }) {
                                     <input name='instagram' onChange={formik.handleChange} style={{ paddingLeft: '70px' }} placeholder='введите ваш ник' className={(formik.errors.instagram) ? modalStyles.error_input : modalStyles.input} type="text" />
                                 </div>
                             </div>
-                            <Button type='submit' onClick={handleClose} top='32px' bottom='0' text='Начать обучение'/>
+                            <Button type='submit' top='32px' bottom='0' text='Начать обучение'/>
                         </form>
                     </Box>
                 </Fade>
