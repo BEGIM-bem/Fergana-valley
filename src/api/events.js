@@ -24,9 +24,8 @@ export const getEventsId = createAsyncThunk(
 
     async function (id, { rejectWithValue }) {
         try {
-            console.log("Id: ", id)
+
             const response = await API.get(`new/${id}/`)
-            // navigations('/evntsDetailed')
             return response.data
         }
         catch (error) {

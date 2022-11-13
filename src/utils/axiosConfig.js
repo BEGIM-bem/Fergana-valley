@@ -1,7 +1,6 @@
 import axios from "axios";
 import {getCookie} from "./Cookies";
 
-console.log("REACT_APP_API ", process.env.REACT_APP_API_URL)
 const API = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     headers: {
@@ -16,5 +15,7 @@ API.interceptors.request.use(
         return req;
     }
 )
+
+
 
 export default API;

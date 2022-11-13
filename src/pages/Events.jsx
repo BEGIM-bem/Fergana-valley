@@ -9,13 +9,16 @@ import Footer from '../components/Footer/index.jsx';
 
 export default function Events() {
     const { allEvents, status, error } = useSelector(state => state.events)
-
+    const lang = useSelector(state => state.localization.language)
 
     return (
         <div  >
             <div className={styles.event__headers}>
 
-                <h1 className={styles.event__headers__title}>Новости и Мероприятия</h1>
+                <h1 className={styles.event__headers__title}>
+                    {lang === 'russian' && 'Новости и Мероприятия'}
+                    {lang === 'kyrgyz' && 'Жаңылыктар жана окуялар'}
+                    {lang === "o'zbekcha" && 'Жаңылыктар жана окуялар   '}</h1>
             </div>
 
             {
@@ -35,7 +38,14 @@ export default function Events() {
                 }
 
 
-                <p className={styles.contents__text}> Следите за нашими новостями в социальных сетях </p>
+                <p className={styles.contents__text}>
+
+
+                    {lang === 'russian' && 'Следите за нашими новостями в социальных сетях'}
+                    {lang === 'kyrgyz' && 'Биздин жаңылыктарды социалдык тармактардан көрүңүз'}
+                    {lang === "o'zbekcha" && 'Биздин жаңылыктарды социалдык тармактардан көрүңүз'}
+
+                </p>
             </div>
 
 
