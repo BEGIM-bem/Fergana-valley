@@ -4,8 +4,14 @@ import currentStyles from './CurrentLesson.module.scss'
 import {MdOutlineCheckBox} from "react-icons/md";
 import {FaRegStar} from "react-icons/fa";
 import './../../Styles/App.scss'
+import {useSelector} from "react-redux";
 
-const CurrentsLesson = () => {
+const CurrentsLesson = ({lesson}) => {
+
+    const {language} = useSelector(state => state.localization)
+
+    console.log(lesson)
+
     return (
         <div>
             <hr style={{width: '100%'}}/>
@@ -13,31 +19,44 @@ const CurrentsLesson = () => {
                 <div style={{marginBottom: "37px"}}>
                     <h5 className={currentStyles.title_blue_text}>Задачи урока:</h5>
                     <div className={currentStyles.blue_text_cont}>
-                        <MdOutlineCheckBox className={currentStyles.icon}/> <span className={currentStyles.blue_text}>Сформировать ценности, на которых будут формироваться финансовые цели</span>
-                    </div>
-                    <div className={currentStyles.blue_text_cont}>
-                        <MdOutlineCheckBox className={currentStyles.icon}/> <span className={currentStyles.blue_text}>Зафиксировать финансовые цели в правильной формултровке</span>
+                        {lesson?.objectives.map(i => <>
+                                <MdOutlineCheckBox className={currentStyles.icon}/>
+                                <span className={currentStyles.blue_text}>
+                                    {language === 'russian' && i.title_ru}
+                                    {language === 'kyrgyz' && i.title_kg}
+                                    {language === "o'zbekcha" && i.title_uz}
+                                </span>
+                            </>
+                        )}
                     </div>
                 </div>
                 <div>
                     <h5 className={currentStyles.title_blue_text}>Практическое задание после урока:</h5>
                     <div className={currentStyles.blue_text_cont}>
-                        <FaRegStar className={currentStyles.icon}/> <p className={currentStyles.blue_text}>Создайте свой страничный финансовый план</p>
-                    </div>
-                    <div className={currentStyles.blue_text_cont}>
-                        <FaRegStar className={currentStyles.icon}/> <p className={currentStyles.blue_text}>Дурное дело нехитрое: коронованный герцог графства определил дальнейшее
-                        развитие</p>
+                        {lesson?.practical_works.map(i => <>
+                            <FaRegStar className={currentStyles.icon}/>
+                                <p className={currentStyles.blue_text}>
+                                    {language === 'russian' && i.title_ru}
+                                    {language === 'kyrgyz' && i.title_kg}
+                                    {language === "o'zbekcha" && i.title_uz}
+                                </p>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
             <div style={{margin: '32px 0'}}>
-                <iframe width="100%" height="640px" src="https://www.youtube.com/embed/ARoGZIN5oC4"
-                        title="YouTube video player" frameBorder="0"
-                        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen>
-                </iframe>
-            </div>
+                {/*<iframe width="100%" height="640px" src="https://www.youtube.com/embed/_ysd-zHamjk"*/}
+                {/*        title="YouTube video player" frameBorder="0"*/}
+                {/*        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
+                {/*        allowFullScreen>*/}
+                {/*</iframe>*/}
 
+                <video width="100%" height="640px" controls>
+                    <source src={lesson?.video} type="video/mp4"/>
+                    {/*<source src="mov_bbb.ogg" type="video/ogg">*/}
+                </video>
+            </div>
             <div className={commentsStyles.admintext_cont}>
                 Учитывая ключевые сценарии поведения, начало повседневной работы по формированию позиции в значительной степени обусловливает важность приоретизации разума над эмоциями. Лишь ключевые особенности структуры проекта, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут в равной степени предоставлены сами себе. Каждый из нас понимает очевидную вещь: консультация с широким активом однозначно фиксирует необходимость направлений прогрессивного развития. В своём стремлении повысить качество жизни, они забывают, что экономическая повестка сегодняшнего дня однозначно фиксирует необходимость приоретизации разума над эмоциями. А также ключевые особенности структуры проекта неоднозначны и будут своевременно верифицированы.
             </div>

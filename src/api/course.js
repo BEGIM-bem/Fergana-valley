@@ -15,9 +15,10 @@ export const getCourse = createAsyncThunk(
 
 export const sendComment = createAsyncThunk(
     'course/sendComment',
-    async (data, { rejectWithValue }) => {
+    async (data, { rejectWithValue, dispatch }) => {
         try {
             const response = await API.post('comments/', data);
+            dispatch(getCourse())
             return response.data
         } catch (e) {
             return rejectWithValue(e.response.data.message);

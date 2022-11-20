@@ -2,18 +2,17 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 import API from "../utils/axiosConfig";
 import {getCookie, setCookie} from "../utils/Cookies";
 import {getCourse} from "./course";
-import {getUserId} from "../redux/usersSlice";
+// import {getUserId} from "../redux/usersSlice";
 
 
 export const getUser = createAsyncThunk(
-    'user/getUser',
+    'users/getUser',
     async (data, { rejectWithValue, dispatch }) => {
         try {
             const response = await API.get('users/');
             console.log("users: ", response)
             const user = response.data.find(i => i.email === data.email)
             setCookie('userId', user.id, 1)
-            // dispatch(getUserId(user.id))
         } catch (e) {
             return rejectWithValue(e.response.data.message);
         }
@@ -21,7 +20,7 @@ export const getUser = createAsyncThunk(
 )
 
 export const createUser = createAsyncThunk(
-    'user/createUser',
+    'users/createUser',
     async (data, { rejectWithValue, dispatch }) => {
         try {
             const response = await API.post('users/', {
@@ -42,7 +41,7 @@ export const createUser = createAsyncThunk(
 )
 
 export const authUser = createAsyncThunk(
-    'user/authUser',
+    'users/authUser',
     async (data, { rejectWithValue, dispatch }) => {
         try {
             const response = await API.post('token/', data.datas);

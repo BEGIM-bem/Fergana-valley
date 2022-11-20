@@ -1,30 +1,45 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {getCourse} from "../api/course";
-import {authUser} from "../api/user";
+// import {authUser, getUser} from "../api/user";
+import API from "../utils/axiosConfig";
+import {setCookie} from "../utils/Cookies";
 
 const initialState = {
-    loading: false
+    loading: false,
+    users: []
 }
+
+export const getUsers = createAsyncThunk(
+    'users/getUsers',
+    async (_, { rejectWithValue, dispatch }) => {
+        try {
+            const response = await API.get('users/');
+            return response.data
+        } catch (e) {
+            return rejectWithValue(e.response.data.message);
+        }
+    }
+)
 
 const usersSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
     },
-    // extraReducers: {
-    //     [authUser.pending]: (state) => {
-    //         state.loading = true;
-    //     },
-    //     [authUser.fulfilled]: (state, action) => {
-    //         state.loading = false
-    //         state.course = action.payload
-    //     },
-    //     [authUser.rejected]: (state) => {
-    //         state.loading = false
-    //     },
-    // },
+    extraReducers: {
+        [getUsers.pending]: (state) => {
+            state.loading = true;
+        },
+        [getUsers.fulfilled]: (state, action) => {
+            state.loading = false
+            state.users = action.payload
+        },
+        [getUsers.rejected]: (state) => {
+            state.loading = false
+        },
+    },
 })
 
-export const { getUserId } = usersSlice.actions
+export const { getUserId } = usersSlice.actions;
 export const userSlice = usersSlice.reducer;
 
