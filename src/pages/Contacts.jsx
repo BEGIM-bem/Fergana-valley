@@ -18,43 +18,72 @@ import Errors from '../components/Actions/Errors';
 
 
 export default function Contacts() {
-    const { status, error, contacts, LinkSocialNetwork } = useSelector(state => state.contacts)
+    const { status, LinkSocialNetwork } = useSelector(state => state.contacts)
 
+    const {language} = useSelector(state => state.localization)
+
+    const mondayd = `${language === 'russian' ? 'Понедельник' : ''}
+                            ${language === 'kyrgyz' ? 'Дүйшөмбү' : ""}
+                            ${language === "o'zbekcha" ? "Dushanba" : ''}`
+
+    const tuesday = `${language === 'russian' ? 'Вторник' : ''}
+                            ${language === 'kyrgyz' ? 'Шейшемби' : ""}
+                            ${language === "o'zbekcha" ? "Seshanba" : ''}`
+
+    const wednesday = `${language === 'russian' ? 'Среда' : ''}
+                            ${language === 'kyrgyz' ? 'Шаршемби' : ""}
+                            ${language === "o'zbekcha" ? "Chorshanba" : ''}`
+
+    const thursday = `${language === 'russian' ? 'Четверг' : ''}
+                            ${language === 'kyrgyz' ? 'Бейшемби' : ""}
+                            ${language === "o'zbekcha" ? "Payshanba" : ''}`
+
+    const friday = `${language === 'russian' ? 'Пятница' : ''}
+                            ${language === 'kyrgyz' ? 'Жума' : ""}
+                            ${language === "o'zbekcha" ? "Juma" : ''}`
+
+    const saturday = `${language === 'russian' ? 'Суббота' : ''}
+                            ${language === 'kyrgyz' ? 'Ишемби' : ""}
+                            ${language === "o'zbekcha" ? "Shanba" : ''}`
+
+    const sunday = `${language === 'russian' ? 'Воскресенье' : ''}
+                            ${language === 'kyrgyz' ? 'Жекшемби' : ""}
+                            ${language === "o'zbekcha" ? "Yakshanba" : ''}`
 
     let contactsWorkTime = [
         {
             id: 1,
-            day: 'Понедельник',
+            day: mondayd,
             time: '10:00 - 18.00'
         },
         {
             id: 2,
-            day: 'Вторник',
+            day: tuesday,
             time: '10:00 - 18.00'
         },
         {
             id: 3,
-            day: 'Среда',
+            day: wednesday,
             time: '10:00 - 18.00'
         },
         {
             id: 4,
-            day: 'Четверг',
+            day: thursday,
             time: '10:00 - 18.00'
         },
         {
             id: 5,
-            day: 'Пятница',
+            day: friday,
             time: '10:00 - 18.00'
         },
         {
             id: 6,
-            day: 'Суббота',
+            day: saturday,
             time: '10:00 - 18.00'
         },
         {
             id: 7,
-            day: 'Воскресенье',
+            day: sunday,
             time: 'Воскресенье'
         },
 
@@ -69,17 +98,23 @@ export default function Contacts() {
     let WatsapLink = LinkSocialNetwork[3]?.link
 
 
-
     return (
 
         <div>
             <div className={styles.banner}>
                 <img src={contactsFon} alt='/' className={styles.banner_img} />
                 <div className={styles.mainAllText} >
-                    <h1 className={styles.mainTitle}>КОНТАКТЫ</h1>
+                    <h1 className={styles.mainTitle}>
+                        {language === 'russian' && 'КОНТАКТЫ'}
+                        {language === 'kyrgyz' && 'БАЙЛАНЫШТАР'}
+                        {language === "o'zbekcha" && "ALOQALAR"}
+                    </h1>
 
-                    <p className={styles.mainText}>МЫ рады услышать вас по телефону,
-                        а также привествовать вас в нашем офисе.</p>
+                    <p className={styles.mainText}>
+                        {language === 'russian' && 'МЫ рады услышать вас по телефону, а также привествовать вас в нашем офисе.'}
+                        {language === 'kyrgyz' && 'Биз сизди телефон аркылуу укканыбызга кубанычтабыз жана сизди кеңсебизде тосуп алабыз.'}
+                        {language === "o'zbekcha" && "Sizni telefon orqali eshitishdan xursandmiz va sizni ofisimizga xush kelibsiz."}
+                    </p>
                 </div>
             </div>
 
@@ -92,7 +127,11 @@ export default function Contacts() {
                 <div className={styles.contanct}>
 
                     <div className={styles.schedule}>
-                        <h1 className={styles.adress__title}>График работы:</h1>
+                        <h1 className={styles.adress__title}>
+                            {language === 'russian' && 'График работы:'}
+                            {language === 'kyrgyz' && 'Иш графиги:'}
+                            {language === "o'zbekcha" && "Ish grafigi:"}
+                        </h1>
                         {
                             contactsWorkTime.map(item => (
                                 <div className={styles.adressWork} key={item.id} >
@@ -117,11 +156,10 @@ export default function Contacts() {
 
 
             <div className='containerFor'>
-                <h1 className={styles.link__title}>Связаться с нами через социальные сети </h1>
-
-
-
-
+                <h1 className={styles.link__title}>
+                    {language === 'russian' && 'Связаться с нами через социальные сети'}
+                    {language === 'kyrgyz' && 'Биз менен социалдык тармактар аркылуу байланышыңыз'}
+                    {language === "o'zbekcha" && "Ijtimoiy tarmoqlar orqali biz bilan bog'laning"}</h1>
 
                 <div className={styles.link__block}>
                     <div className={styles.link__blocks} >

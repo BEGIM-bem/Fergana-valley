@@ -16,7 +16,7 @@
 .text_cont {
   position: absolute;
   bottom: 45px;
-  left: 40px;
+  left: 25px;
 }
 
 .name_text{
@@ -28,6 +28,20 @@
 .position_text{
   font-size: 16px;
   line-height: 19px;
+}
+
+.img_in {
+  position: absolute;
+  top: 41%;
+  left: 38%;
+  transform: translate(-50%,-50%);
+  width: 293px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.img_bg {
+  color: transparent;
 }
 
 @media screen and (max-width: 1070px) {

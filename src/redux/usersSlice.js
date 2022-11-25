@@ -3,10 +3,12 @@ import {getCourse} from "../api/course";
 // import {authUser, getUser} from "../api/user";
 import API from "../utils/axiosConfig";
 import {setCookie} from "../utils/Cookies";
+import {getFounders} from "../api/user";
 
 const initialState = {
     loading: false,
-    users: []
+    users: [],
+    founders: [],
 }
 
 export const getUsers = createAsyncThunk(
@@ -35,6 +37,16 @@ const usersSlice = createSlice({
             state.users = action.payload
         },
         [getUsers.rejected]: (state) => {
+            state.loading = false
+        },
+        [getFounders.pending]: (state) => {
+            state.loading = true;
+        },
+        [getFounders.fulfilled]: (state, action) => {
+            state.loading = false
+            state.founders = action.payload
+        },
+        [getFounders.rejected]: (state) => {
             state.loading = false
         },
     },

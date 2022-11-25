@@ -6,9 +6,12 @@ import {
     paginationsArrows1,
     paginationsArrows2
 } from '../../images/index.js'
+import {useSelector} from "react-redux";
 
 
 function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
+
+    const {language} = useSelector(state => state.localization)
 
 
     return (

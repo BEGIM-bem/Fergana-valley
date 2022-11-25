@@ -88,6 +88,10 @@ import imgCourseBanner from './imgCourseBanner.png'
 import CoursesBanner from './CoursesBanner.png'
 import imgCourseBg from './imgCourseBg.png'
 import aboutImagess from './итьб.svg'
+import founder_card_bg_img from './founder_card_bg_img.svg'
+import imgF1 from './imgF1.JPG'
+import imgF2 from './imgF2.jpg'
+import imgF3 from './imgF3.jpg'
 
 export {
     aboutImagess,
@@ -188,4 +192,9 @@ export {
     imgFounders33,
 
     imgCourseBanner,
+    founder_card_bg_img,
+
+    imgF1,
+    imgF2,
+    imgF3,
 }

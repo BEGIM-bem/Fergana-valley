@@ -10,7 +10,7 @@ import AccessModal from "../components/Modal";
 import CurrentsLesson from "../components/CurrentLesson";
 import Pagination from "../components/Pagination";
 import {useDispatch, useSelector} from "react-redux";
-import {getCourse, sendComment} from "../api/course";
+import {getComments, getCourse, sendComment} from "../api/course";
 import AuthModal from "../components/Modal/AuthModal";
 import {useFormik} from "formik";
 import {authUser} from "../api/user";
@@ -30,17 +30,21 @@ export default function Course() {
 
     const [lessonId, setLessonId] = React.useState(1);
 
+    // const currentLessonFunction = (id) => {
+    //     setLessonId(id)
+    //
+    // }
+
     const dispatch = useDispatch()
-    const {course} = useSelector(state => state.course)
+    const {course, comments} = useSelector(state => state.course)
     const {language} = useSelector(state => state.localization)
     const users = useSelector(state => state.users.users)
-    console.log("course: ", course)
-    console.log("coursssssssssssssse: ", users)
 
     useEffect(() => {
         window.scrollTo(0, 0);
         !getCookie('jwt-token') && handleOpenAuth()
         dispatch(getCourse())
+        dispatch(getComments())
     }, [])
 
     const screenWidth = window.screen.width
@@ -58,6 +62,7 @@ export default function Course() {
 
 
     const id = getCookie('userId')
+    console.log("iddd:", course1)
 
     const formik = useFormik({
         initialValues: {
@@ -66,11 +71,22 @@ export default function Course() {
             course: 1
         },
         validationSchema: AccessSchema,
-        onSubmit: (data) => {
+        onSubmit: (data, {resetForm}) => {
             console.log(data)
             dispatch(sendComment(data))
+            resetForm({data: ''})
         }
     })
+
+    const commentb = `${language === 'russian' ? 'Все комментарии': ''}
+                            ${language === 'kyrgyz' ? 'Бардык комментарийлер' : ""}
+                            ${language === "o'zbekcha" ? "Barcha sharhlar" : ''}`
+
+    const placeh_text = `${language === 'russian' ? 'Добавить комментарий': ''} ${language === 'kyrgyz' ? 'Комментарий кошуу' : ""}${language === "o'zbekcha" ? "Fikr qo'shing" : ''}`
+
+    const add_comment_text = `${language === 'russian' ? 'Добавить' : ''}
+                                ${language === 'kyrgyz' ? 'Kошуу' : ''}
+                                ${language === "o'zbekcha" ? "Qo'shish" : ''}`
 
     return (
         <>
@@ -93,20 +109,26 @@ export default function Course() {
                         </p>
                     </div>
                     <CurrentsLesson lesson={current_lesson}/>
-                    {screenWidth <= 600 ? (<Pagination lessons={course1?.lessons} setLessonId={setLessonId}/>) :
-                        (<div className={courseStyles.lessons_cont}>
-                            {course1?.lessons.map(lesson => <Lesson onClick={() => setLessonId(lesson.id)} lesson={lesson}/>)}
-                        </div>)
-                    }
+                    {screenWidth <= 600 ? (
+                        <Pagination lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId}/>
+                    ) :(
+                        <div className={courseStyles.lessons_cont}>
+                            {course1?.lessons.map(lesson => <Lesson onClick={() => setLessonId(lesson.id)} id={lessonId} lesson={lesson}/>)}
+                        </div>)}
+                    {/*}*/}
                     <div className={courseStyles.comments_cont}>
-                        <h4 className={courseStyles.comments_title}>Комментарий</h4>
+                        <h4 className={courseStyles.comments_title}>
+                            {language === 'russian' && 'Комментарий'}
+                            {language === 'kyrgyz' && 'Комментарий'}
+                            {language === "o'zbekcha" && "Izoh"}
+                        </h4>
                         <form onSubmit={formik.handleSubmit} className={courseStyles.comment_inp_cont}>
-                            <button type='submit' className={courseStyles.comment_button}>Добавить</button>
-                            <textarea name='text' onChange={formik.handleChange} className={courseStyles.comments_input} placeholder='Добавить комментарий' type="text"/>
+                            <button type='submit' className={courseStyles.comment_button}>{add_comment_text}</button>
+                            <textarea value={formik.values.text} name='text' onChange={formik.handleChange} className={courseStyles.comments_input} placeholder={placeh_text} type="text"/>
                         </form>
-                        {course1?.comments.map(comment => <Comments comment={comment}/>)}
+                        {comments.map(comment => <Comments comment={comment}/>)}
                         <NavLink style={{ textDecoration: 'none',cursor: 'default' }} to='/comments'>
-                            <Button text='Все комментарии'/>
+                            <Button text={commentb}/>
                         </NavLink>
                     </div>
                 </div>

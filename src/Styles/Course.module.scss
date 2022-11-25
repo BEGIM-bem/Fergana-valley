@@ -78,6 +78,7 @@
   text-align: center;
   color: #FFFFFF;
   border: none;
+  cursor: pointer;
 }
 .comment_inp_cont{
   position: relative;
@@ -99,7 +100,7 @@
     padding: 47px;
   }
   .comments_cont {
-    margin: 64px 0 0;
+    margin: 40px 0 0;
     gap: 32px;
   }
 }

@@ -8,7 +8,9 @@
     outline: none;
     // overflow-x: hidden;
 }
-
+ul {
+    padding-left: 25px;
+}
 
 body::-webkit-scrollbar {
     width: 5px;

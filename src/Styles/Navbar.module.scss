@@ -107,6 +107,7 @@
 
 .Navbar1 {
     position: absolute;
+    //position: fixed;
     z-index: 5;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(7.5px);
@@ -246,7 +247,7 @@
 
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1300px) {
 
     .navbar__conteinerss {
         margin: 0 20px;
@@ -281,7 +282,7 @@
 }
 
 
-@media screen and (max-width: 748px) {
+@media screen and (max-width: 800px) {
     .Navbar {
         position: relative;
         // z-index: 5;

@@ -17,7 +17,11 @@ const CurrentsLesson = ({lesson}) => {
             <hr style={{width: '100%'}}/>
             <div className={commentsStyles.usertext_cont}>
                 <div style={{marginBottom: "37px"}}>
-                    <h5 className={currentStyles.title_blue_text}>Задачи урока:</h5>
+                    <h5 className={currentStyles.title_blue_text}>
+                        {language === 'russian' && 'Задачи урока:'}
+                        {language === 'kyrgyz' && 'Сабактын максаттары:'}
+                        {language === "o'zbekcha" && "Dars maqsadlari:"}
+                    </h5>
                     <div className={currentStyles.blue_text_cont}>
                         {lesson?.objectives.map(i => <>
                                 <MdOutlineCheckBox className={currentStyles.icon}/>
@@ -31,7 +35,11 @@ const CurrentsLesson = ({lesson}) => {
                     </div>
                 </div>
                 <div>
-                    <h5 className={currentStyles.title_blue_text}>Практическое задание после урока:</h5>
+                    <h5 className={currentStyles.title_blue_text}>
+                        {language === 'russian' && 'Практическое задание после урока:'}
+                        {language === 'kyrgyz' && 'Сабактан кийин көнүгүү:'}
+                        {language === "o'zbekcha" && "Darsdan keyin mashq qiling:"}
+                    </h5>
                     <div className={currentStyles.blue_text_cont}>
                         {lesson?.practical_works.map(i => <>
                             <FaRegStar className={currentStyles.icon}/>

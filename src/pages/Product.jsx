@@ -123,6 +123,36 @@ export default function Product() {
 
 
     const screenWidth = window.screen.width
+    const {language} = useSelector(state => state.localization)
+
+    const bussinesst = `${language === 'russian' ? 'Бизнес Управление': ''}
+                            ${language === 'kyrgyz' ? 'Бизнести башкаруу' : ""}
+                            ${language === "o'zbekcha" ? "Biznes boshqaruvi" : ''}`
+
+    const financialt = `${language === 'russian' ? 'Финансирование': ''}
+                            ${language === 'kyrgyz' ? 'Каржылоо' : ""}
+                            ${language === "o'zbekcha" ? "Moliyalashtirish" : ''}`
+
+    const eventt = `${language === 'russian' ? 'Новости': ''}
+                            ${language === 'kyrgyz' ? 'Жаңылыктар' : ""}
+                            ${language === "o'zbekcha" ? "Yangiliklar" : ''}`
+
+    const exportt = `${language === 'russian' ? 'Экспорт': ''}
+                            ${language === 'kyrgyz' ? 'Экспорт' : ""}
+                            ${language === "o'zbekcha" ? "Eksport" : ''}`
+
+    const beginb = `${language === 'russian' ? 'Приступить к курсу “Бизнес с 0”': ''}
+                            ${language === 'kyrgyz' ? '"Бизнес 0дөн" курсун баштоо' : ""}
+                            ${language === "o'zbekcha" ? 'Biznes 0 dan" kursini boshlang' : ''}`
+
+    const moreb = `${language === 'russian' ? 'Получить подробную информацию': ''}
+                            ${language === 'kyrgyz' ? 'Толук маалымат алыңыз' : ""}
+                            ${language === "o'zbekcha" ? "Batafsil ma'lumot oling" : ''}`
+
+    const morenewsb = `${language === 'russian' ? 'Узнать о Последних Новостях': ''}
+                            ${language === 'kyrgyz' ? 'Акыркы Кабарлар жөнүндө билип алыңыз' : ""}
+                            ${language === "o'zbekcha" ? "So'nggi yangiliklar haqida bilib oling" : ''}`
+
 
 
     return (
@@ -131,7 +161,7 @@ export default function Product() {
             {/*<LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />*/}
 
             <div id="buzness" className={styles.conteiner__lines}>
-                <LineHeaders text={'Бизнес Управление'} stylesContent1={'3%'} />
+                <LineHeaders text={bussinesst} stylesContent1={'3%'} />
             </div>
 
 
@@ -140,13 +170,18 @@ export default function Product() {
 
                     <div className={styles.conteiner__Margin} >
 
-                        <h1 className={styles.conteiner__title}> Курс “Бизнес с 0”</h1>
+                        <h1 className={styles.conteiner__title}>
+                            {language === 'russian' && ' Курс “Бизнес с 0” '}
+                            {language === 'kyrgyz' && '"Бизнес 0дөн" курсу'}
+                            {language === "o'zbekcha" && '“Biznes 0 dan” kursi'}
+                        </h1>
 
                         <div className={styles.conteiner__block}>
-                            <p className={styles.conteiner__block_text} >Следует отметить, что укрепление и развитие внутренней
-                                структуры однозначно определяет каждого участника как
-                                способного принимать собственные решения касаемо
-                                системы массового участия.</p>
+                            <p className={styles.conteiner__block_text} >
+                                {language === 'russian' && ' Следует отметить, что укрепление и развитие внутренней структуры однозначно определяет каждого участника как способного принимать собственные решения касаемо системы массового участия.'}
+                                {language === 'kyrgyz' && 'Белгилей кетчү нерсе, ички структураны чыңдоо жана өнүктүрүү ар бир катышуучунун массалык катышуу системасына карата өз алдынча чечим кабыл алууга жөндөмдүү экендигин так аныктайт.'}
+                                {language === "o'zbekcha" && "Shuni ta'kidlash kerakki, ichki tuzilmaning mustahkamlanishi va rivojlanishi har bir ishtirokchini ommaviy ishtirok tizimi bo'yicha o'z qarorlarini qabul qilishga qodir ekanligini aniq belgilaydi."}
+                            </p>
                         </div>
                         {/* <img src={imageTextForProducts} alt='not find'
                             className={styles.conteiner__content_img} /> */}
@@ -154,7 +189,7 @@ export default function Product() {
 
                     <div className={styles.conteiner__btnBlock}>
                         <Button
-                            text={'Приступить к курсу “Бизнес с 0”'}
+                            text={beginb}
                             width={'100%'}
                             top={'16px'}
                             bottom={'0px'}
@@ -197,7 +232,7 @@ export default function Product() {
                         <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
-                            <Button text={"Получить подробную информацию"}
+                            <Button text={moreb}
                                 width={'83%'}
                             />
                         </a> :
@@ -205,7 +240,7 @@ export default function Product() {
                         <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
-                            <Button text={"Получить подробную информацию"}
+                            <Button text={moreb}
                             />
                         </a>
                 }
@@ -216,7 +251,7 @@ export default function Product() {
 
             {/* <div className='container'> */}
             <div id="finans" className={styles.conteiners__finans}>
-                <LineHeaders text={'Финансирование'} stylesContent={'9%'} stylesContent1={'4%'} />
+                <LineHeaders text={financialt} stylesContent={'9%'} stylesContent1={'4%'} />
 
                 <div className='container'>
                     {
@@ -245,7 +280,7 @@ export default function Product() {
                         <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
-                            <Button text={"Получить подробную информацию"}
+                            <Button text={moreb}
                                 width={'75%'}
                             />
                         </a>
@@ -253,7 +288,7 @@ export default function Product() {
                         <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
-                            <Button text={"Получить подробную информацию"} />
+                            <Button text={moreb} />
                         </a>
                 }
 
@@ -266,11 +301,11 @@ export default function Product() {
             <div id='exports' >
                 {
                     screenWidth <= 600 ?
-                        <LineHeaders text={'Экспорт'}
+                        <LineHeaders text={exportt}
                             stylesContent={'9%'}
                             stylesContent1={'35%'} />
                         :
-                        <LineHeaders text={'Экспорт'}
+                        <LineHeaders text={exportt}
                             stylesContent={'15%'}
                             stylesContent1={'8rem'} />
                 }
@@ -297,14 +332,14 @@ export default function Product() {
                         <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
-                            <Button text={"Получить подробную информацию"}
+                            <Button text={moreb}
                                 width={'73%'}
                             />
                         </a>
                         : <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
-                            <Button text={"Получить подробную информацию"} />
+                            <Button text={moreb} />
                         </a>
                 }
 
@@ -317,11 +352,11 @@ export default function Product() {
 
                 {
                     screenWidth <= 600 ?
-                        <LineHeaders text={'Мероприятие'}
+                        <LineHeaders text={eventt}
                             stylesContent={'6%'}
                             stylesContent1={'8%'} />
                         :
-                        <LineHeaders text={'Мероприятие'}
+                        <LineHeaders text={eventt}
                             stylesContent={'12%'}
                             stylesContent1={'8%'} />
                 }
@@ -346,13 +381,13 @@ export default function Product() {
 
                         <NavLink to='/events'
                             className={styles.conteiners_services_linkBtn}>
-                            <Button width={'88%'} text={"Узнать о Последних Новостях"} />
+                            <Button width={'88%'} text={morenewsb} />
                         </NavLink>
                         :
 
                         <NavLink to='/events'
                             className={styles.conteiners_services_linkBtn}>
-                            <Button text={"Узнать о Последних Новостях"} />
+                            <Button text={morenewsb} />
                         </NavLink>
                 }
 

@@ -1,4 +1,4 @@
-.card {
+%card {
   //width: 370px;
   height: 370px;
   width: 30.3%;
@@ -11,7 +11,15 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.number {
+.card{
+  @extend %card;
+}
+.active_card{
+  background: #FFFFFF;
+  border: 2px solid #1959AB;
+  @extend %card;
+}
+%number {
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
@@ -25,6 +33,16 @@
   justify-content: center;
 }
 
+.number {
+  @extend %number
+}
+
+.active_number {
+  @extend %number;
+  background: #1959AB;
+  color: white;
+}
+
 %text {
   font-size: 16px;
   line-height: 19px;
@@ -36,6 +54,16 @@
   margin-bottom: 16px;
 }
 
+.active_text1{
+  @extend %text;
+  color: #1959AB;
+}
+
+.active_text2{
+  @extend %text;
+  color:#1959AB;
+}
+
 .text2 {
   @extend %text;
 }
@@ -43,6 +71,12 @@
   display: flex;
   align-items: center;
   gap: 21px;
+}
+.active_time_cont {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  color: #1959AB;
 }
 .time_icon {
   font-size: 30px;
@@ -53,21 +87,43 @@
     width: 46%;
     flex: auto;
   }
+  .active_card{
+    width: 46%;
+    flex: auto;
+  }
 }
 @media screen and (max-width: 500px) {
-  .text1 {
+  %textt {
     font-size: 14px;
     line-height: 17px;
   }
+  .text1{
+    @extend %textt
+  }
   .text2 {
-    font-size: 14px;
-    line-height: 17px;
+    @extend %textt
+  }
+  .active_text1{
+    @extend %textt
+  }
+  .active_text2{
+    @extend %textt
   }
   .card {
     padding: 8px;
     height: 272px;
   }
+  .active_card{
+    padding: 8px;
+    height: 272px;
+  }
   .number {
+    width: 108px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .active_number {
     width: 108px;
     height: 40px;
     font-size: 20px;

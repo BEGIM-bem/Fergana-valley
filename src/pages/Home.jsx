@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Routes, Route, NavLink } from 'react-router-dom';
 import styles from '../Styles/Home.module.scss'
 import {
@@ -21,6 +21,7 @@ import NewsConteiner from '../components/NewsConteiner';
 import Footer from '../components/Footer/index.jsx'
 import SliderAdaptability from '../components/ConteinerAdaptability';
 import { useDispatch, useSelector } from 'react-redux';
+import {getFounders} from "../api/user";
 
 
 export default function Home() {
@@ -46,12 +47,31 @@ export default function Home() {
     ]
     const { allEvents, status, error } = useSelector(state => state.events)
     const { LinkSocialNetwork } = useSelector(state => state.contacts)
+    const {language} = useSelector(state => state.localization)
 
     let sliceEvent = allEvents.slice(0, 2)
 
     let WatsapLink = LinkSocialNetwork[3]?.link
 
     const screenWidth = window.screen.width
+
+    const mainb = `${language === 'russian' ? 'Главное действие' : ''}
+                            ${language === 'kyrgyz' ? 'Негизги аракет' : ""}
+                            ${language === "o'zbekcha" ? "Asosiy harakat" : ''}`
+
+    const moreb = `${language === 'russian' ? 'Подробнее' : ''}
+                            ${language === 'kyrgyz' ? 'Kөбүрөөк' : ""}
+                            ${language === "o'zbekcha" ? "Ko'proq" : ''}`
+    const newsb = `${language === 'russian' ? 'Все новости' : ''}
+                            ${language === 'kyrgyz' ? 'Бардык жаңылыктар' : ""}
+                            ${language === "o'zbekcha" ? "Barcha yangiliklar" : ''}`
+
+    // const dispatch = useDispatch()
+    // const {founders} = useSelector(state => state.users)
+    //
+    // useEffect(()=>{
+    //     dispatch(getFounders())
+    // },[])
 
     return (
         <div >
@@ -62,19 +82,76 @@ export default function Home() {
 
                 <div className={styles.about__contents}>
 
-                    <h1 className={styles.about__content_title} >Кто мы?</h1>
-                    <p className={styles.about__content_text}  >Предварительные выводы
-                        неутешительны: перспективное
-                        планирование позволяет оценить значение вывода текущих активов.
-                        Ясность нашей позиции очевидна: современная методология
-                        разработки играет определяющее значение для системы массового
-                        участия. Внезапно, акционеры крупнейших компаний, вне зависимости
-                        от их уровня, должны быть призваны к ответу. Современные
-                        технологии достигли такого уровня, что убеждённость некоторых
-                        оппонентов является качественно новой ступенью соответствующих
-                        условий активизации.</p>
+                    <h1 className={styles.about__content_title} >
+                        {language === 'russian' && 'Кто мы?'}
+                        {language === 'kyrgyz' && 'Биз кимбиз?'}
+                        {language === "o'zbekcha" && "Biz kimmiz?"}
+                    </h1>
+                    <br/>
+                    {language == 'russian' && (
+                        <p className={aboutStyles.text}>
+
+                            Общество с Ограниченной Ответственностью  «Академия Бизнеса Ферганской Долины» создано для развития, поддержки и продвижения предпринимательства в Ферганской Долине.<br/><br/>
+                            Наша главная цель - помочь предпринимателям Ферганской Долины реализовать свои идеи и замыслы и достичь результата.
+                            <br/><br/>
+                            Основные направления<br/>
+                            <ul>
+                                <li>Информирование</li>
+                                <li>Обучение</li>
+                                <li>Поддержка предпринимателей</li>
+                                <li>Нетворкинг</li>
+                            </ul><br/>
+
+                            Мы предоставляем ресурсы и услуги, необходимые для вывода бизнеса на новый уровень - локально и глобально.
+
+                        </p>
+                    )}
+                    { language == "o'zbekcha"&& (
+                        <p className={aboutStyles.text}>
+                            Farg‘ona vodiysida tadbirkorlikni rivojlantirish, qo‘llab-quvvatlash va rag‘batlantirish maqsadida “Farg‘ona vodiysi biznes akademiyasi” mas’uliyati cheklangan jamiyati tashkil etildi.
+                            <br/><br/>
+                            Farg‘ona vodiysi tadbirkorlariga o‘z g‘oya va rejalarini ro‘yobga chiqarish, natijaga erishishda ko‘maklashish asosiy maqsadimizdir.
+                            <br/><br/>
+                            Asosiy yo'nalishlar<br/>
+                            <ul>
+                                <li>Axborot berish</li>
+                                <li>Ta'lim</li>
+                                <li>Tadbirkorlarni qo'llab-quvvatlash</li>
+                                <li>Tarmoqqa ulanish</li>
+                            </ul>
+                            <br/><br/>
+
+                            Biz sizning biznesingizni keyingi bosqichga olib chiqishingiz uchun zarur bo'lgan resurslar va xizmatlarni taqdim etamiz - mahalliy va global.
+
+                        </p>
+                    )}
+                    {language == 'kyrgyz' && (
+                        <p className={aboutStyles.text}>
+                            Fergana Valley Business Academy жоопкерчилиги чектелген коому Фергана өрөөнүндө ишкерликти өнүктүрүү, колдоо жана өнүктүрүү максатында түзүлгөн.
+                            <br/><br/>
+                            Негизги максатыбыз – Фергана өрөөнүнүн ишкерлерине өз идеяларын, пландарын ишке ашырууга жана натыйжаларга жетишүүгө жардам берүү.
+                            <br/><br/>
+                            Негизги багыттары<br/>
+                            <ul>
+                                <li>Маалымат берүү</li>
+                                <li>Билим берүү</li>
+                                <li>Ишкерлерди колдоо</li>
+                                <li>Networking</li>
+                            </ul>
+                            <br/><br/>
+
+                            Биз сиздин бизнесиңизди кийинки деңгээлге чыгаруу үчүн керектүү ресурстарды жана кызматтарды сунуштайбыз - жергиликтүү жана глобалдык.
+                            <br/><br/>
+
+                        </p>
+                    )}
+                    <br/>
                     <NavLink style={{ textDecoration: 'none' }} to='/about'>
-                        <button className={styles.about_btn}>Подробнее о нас</button>
+                        <button className={styles.about_btn}>
+                            {language === 'russian' && 'Подробнее о нас'}
+                            {language === 'kyrgyz' && 'Биз жөнүндө көбүрөөк'}
+                            {language === "o'zbekcha" && "Biz haqimizda ko'proq"}
+                        </button>
                     </NavLink>
                 </div>
 
@@ -89,7 +166,11 @@ export default function Home() {
 
             <div className={aboutStyles.second_section}>
                 <div className="container1">
-                    <h2 className={aboutStyles.white_title}>Fergana Valley Business Academy в Цифрах</h2>
+                    <h2 className={aboutStyles.white_title}>
+                        {language === 'russian' && 'Fergana Valley Business Academy в Цифрах'}
+                        {language === 'kyrgyz' && 'Сандар боюнча Фергана өрөөнүнүн бизнес академиясы'}
+                        {language === "o'zbekcha" && 'Farg‘ona vodiysi biznes akademiyasi raqamlarda'}
+                    </h2>
                     <Cards />
                 </div>
 
@@ -101,7 +182,11 @@ export default function Home() {
 
                 <div className='container1'>
 
-                    <h1 className={styles.services__title}>Продукты и Услуги</h1>
+                    <h1 className={styles.services__title}>
+                        {language === 'russian' && 'Продукты и Услуги'}
+                        {language === 'kyrgyz' && 'Продукциялар жана кызматтар'}
+                        {language === "o'zbekcha" && 'Mahsulotlar va xizmatlar'}
+                    </h1>
                     {
                         screenWidth <= 688 ? <SliderAdaptability
                             sliderImage={sliderImageProduct} /> :
@@ -124,7 +209,7 @@ export default function Home() {
                         <a href={WatsapLink} target='_blank'
                             style={{ textDecoration: 'none' }}
                             rel='noreferrer'>
-                            <Button text={'Подробнее'}
+                            <Button text={moreb}
                                 width={'70%'}
                             />
                         </a>
@@ -132,7 +217,7 @@ export default function Home() {
                         <a href={WatsapLink} target='_blank'
                             style={{ textDecoration: 'none' }}
                             rel='noreferrer'>
-                            <Button text={'Главное действие '} />
+                            <Button text={mainb} />
                         </a>
                 }
 
@@ -146,7 +231,11 @@ export default function Home() {
                 <div className={styles.events1} >
 
                     <div className='container1' >
-                        <h1 className={styles.events__title} >Мероприятия</h1>
+                        <h1 className={styles.events__title} >
+                            {language === 'russian' && 'Новости'}
+                            {language === 'kyrgyz' && 'Жаңылыктар'}
+                            {language === "o'zbekcha" && 'Yangiliklar'}
+                        </h1>
 
                         <NewsConteiner date={sliceEvent} />
 
@@ -158,10 +247,10 @@ export default function Home() {
                     {
                         screenWidth <= 600 ?
                             <Button width={'82%'}
-                                text={'Подробнее'} />
+                                text={moreb} />
                             : <Button
                                 // width={'82%'}
-                                text={'Все новости'} />
+                                text={newsb} />
                     }
 
                 </NavLink>

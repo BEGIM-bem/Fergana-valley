@@ -46,13 +46,26 @@ export const authUser = createAsyncThunk(
         try {
             const response = await API.post('token/', data.datas);
             await setCookie("jwt-token", response.data.access, 3)
-            dispatch(getUser(data.datas))
+            await dispatch(getUser(data.datas))
+            document.location.reload();
             dispatch(getCourse())
             data.closeAuth()
             console.log("auth: ", response)
         } catch (e) {
             data.closeAuth()
             data.openRegist()
+            return rejectWithValue(e.response.data.message);
+        }
+    }
+)
+
+export const getFounders = createAsyncThunk(
+    'users/getFounders',
+    async (data, { rejectWithValue }) => {
+        try {
+            const response = await API.get('founders/');
+            return response.data
+        } catch (e) {
             return rejectWithValue(e.response.data.message);
         }
     }

@@ -3,11 +3,18 @@ import aboutStyles from "../Styles/About.module.scss";
 import courseStyles from "../Styles/Course.module.scss";
 import Comments from "../components/Commets/Commets";
 import Footer from "../components/Footer";
+import {useDispatch, useSelector} from "react-redux";
+import {getComments, getCourse} from "../api/course";
 
 const AllComments = () => {
 
+
+    const {comments} = useSelector(state => state.course)
+    const dispatch = useDispatch()
+
     useEffect(() => {
         window.scrollTo(0, 0);
+        dispatch(getComments())
     }, [])
 
     return (
@@ -20,7 +27,7 @@ const AllComments = () => {
                 <div className='container'>
                     <div className={courseStyles.all_comments_cont}>
                         <h4 className={courseStyles.comments_title}>Комментарий</h4>
-                        <Comments/>
+                        {comments.map(comment => <Comments comment={comment}/>)}
                     </div>
                 </div>
             </div>

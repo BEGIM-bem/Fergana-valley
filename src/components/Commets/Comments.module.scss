@@ -33,6 +33,7 @@
 .comment_adminname {
   @extend %name;
   color: #1959AB;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 500px) {
