@@ -9,10 +9,12 @@ import SliderContent from './SliderContent'
 sliderImage - данные каторые приходять из разных компонениов. 
 Это массив данных  с карточками
 */
-export default function SliderAdaptability({ sliderImage, screenWidth }) {
-
-
-    const len = sliderImage.length - 1;
+export default function SliderAdaptability({ data, vid, withs, colorArrow }) {
+    console.log("vid11:: ", vid)
+    let len = 0
+    if (data.length > 0) {
+        len = data.length - 1
+    }
 
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -20,14 +22,13 @@ export default function SliderAdaptability({ sliderImage, screenWidth }) {
         <div>
             <div>
                 <SliderForContent activeIndex={activeIndex}
-                    sliderImage={sliderImage}
-                    screenWidth={screenWidth}
+                    sliderImage={data}
+                    vid={vid}
+                    screenWidth={withs}
+                    colorArrow={colorArrow}
                     prevSlide={() =>
                         setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
                     }
-                // nextSlide={() =>
-                //     setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
-                // }
 
                 />
             </div>

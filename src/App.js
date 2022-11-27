@@ -15,12 +15,14 @@ import { getEvents, getEventsId } from "./api/events";
 import DetailedEvents from "./components/NewsConteiner/DetailedEvents";
 import { getAdress, getLinkSocialNetwork } from "./api/contacts";
 import { setIdEvents } from "./redux/eventsSlice";
+import useWindowDimensions from "./pages/with";
 
 
 function App() {
   const dispatch = useDispatch()
   const { allEvents, status, error, idEventsState } = useSelector(state => state.events)
-
+  //Кастомный Хук для определение ширины экрана
+  const { height, width } = useWindowDimensions();
 
 
 
@@ -36,7 +38,7 @@ function App() {
   const screenWidth = window.screen.width
 
   return (
-    <div className={screenWidth > 1700 && 'container'} >
+    <div className={width > 1700 && 'container'} >
       <Navbar />
       <Routes>
         <Route path='/*' element={<Home />} />

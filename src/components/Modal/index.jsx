@@ -9,9 +9,9 @@ import Button from "../Button";
 import { iconInstagram } from "../../images";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import {useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
-import {createUser} from "../../api/user";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { createUser } from "../../api/user";
 
 const style = {
     position: 'absolute',
@@ -39,6 +39,14 @@ const title = {
 };
 
 export default function AccessModal({ open, handleClose }) {
+
+
+    useEffect(() => {
+
+        document.body.style.overflow = 'hidden';
+        return () => document.body.style.overflow = 'auto';
+    }, [])
+
 
     const dispatch = useDispatch()
 
@@ -73,7 +81,7 @@ export default function AccessModal({ open, handleClose }) {
         },
         validationSchema: AccessSchema,
         onSubmit: (datas) => {
-            const data = {datas: datas, closeRegistrationModal: handleClose}
+            const data = { datas: datas, closeRegistrationModal: handleClose }
             dispatch(createUser(data))
         }
     })
@@ -133,7 +141,7 @@ export default function AccessModal({ open, handleClose }) {
                                     <input name='instagram' onChange={formik.handleChange} style={{ paddingLeft: '70px' }} placeholder='введите ваш ник' className={(formik.errors.instagram) ? modalStyles.error_input : modalStyles.input} type="text" />
                                 </div>
                             </div>
-                            <Button type='submit' top='32px' bottom='0' text='Начать обучение'/>
+                            <Button type='submit' top='32px' bottom='0' text='Начать обучение' />
                         </form>
                     </Box>
                 </Fade>

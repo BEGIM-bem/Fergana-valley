@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route, NavLink } from 'react-router-dom';
 import styles from '../Styles/Home.module.scss'
 import {
@@ -21,7 +21,8 @@ import NewsConteiner from '../components/NewsConteiner';
 import Footer from '../components/Footer/index.jsx'
 import SliderAdaptability from '../components/ConteinerAdaptability';
 import { useDispatch, useSelector } from 'react-redux';
-import {getFounders} from "../api/user";
+import { getFounders } from "../api/user";
+import useWindowDimensions from './with';
 
 
 export default function Home() {
@@ -29,25 +30,30 @@ export default function Home() {
     let sliderImageProduct = [
         {
             id: 1,
-            images: blokMain1,
+            icon: blokMain1,
         },
         {
             id: 2,
-            images: blokMain2,
+            icon: blokMain2,
         },
         {
             id: 3,
-            images: blockMain3,
+            icon: blockMain3,
         },
         {
             id: 4,
-            images: blockMain4,
+            icon: blockMain4,
         },
 
     ]
+
+
+    const { height, width } = useWindowDimensions();
+
+
     const { allEvents, status, error } = useSelector(state => state.events)
     const { LinkSocialNetwork } = useSelector(state => state.contacts)
-    const {language} = useSelector(state => state.localization)
+    const { language } = useSelector(state => state.localization)
 
     let sliceEvent = allEvents.slice(0, 2)
 
@@ -87,39 +93,39 @@ export default function Home() {
                         {language === 'kyrgyz' && 'Биз кимбиз?'}
                         {language === "o'zbekcha" && "Biz kimmiz?"}
                     </h1>
-                    <br/>
+                    <br />
                     {language == 'russian' && (
                         <p className={aboutStyles.text}>
 
-                            Общество с Ограниченной Ответственностью  «Академия Бизнеса Ферганской Долины» создано для развития, поддержки и продвижения предпринимательства в Ферганской Долине.<br/><br/>
+                            Общество с Ограниченной Ответственностью  «Академия Бизнеса Ферганской Долины» создано для развития, поддержки и продвижения предпринимательства в Ферганской Долине.<br /><br />
                             Наша главная цель - помочь предпринимателям Ферганской Долины реализовать свои идеи и замыслы и достичь результата.
-                            <br/><br/>
-                            Основные направления<br/>
+                            <br /><br />
+                            Основные направления<br />
                             <ul>
                                 <li>Информирование</li>
                                 <li>Обучение</li>
                                 <li>Поддержка предпринимателей</li>
                                 <li>Нетворкинг</li>
-                            </ul><br/>
+                            </ul><br />
 
                             Мы предоставляем ресурсы и услуги, необходимые для вывода бизнеса на новый уровень - локально и глобально.
 
                         </p>
                     )}
-                    { language == "o'zbekcha"&& (
+                    {language == "o'zbekcha" && (
                         <p className={aboutStyles.text}>
                             Farg‘ona vodiysida tadbirkorlikni rivojlantirish, qo‘llab-quvvatlash va rag‘batlantirish maqsadida “Farg‘ona vodiysi biznes akademiyasi” mas’uliyati cheklangan jamiyati tashkil etildi.
-                            <br/><br/>
+                            <br /><br />
                             Farg‘ona vodiysi tadbirkorlariga o‘z g‘oya va rejalarini ro‘yobga chiqarish, natijaga erishishda ko‘maklashish asosiy maqsadimizdir.
-                            <br/><br/>
-                            Asosiy yo'nalishlar<br/>
+                            <br /><br />
+                            Asosiy yo'nalishlar<br />
                             <ul>
                                 <li>Axborot berish</li>
                                 <li>Ta'lim</li>
                                 <li>Tadbirkorlarni qo'llab-quvvatlash</li>
                                 <li>Tarmoqqa ulanish</li>
                             </ul>
-                            <br/><br/>
+                            <br /><br />
 
                             Biz sizning biznesingizni keyingi bosqichga olib chiqishingiz uchun zarur bo'lgan resurslar va xizmatlarni taqdim etamiz - mahalliy va global.
 
@@ -128,24 +134,24 @@ export default function Home() {
                     {language == 'kyrgyz' && (
                         <p className={aboutStyles.text}>
                             Fergana Valley Business Academy жоопкерчилиги чектелген коому Фергана өрөөнүндө ишкерликти өнүктүрүү, колдоо жана өнүктүрүү максатында түзүлгөн.
-                            <br/><br/>
+                            <br /><br />
                             Негизги максатыбыз – Фергана өрөөнүнүн ишкерлерине өз идеяларын, пландарын ишке ашырууга жана натыйжаларга жетишүүгө жардам берүү.
-                            <br/><br/>
-                            Негизги багыттары<br/>
+                            <br /><br />
+                            Негизги багыттары<br />
                             <ul>
                                 <li>Маалымат берүү</li>
                                 <li>Билим берүү</li>
                                 <li>Ишкерлерди колдоо</li>
                                 <li>Networking</li>
                             </ul>
-                            <br/><br/>
+                            <br /><br />
 
                             Биз сиздин бизнесиңизди кийинки деңгээлге чыгаруу үчүн керектүү ресурстарды жана кызматтарды сунуштайбыз - жергиликтүү жана глобалдык.
-                            <br/><br/>
+                            <br /><br />
 
                         </p>
                     )}
-                    <br/>
+                    <br />
                     <NavLink style={{ textDecoration: 'none' }} to='/about'>
                         <button className={styles.about_btn}>
                             {language === 'russian' && 'Подробнее о нас'}
@@ -187,13 +193,11 @@ export default function Home() {
                         {language === 'kyrgyz' && 'Продукциялар жана кызматтар'}
                         {language === "o'zbekcha" && 'Mahsulotlar va xizmatlar'}
                     </h1>
+
                     {
-                        screenWidth <= 688 ? <SliderAdaptability
-                            sliderImage={sliderImageProduct} /> :
-
-
+                        width <= 688 ? <SliderAdaptability
+                            data={sliderImageProduct} /> :
                             <div className={styles.services__conteiner}>
-
                                 <img src={blokMain1} alt='not find' className={styles.services_img} />
                                 <img src={blokMain2} alt='not find' className={styles.services_img} />
                                 <img src={blockMain3} alt='not find' className={styles.services_img} />
@@ -205,7 +209,7 @@ export default function Home() {
                 </div>
 
                 {
-                    screenWidth <= 688 ?
+                    width <= 688 ?
                         <a href={WatsapLink} target='_blank'
                             style={{ textDecoration: 'none' }}
                             rel='noreferrer'>
@@ -245,7 +249,7 @@ export default function Home() {
 
                 <NavLink to='/events' style={{ textDecoration: 'none' }} >
                     {
-                        screenWidth <= 600 ?
+                        width <= 600 ?
                             <Button width={'82%'}
                                 text={moreb} />
                             : <Button

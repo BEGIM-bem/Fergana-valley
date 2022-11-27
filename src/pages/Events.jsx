@@ -6,11 +6,13 @@ import Spinner from '../components/Actions/Spinner.jsx';
 import Errors from '../components/Actions/Errors.jsx';
 import NewsConteiner from '../components/NewsConteiner/index.jsx';
 import Footer from '../components/Footer/index.jsx';
+import useWindowDimensions from './with.jsx';
 
 export default function Events() {
     const { allEvents, status, error } = useSelector(state => state.events)
     const lang = useSelector(state => state.localization.language)
-
+    const { height, width } = useWindowDimensions();
+    // <div className={width > 1700 && 'container'} >
     return (
         <div  >
             <div className={styles.event__headers}>
@@ -32,7 +34,7 @@ export default function Events() {
             }
 
 
-            <div className='containerFor' >
+            <div className={width > 1700 ? "containerForNew" : 'containerFor'} >
                 {
                     allEvents && <NewsConteiner date={allEvents} />
                 }

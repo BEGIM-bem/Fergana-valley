@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LineHeaders from '../components/Lines/LineHeaders'
 import styles from '../Styles/Product.module.scss'
 import { productImages, imageTextForProducts } from '../images/index.js'
@@ -37,119 +37,56 @@ import {
 } from '../images/index.js'
 import Footer from '../components/Footer'
 import SliderAdaptability from '../components/ConteinerAdaptability'
+import CardsComponents from '../components/CardsCompon.js'
+import { KGBusness, KGEvents, KGExport, KGFinans, OZBusness, OZEvents, OZExport, OZFinans, RusBusness, RusEvents, RusExport, RusFinans } from './InfoProducts'
+import useWindowDimensions from './with'
 // import ConteinerSlider from '../components/ConteinerSliders'
 
+
+
+
+
 export default function Product() {
+    //Кастомный Хук для определение ширины экрана
+    const { height, width } = useWindowDimensions();
+    console.log("with: ", width)
+
+
     const { status, error, contacts, LinkSocialNetwork } = useSelector(state => state.contacts)
     let WatsapLink = LinkSocialNetwork[3]?.link
 
-    let sliderImageBusness = [
-        {
-            id: 1,
-            images: iconPr1,
-        },
-        {
-            id: 2,
-            images: iconPr2,
-        },
-        {
-            id: 3,
-            images: iconPr3,
-        },
-        {
-            id: 4,
-            images: iconPr4,
-        }
-    ]
 
 
-    let sliderImageFinans = [
-        {
-            id: 1,
-            images: productFinancImg1,
-        },
-        {
-            id: 2,
-            images: productFinancImg2,
-        },
-        {
-            id: 3,
-            images: productFinancImg3,
-        },
-        {
-            id: 4,
-            images: productFinancImg4,
-        }
-    ]
-
-    let sliderImageExport = [
-        {
-            id: 1,
-            images: productxport1,
-        },
-        {
-            id: 2,
-            images: productxport2,
-        },
-        {
-            id: 3,
-            images: productxport3,
-        },
-        {
-            id: 4,
-            images: productxport4,
-        }
-    ]
-
-
-    let sliderImageEvents = [
-        {
-            id: 1,
-            images: events1,
-        },
-        {
-            id: 2,
-            images: events1,
-        },
-        {
-            id: 3,
-            images: events1,
-        },
-        {
-            id: 4,
-            images: events1,
-        }
-    ]
 
 
     const screenWidth = window.screen.width
-    const {language} = useSelector(state => state.localization)
+    const { language } = useSelector(state => state.localization)
 
-    const bussinesst = `${language === 'russian' ? 'Бизнес Управление': ''}
+    const bussinesst = `${language === 'russian' ? 'Бизнес Управление' : ''}
                             ${language === 'kyrgyz' ? 'Бизнести башкаруу' : ""}
                             ${language === "o'zbekcha" ? "Biznes boshqaruvi" : ''}`
 
-    const financialt = `${language === 'russian' ? 'Финансирование': ''}
+    const financialt = `${language === 'russian' ? 'Финансирование' : ''}
                             ${language === 'kyrgyz' ? 'Каржылоо' : ""}
                             ${language === "o'zbekcha" ? "Moliyalashtirish" : ''}`
 
-    const eventt = `${language === 'russian' ? 'Новости': ''}
+    const eventt = `${language === 'russian' ? 'Новости' : ''}
                             ${language === 'kyrgyz' ? 'Жаңылыктар' : ""}
                             ${language === "o'zbekcha" ? "Yangiliklar" : ''}`
 
-    const exportt = `${language === 'russian' ? 'Экспорт': ''}
+    const exportt = `${language === 'russian' ? 'Экспорт' : ''}
                             ${language === 'kyrgyz' ? 'Экспорт' : ""}
                             ${language === "o'zbekcha" ? "Eksport" : ''}`
 
-    const beginb = `${language === 'russian' ? 'Приступить к курсу “Бизнес с 0”': ''}
+    const beginb = `${language === 'russian' ? 'Приступить к курсу “Бизнес с 0”' : ''}
                             ${language === 'kyrgyz' ? '"Бизнес 0дөн" курсун баштоо' : ""}
                             ${language === "o'zbekcha" ? 'Biznes 0 dan" kursini boshlang' : ''}`
 
-    const moreb = `${language === 'russian' ? 'Получить подробную информацию': ''}
+    const moreb = `${language === 'russian' ? 'Получить подробную информацию' : ''}
                             ${language === 'kyrgyz' ? 'Толук маалымат алыңыз' : ""}
                             ${language === "o'zbekcha" ? "Batafsil ma'lumot oling" : ''}`
 
-    const morenewsb = `${language === 'russian' ? 'Узнать о Последних Новостях': ''}
+    const morenewsb = `${language === 'russian' ? 'Узнать о Последних Новостях' : ''}
                             ${language === 'kyrgyz' ? 'Акыркы Кабарлар жөнүндө билип алыңыз' : ""}
                             ${language === "o'zbekcha" ? "So'nggi yangiliklar haqida bilib oling" : ''}`
 
@@ -183,8 +120,7 @@ export default function Product() {
                                 {language === "o'zbekcha" && "Shuni ta'kidlash kerakki, ichki tuzilmaning mustahkamlanishi va rivojlanishi har bir ishtirokchini ommaviy ishtirok tizimi bo'yicha o'z qarorlarini qabul qilishga qodir ekanligini aniq belgilaydi."}
                             </p>
                         </div>
-                        {/* <img src={imageTextForProducts} alt='not find'
-                            className={styles.conteiner__content_img} /> */}
+
                     </div>
 
                     <div className={styles.conteiner__btnBlock}>
@@ -199,89 +135,76 @@ export default function Product() {
 
             </div>
 
+            {/* Бизнес Управление */}
 
-
-            <div className={styles.conteiners_wrappers} >
-
+            <div className={styles.container2} >
                 {
-                    (screenWidth <= 600 && <SliderAdaptability
-                        sliderImage={sliderImageBusness} />)
-                    ||
-
-                    (screenWidth <= 1006 ?
-                        <div className={styles.conteiners_services}>
-                            <figure>   <img src={iconPr1} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                            <figure>  <img src={iconPr2} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                            <figure>   <img src={iconPr3} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                            <figure>    <img src={iconPr4} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                        </div>
+                    width < 786 ?
+                        <>
+                            {language === 'russian' && <SliderAdaptability withs={width <= 500 ? '100%' : '365px'} colorArrow={'black'} data={RusBusness} />}
+                            {language === 'kyrgyz' && <SliderAdaptability withs={width <= 500 ? '100%' : '365px'} colorArrow={'black'} data={KGBusness} />}
+                            {language === "o'zbekcha" && <SliderAdaptability withs={width <= 500 ? '100%' : '365px'} colorArrow={'black'} data={OZBusness} />}
+                        </>
                         :
-                        <div className={styles.conteiners_services}>
-                            <figure>   <img src={productImg1} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                            <figure>  <img src={productImg2} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                            <figure>   <img src={productImg3} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                            <figure>    <img src={productImg4} alt='/' style={{ width: '100%' }} className={styles.conteiners_services_img} /> </figure>
-                        </div>)
-
-
-
+                        <>
+                            {language === 'russian' && <CardsComponents withs={width <= 1272 ? '320px' : '286px'} data={RusBusness} />}
+                            {language === 'kyrgyz' && <CardsComponents withs={width <= 1272 ? '320px' : '286px'} data={KGBusness} />}
+                            {language === "o'zbekcha" && <CardsComponents withs={width <= 1272 ? '320px' : '286px'} data={OZBusness} />}
+                        </>
                 }
-                {
-                    screenWidth <= 600 ?
-
-                        <a href={WatsapLink} target="_blank"
-                            rel="noreferrer"
-                            className={styles.conteiners_services_linkBtn}>
-                            <Button text={moreb}
-                                width={'83%'}
-                            />
-                        </a> :
-
-                        <a href={WatsapLink} target="_blank"
-                            rel="noreferrer"
-                            className={styles.conteiners_services_linkBtn}>
-                            <Button text={moreb}
-                            />
-                        </a>
-                }
-
-
             </div>
+            {
+                width <= 500 ?
+                    <a href={WatsapLink} target="_blank"
+                        rel="noreferrer"
+                        className={styles.conteiners_services_linkBtn}>
+                        <Button text={moreb}
+                            width={'90%'}
+                        />
+                    </a> :
+
+                    <a href={WatsapLink} target="_blank"
+                        rel="noreferrer"
+                        className={styles.conteiners_services_linkBtn}>
+                        <Button text={moreb}
+                        />
+                    </a>
+            }
 
 
-            {/* <div className='container'> */}
+            <hr />
+
+            {/* Финансирование */}
+
+
             <div id="finans" className={styles.conteiners__finans}>
                 <LineHeaders text={financialt} stylesContent={'9%'} stylesContent1={'4%'} />
 
-                <div className='container'>
+                <div className={styles.container2} >
                     {
-                        screenWidth <= 600 ?
-
-                            <SliderAdaptability
-                                sliderImage={sliderImageFinans} />
-
-
+                        width <= 786 ?
+                            <>
+                                {language === 'russian' && <SliderAdaptability withs={width <= 500 ? '100%' : '365px'} colorArrow={'white'} data={RusFinans} />}
+                                {language === 'kyrgyz' && <SliderAdaptability withs={width <= 500 ? '100%' : '365px'} colorArrow={'white'} data={RusFinans} />}
+                                {language === "o'zbekcha" && <SliderAdaptability withs={width <= 500 ? '100%' : '365px'} colorArrow={'white'} data={RusFinans} />}
+                            </>
                             :
-                            <div className={styles.conteiner__contentsFinans}>
-                                <img src={productFinancImg1} alt='/' className={styles.conteiner__finans_img} />
-                                <img src={productFinancImg2} alt='/' className={styles.conteiner__finans_img} />
-                                <img src={productFinancImg3} alt='/' className={styles.conteiner__finans_img} />
-                                <img src={productFinancImg4} alt='/' className={styles.conteiner__finans_img} />
-                                <img src={productFinancImg5} alt='/' className={styles.conteiner__finans_img} />
-                            </div>
-
+                            <>
+                                {language === 'russian' && <CardsComponents withs={width <= 1272 ? '320px' : '370px'} data={RusFinans} />}
+                                {language === 'kyrgyz' && <CardsComponents withs={width <= 1272 ? '320px' : '370px'} data={KGFinans} />}
+                                {language === "o'zbekcha" && <CardsComponents withs={width <= 1272 ? '320px' : '370px'} data={OZFinans} />}
+                            </>
                     }
                 </div>
 
-
                 {
-                    screenWidth <= 600 ?
+                    width <= 500 ?
 
                         <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={moreb}
-                                width={'75%'}
+                                width={'90%'}
                             />
                         </a>
                         :
@@ -295,12 +218,11 @@ export default function Product() {
             </div>
 
 
-            {/* </div> */}
 
             <hr />
             <div id='exports' >
                 {
-                    screenWidth <= 600 ?
+                    width <= 600 ?
                         <LineHeaders text={exportt}
                             stylesContent={'9%'}
                             stylesContent1={'35%'} />
@@ -309,31 +231,33 @@ export default function Product() {
                             stylesContent={'15%'}
                             stylesContent1={'8rem'} />
                 }
-                <div className='container'>
+
+                {/* Экспорт */}
+                <div className={styles.container2}>
                     {
-                        screenWidth <= 600 ?
-                            <SliderAdaptability
-                                sliderImage={sliderImageExport} />
+                        width <= 786 ?
+                            <>
+                                {language === 'russian' && <SliderAdaptability withs={width <= 500 ? '100%' : '365px'} colorArrow={'black'} data={RusExport} />}
+                                {language === 'kyrgyz' && <SliderAdaptability withs={width <= 500 ? '100%' : '365px'} colorArrow={'black'} data={KGExport} />}
+                                {language === "o'zbekcha" && <SliderAdaptability withs={width <= 500 ? '100%' : '365px'} colorArrow={'black'} data={OZExport} />}
+                            </>
                             :
-                            <div className={styles.export__conteiner}>
-                                <img src={productxport1} alt='/' className={styles.export__conteiner_img} />
-                                <img src={productxport2} alt='/' className={styles.export__conteiner_img} />
-                                <img src={productxport3} alt='/' className={styles.export__conteiner_img} />
-                                <img src={productxport4} alt='/' className={styles.export__conteiner_img} />
-                                <img src={productxport5} alt='/' className={styles.export__conteiner_img} />
-                                <img src={productxport6} alt='/' className={styles.export__conteiner_img} />
-                            </div>
+                            <>
+                                {language === 'russian' && <CardsComponents withs={width <= 1272 ? '320px' : '370px'} data={RusExport} />}
+                                {language === 'kyrgyz' && <CardsComponents withs={width <= 1272 ? '320px' : '370px'} data={KGExport} />}
+                                {language === "o'zbekcha" && <CardsComponents withs={width <= 1272 ? '320px' : '370px'} data={OZExport} />}
+                            </>
                     }
                 </div>
 
 
                 {
-                    screenWidth <= 600 ?
+                    width <= 500 ?
                         <a href={WatsapLink} target="_blank"
                             rel="noreferrer"
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={moreb}
-                                width={'73%'}
+                                width={'90%'}
                             />
                         </a>
                         : <a href={WatsapLink} target="_blank"
@@ -351,41 +275,45 @@ export default function Product() {
             <div id='events' className={styles.events}>
 
                 {
-                    screenWidth <= 600 ?
+                    width <= 600 ?
                         <LineHeaders text={eventt}
-                            stylesContent={'6%'}
-                            stylesContent1={'8%'} />
+                            stylesContent={'9%'}
+                            stylesContent1={'32%'} />
                         :
                         <LineHeaders text={eventt}
-                            stylesContent={'12%'}
-                            stylesContent1={'8%'} />
+                            stylesContent={'15%'}
+                            stylesContent1={'5rem'} />
                 }
+                {/* Мероприятия */}
 
+                <div className={styles.container2} >
+                    {
+                        width <= 786 ?
+                            <>
+                                {language === 'russian' && <SliderAdaptability withs={width <= 500 ? '100%' : '370px'} vid={'events'} colorArrow={'white'} data={RusEvents} />}
+                                {language === 'kyrgyz' && <SliderAdaptability withs={width <= 500 ? '100%' : '370px'} vid={'events'} colorArrow={'white'} data={KGEvents} />}
+                                {language === "o'zbekcha" && <SliderAdaptability withs={width <= 500 ? '100%' : '370px'} vid={'events'} colorArrow={'white'} data={OZEvents} />}
+                            </>
+                            :
+                            <>
+                                {language === 'russian' && <CardsComponents withs={width <= 1272 ? '320px' : '286px'} vid={'events'} data={RusEvents} />}
+                                {language === 'kyrgyz' && <CardsComponents withs={width <= 1272 ? '320px' : '286px'} vid={'events'} data={KGEvents} />}
+                                {language === "o'zbekcha" && <CardsComponents withs={width <= 1272 ? '320px' : '286px'} vid={'events'} data={OZEvents} />}
+                            </>
+                    }
+                </div>
 
                 {
-                    screenWidth <= 600 ?
-                        <SliderAdaptability
-                            sliderImage={sliderImageEvents}
-                        />
-                        :
-                        <div className={styles.events__contents}>
-                            <img className={styles.events__contents_img} src={productEvents4} alt='/' />
-                            <img className={styles.events__contents_img} src={productEvents3} alt='/' />
-                            <img className={styles.events__contents_img} src={productEvents2} alt='/' />
-                            <img className={styles.events__contents_img} src={productEvents1} alt='/' />
-                        </div>
-
-                }
-                {
-                    screenWidth <= 600 ?
+                    width <= 500 ?
 
                         <NavLink to='/events'
                             className={styles.conteiners_services_linkBtn}>
-                            <Button width={'88%'} text={morenewsb} />
+                            <Button width={'90%'} text={morenewsb} />
                         </NavLink>
                         :
 
                         <NavLink to='/events'
+
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={morenewsb} />
                         </NavLink>

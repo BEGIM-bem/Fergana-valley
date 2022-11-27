@@ -1,36 +1,63 @@
 import React from "react";
 import styles from './index.module.scss'
 import { switchs, switchsBlack } from '../../images/index.js'
-
-function SliderForContent({ prevSlide, activeIndex, sliderImage, screenWidth }) {
-
+import styless from '../CardsCompon.js/index.module.scss'
+import { whiteStrellka } from '../../imagesProduct/index.js'
+function SliderForContent({ prevSlide, screenWidth, activeIndex, vid, sliderImage, colorArrow }) {
+    console.log("vid: ", vid)
 
     return (
+
         <div className={styles.slideshow}>
 
             {
-                sliderImage.map((slide, index) =>
+                vid === 'events' ?
+                    sliderImage.map((item, index) =>
+                        <div
+                            key={index}
+                            style={{ maxWidth: screenWidth }}
+                            className={index === activeIndex ?
+                                styles.actives :
+                                styles.inactives}
+                        >
+                            <div className={styles.d}>
+                                <img src={item.icon} alt='/' className={styles.sa} />
+                            </div>
 
-                    <div
-                        key={index}
-                        className={index === activeIndex ?
-                            [styles.slides, styles.active] :
-                            styles.inactive}>
+                            <h1 className={styles.contents__titles1}>{item.title} </h1>
+                            <p className={styles.contents__text1}>{item.text} </p>
+                            <p className={styles.contents__br11}>{item.br}</p>
+                        </div>
+                    )
+                    :
+                    sliderImage.map((item, index) =>
+                        <div
+                            key={index}
+                            style={{ maxWidth: screenWidth }}
+                            className={index === activeIndex ?
+                                styles.active :
+                                styles.inactive}
+                        >
 
-                        <img style={{ width: '100%' }}
-                            className={styles.slideImage}
-                            src={slide.images} alt='/' />
+                            <img src={item.icon} alt='/' />
+                            <h1 className={styless.contents__title}>{item.title} </h1>
+                            <p className={styless.contents__text}>{item.text} </p>
+                            <p className={styless.contents__br}>{item.br}</p>
+                        </div>
 
-
-
-                    </div>
-
-                )
+                    )
             }
+
             <div onClick={prevSlide}
                 className={styles.slideshow__icon}>
-                <img
-                    src={switchsBlack} alt='/' />
+                {
+                    colorArrow === 'white' ?
+                        <img
+                            src={whiteStrellka} alt='/' />
+                        :
+                        <img
+                            src={switchsBlack} alt='/' />
+                }
             </div>
 
         </div>

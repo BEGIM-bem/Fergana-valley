@@ -6,7 +6,20 @@
     margin-top: 8px;
 
     z-index: 1;
+
+
+
     // background: rebeccapurple;
+}
+
+.com {
+    // display: flex;
+    position: relative;
+    // justify-content: center;
+    margin-top: 10px;
+    // width: 90%;
+    overflow: hidden;
+
 }
 
 
@@ -35,11 +48,112 @@
 }
 
 .active {
+    background: #FFFFFF;
+    /* тень больших карточек */
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+    border-radius: 5px;
+    padding-top: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 18px;
+
+    // width: 320px;
     display: inline-block;
     box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+    min-height: 420px;
+}
+
+.actives {
+    background: #FFFFFF;
+    /* тень больших карточек */
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+    border-radius: 5px;
+
+    padding-bottom: 18px;
+
+    // width: 320px;
+    display: inline-block;
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+    min-height: 420px;
+}
+
+.d {
+    border-radius: 5px;
+    height: 200px;
+    width: 100%;
+
+}
+
+.sa {
+    border-radius: 5px;
+
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
 }
 
 .inactive {
+
+    background: #FFFFFF;
+
+    min-height: 420px;
+
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+    border-radius: 5px;
+    padding-top: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 18px;
+
+    // width: 320px;
     display: none;
     box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+}
+
+.inactives {
+
+    background: #FFFFFF;
+
+    min-height: 420px;
+
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+    border-radius: 5px;
+
+
+    padding-bottom: 18px;
+
+    // width: 320px;
+    display: none;
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+}
+
+.contents__titles1 {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 8px;
+
+    color: #1959AB;
+}
+
+.contents__text1 {
+    padding: 8px;
+
+    font-size: 14px;
+    line-height: 17px;
+
+
+    color: #333333;
+}
+
+.contents__br11 {
+
+    padding-left: 8px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 17px;
+
+
+    color: #333333;
 }

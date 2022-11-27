@@ -299,18 +299,20 @@
     }
 
 
+
     .languagesBar {
         position: absolute;
 
+        top: 570%;
 
-        top: 950%;
-        left: -4%;
+        left: -2355%;
+
         z-index: 5;
         padding: 16px;
         background: $bacrountConteiner;
         border-radius: 5px;
         padding: 16px;
-
+        // background: red;
     }
 
     .navbar__conteinerss {

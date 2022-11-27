@@ -24,7 +24,7 @@ export default function NewsConteiner({ date }) {
       {
         date.map(item => (
 
-          <NavLink to={`/evntsDetailed/${item.id}`}>
+          <NavLink to={`/evntsDetailed/${item.id}`} className={styles.d} >
             <div className={styles.wrapper}
               onClick={() => handleDetalis(item)}
               key={item.id}>

@@ -1,17 +1,20 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import footerStyles from './Footer.module.scss'
 import { iconFacbook, iconInstagram, iconTelegram, iconWatsap } from "../../images";
-import {useDispatch, useSelector} from "react-redux";
-import {getCookie} from "../../utils/Cookies";
-import {getAddress} from "../../api/course";
+import { useDispatch, useSelector } from "react-redux";
+import { getCookie } from "../../utils/Cookies";
+import { getAddress } from "../../api/course";
 // import aboutStyles from './../../Styles/About.module.scss'
 
 const Footer = () => {
 
-    const { LinkSocialNetwork } = useSelector(state => state.contacts)
-    const {address} = useSelector(state => state.course)
+    const { LinkSocialNetwork, contacts } = useSelector(state => state.contacts)
+
+    // const { contacts } = useSelector(state => state.contacts)
+
+    // const { address } = useSelector(state => state.course)
     const dispatch = useDispatch()
-    const {language} = useSelector(state => state.localization)
+    const { language } = useSelector(state => state.localization)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -59,7 +62,7 @@ const Footer = () => {
                         {language === 'kyrgyz' && 'Байланыш маалымат'}
                         {language === "o'zbekcha" && "Bog'lanish uchun ma'lumot"}
                     </p>
-                    {address.map(i => {
+                    {contacts.map(i => {
                         return <>
                             <p>
                                 {language === 'russian' && i?.city_country_ru}
@@ -83,9 +86,9 @@ const Footer = () => {
                     {LinkSocialNetwork.map((item, index) => {
                         return (
                             // <div key={item.id} className='conteiner__icon'>
-                                <a href={item.link} target='_blank' rel='noreferrer'>
-                                    <img src={item.logo} alt='not find icon' />
-                                </a>
+                            <a href={item.link} target='_blank' rel='noreferrer'>
+                                <img src={item.logo} alt='not find icon' />
+                            </a>
                             //</div>
                         )
                     })}

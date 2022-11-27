@@ -1,5 +1,5 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
-import API from "../utils/axiosConfig";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import API from "../utils/axiosConfigTOKEN";
 
 export const getCourse = createAsyncThunk(
     'course/getCourse',

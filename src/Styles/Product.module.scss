@@ -124,7 +124,7 @@
 
     display: flex;
     justify-content: center;
-    margin-top: 64px;
+    margin-top: 50px;
     flex-wrap: wrap;
 
 }
@@ -210,6 +210,24 @@ hr {
     background-image: url(../images/imgProduct1.svg);
 }
 
+.container2 {
+    width: 90%;
+    margin: 0 auto;
+    // margin-top: 10px;
+    // background: rebeccapurple;
+}
+
+@media screen and (max-width: 786px) {
+    .container2 {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        // background: rebeccapurple;
+    }
+}
+
+
 
 
 @media screen and (max-width: 953px) {
@@ -256,6 +274,12 @@ hr {
 
 // padding-bottom: 50px;
 
+@media screen and (max-width: 786px) {
+    hr {
+        margin: 15px auto;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
     .conteiners__finans {
@@ -263,9 +287,9 @@ hr {
 
     }
 
-    hr {
-        margin: 15px auto;
-    }
+    // hr {
+    //     margin: 15px auto;
+    // }
 
     .conteiners__finans {
 
@@ -287,5 +311,5 @@ hr {
         font-size: 20px;
     }
 
-    .conteiner__block_text {}
+
 }

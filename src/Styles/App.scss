@@ -8,6 +8,7 @@
     outline: none;
     // overflow-x: hidden;
 }
+
 ul {
     padding-left: 25px;
 }
@@ -34,14 +35,18 @@ body::-webkit-scrollbar-thumb {
     // max-width: 90%;
     width: 90%;
     margin: 0 auto;
+
+
 }
 
 
 .container1 {
     width: 90%;
-    // background: rebeccapurple;
+
     margin: 0 auto
 }
+
+
 
 
 .containerFor {
@@ -51,8 +56,15 @@ body::-webkit-scrollbar-thumb {
     width: 90%;
     margin-bottom: 64px;
     // background: rebeccapurple;
-
 }
+
+.containerForNew {
+    width: 95%;
+    // background: red;
+    margin: 0 auto;
+}
+
+
 
 .ytp-pause-overlay-container {
     display: none !important;
@@ -109,6 +121,7 @@ body::-webkit-scrollbar-thumb {
     }
 
 }
+
 @media screen and (max-width: 1000px) {
     .flex_between {
         display: initial;
