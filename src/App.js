@@ -38,7 +38,7 @@ function App() {
   const screenWidth = window.screen.width
 
   return (
-    <div className={width > 1700 && 'container'} >
+    <div className={width > 2000 && 'container'} >
       <Navbar />
       <Routes>
         <Route path='/*' element={<Home />} />

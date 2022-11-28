@@ -80,7 +80,7 @@ export default function AuthModal({ openAuth, handleCloseAuth, handleOpen }) {
                         <Typography sx={title} id="transition-modal-title" variant="h6" component="h2">
                             Авторизация
                         </Typography>
-                        <form onSubmit={formik.handleSubmit} className={modalStyles.form}>
+                        <form onSubmit={formik.handleSubmit} className={modalStyles.auth_form}>
                             <div className={modalStyles.input_cont}>
                                 <label className={modalStyles.label}>Email<span style={{ color: '#EB5757' }}>*</span></label>
                                 <input name='email' onChange={formik.handleChange} placeholder='Ваша почта' className={(formik.errors.email) ? modalStyles.error_input : modalStyles.input} type="text" />

@@ -32,7 +32,7 @@ export default function NewsConteiner({ date }) {
               <img src={item.main_image} alt='/' className={styles.wrapper__imgFon} />
 
               <div className={styles.wrapper__conteiner}>
-                <p className={styles.wrapper__conteiner__date} >{item.date.split("").reverse().join('')}</p>
+                <p className={styles.wrapper__conteiner__date} >{item.date}</p>
                 <p className={styles.wrapper__conteiner__title}>
                   {lang === 'russian' && item.title_ru}
                   {lang === 'kyrgyz' && item.title_kg}

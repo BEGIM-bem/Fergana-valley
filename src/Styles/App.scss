@@ -6,7 +6,7 @@
     box-sizing: border-box;
     text-decoration: none;
     outline: none;
-    // overflow-x: hidden;
+    //overflow: auto;
 }
 
 ul {
@@ -22,12 +22,13 @@ body::-webkit-scrollbar {
 /*Стили чтобы уменьшить вертикальный скрол в body  */
 
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
     background: #c4c4c4;
 
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 
 .container {
     // max-width: 76.25rem;
@@ -99,11 +100,11 @@ body::-webkit-scrollbar-thumb {
     //top: 100px !important;
 }
 
-.css-79ws1d-MuiModal-root::-webkit-scrollbar {
+.css-79ws1d-MuiModal-root::-webkit-scrollbar, div::-webkit-scrollbar {
     width: 0.1em;
 }
 
-.css-79ws1d-MuiModal-root::-webkit-scrollbar-track {
+.css-79ws1d-MuiModal-root::-webkit-scrollbar-track, div::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 

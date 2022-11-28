@@ -31,8 +31,8 @@ export const createUser = createAsyncThunk(
                 instagram: data.datas.instagram,
                 password: data.datas.password
             });
-            console.log("regist:", response)
             data.closeRegistrationModal()
+            data.openAuthModal()
             dispatch(authUser(data.datas.email))
         } catch (e) {
             return rejectWithValue(e.response.data.message);

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect, useState} from 'react'
 import aboutStyles from "../Styles/About.module.scss";
 import courseStyles from "../Styles/Course.module.scss";
 import Lesson from "../components/Lesson/Lesson";
@@ -17,6 +17,7 @@ import { authUser } from "../api/user";
 import * as Yup from "yup";
 import { getCookie } from "../utils/Cookies";
 import { getUser } from "../redux/usersSlice";
+import Registration from "../components/Modal/Regist";
 
 export default function Course() {
 
@@ -28,12 +29,12 @@ export default function Course() {
     const handleOpenAuth = () => setOpenAuth(true);
     const handleCloseAuth = () => setOpenAuth(false);
 
-    const [lessonId, setLessonId] = React.useState(1);
+    const [modal, setModal] = useState(false);
 
-    // const currentLessonFunction = (id) => {
-    //     setLessonId(id)
-    //
-    // }
+    const closeModal = () => setModal(false);
+    const openModal = () => setModal(true);
+
+    const [lessonId, setLessonId] = React.useState(1);
 
     const dispatch = useDispatch()
     const { course, comments } = useSelector(state => state.course)
@@ -43,6 +44,7 @@ export default function Course() {
     useEffect(() => {
         window.scrollTo(0, 0);
         !getCookie('jwt-token') && handleOpenAuth()
+        // openModal()
         dispatch(getCourse())
         dispatch(getComments())
     }, [])
@@ -60,12 +62,9 @@ export default function Course() {
         current_lesson = course1?.lessons.find(i => i.id === lessonId)
     }, [lessonId])
 
-
-    useEffect(() => {
-
+    if(modal) {
         document.body.style.overflow = 'hidden';
-        return () => document.body.style.overflow = 'auto';
-    }, [])
+    }
 
 
     const id = getCookie('userId')
@@ -127,7 +126,7 @@ export default function Course() {
                             <h4 className={courseStyles.comments_title}>
                                 {language === 'russian' && 'Комментарий'}
                                 {language === 'kyrgyz' && 'Комментарий'}
-                                {language === "o'zbekcha" && "Izoh"}
+                                {language === "o'zbekcha" && "Fikr"}
                             </h4>
                             <form onSubmit={formik.handleSubmit} className={courseStyles.comment_inp_cont}>
                                 <button type='submit' className={courseStyles.comment_button}>{add_comment_text}</button>
@@ -141,9 +140,11 @@ export default function Course() {
                     </div>
                 </div>
                 <Footer />
+                {modal && <Registration close={closeModal} openAuthModal={handleOpenAuth}/>}
             </div>
-            <AccessModal open={open} handleClose={handleClose} />
-            <AuthModal openAuth={openAuth} handleOpen={handleOpen} handleCloseAuth={handleCloseAuth} />
+
+            {/*<AccessModal open={open} handleClose={handleClose} />*/}
+            <AuthModal openAuth={openAuth} handleOpen={openModal} handleCloseAuth={handleCloseAuth} />
         </>
     )
 }

@@ -49,6 +49,9 @@ export default function Contacts() {
     const sunday = `${language === 'russian' ? 'Воскресенье' : ''}
                             ${language === 'kyrgyz' ? 'Жекшемби' : ""}
                             ${language === "o'zbekcha" ? "Yakshanba" : ''}`
+    const weekend = `${language === 'russian' ? 'Выходной' : ''}
+                            ${language === 'kyrgyz' ? 'Эс алуу күнү' : ""}
+                            ${language === "o'zbekcha" ? "Dam olish kuni" : ''}`
 
     let contactsWorkTime = [
         {
@@ -84,7 +87,7 @@ export default function Contacts() {
         {
             id: 7,
             day: sunday,
-            time: 'Воскресенье'
+            time: weekend
         },
 
     ]  //График работы

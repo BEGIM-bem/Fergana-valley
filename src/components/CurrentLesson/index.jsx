@@ -5,6 +5,8 @@ import {MdOutlineCheckBox} from "react-icons/md";
 import {FaRegStar} from "react-icons/fa";
 import './../../Styles/App.scss'
 import {useSelector} from "react-redux";
+import {BsFileEarmarkArrowDown} from "react-icons/bs";
+import {FcFile} from "react-icons/fc";
 
 const CurrentsLesson = ({lesson}) => {
 
@@ -67,6 +69,10 @@ const CurrentsLesson = ({lesson}) => {
             </div>
             <div className={commentsStyles.admintext_cont}>
                 Учитывая ключевые сценарии поведения, начало повседневной работы по формированию позиции в значительной степени обусловливает важность приоретизации разума над эмоциями. Лишь ключевые особенности структуры проекта, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут в равной степени предоставлены сами себе. Каждый из нас понимает очевидную вещь: консультация с широким активом однозначно фиксирует необходимость направлений прогрессивного развития. В своём стремлении повысить качество жизни, они забывают, что экономическая повестка сегодняшнего дня однозначно фиксирует необходимость приоретизации разума над эмоциями. А также ключевые особенности структуры проекта неоднозначны и будут своевременно верифицированы.
+            </div>
+            <div className={currentStyles.file_cont}>
+                <FcFile/>
+                <a href='https://binaries.templates.cdn.office.net/support/templates/ru-ru/tf16392878_win32.dotx' download="My_File.pdf">Download</a>
             </div>
             <hr style={{width: '100%'}}/>
         </div>

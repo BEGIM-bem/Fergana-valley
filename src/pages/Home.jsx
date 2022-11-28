@@ -250,7 +250,7 @@ export default function Home() {
                 <NavLink to='/events' style={{ textDecoration: 'none' }} >
                     {
                         width <= 600 ?
-                            <Button width={'82%'}
+                            <Button width={'85%'}
                                 text={moreb} />
                             : <Button
                                 // width={'82%'}

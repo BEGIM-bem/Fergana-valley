@@ -13,6 +13,7 @@ const Comments = ({comment}) => {
         dispatch(getUsers())
     }, [])
 
+    const { language } = useSelector(state => state.localization)
 
     const user = users?.find(user => user.id === comment.user)
     console.log('userIddd: ', user)
@@ -25,7 +26,11 @@ const Comments = ({comment}) => {
                 comment.answer && (
                     comment.answer.map(ad_answer => {
                         return <>
-                            <p className={commentsStyles.comment_adminname}>Админ</p>
+                            <p className={commentsStyles.comment_adminname}>
+                                {language === 'russian' && 'Админ'}
+                                {language === 'kyrgyz' && 'Админ'}
+                                {language === "o'zbekcha" && "Admin"}
+                            </p>
                             <p className={commentsStyles.admintext_cont}>{ad_answer.answer}</p>
                         </>
                     })

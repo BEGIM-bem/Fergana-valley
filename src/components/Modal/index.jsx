@@ -41,11 +41,11 @@ const title = {
 export default function AccessModal({ open, handleClose }) {
 
 
-    useEffect(() => {
-
-        document.body.style.overflow = 'hidden';
-        return () => document.body.style.overflow = 'auto';
-    }, [])
+    // useEffect(() => {
+    //
+    //     document.body.style.overflow = 'hidden';
+    //     return () => document.body.style.overflow = 'auto';
+    // }, [])
 
 
     const dispatch = useDispatch()
