@@ -11,14 +11,17 @@ import {
 import { useState } from 'react'
 import LanguagesBar from '../LanguagesBar/index'
 import { useEffect } from 'react'
-import {useSelector} from "react-redux";
-
+import { useSelector } from "react-redux";
+import useWindowDimensions from '../../pages/with.jsx';
 
 
 export default function Navbar() {
+
+    const { height, width } = useWindowDimensions();
+
     const [paths, setPaths] = useState('')
 
-    const {language} = useSelector(state => state.localization)
+    const { language } = useSelector(state => state.localization)
 
     const translate = (ru, kg, uz) => {
         return `${language === 'russian' ? ru : ''}
@@ -33,6 +36,8 @@ export default function Navbar() {
     }, [window.location.pathname, paths])
 
 
+
+
     const [isOpenLanguages, setIsOpenLanguages] = useState(false)
     const [clicked, setClicked] = useState(false)
 
@@ -43,7 +48,7 @@ export default function Navbar() {
             : setIsOpenLanguages(true)
     }
 
-    const screenWidth = window.screen.width
+    // const screenWidth = window.screen.width
 
     const handleClick = () => {
         setIsOpenList(false)
@@ -77,7 +82,7 @@ export default function Navbar() {
 
     return (
         <div>
-            <div className={clicked === true ? styles.Navbar : screenWidth > 1700 ? styles.Navbar3 : styles.Navbar1} >
+            <div className={clicked === true ? styles.Navbar : width > 1700 ? styles.Navbar3 : styles.Navbar1} >
                 <div className={styles.navbar__conteinerss}>
                     <NavLink to='/*'> <img src={LogoTip} alt='not find'
                         className={styles.navbar__log} />  </NavLink>
@@ -100,39 +105,41 @@ export default function Navbar() {
                             <NavLink
                                 className={(navDate) => navDate.isActive ?
                                     styles.active : styles.navbar_item_to}
-                                to={'/about'}> {translate('О нас', 'Биз жөнүндө', 'Biz haqimizda')}
+                                onClick={handleClickClose}
+                                to={'/about'}> {translate('Кто мы?', 'Биз жөнүндө', 'Biz haqimizda')}
                             </NavLink>
 
 
                             <div className={styles.dropdown} >
                                 {
-                                    screenWidth <= 900 ?
+                                    width <= 900 ?
                                         <NavLink onClick={handleList}
                                             className={(navDate) => navDate.isActive ?
                                                 styles.active : styles.navbar_item_to}
-                                            to={'/products_services'}>{translate('Продукты и Услуги','Продукциялар','Mahsulotlar va xizmatlar')}
+                                            // onClick={handleClickClose}
+                                            to={'/products_services'}>{translate('Продукты и Услуги', 'Продукциялар', 'Mahsulotlar va xizmatlar')}
                                         </NavLink>
                                         :
                                         <NavLink
                                             className={(navDate) => navDate.isActive ?
                                                 styles.active : styles.navbar_item_to}
                                             to={'/products_services'} >
-                                            {translate('Продукты и Услуги','Продукциялар','Mahsulotlar va xizmatlar')}
+                                            {translate('Продукты и Услуги', 'Продукциялар', 'Mahsulotlar va xizmatlar')}
                                         </NavLink>
                                 }
 
                                 <div className={styles.linkBar}>
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#buzness">
-                                        {translate('Бизнес управление','Бизнести башкаруу','Biznes boshqaruvi')}
+                                        {translate('Бизнес управление', 'Бизнести башкаруу', 'Biznes boshqaruvi')}
                                     </a> </p>
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#finans">
-                                        {translate('Финансирование','Каржылоо','Moliyalashtirish')}
+                                        {translate('Финансирование', 'Каржылоо', 'Moliyalashtirish')}
                                     </a> </p>
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#exports">
-                                        {translate('Экспорт','Экспорт','Eksport')}
+                                        {translate('Экспорт', 'Экспорт', 'Eksport')}
                                     </a></p>
-                                    <p><a className={styles.linkBar__link} href="#events">
-                                        {translate('Новости','Жаңылыктар','Yangiliklar')}
+                                    <p><a className={styles.linkar__link} href="#events">
+                                        {translate('Новости', 'Жаңылыктар', 'Yangiliklar')}
                                     </a></p>
 
                                 </div>
@@ -146,22 +153,27 @@ export default function Navbar() {
                             <NavLink
                                 className={(navDate) => navDate.isActive ?
                                     styles.active : styles.navbar_item_to}
+                                onClick={handleClickClose}
                                 to={'/course'}>
-                                {translate(' Курс “Бизнес с 0” ','"Бизнес 0дөн" курсу', '“Biznes 0 dan” kursi')}
+
+                                {translate(' Курс “Бизнес с 0” ', '"Бизнес 0дөн" курсу', '“Biznes 0 dan” kursi')}
                             </NavLink>
 
                             <NavLink
                                 className={(navDate) => navDate.isActive ?
                                     styles.active : styles.navbar_item_to}
-                                to={'/events'}>
-                                {translate('Новости','Жаңылыктар','Yangiliklar')}
+                                to={'/events'}
+                                onClick={handleClickClose}
+                            >
+                                {translate('Новости', 'Жаңылыктар', 'Yangiliklar')}
                             </NavLink>
 
                             <NavLink
                                 className={(navDate) => navDate.isActive ?
                                     styles.active : styles.navbar_item_to}
-                                to={'/contacts'}>
-                                {translate('Контакты','Байланыштар','Kontaktlar')}
+                                to={'/contacts'}
+                                onClick={handleClickClose}>
+                                {translate('Контакты', 'Байланыштар', 'Kontaktlar')}
                             </NavLink>
                         </nav>
                     }
@@ -174,16 +186,16 @@ export default function Navbar() {
                         >
                             {/* <div className={styles.linkBar}> */}
                             <p style={{ paddingTop: '30px', paddingBottom: '32px' }} onClick={handleclose} > <a className={styles.linkBar__link} href="#buzness">
-                                {translate('Бизнес управление','Бизнести башкаруу','Biznes boshqaruvi')}
+                                {translate('Бизнес управление', 'Бизнести башкаруу', 'Biznes boshqaruvi')}
                             </a> </p>
                             <p style={{ paddingBottom: '32px' }} onClick={handleclose}  > <a className={styles.linkBar__link} href="#finans">
-                                {translate('Финансирование','Каржылоо','Moliyalashtirish')}
+                                {translate('Финансирование', 'Каржылоо', 'Moliyalashtirish')}
                             </a> </p>
                             <p style={{ paddingBottom: '32px' }} onClick={handleclose} ><a className={styles.linkBar__link} href="#exports">
-                                {translate('Экспорт','Экспорт','Eksport')}
+                                {translate('Экспорт', 'Экспорт', 'Eksport')}
                             </a></p>
                             <p onClick={handleclose} ><a className={styles.linkBar__link} href="#events">
-                                {translate('Новости','Жаңылыктар','Yangiliklar')}
+                                {translate('Новости', 'Жаңылыктар', 'Yangiliklar')}
                             </a></p>
                             {/* </div> */}
                         </nav>
@@ -204,9 +216,13 @@ export default function Navbar() {
                                 (clicked ||
                                     isOpenLanguages) &&
 
+
+
                                 <div className={styles.languagesBar} >
                                     <LanguagesBar />
                                 </div>
+
+
                             }
                         </div>
                     }

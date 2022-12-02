@@ -49,7 +49,7 @@ import useWindowDimensions from './with'
 export default function Product() {
     //Кастомный Хук для определение ширины экрана
     const { height, width } = useWindowDimensions();
-    console.log("with: ", width)
+
 
 
     const { status, error, contacts, LinkSocialNetwork } = useSelector(state => state.contacts)

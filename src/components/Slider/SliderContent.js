@@ -6,14 +6,15 @@ import {
     paginationsArrows1,
     paginationsArrows2
 } from '../../images/index.js'
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 
 function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
 
-    const {language} = useSelector(state => state.localization)
-
-
+    const { language } = useSelector(state => state.localization)
+    const { status, error, LinkSocialNetwork } = useSelector(state => state.contacts)
+    // console.log("LinkSocialNetwork: ", LinkSocialNetwork[0])
     return (
 
         <section className={styles.slideshow}>
@@ -50,9 +51,6 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
                 </div>
 
             </div>
-
-
-
             {
                 sliderImage.map((slide, index) => (
                     <div
@@ -80,7 +78,9 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
                                             {slide.events}
                                         </h1>
 
-                                        <button className={styles.events__btn} >{slide.btnText} </button>
+                                        <NavLink to='/events'>
+                                            <button className={styles.events__btn} >{slide.btnText} </button>
+                                        </NavLink>
                                     </div>
                                     <button className={styles.events_data}>{slide.data}</button>
                                 </div>)

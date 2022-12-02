@@ -18,9 +18,9 @@ export default function Events() {
             <div className={styles.event__headers}>
 
                 <h1 className={styles.event__headers__title}>
-                    {lang === 'russian' && 'Новости и Мероприятия'}
-                    {lang === 'kyrgyz' && 'Жаңылыктар жана окуялар'}
-                    {lang === "o'zbekcha" && 'Voqealar va Yangiliklar'}</h1>
+                    {lang === 'russian' && 'Новости'}
+                    {lang === 'kyrgyz' && 'Жаңылыктар'}
+                    {lang === "o'zbekcha" && 'Voqealar'}</h1>
             </div>
 
             {

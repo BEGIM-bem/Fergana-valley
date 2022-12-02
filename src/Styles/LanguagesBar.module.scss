@@ -2,7 +2,7 @@
 
 
 .switch_texst {
-
+    cursor: pointer;
     // padding-right: 90px;
     font-weight: 400;
     font-size: 16px;
@@ -14,7 +14,7 @@
     // padding-left: 3rem;
     position: relative;
     z-index: 0;
-
+    cursor: pointer;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
@@ -22,6 +22,9 @@
     color: #000000;
 }
 
+.switch__radio:hover {
+    color: #1959AB;
+}
 
 
 
@@ -36,6 +39,7 @@
 }
 
 
+
 .icon__countury {
     padding-left: 20px;
     padding-right: 16px;
@@ -47,6 +51,16 @@
     flex-direction: row;
     align-items: center;
 
+}
+
+.conteiner__blok:hover {
+    color: #1959AB;
+    cursor: pointer;
+}
+
+.conteiner__blok_last:hover {
+    color: #1959AB;
+    cursor: pointer;
 }
 
 
