@@ -20,7 +20,7 @@ import Errors from '../components/Actions/Errors';
 export default function Contacts() {
     const { status, LinkSocialNetwork } = useSelector(state => state.contacts)
 
-    const {language} = useSelector(state => state.localization)
+    const { language } = useSelector(state => state.localization)
 
     const mondayd = `${language === 'russian' ? 'Понедельник' : ''}
                             ${language === 'kyrgyz' ? 'Дүйшөмбү' : ""}
@@ -166,8 +166,18 @@ export default function Contacts() {
 
                 <div className={styles.link__block}>
                     <div className={styles.link__blocks} >
-                        <h1 className={styles.link__block_title}>Франция намерена исследовать, почему чистосердечное признание облегчает душу </h1>
-                        <p className={styles.link__block_text}>(для перехода нажмите на иконку) </p>
+                        <h1 className={styles.link__block_title}>
+
+                            {language === 'russian' && "Следите за последними новостями на наших страницах"}
+                            {language === 'kyrgyz' && "Акыркы жаңылыктарды биздин баракчалардан көрүңүз"}
+                            {language === "o'zbekcha" && "So'nggi yangiliklarni bizning sahifalarimizda kuzatib boring"}
+                        </h1>
+                        <p className={styles.link__block_text}>
+                            {language === 'russian' && "(для перехода нажмите на иконку)"}
+                            {language === 'kyrgyz' && "(баруу үчүн сөлөкөтүн чыкылдатыңыз)"}
+                            {language === "o'zbekcha" && "  (o'tish uchun belgini bosing) "}
+
+                        </p>
                     </div>
 
                     <a href={InstagramLink} target="_blank" rel="noreferrer" >

@@ -23,29 +23,14 @@ import SliderAdaptability from '../components/ConteinerAdaptability';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFounders } from "../api/user";
 import useWindowDimensions from './with';
+import { useState } from 'react';
+import { sliderADImageProductKG, sliderADImageProductOZ, sliderADImageProductRU, sliderImageProductKG, sliderImageProductOZ, sliderImageProductRus } from './InfoProducts.js'
+import AdaptivMainProduct from '../components/ConteinerAdaptability/ProductMain';
 
 
 export default function Home() {
 
-    let sliderImageProduct = [
-        {
-            id: 1,
-            icon: blokMain1,
-        },
-        {
-            id: 2,
-            icon: blokMain2,
-        },
-        {
-            id: 3,
-            icon: blockMain3,
-        },
-        {
-            id: 4,
-            icon: blockMain4,
-        },
 
-    ]
 
 
     const { height, width } = useWindowDimensions();
@@ -58,8 +43,36 @@ export default function Home() {
     let sliceEvent = allEvents.slice(0, 2)
 
     let WatsapLink = LinkSocialNetwork[3]?.link
+    const [changeLangues, setChangeLangues] = useState()
+    const [adaptivChangeLangues, setAdaptivChangeLangues] = useState()
 
-    const screenWidth = window.screen.width
+    useEffect(() => {
+        console.log(changeLangues)
+        if (language === 'russian') {
+            setChangeLangues(sliderImageProductRus)
+        }
+        else if (language === "o'zbekcha") {
+            setChangeLangues(sliderImageProductOZ)
+        }
+        else if (language === 'kyrgyz') {
+            setChangeLangues(sliderImageProductKG)
+        }
+
+        if (language === 'russian') {
+            setAdaptivChangeLangues(sliderADImageProductRU)
+        }
+        else if (language === "o'zbekcha") {
+            setAdaptivChangeLangues(sliderADImageProductOZ)
+        }
+        else if (language === 'kyrgyz') {
+            setAdaptivChangeLangues(sliderADImageProductKG)
+        }
+
+        // sliderADImageProductRU
+
+    }, [language, changeLangues])
+
+    console.log("changeLangues: ", changeLangues)
 
     const mainb = `${language === 'russian' ? 'Главное действие' : ''}
                             ${language === 'kyrgyz' ? 'Негизги аракет' : ""}
@@ -72,12 +85,8 @@ export default function Home() {
                             ${language === 'kyrgyz' ? 'Бардык жаңылыктар' : ""}
                             ${language === "o'zbekcha" ? "Barcha yangiliklar" : ''}`
 
-    // const dispatch = useDispatch()
-    // const {founders} = useSelector(state => state.users)
-    //
-    // useEffect(()=>{
-    //     dispatch(getFounders())
-    // },[])
+
+
 
     return (
         <div >
@@ -94,7 +103,7 @@ export default function Home() {
                         {language === "o'zbekcha" && "Biz kimmiz?"}
                     </h1>
                     <br />
-                    {language == 'russian' && (
+                    {language === 'russian' && (
                         <p className={aboutStyles.text}>
 
                             Общество с Ограниченной Ответственностью  «Академия Бизнеса Ферганской Долины» создано для развития, поддержки и продвижения предпринимательства в Ферганской Долине.<br /><br />
@@ -112,7 +121,7 @@ export default function Home() {
 
                         </p>
                     )}
-                    {language == "o'zbekcha" && (
+                    {language === "o'zbekcha" && (
                         <p className={aboutStyles.text}>
                             Farg‘ona vodiysida tadbirkorlikni rivojlantirish, qo‘llab-quvvatlash va rag‘batlantirish maqsadida “Farg‘ona vodiysi biznes akademiyasi” mas’uliyati cheklangan jamiyati tashkil etildi.
                             <br /><br />
@@ -196,14 +205,20 @@ export default function Home() {
 
                     {
                         width <= 688 ? <SliderAdaptability
-                            data={sliderImageProduct} /> :
+                            text={'MainProduct'}
+                            data={adaptivChangeLangues} /> :
+
+
                             <div className={styles.services__conteiner}>
-                                <img src={blokMain1} alt='not find' className={styles.services_img} />
-                                <img src={blokMain2} alt='not find' className={styles.services_img} />
-                                <img src={blockMain3} alt='not find' className={styles.services_img} />
-                                <img src={blockMain4} alt='not find' className={styles.services_img} />
+                                {
+                                    changeLangues?.map((item =>
+                                        <img key={item.id} src={item.icon} alt='/' className={styles.services_img} />
+                                    ))
+                                }
 
                             </div>
+
+
                     }
 
                 </div>
@@ -214,7 +229,7 @@ export default function Home() {
                             style={{ textDecoration: 'none' }}
                             rel='noreferrer'>
                             <Button text={moreb}
-                                width={'70%'}
+                                width={width < 421 ? '81%' : '343px'}
                             />
                         </a>
                         :

@@ -7,6 +7,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 
@@ -201,8 +202,17 @@
 }
 
 
+.navbar_item_to:hover {
+    color: #1959AB;
+    cursor: pointer;
+}
 
 
+
+.conteiner__blok_last:hover {
+    color: #1959AB;
+    cursor: pointer;
+}
 
 
 
@@ -299,20 +309,20 @@
     }
 
 
-
     .languagesBar {
-        position: absolute;
 
-        top: 570%;
-
-        left: -2355%;
-
+        // // top: 570%;
+        position: relative;
+        top: 300px;
+        left: -300px;
+        // // left: -2355%;
+        background: red;
         z-index: 5;
         padding: 16px;
         background: $bacrountConteiner;
         border-radius: 5px;
         padding: 16px;
-        // background: red;
+        // // background: red;
     }
 
     .navbar__conteinerss {

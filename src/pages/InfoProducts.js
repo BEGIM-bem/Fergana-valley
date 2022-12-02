@@ -18,6 +18,189 @@ import {
     ex2, ex3,
     ex4, ex5,
 } from '../imagesProduct/index.js'
+import {
+    mainAboutImg,
+    blokMain1,
+    blokMain2,
+    blockMain3,
+    blockMain4,
+    adaptivProductImg,
+    aboutImagess,
+    imgAbout2
+} from '../images/index.js'
+
+import Main1 from '../imagesProduct/Бизнес  Управление карточка OZ.svg'
+import Main2 from '../imagesProduct/Мероприятие карточкаOZ.svg'
+import Main3 from '../imagesProduct/Финансирование карточка OZ.svg'
+import Main4 from '../imagesProduct/Экпорт карточка OZ.svg'
+
+import kg1 from '../imagesProduct/Бизнес  Управление карточкаKG.svg'
+import kg2 from '../imagesProduct/Мероприятие карточкаKG.svg'
+import kg3 from '../imagesProduct/Финансирование карточкаKG.svg'
+import kg4 from '../imagesProduct/Экпорт карточкаKG.svg'
+
+import ad1 from '../imagesProduct/Бизнес  Управление карточкаAdRus1.svg'
+import ad2 from '../imagesProduct/Финансирование карточкаAdRus2.svg'
+import ad3 from '../imagesProduct/Экпорт карточкаAdRus3.svg'
+import ad4 from '../imagesProduct/Мероприятие карточкаAdRus4.svg'
+import iconProduct1 from '../imagesProduct/ruIcon1.svg'
+import iconProduct2 from '../imagesProduct/runIcon2.svg'
+import textProduct1 from '../imagesProduct/ruText2.svg'
+import textProduct2 from '../imagesProduct/runText2.svg'
+
+import textExport from '../imagesProduct/exsportText.svg'
+import iconExport from '../imagesProduct/Iconexport.svg'
+
+import textEvent from '../imagesProduct/eventYext.svg'
+import iconEvent from '../imagesProduct/eventIcon.svg'
+
+
+import text1 from '../imagesProduct/exKg1.svg'
+import text2 from '../imagesProduct/exKG2.svg'
+import text3 from '../imagesProduct/exKG3.svg'
+import text4 from '../imagesProduct/exKG4.svg'
+
+
+import textOZ1 from '../imagesProduct/eventOZ1.svg'
+import textOZ2 from '../imagesProduct/eventOZ2.svg'
+import textOZ3 from '../imagesProduct/eventOZ3.svg'
+import textOZ4 from '../imagesProduct/eventOZ4.svg'
+
+// Главная страница Продукты и Услиги 
+export let sliderImageProductRus = [
+    {
+        id: 1,
+        icon: blokMain1,
+    },
+    {
+        id: 2,
+        icon: blokMain2,
+    },
+    {
+        id: 3,
+        icon: blockMain3,
+    },
+    {
+        id: 4,
+        icon: blockMain4,
+    },
+
+]
+
+export let sliderImageProductOZ = [
+    {
+        id: 1,
+        icon: Main1,
+    },
+    {
+        id: 2,
+        icon: Main2,
+    },
+    {
+        id: 3,
+        icon: Main3,
+    },
+    {
+        id: 4,
+        icon: Main4,
+    },
+
+]
+
+export let sliderImageProductKG = [
+    {
+        id: 1,
+        icon: kg1,
+    },
+    {
+        id: 2,
+        icon: kg2,
+    },
+    {
+        id: 3,
+        icon: kg3,
+    },
+    {
+        id: 4,
+        icon: kg4,
+    },
+
+]
+
+// Главная Страница Продукты и Услуги Мобилька
+
+export let sliderADImageProductRU = [
+    {
+        id: 1,
+        icon: iconProduct1,
+        text: textProduct1
+    },
+    {
+        id: 2,
+        icon: iconProduct2,
+        text: textProduct2
+    },
+    {
+        id: 3,
+        icon: iconExport,
+        text: textExport
+    },
+    {
+        id: 4,
+        icon: iconEvent,
+        text: textEvent
+    },
+
+]
+
+export let sliderADImageProductKG = [
+    {
+        id: 1,
+        icon: iconProduct1,
+        text: text1
+    },
+    {
+        id: 2,
+        icon: iconProduct2,
+        text: text2
+    },
+    {
+        id: 3,
+        icon: iconExport,
+        text: text3
+    },
+    {
+        id: 4,
+        icon: iconEvent,
+        text: text4
+    },
+
+]
+
+export let sliderADImageProductOZ = [
+    {
+        id: 1,
+        icon: iconProduct1,
+        text: textOZ1
+    },
+    {
+        id: 2,
+        icon: iconProduct2,
+        text: textOZ1
+    },
+    {
+        id: 3,
+        icon: iconExport,
+        text: textOZ1
+    },
+    {
+        id: 4,
+        icon: iconEvent,
+        text: textOZ1
+    },
+
+]
+
 
 //Бизнес Управление
 export let RusBusness = [
