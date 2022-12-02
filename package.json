@@ -29,6 +29,7 @@
     "react-yandex-maps": "^4.6.0",
     "sass": "^1.55.0",
     "styled-components": "^5.3.6",
+    "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },

@@ -12,6 +12,7 @@ import * as Yup from "yup";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { createUser } from "../../api/user";
+import swal from 'sweetalert';
 
 const style = {
     position: 'absolute',
@@ -26,6 +27,8 @@ const style = {
     boxShadow: 24,
     p: 4,
     padding: '32.5px',
+    overflow: 'scroll',
+    height: '100%',
 
 };
 
@@ -38,7 +41,7 @@ const title = {
     marginBottom: '16px',
 };
 
-export default function AccessModal({ open, handleClose }) {
+export default function AccessModal({ open, handleClose, openAuthModal }) {
 
 
     // useEffect(() => {
@@ -49,6 +52,15 @@ export default function AccessModal({ open, handleClose }) {
 
 
     const dispatch = useDispatch()
+
+    const backAuthModal = () => {
+        handleClose()
+        openAuthModal()
+    }
+
+    const alert = () => {
+        swal("Повторите попытку", "Пользователь с таким почтовым адресом уже существует!", "error");
+    }
 
     const AccessSchema = Yup.object().shape({
         email: Yup.string()
@@ -81,7 +93,7 @@ export default function AccessModal({ open, handleClose }) {
         },
         validationSchema: AccessSchema,
         onSubmit: (datas) => {
-            const data = { datas: datas, closeRegistrationModal: handleClose }
+            const data = { datas: datas, closeRegistrationModal: handleClose, alert: alert }
             dispatch(createUser(data))
         }
     })
@@ -141,7 +153,9 @@ export default function AccessModal({ open, handleClose }) {
                                     <input name='instagram' onChange={formik.handleChange} style={{ paddingLeft: '70px' }} placeholder='введите ваш ник' className={(formik.errors.instagram) ? modalStyles.error_input : modalStyles.input} type="text" />
                                 </div>
                             </div>
-                            <Button type='submit' top='32px' bottom='0' text='Начать обучение' />
+                            <Button type='submit' width='220px' top='32px' bottom='0' text='Начать обучение' />
+                            <Button onClick={backAuthModal} width='220px' type='button' top='13px' bottom='0' text='Авторизоваться' />
+
                         </form>
                     </Box>
                 </Fade>

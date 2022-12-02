@@ -17,7 +17,7 @@ import { authUser } from "../api/user";
 import * as Yup from "yup";
 import { getCookie } from "../utils/Cookies";
 import { getUser } from "../redux/usersSlice";
-import Registration from "../components/Modal/Regist";
+import Registration from "../components/Modal/Regist2";
 
 export default function Course() {
 
@@ -140,11 +140,11 @@ export default function Course() {
                     </div>
                 </div>
                 <Footer />
-                {modal && <Registration close={closeModal} openAuthModal={handleOpenAuth}/>}
+                {/*{modal && <Registration close={closeModal}/>}*/}
             </div>
 
-            {/*<AccessModal open={open} handleClose={handleClose} />*/}
-            <AuthModal openAuth={openAuth} handleOpen={openModal} handleCloseAuth={handleCloseAuth} />
+            <AccessModal open={open} handleClose={handleClose} />
+            <AuthModal openAuth={openAuth} handleOpen={handleOpen} openAuthModal={handleOpenAuth} handleCloseAuth={handleCloseAuth} />
         </>
     )
 }

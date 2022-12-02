@@ -144,7 +144,9 @@
     @extend %card_text;
     color: white;
 }
-
+.partner_logo {
+    height: 100%;
+}
 // third section
 .img2 {
     width: 636px;
@@ -154,7 +156,8 @@
 .icons_cont {
     overflow-x: auto;
     // background: rebeccapurple;
-    padding: 130px 0 66px
+    padding: 130px 0 66px;
+    align-items: center;
 }
 
 
@@ -269,6 +272,7 @@
 
     .partner_logo {
         width: 25%;
+        height: 100%;
     }
 }
 

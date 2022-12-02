@@ -35,6 +35,7 @@ export const createUser = createAsyncThunk(
             data.openAuthModal()
             dispatch(authUser(data.datas.email))
         } catch (e) {
+            data.alert()
             return rejectWithValue(e.response.data.message);
         }
     }
@@ -52,7 +53,8 @@ export const authUser = createAsyncThunk(
             data.closeAuth()
             console.log("auth: ", response)
         } catch (e) {
-            data.closeAuth()
+            // alert('Incorrect password')
+            data.alert()
             data.openRegist()
             return rejectWithValue(e.response.data.message);
         }
@@ -64,6 +66,19 @@ export const getFounders = createAsyncThunk(
     async (data, { rejectWithValue }) => {
         try {
             const response = await API.get('founders/');
+            return response.data
+        } catch (e) {
+            return rejectWithValue(e.response.data.message);
+        }
+    }
+)
+
+
+export const getPartners = createAsyncThunk(
+    'users/getPartners',
+    async (_, { rejectWithValue }) => {
+        try {
+            const response = await API.get('partners/');
             return response.data
         } catch (e) {
             return rejectWithValue(e.response.data.message);

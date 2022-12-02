@@ -12,6 +12,7 @@ import * as Yup from "yup";
 import { useEffect } from "react";
 import {useDispatch} from "react-redux";
 import {authUser} from "../../api/user";
+import swal from 'sweetalert';
 
 const style = {
     position: 'absolute',
@@ -42,6 +43,10 @@ export default function AuthModal({ openAuth, handleCloseAuth, handleOpen }) {
 
     const dispatch = useDispatch()
 
+    const alert = () => {
+        swal("Повторите попытку", "Пользователь с таким почтовым адресом не существует!", "error");
+    }
+
     const AccessSchema = Yup.object().shape({
         email: Yup.string()
             .email("Введите правильный формат почты")
@@ -55,7 +60,7 @@ export default function AuthModal({ openAuth, handleCloseAuth, handleOpen }) {
         },
         validationSchema: AccessSchema,
         onSubmit: (datas) => {
-            const data = {datas: datas, closeAuth: handleCloseAuth, openRegist: handleOpen}
+            const data = {datas: datas, closeAuth: handleCloseAuth, alert: alert}
             console.log(datas)
             dispatch(authUser(data))
         }
@@ -85,7 +90,8 @@ export default function AuthModal({ openAuth, handleCloseAuth, handleOpen }) {
                                 <label className={modalStyles.label}>Email<span style={{ color: '#EB5757' }}>*</span></label>
                                 <input name='email' onChange={formik.handleChange} placeholder='Ваша почта' className={(formik.errors.email) ? modalStyles.error_input : modalStyles.input} type="text" />
                             </div>
-                            <Button type='submit' top='32px' bottom='0' text='Начать обучение'/>
+                            <Button type='submit' width='220px' top='32px' bottom='0' text='Начать обучение'/>
+                            <Button onClick={handleOpen} type='button' width='220px' top='13px' bottom='0' text='Зарегистрироваться'/>
                         </form>
                     </Box>
                 </Fade>
