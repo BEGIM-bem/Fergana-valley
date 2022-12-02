@@ -1,4 +1,5 @@
-
+import About2_img from './About2_img.svg';
+import About3_img from './About3_img.svg';
 import ArrowsWhitsLeft from './стрелки (1).svg';
 import ArrowsWhitsRight from './стрелки.svg'
 import MainImages from './фото1 (2).svg'
@@ -119,6 +120,8 @@ export {
     iconPr3,
     iconPr4,
 
+    About2_img,
+    About3_img,
 
     close,
     open,

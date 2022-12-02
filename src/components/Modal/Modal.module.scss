@@ -66,29 +66,29 @@
   line-height: 19px;
 }
 
-.input {
-  width: 320px;
+
+%input {
+  width: 430px;
   padding: 10px;
   background: #FFFFFF;
-  border: 1px solid #BDBDBD;
   border-radius: 5px;
   outline: none;
+}
+.input {
+  @extend %input;
+  border: 1px solid #BDBDBD;
   @extend %text;
 }
 
 .error_input {
-  width: 320px;
-  padding: 10px;
-  background: #FFFFFF;
-  border: 1px solid #EB5757;
-  border-radius: 5px;
-  outline: none;
+  border: 1.5px solid #EB5757;
   @extend %text;
+  @extend %input;
 }
 
 .error_input::placeholder {
   @extend %text;
-  color: #EB5757;
+  color: #BDBDBD;
 }
 
 .input::placeholder {
@@ -140,6 +140,8 @@
   @extend %text;
   color: #EB5757;
   font-size: 12px;
+  padding: 2px 0 0  5px;
+  //text-align: start;
 }
 
 input::-webkit-outer-spin-button,

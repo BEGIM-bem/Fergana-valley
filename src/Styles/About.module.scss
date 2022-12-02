@@ -45,8 +45,8 @@
 .text_container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 4rem 0 4rem;
+    //justify-content: center;
+    padding: 1rem 0 4rem;
     width: 55%;
 }
 
@@ -218,6 +218,7 @@
     .desc_cont {
         flex-direction: column-reverse;
         align-items: end;
+        margin-top: 0 !important;
     }
 
     // Cards

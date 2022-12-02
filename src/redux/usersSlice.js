@@ -8,6 +8,7 @@ import {getFounders, getPartners} from "../api/user";
 const initialState = {
     loading: false,
     users: [],
+    userId: null,
     founders: [],
     partners: [],
 }
@@ -28,6 +29,9 @@ const usersSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
+        setUserId: (state, action) => {
+            state.userId = action.payload
+        }
     },
     extraReducers: {
         [getUsers.pending]: (state) => {
@@ -63,6 +67,6 @@ const usersSlice = createSlice({
     },
 })
 
-export const { getUserId } = usersSlice.actions;
+export const { setUserId } = usersSlice.actions;
 export const userSlice = usersSlice.reducer;
 
