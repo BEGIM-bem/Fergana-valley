@@ -71,7 +71,10 @@ body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
     display: none !important;
     background: red !important;
 }
-
+.MuiModal-root .MuiBox-root css-91gk30{
+    overflow: scroll !important;
+    height: 100% !important;
+}
 
 .flex_between {
     display: flex;

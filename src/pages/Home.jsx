@@ -26,6 +26,7 @@ import useWindowDimensions from './with';
 import { useState } from 'react';
 import { sliderADImageProductKG, sliderADImageProductOZ, sliderADImageProductRU, sliderImageProductKG, sliderImageProductOZ, sliderImageProductRus } from './InfoProducts.js'
 import AdaptivMainProduct from '../components/ConteinerAdaptability/ProductMain';
+import {getCookie} from "../utils/Cookies";
 
 
 export default function Home() {

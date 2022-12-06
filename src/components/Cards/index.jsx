@@ -35,7 +35,7 @@ const Cards = () => {
             <div className={aboutStyles.blue_card}>
                 <p className={aboutStyles.card_num_blue}>100+</p>
                 <p className={aboutStyles.card_white_text}>
-                    {language === 'russian' && 'специалистов в предпринимательстве в ФДv'}
+                    {language === 'russian' && 'специалистов в предпринимательстве в ФД'}
                     {language === 'kyrgyz' && 'ФДда ишкердик боюнча адистер'}
                     {language === "o'zbekcha" && "FDda tadbirkorlik bo'yicha mutaxassislar"}
                 </p>

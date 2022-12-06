@@ -4,6 +4,7 @@ import { iconFacbook, iconInstagram, iconTelegram, iconWatsap } from "../../imag
 import { useDispatch, useSelector } from "react-redux";
 import { getCookie } from "../../utils/Cookies";
 import { getAddress } from "../../api/course";
+import {NavLink} from "react-router-dom";
 // import aboutStyles from './../../Styles/About.module.scss'
 
 const Footer = () => {
@@ -30,31 +31,42 @@ const Footer = () => {
                         {language === 'kyrgyz' && 'Навигация'}
                         {language === "o'zbekcha" && "Navigatsiya"}
                     </p>
-                    <p>
-                        {language === 'russian' && 'О нас'}
-                        {language === 'kyrgyz' && 'Биз жөнүндө'}
-                        {language === "o'zbekcha" && 'Biz haqimizda'}
-                    </p>
-                    <p>
-                        {language === 'russian' && 'Продукты и Услуги'}
-                        {language === 'kyrgyz' && 'Продукциялар жана кызматтар'}
-                        {language === "o'zbekcha" && 'Mahsulotlar va xizmatlar'}
-                    </p>
-                    <p>
-                        {language === 'russian' && ' Курс “Бизнес с 0” '}
-                        {language === 'kyrgyz' && '"Бизнес 0дөн" курсу'}
-                        {language === "o'zbekcha" && '“Biznes 0 dan” kursi'}
-                    </p>
-                    <p>
-                        {language === 'russian' && 'Новости'}
-                        {language === 'kyrgyz' && 'Жаңылыктар'}
-                        {language === "o'zbekcha" && 'Yangiliklar'}
-                    </p>
-                    <p>
-                        {language === 'russian' && 'Контакты'}
-                        {language === 'kyrgyz' && 'Байланыштар'}
-                        {language === "o'zbekcha" && 'Kontaktlar'}
-                    </p>
+                    <NavLink to={'/about'}>
+                        <p className={footerStyles.nav_text}>
+                            {language === 'russian' && 'О нас'}
+                            {language === 'kyrgyz' && 'Биз жөнүндө'}
+                            {language === "o'zbekcha" && 'Biz haqimizda'}
+                        </p>
+                    </NavLink>
+                    <NavLink to={'/products_services'}>
+                        <p className={footerStyles.nav_text}>
+                            {language === 'russian' && 'Продукты и Услуги'}
+                            {language === 'kyrgyz' && 'Продукциялар жана кызматтар'}
+                            {language === "o'zbekcha" && 'Mahsulotlar va xizmatlar'}
+                        </p>
+                    </NavLink>
+                    <NavLink to={'/course'}>
+                        <p className={footerStyles.nav_text}>
+                            {language === 'russian' && ' Курс “Бизнес с 0” '}
+                            {language === 'kyrgyz' && '"Бизнес 0дөн" курсу'}
+                            {language === "o'zbekcha" && '“Biznes 0 dan” kursi'}
+                        </p>
+                    </NavLink>
+                    <NavLink to={'/events'}>
+                        <p className={footerStyles.nav_text}>
+                            {language === 'russian' && 'Новости'}
+                            {language === 'kyrgyz' && 'Жаңылыктар'}
+                            {language === "o'zbekcha" && 'Yangiliklar'}
+                        </p>
+                    </NavLink>
+                    <NavLink to={'/contacts'}>
+                        <p className={footerStyles.nav_text}>
+                            {language === 'russian' && 'Контакты'}
+                            {language === 'kyrgyz' && 'Байланыштар'}
+                            {language === "o'zbekcha" && 'Kontaktlar'}
+                        </p>
+                    </NavLink>
+
                 </div>
                 <div className={`${footerStyles.text_block} white_text`}>
                     <p style={{ fontWeight: 700 }}>

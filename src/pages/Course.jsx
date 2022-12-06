@@ -16,8 +16,9 @@ import { useFormik } from "formik";
 import { authUser } from "../api/user";
 import * as Yup from "yup";
 import { getCookie } from "../utils/Cookies";
+import swal from 'sweetalert';
 import { getUser } from "../redux/usersSlice";
-import Registration from "../components/Modal/Regist";
+import Registration from "../components/Modal/Regist2";
 
 export default function Course() {
 
@@ -40,6 +41,10 @@ export default function Course() {
     const { course, comments } = useSelector(state => state.course)
     const { language } = useSelector(state => state.localization)
     const users = useSelector(state => state.users.users)
+
+    const translate = (ru, kg, uz) => {
+        return `${language === 'russian' ? ru : ''}${language === 'kyrgyz' ? kg : ''}${language === "o'zbekcha" ? uz : ''}`
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -68,7 +73,12 @@ export default function Course() {
 
 
     const id = getCookie('userId')
-    console.log("iddd:", course1)
+    const {userId} = useSelector(state => state.users)
+    console.log("iddd:", userId)
+
+    const alert = () => {
+        swal(translate('Ваш комментарий опубликовали!', "Сиздин комментарийиниз жарыяланды!","Fikringiz chop etildi!"))
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -77,7 +87,8 @@ export default function Course() {
             course: 1
         },
         validationSchema: AccessSchema,
-        onSubmit: (data, { resetForm }) => {
+        onSubmit: (datas, { resetForm }) => {
+            const data = {data: datas, alert: alert}
             console.log(data)
             dispatch(sendComment(data))
             resetForm({ data: '' })
@@ -114,7 +125,10 @@ export default function Course() {
                                 {language === "o'zbekcha" && course1?.description_uz}
                             </p>
                         </div>
-                        <CurrentsLesson lesson={current_lesson} />
+                        {
+                            course1?.lessons.length !== 0 ? <CurrentsLesson lesson={current_lesson} /> : <h2 style={{marginTop: '80px', textAlign: 'center'}}>{translate('Пока нет опубликованных уроков', 'Азырынча жарыяланган сабактар жок', "Hali chop etilgan darslar yo'q")}</h2>
+                        }
+
                         {screenWidth <= 600 ? (
                             <Pagination lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
                         ) : (
@@ -140,11 +154,11 @@ export default function Course() {
                     </div>
                 </div>
                 <Footer />
-                {modal && <Registration close={closeModal} openAuthModal={handleOpenAuth}/>}
+                {/*{modal && <Registration close={closeModal}/>}*/}
             </div>
 
-            {/*<AccessModal open={open} handleClose={handleClose} />*/}
-            <AuthModal openAuth={openAuth} handleOpen={openModal} handleCloseAuth={handleCloseAuth} />
+            <AccessModal open={open} handleClose={handleClose} />
+            <AuthModal openAuth={openAuth} handleOpen={handleOpen} openAuthModal={handleOpenAuth} handleCloseAuth={handleCloseAuth} />
         </>
     )
 }

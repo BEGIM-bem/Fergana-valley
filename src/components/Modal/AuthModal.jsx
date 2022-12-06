@@ -10,8 +10,9 @@ import { iconInstagram } from "../../images";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useEffect } from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {authUser} from "../../api/user";
+import swal from 'sweetalert';
 
 const style = {
     position: 'absolute',
@@ -42,6 +43,24 @@ export default function AuthModal({ openAuth, handleCloseAuth, handleOpen }) {
 
     const dispatch = useDispatch()
 
+    const { language } = useSelector(state => state.localization)
+
+    const translate = (ru, kg, uz) => {
+        return `${language === 'russian' ? ru : ''}${language === 'kyrgyz' ? kg : ''}${language === "o'zbekcha" ? uz : ''}`
+    }
+    const firstAlertText = translate("Повторите попытку", "Кайра аракет кылып корунуз", "Qayta urinib ko'ring")
+    const secondAlertText = translate("Пользователь с таким почтовым адресом не существует!", "Бул электрондук почта дареги бар колдонуучу жок!", "Ushbu elektron pochta manziliga ega foydalanuvchi mavjud emas!")
+    const AlertTextSuccess = translate("Вы успешно авторизовались!", "Сиз ийгиликтүү кирдиңиз!", "Siz muvaffaqiyatli tizimga kirdingiz!")
+
+    const alert = () => {
+        swal(`${firstAlertText}`, `${secondAlertText}`, "error");
+    }
+
+    const alertSuccess = () => {
+        swal(`${AlertTextSuccess}`);
+    }
+
+
     const AccessSchema = Yup.object().shape({
         email: Yup.string()
             .email("Введите правильный формат почты")
@@ -55,7 +74,7 @@ export default function AuthModal({ openAuth, handleCloseAuth, handleOpen }) {
         },
         validationSchema: AccessSchema,
         onSubmit: (datas) => {
-            const data = {datas: datas, closeAuth: handleCloseAuth, openRegist: handleOpen}
+            const data = {datas: datas, closeAuth: handleCloseAuth, alert: alert, alertSuccess: alertSuccess}
             console.log(datas)
             dispatch(authUser(data))
         }
@@ -78,14 +97,15 @@ export default function AuthModal({ openAuth, handleCloseAuth, handleOpen }) {
                 <Fade in={openAuth}>
                     <Box sx={style}>
                         <Typography sx={title} id="transition-modal-title" variant="h6" component="h2">
-                            Авторизация
+                            {translate("Авторизация","Кирүү", "Avtorizatsiya")}
                         </Typography>
                         <form onSubmit={formik.handleSubmit} className={modalStyles.auth_form}>
                             <div className={modalStyles.input_cont}>
-                                <label className={modalStyles.label}>Email<span style={{ color: '#EB5757' }}>*</span></label>
-                                <input name='email' onChange={formik.handleChange} placeholder='Ваша почта' className={(formik.errors.email) ? modalStyles.error_input : modalStyles.input} type="text" />
+                                <label className={modalStyles.label}>{translate("Почта","Почта","Pochta")}<span style={{ color: '#EB5757' }}>*</span></label>
+                                <input name='email' onChange={formik.handleChange} placeholder={translate('Ваша почта', "Сиздин почтаныз", "Sizning pochtangiz")} className={(formik.errors.email) ? modalStyles.error_input : modalStyles.input} type="text" />
                             </div>
-                            <Button type='submit' top='32px' bottom='0' text='Начать обучение'/>
+                            <Button type='submit' width='220px' top='32px' bottom='0' text={translate('Начать обучение', "Окууну баштоо", "Treningni boshlash")}/>
+                            <Button onClick={handleOpen} type='button' width='220px' top='13px' bottom='0' text={translate('Зарегистрироваться', "Катталуу", "Ro'yxatdan o'tish")}/>
                         </form>
                     </Box>
                 </Fade>

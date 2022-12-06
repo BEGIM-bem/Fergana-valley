@@ -8,6 +8,7 @@
   flex-direction: column;
   gap: 1rem;
   text-align: start;
+  color: white;
 }
 
 .text_block {
@@ -16,6 +17,14 @@
 
 .icon_block {
   @extend %block;
+}
+
+.nav_text {
+  cursor: pointer;
+  color: white;
+  &:hover{
+    color: lightgrey;
+  }
 }
 
 .footer_cont {

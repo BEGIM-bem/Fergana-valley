@@ -15,6 +15,10 @@ const Founders = () => {
         dispatch(getFounders())
     },[])
 
+    const translate = (ru, kg, uz) => {
+        return `${language === 'russian' ? ru : ''}${language === 'kyrgyz' ? kg : ''}${language === "o'zbekcha" ? uz : ''}`
+    }
+
     return (
         <div className={foundersStyles.founders}>
             <div className='container1'>
@@ -24,7 +28,7 @@ const Founders = () => {
                     {language === "o'zbekcha" && "Ta'sischilar"}
                 </h2>
                 <div className={`${foundersStyles.cards_container} {/*flex_between*/}`}>
-                    {founders. map(founder => <FoundersCard img={founder.image} name={founder.fullname}/>)}
+                    {founders. map(founder => <FoundersCard img={founder.image} name={translate(founder.fullname_ru, founder.fullname_ru, founder.fullname_uz)}/>)}
 
                     {/*<FoundersCard img={imgF2} name='Самидинова Файруза' position='Должность'/>*/}
                     {/*<FoundersCard img={imgF3} name='Самидинова Файруза' position='Должность'/>*/}

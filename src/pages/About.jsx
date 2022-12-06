@@ -1,6 +1,15 @@
 import React from 'react'
 import Navbar from "../components/Navbar";
-import {aboutImagess, imgAbout, imgAbout2, imgAbout2banner, imgAbout3, imgAbout4} from "../images";
+import {
+    About2_img,
+    About3_img,
+    aboutImagess,
+    imgAbout,
+    imgAbout2,
+    imgAbout2banner,
+    imgAbout3,
+    imgAbout4
+} from "../images";
 import mainStyles from "./../components/Slider/slider.module.css"
 import aboutStyles from "./../Styles/About.module.scss"
 import Cards from "../components/Cards";
@@ -43,7 +52,7 @@ export default function About() {
 
             <div className="container">
                 <div className={aboutStyles.desc_cont}>
-                    <div style={{ marginRight: "10px" }} className={aboutStyles.text_container}>
+                    <div style={{ marginRight: "10px", paddingTop: '4rem' }} className={aboutStyles.text_container}>
                         <h2 className={aboutStyles.title}>
                             {lang === 'russian' && 'Кто мы?'}
                             {lang === 'kyrgyz' && 'Биз кимбиз?'}
@@ -130,9 +139,9 @@ export default function About() {
             <div className="container">
                 <div className="flex_between">
                     <div className={styles.contents__imgBlock}>
-                        <img src={aboutImagess} alt='/' style={{boxShadow: '-15px 16px 2px -5px #1959ab', marginTop: '30px'}} className={styles.contents__img} />
+                        <img src={About2_img} alt='/' style={{boxShadow: '-15px 16px 2px -5px #1959ab', marginTop: '30px'}} className={styles.contents__img} />
                     </div>
-                    <div style={{ marginLeft: "10px" }} className={aboutStyles.text_container}>
+                    <div style={{ marginLeft: "16px" }} className={aboutStyles.text_container}>
                         {lang == 'russian' && (
                             <p className={aboutStyles.text}>
                                 Предоставьте своему бизнесу конкурентное преимущество, убедившись, что у вас есть знания бизнес управления, финансирования, экспорта и нетворкинга!
@@ -170,11 +179,8 @@ export default function About() {
                 </div>
             </div>
             <div className="container">
-                <div style={{ marginTop: "20px" }} className={aboutStyles.desc_cont}>
-                    <div style={{ marginRight: "10px" }} className={aboutStyles.text_container}>
-                        <h2 className={aboutStyles.title}>
-                        </h2>
-
+                <div style={{ marginTop: "64px" }} className={aboutStyles.desc_cont}>
+                    <div style={{ marginRight: "28px" }} className={aboutStyles.text_container}>
                         {lang == 'russian' && (
                             <p className={aboutStyles.text}>
                                 <span style={{fontWeight: "bold"}}>Ожидаемые результаты –</span>
@@ -263,7 +269,7 @@ export default function About() {
                         <br />
                     </div>
                     <div className={styles.contents__imgBlock}>
-                        <img src={aboutImagess} alt='/' className={styles.contents__img} />
+                        <img style={{top: 0}} src={About3_img} alt='/' className={styles.contents__img} />
                     </div>
                 </div>
             </div>
