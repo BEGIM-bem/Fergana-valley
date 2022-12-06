@@ -15,6 +15,7 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
     const { language } = useSelector(state => state.localization)
     const { status, error, LinkSocialNetwork } = useSelector(state => state.contacts)
     // console.log("LinkSocialNetwork: ", LinkSocialNetwork[0])
+    let wats = LinkSocialNetwork[LinkSocialNetwork.length - 1]?.link
     return (
 
         <section className={styles.slideshow}>
@@ -65,7 +66,10 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
                             {slide.titleSmoll && <p className={styles.titleSmoll}>{slide.titleSmoll} </p>}
                             {slide.titleBig && <p className={styles.titleBig}>{slide.titleBig} </p>}
                             {slide.titleBig2 && <p className={styles.tiitleOne}>{slide.titleBig2}</p>}
-                            {slide.textImages && <button className={styles.btn}  >{slide.textImages} </button>}
+                            {slide.textImages && <a href={wats}>
+                                <button className={styles.btn}  >{slide.textImages} </button>
+                            </a>
+                            }
                         </div>
 
                         {

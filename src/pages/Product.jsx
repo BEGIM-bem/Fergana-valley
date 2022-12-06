@@ -53,7 +53,7 @@ export default function Product() {
 
 
     const { status, error, contacts, LinkSocialNetwork } = useSelector(state => state.contacts)
-    let WatsapLink = LinkSocialNetwork[3]?.link
+    let WatsapLink = LinkSocialNetwork[LinkSocialNetwork.length - 1]?.link
 
 
 
@@ -124,12 +124,14 @@ export default function Product() {
                     </div>
 
                     <div className={styles.conteiner__btnBlock}>
-                        <Button
-                            text={beginb}
-                            width={'100%'}
-                            top={'16px'}
-                            bottom={'0px'}
-                        />
+                        <NavLink to='/course'>
+                            <Button
+                                text={beginb}
+                                width={'100%'}
+                                top={'16px'}
+                                bottom={'0px'}
+                            />
+                        </NavLink>
                     </div>
                 </div>
 
@@ -313,7 +315,6 @@ export default function Product() {
                         :
 
                         <NavLink to='/events'
-
                             className={styles.conteiners_services_linkBtn}>
                             <Button text={morenewsb} />
                         </NavLink>

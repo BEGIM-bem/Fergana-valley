@@ -42,7 +42,9 @@ export default function Home() {
 
     let sliceEvent = allEvents.slice(0, 2)
 
-    let WatsapLink = LinkSocialNetwork[3]?.link
+    let WatsapLink = LinkSocialNetwork[LinkSocialNetwork.length - 1]?.link
+
+
     const [changeLangues, setChangeLangues] = useState()
     const [adaptivChangeLangues, setAdaptivChangeLangues] = useState()
 

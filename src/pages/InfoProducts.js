@@ -60,6 +60,7 @@ import text2 from '../imagesProduct/exKG2.svg'
 import text3 from '../imagesProduct/exKG3.svg'
 import text4 from '../imagesProduct/exKG4.svg'
 
+import fin31 from '../imagesProduct/wallet-money.svg'
 
 import textOZ1 from '../imagesProduct/eventOZ1.svg'
 import textOZ2 from '../imagesProduct/eventOZ2.svg'
@@ -326,13 +327,21 @@ export let RusFinans = [
         id: 3,
         icon: fin3,
         title: 'Курсы финансовой грамотности',
+        text: "Хотите научиться планировать свои доходы и расходы? Не знаете как составлять план для достижения финансовой цели? Нужна информация про финансовые продукты? Хотите узнать как распознать мошенников и противостоять им? Хотите научиться копить и увеличивать свои деньги? Но е знаете как?",
+        br: ' Нажмите кнопку внизу для получения подробной информации.'
+
+    },
+    {
+        id: 10,
+        icon: fin4, // Фотку
+        title: 'Финансовый менеджмент',
         text: "Не знаете куда уходят деньги и как сократить расходы? Нужна помощь с управлением денежными средствами в бизнесе? Хотите внедрить бухгалтерский и финансовый учет?",
         br: ' Нажмите кнопку внизу для получения подробной информации.'
 
     },
     {
         id: 4,
-        icon: fin4,
+        icon: fin31,
         title: 'Как найти деньги для бизнеса',
         text: "Начали поиски денежных средств для запуска бизнеса или масштабирования бизнеса? Не знаете куда и как подавать? Не знаете как оформить документы? Нужна помощь с написанием бизнес плана или инвестиционного проекта? Наши финансовые консультанты предоставят вам поддержку в виде консультаций, наставничества и сопровождения.",
         br: ' Нажмите кнопку внизу для получения подробной информации'
@@ -360,13 +369,21 @@ export let KGFinans = [
         id: 3,
         icon: fin3,
         title: 'Финансылык сабаттуулук курстары.',
+        text: "Кирешеңизди жана чыгашаңызды пландаштырууну үйрөнгүңүз келеби? Каржылык максатыңызга жетүү үчүн кантип план түзүүнү билбей жатасызбы? Каржылык продуктулар жөнүндө маалымат керекпи? Сиз алдамчыларды кантип таанып, аларга каршы турууну үйрөнгүңүз келеби? Акчаңызды кантип үнөмдөөнү жана көбөйтүүнү үйрөнгүңүз келеби? Бирок кантип билесизби?",
+        br: "Чоо-жайын билүү үчүн төмөнкү баскычты басыңыз."
+
+    },
+    {
+        id: 10,
+        icon: fin4, // Фотку
+        title: 'Финансылык сабаттуулук курстары.',
         text: "Акча кайда кетип жатканын жана чыгымдарды кантип кыскартууну билбей жатасызбы? Бизнес акчаңызды башкарууга жардам керекпи? Бухгалтердик эсепти жана финансылык эсепти ишке ашырууну каалайсызбы?",
         br: "Чоо-жайын билүү үчүн төмөнкү баскычты басыңыз."
 
     },
     {
         id: 4,
-        icon: fin4,
+        icon: fin31,
         title: 'Бизнеске акчаны кантип тапса болот',
         text: "Сиз бизнес баштоо үчүн же бизнести масштабдоо үчүн каражат издеп баштадыңызбы? Каякка же кантип тапшырууну билбей жатасызбы? Документтерди кантип тапшырууну билбей жатасызбы? Бизнес-план же инвестициялык долбоорду жазууга жардам керекпи? Биздин финансылык кеңешчилерибиз сизге кеңеш, насаатчылык жана колдоо түрүндө колдоо көрсөтөт.",
         br: "Чоо-жайын билүү үчүн төмөнкү баскычты басыңыз."
@@ -399,8 +416,16 @@ export let OZFinans = [
 
     },
     {
+        id: 10,
+        icon: fin4, // Фотку
+        title: 'Moliyaviy menejment',
+        text: "Pul qayerga ketayotganini va xarajatlarni qanday kamaytirishni bilmayapsizmi? Biznes pulingizni boshqarishda yordam kerakmi? Buxgalteriya hisobi va moliyaviy hisobni amalga oshirishni xohlaysizmi?",
+        br: 'Choo-zhayyn biluuchun tömonku baskychty basynyz.'
+
+    },
+    {
         id: 4,
-        icon: fin4,
+        icon: fin31,
         title: 'Biznes uchun pulni qanday topish mumkin',
         text: "Biznes boshlash yoki biznesni kengaytirish uchun mablag' izlashni boshladingizmi? Qaerga yoki qanday murojaat qilishni bilmayapsizmi? Hujjatlarni qanday topshirishni bilmayapsizmi? Biznes-reja yoki investitsiya loyihasini yozishda yordam kerakmi? Bizning moliyaviy maslahatchilarimiz sizga maslahat, maslahat va qo'llab-quvvatlash shaklida yordam beradi.",
         br: "Choo-zhayyn biluuchun tömonku baskychty basynyz."
