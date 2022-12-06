@@ -42,13 +42,14 @@
 .linkBar {
     display: none;
     position: absolute;
-    top: 25px;
+    top: 20px;
     min-width: 220px;
 
     z-index: 5;
     background: #FFFFFF;
     border-radius: 5px;
     padding: 16px;
+    // background: red;
 }
 
 
@@ -283,6 +284,7 @@
 
 
     .Navbar__active {
+        // background: red;
         margin-right: 16px;
         font-size: 12px;
         line-height: 15px;
@@ -296,6 +298,7 @@
     .d {
         width: 100%;
     }
+
     .Navbar {
         position: relative;
         // z-index: 5;
