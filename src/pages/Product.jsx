@@ -53,13 +53,11 @@ export default function Product() {
 
 
     const { status, error, contacts, LinkSocialNetwork } = useSelector(state => state.contacts)
-    let WatsapLink = LinkSocialNetwork[LinkSocialNetwork.length - 1]?.link
+    let WatsapLink = LinkSocialNetwork[1]?.link
 
 
 
 
-
-    const screenWidth = window.screen.width
     const { language } = useSelector(state => state.localization)
 
     const bussinesst = `${language === 'russian' ? 'Бизнес Управление' : ''}

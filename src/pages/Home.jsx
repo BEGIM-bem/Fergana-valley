@@ -26,7 +26,7 @@ import useWindowDimensions from './with';
 import { useState } from 'react';
 import { sliderADImageProductKG, sliderADImageProductOZ, sliderADImageProductRU, sliderImageProductKG, sliderImageProductOZ, sliderImageProductRus } from './InfoProducts.js'
 import AdaptivMainProduct from '../components/ConteinerAdaptability/ProductMain';
-import {getCookie} from "../utils/Cookies";
+import { getCookie } from "../utils/Cookies";
 
 
 export default function Home() {
@@ -43,7 +43,7 @@ export default function Home() {
 
     let sliceEvent = allEvents.slice(0, 2)
 
-    let WatsapLink = LinkSocialNetwork[LinkSocialNetwork.length - 1]?.link
+    let WatsapLink = LinkSocialNetwork[1]?.link
 
 
     const [changeLangues, setChangeLangues] = useState()

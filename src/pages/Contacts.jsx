@@ -96,9 +96,9 @@ export default function Contacts() {
 
 
     let InstagramLink = LinkSocialNetwork[0]?.link
-    let TelegramLink = LinkSocialNetwork[1]?.link
-    let FacbookLink = LinkSocialNetwork[2]?.link
-    let WatsapLink = LinkSocialNetwork[3]?.link
+    let WatsapLink = LinkSocialNetwork[1]?.link
+    let TelegramLink = LinkSocialNetwork[2]?.link
+    let FacbookLink = LinkSocialNetwork[3]?.link
 
 
     return (
