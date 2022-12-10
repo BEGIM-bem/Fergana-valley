@@ -53,7 +53,7 @@ export default function DetailedEvents() {
                         <div className={styles.banner__data}>
                             <img src={eventsCalendar} alt='/' />
                             <h1 className={styles.banner__data_number}>
-                                {idEvents.date?.split("").reverse().join('')}
+                                {idEvents.date}
                             </h1>
                         </div>
                     </div>
@@ -130,7 +130,11 @@ export default function DetailedEvents() {
                 </div>
             }
 
-            <Footer />
+            {
+                status.getEventIdStatus === 'Geted id event' &&
+                <Footer />
+            }
+
 
         </div >
     )
