@@ -123,7 +123,11 @@ export default function DetailedEvents() {
 
 
                     <div className='containerFor'>
-                        <h1 className={styles.Other}> Другие Новости</h1>
+                        <h1 className={styles.Other}>
+                            {lang === 'russian' && "Другие Новости"}
+                            {lang === 'kyrgyz' && "Башка жаңылыктар"}
+                            {lang === "o'zbekcha" && "Boshqa yangiliklar"}
+                        </h1>
                         <NewsConteiner date={allEvents?.slice(0, 2)} />
 
                     </div>

@@ -52,6 +52,9 @@
     // background: red;
 }
 
+.linkBarBlock {
+    display: none;
+}
 
 .dropdown:hover .linkBar {
     display: block;
@@ -223,7 +226,7 @@
 
 .menuIcon {
     display: none;
-
+    background: rebeccapurple;
     // margin-top: -vh;
     margin-right: -30px;
 }

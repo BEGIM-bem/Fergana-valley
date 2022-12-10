@@ -71,7 +71,7 @@ export default function Home() {
             setAdaptivChangeLangues(sliderADImageProductKG)
         }
 
-        // sliderADImageProductRU
+
 
     }, [language, changeLangues])
 
@@ -100,7 +100,7 @@ export default function Home() {
 
                 <div className={styles.about__contents}>
 
-                    <h1 className={styles.about__content_title} >
+                    <h1 className={styles.about__content_title}>
                         {language === 'russian' && 'Кто мы?'}
                         {language === 'kyrgyz' && 'Биз кимбиз?'}
                         {language === "o'zbekcha" && "Biz kimmiz?"}
@@ -143,7 +143,7 @@ export default function Home() {
 
                         </p>
                     )}
-                    {language == 'kyrgyz' && (
+                    {language === 'kyrgyz' && (
                         <p className={aboutStyles.text}>
                             Fergana Valley Business Academy жоопкерчилиги чектелген коому Фергана өрөөнүндө ишкерликти өнүктүрүү, колдоо жана өнүктүрүү максатында түзүлгөн.
                             <br /><br />

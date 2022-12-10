@@ -32,10 +32,8 @@ export default function NewsConteiner({ date }) {
       {
         date.map(item => (
 
-          <NavLink to={`/evntsDetailed/${item.id}`} onClick={() => handleDetalis(item)} className={styles.d} >
-            {/* <div className={styles.wrapper} */}
-
-            {/* key={item.id}> */}
+          <NavLink to={`/evntsDetailed/${item.id}`}
+            onClick={() => handleDetalis(item)} className={styles.d} >
 
             <img src={item.main_image} alt='/' className={styles.wrapper__imgFon} />
 
@@ -47,7 +45,6 @@ export default function NewsConteiner({ date }) {
                 {lang === "o'zbekcha" && textSlice(item.title_uz)}</p>
             </div>
 
-            {/* </div> */}
           </NavLink>
 
         ))

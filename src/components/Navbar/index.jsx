@@ -11,11 +11,21 @@ import {
 import { useState } from 'react'
 import LanguagesBar from '../LanguagesBar/index'
 import { useEffect } from 'react'
-import { useSelector } from "react-redux";
+import { useSelector, } from "react-redux";
 import useWindowDimensions from '../../pages/with.jsx';
+
+import { useRouteMatch, Route } from 'react-router-dom';
 
 
 export default function Navbar() {
+
+
+    // const { path } = useRouteMatch()
+    // useEffect(() => {
+    //     console.log({ path });
+    // }, [path])
+
+
 
     const { height, width } = useWindowDimensions();
 
@@ -48,12 +58,7 @@ export default function Navbar() {
             : setIsOpenLanguages(true)
     }
 
-    // const screenWidth = window.screen.width
 
-    const handleClick = () => {
-        setIsOpenList(false)
-        setClicked(false)
-    }
 
     const handleList = () => {
 
@@ -76,7 +81,7 @@ export default function Navbar() {
         setClicked(false)
     }
 
-
+    const [pathsProduct, setPathsProduct] = useState('')
 
 
 
@@ -87,7 +92,7 @@ export default function Navbar() {
                     <NavLink to='/*'> <img src={LogoTip} alt='not find'
                         className={styles.navbar__log} />  </NavLink>
 
-                    <div className={styles.menuIcon}  >
+                    <div className={styles.menuIcon}>
                         {clicked ?
                             <img src={close} alt='/' onClick={handleClickClose} />
                             :
@@ -128,7 +133,11 @@ export default function Navbar() {
                                         </NavLink>
                                 }
 
-                                <div className={styles.linkBar}>
+                                {/* {
+                                    pathsProduct === 'products_services' && */}
+
+                                <div className={styles.linkBar
+                                }>
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#buzness">
                                         {translate('Бизнес управление', 'Бизнести башкаруу', 'Biznes boshqaruvi')}
                                     </a> </p>
@@ -138,12 +147,11 @@ export default function Navbar() {
                                     <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#exports">
                                         {translate('Экспорт', 'Экспорт', 'Eksport')}
                                     </a></p>
-                                    <p><a className={styles.linkar__link} href="#events">
+                                    <p><a className={styles.linkBar__link} href="#events">
                                         {translate('Новости', 'Жаңылыктар', 'Yangiliklar')}
                                     </a></p>
-
                                 </div>
-
+                                {/* } */}
 
 
                             </div>
@@ -178,13 +186,14 @@ export default function Navbar() {
                         </nav>
                     }
 
+
                     {
+
                         isOpenList &&
                         < nav className={clicked ?
                             styles.Navbar__active
                             : styles.Navbar__navMenu}
                         >
-                            {/* <div className={styles.linkBar}> */}
                             <p style={{ paddingTop: '30px', paddingBottom: '32px' }} onClick={handleclose} > <a className={styles.linkBar__link} href="#buzness">
                                 {translate('Бизнес управление', 'Бизнести башкаруу', 'Biznes boshqaruvi')}
                             </a> </p>
@@ -197,7 +206,7 @@ export default function Navbar() {
                             <p onClick={handleclose} ><a className={styles.linkBar__link} href="#events">
                                 {translate('Новости', 'Жаңылыктар', 'Yangiliklar')}
                             </a></p>
-                            {/* </div> */}
+
                         </nav>
 
                     }

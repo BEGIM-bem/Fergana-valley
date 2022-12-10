@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import './Styles/App.scss'
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route, useParams, useRouteMatch } from 'react-router-dom';
 import Product from "./pages/Product";
 import Course from "./pages/Course";
 import Events from "./pages/Events";
@@ -10,12 +10,13 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import AllComments from "./pages/AllComments";
 import { useDispatch, useSelector } from 'react-redux'
-import { getEvents, getEventsId } from "./api/events";
+import { getEvents, getEventsId, useMatch } from "./api/events";
 
 import DetailedEvents from "./components/NewsConteiner/DetailedEvents";
 import { getAdress, getLinkSocialNetwork } from "./api/contacts";
 import { setIdEvents } from "./redux/eventsSlice";
 import useWindowDimensions from "./pages/with";
+
 
 
 function App() {
@@ -26,16 +27,21 @@ function App() {
 
 
 
+
+
   useEffect(() => {
     dispatch(getEvents())
     dispatch(getAdress())
-    // dispatch(getEventsId(idEventsState))
+
     dispatch(getLinkSocialNetwork())
 
-  }, [dispatch])
+    console.log("    window.location.pathname: ", window.location.pathname)
+  }, [dispatch, window.location.pathname])
 
 
-  const screenWidth = window.screen.width
+
+
+  // const screenWidth = window.screen.width
 
   return (
     <div className={width > 2000 && 'container'} >
