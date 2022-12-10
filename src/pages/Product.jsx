@@ -177,7 +177,7 @@ export default function Product() {
             {/* Финансирование */}
 
 
-            <div id="#finans" className={styles.conteiners__finans}>
+            <div id="finans" className={styles.conteiners__finans}>
                 <LineHeaders text={financialt} stylesContent={'9%'} stylesContent1={'4%'} />
 
                 <div className={styles.container2} >

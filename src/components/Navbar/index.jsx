@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../Styles/Navbar.module.scss'
 import { LogoTip } from '../../images/index.js'
 import { nameBar } from './NameNavbar.js'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import './index.scss'
 import {
     iconLangusges, close,
@@ -19,12 +19,15 @@ import { useRouteMatch, Route } from 'react-router-dom';
 
 export default function Navbar() {
 
+    const [pathss, setPathss] = useState('')
+    const location = useLocation();
 
-    // const { path } = useRouteMatch()
-    // useEffect(() => {
-    //     console.log({ path });
-    // }, [path])
+    useEffect(() => {
 
+        setPathss(location.pathname);
+
+    }, [location.pathname])
+    console.log("Pathss: ", pathss)
 
 
     const { height, width } = useWindowDimensions();
@@ -81,7 +84,7 @@ export default function Navbar() {
         setClicked(false)
     }
 
-    const [pathsProduct, setPathsProduct] = useState('')
+
 
 
 
@@ -133,27 +136,25 @@ export default function Navbar() {
                                         </NavLink>
                                 }
 
-                                {/* {
-                                    pathsProduct === 'products_services' && */}
 
-                                <div className={styles.linkBar
-                                }>
-                                    <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#buzness">
-                                        {translate('Бизнес управление', 'Бизнести башкаруу', 'Biznes boshqaruvi')}
-                                    </a> </p>
-                                    <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#finans">
-                                        {translate('Финансирование', 'Каржылоо', 'Moliyalashtirish')}
-                                    </a> </p>
-                                    <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#exports">
-                                        {translate('Экспорт', 'Экспорт', 'Eksport')}
-                                    </a></p>
-                                    <p><a className={styles.linkBar__link} href="#events">
-                                        {translate('Новости', 'Жаңылыктар', 'Yangiliklar')}
-                                    </a></p>
-                                </div>
-                                {/* } */}
-
-
+                                {
+                                    pathss === '/products_services' &&
+                                    <div className={styles.linkBar
+                                    }>
+                                        <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#buzness">
+                                            {translate('Бизнес управление', 'Бизнести башкаруу', 'Biznes boshqaruvi')}
+                                        </a> </p>
+                                        <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#finans">
+                                            {translate('Финансирование', 'Каржылоо', 'Moliyalashtirish')}
+                                        </a> </p>
+                                        <p style={{ paddingBottom: '32px' }} > <a className={styles.linkBar__link} href="#exports">
+                                            {translate('Экспорт', 'Экспорт', 'Eksport')}
+                                        </a></p>
+                                        <p><a className={styles.linkBar__link} href="#events">
+                                            {translate('Новости', 'Жаңылыктар', 'Yangiliklar')}
+                                        </a></p>
+                                    </div>
+                                }
                             </div>
 
 

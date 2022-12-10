@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import aboutStyles from "../Styles/About.module.scss";
 import courseStyles from "../Styles/Course.module.scss";
 import Lesson from "../components/Lesson/Lesson";
@@ -67,17 +67,17 @@ export default function Course() {
         current_lesson = course1?.lessons.find(i => i.id === lessonId)
     }, [lessonId])
 
-    if(modal) {
+    if (modal) {
         document.body.style.overflow = 'hidden';
     }
 
 
     const id = getCookie('userId')
-    const {userId} = useSelector(state => state.users)
+    const { userId } = useSelector(state => state.users)
     console.log("iddd:", userId)
 
     const alert = () => {
-        swal(translate('Ваш комментарий опубликовали!', "Сиздин комментарийиниз жарыяланды!","Fikringiz chop etildi!"))
+        swal(translate('Ваш комментарий опубликовали!', "Сиздин комментарийиниз жарыяланды!", "Fikringiz chop etildi!"))
     }
 
     const formik = useFormik({
@@ -88,7 +88,7 @@ export default function Course() {
         },
         validationSchema: AccessSchema,
         onSubmit: (datas, { resetForm }) => {
-            const data = {data: datas, alert: alert}
+            const data = { data: datas, alert: alert }
             console.log(data)
             dispatch(sendComment(data))
             resetForm({ data: '' })
@@ -126,14 +126,16 @@ export default function Course() {
                             </p>
                         </div>
                         {
-                            course1?.lessons.length !== 0 ? <CurrentsLesson lesson={current_lesson} /> : <h2 style={{marginTop: '80px', textAlign: 'center'}}>{translate('Пока нет опубликованных уроков', 'Азырынча жарыяланган сабактар жок', "Hali chop etilgan darslar yo'q")}</h2>
+                            course1?.lessons.length !== 0 ? <CurrentsLesson lesson={current_lesson} />
+                                : <h2 style={{ marginTop: '80px', textAlign: 'center' }}>{translate('Пока нет опубликованных уроков', 'Азырынча жарыяланган сабактар жок', "Hali chop etilgan darslar yo'q")}</h2>
                         }
 
                         {screenWidth <= 600 ? (
                             <Pagination lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
                         ) : (
                             <div className={courseStyles.lessons_cont}>
-                                {course1?.lessons.map(lesson => <Lesson onClick={() => setLessonId(lesson.id)} id={lessonId} lesson={lesson} />)}
+                                {course1?.lessons.map(lesson => <Lesson onClick={() => setLessonId(lesson.id)}
+                                    id={lessonId} lesson={lesson} />)}
                             </div>)}
                         {/*}*/}
                         <div className={courseStyles.comments_cont}>
