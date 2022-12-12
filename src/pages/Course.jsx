@@ -74,7 +74,7 @@ export default function Course() {
 
     const id = getCookie('userId')
     const { userId } = useSelector(state => state.users)
-    console.log("iddd:", userId)
+    const course_id = course1?.id
 
     const alert = () => {
         swal(translate('Ваш комментарий опубликовали!', "Сиздин комментарийиниз жарыяланды!", "Fikringiz chop etildi!"))
@@ -84,12 +84,12 @@ export default function Course() {
         initialValues: {
             text: "",
             user: id,
-            course: 1
+            course: course_id
         },
         validationSchema: AccessSchema,
         onSubmit: (datas, { resetForm }) => {
             const data = { data: datas, alert: alert }
-            console.log(data)
+            console.log("jjj", data)
             dispatch(sendComment(data))
             resetForm({ data: '' })
         }
@@ -104,6 +104,13 @@ export default function Course() {
     const add_comment_text = `${language === 'russian' ? 'Добавить' : ''}
                                 ${language === 'kyrgyz' ? 'Kошуу' : ''}
                                 ${language === "o'zbekcha" ? "Qo'shish" : ''}`
+
+    const [clicked, setClicked] = useState(false);
+
+    const handleClick = (id) => {
+        setClicked(true)
+        setLessonId(id)
+    }
 
     return (
         <>
@@ -126,15 +133,14 @@ export default function Course() {
                             </p>
                         </div>
                         {
-                            course1?.lessons.length !== 0 ? <CurrentsLesson lesson={current_lesson} />
-                                : <h2 style={{ marginTop: '80px', textAlign: 'center' }}>{translate('Пока нет опубликованных уроков', 'Азырынча жарыяланган сабактар жок', "Hali chop etilgan darslar yo'q")}</h2>
+                            clicked && <CurrentsLesson lesson={current_lesson} />
                         }
 
                         {screenWidth <= 600 ? (
                             <Pagination lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
                         ) : (
                             <div className={courseStyles.lessons_cont}>
-                                {course1?.lessons.map(lesson => <Lesson onClick={() => setLessonId(lesson.id)}
+                                {course1?.lessons.map(lesson => <Lesson onClick={() => handleClick(lesson.id)}
                                     id={lessonId} lesson={lesson} />)}
                             </div>)}
                         {/*}*/}

@@ -25,14 +25,14 @@ const CurrentsLesson = ({lesson}) => {
                         {language === "o'zbekcha" && "Dars maqsadlari:"}
                     </h5>
                     <div className={currentStyles.blue_text_cont}>
-                        {lesson?.objectives.map(i => <>
+                        {lesson?.objectives.map(i => <div className={currentStyles.pract__text_cont}>
                                 <MdOutlineCheckBox className={currentStyles.icon}/>
-                                <span className={currentStyles.blue_text}>
+                                <span style={{margin: 0}} className={currentStyles.blue_text}>
                                     {language === 'russian' && i.title_ru}
                                     {language === 'kyrgyz' && i.title_kg}
                                     {language === "o'zbekcha" && i.title_uz}
                                 </span>
-                            </>
+                            </div>
                         )}
                     </div>
                 </div>
@@ -43,36 +43,36 @@ const CurrentsLesson = ({lesson}) => {
                         {language === "o'zbekcha" && "Darsdan keyin mashq qiling:"}
                     </h5>
                     <div className={currentStyles.blue_text_cont}>
-                        {lesson?.practical_works.map(i => <>
+                        {lesson?.practical_works.map(i => <div className={currentStyles.pract__text_cont}>
                             <FaRegStar className={currentStyles.icon}/>
-                                <p className={currentStyles.blue_text}>
+                                <p style={{margin: 0}} className={currentStyles.blue_text}>
                                     {language === 'russian' && i.title_ru}
                                     {language === 'kyrgyz' && i.title_kg}
                                     {language === "o'zbekcha" && i.title_uz}
                                 </p>
-                            </>
+                            </div>
                         )}
                     </div>
                 </div>
             </div>
             <div style={{margin: '32px 0'}}>
-                {/*<iframe width="100%" height="640px" src="https://www.youtube.com/embed/_ysd-zHamjk"*/}
-                {/*        title="YouTube video player" frameBorder="0"*/}
-                {/*        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
-                {/*        allowFullScreen>*/}
-                {/*</iframe>*/}
+                <iframe width="100%" height="640px" src={lesson?.video}
+                        title="YouTube video player" frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+                </iframe>
 
-                <video width="100%" height="640px" controls>
-                    <source src={lesson?.video} type="video/mp4"/>
-                    {/*<source src="mov_bbb.ogg" type="video/ogg">*/}
-                </video>
+                {/*<video width="100%" height="640px" controls>*/}
+                {/*    <source src={lesson?.video} type="video/mp4"/>*/}
+                {/*    /!*<source src="mov_bbb.ogg" type="video/ogg">*!/*/}
+                {/*</video>*/}
             </div>
             <div className={commentsStyles.admintext_cont}>
                 Учитывая ключевые сценарии поведения, начало повседневной работы по формированию позиции в значительной степени обусловливает важность приоретизации разума над эмоциями. Лишь ключевые особенности структуры проекта, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут в равной степени предоставлены сами себе. Каждый из нас понимает очевидную вещь: консультация с широким активом однозначно фиксирует необходимость направлений прогрессивного развития. В своём стремлении повысить качество жизни, они забывают, что экономическая повестка сегодняшнего дня однозначно фиксирует необходимость приоретизации разума над эмоциями. А также ключевые особенности структуры проекта неоднозначны и будут своевременно верифицированы.
             </div>
             <div className={currentStyles.file_cont}>
                 <FcFile/>
-                <a href='https://binaries.templates.cdn.office.net/support/templates/ru-ru/tf16392878_win32.dotx' download="My_File.pdf">Download</a>
+                <a target="_blank" href={lesson?.excel_link} download="My_File.pdf">Download</a>
             </div>
             <hr style={{width: '100%'}}/>
         </div>

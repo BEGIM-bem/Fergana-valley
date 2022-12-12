@@ -74,48 +74,48 @@ export default function AccessModal({ open, handleClose, openAuthModal }) {
         swal(`${AlertTextSuccess}`);
     }
 
-    // const emailValid = translate("Введите правильный формат почты","Туура почта форматын киргизиңиз", "To'g'ri pochta formatini kiriting")
-    // const requiredValid = translate("Обязательное поле","Милдеттүү","Majburiy")
-    //
-    // const AccessSchema = Yup.object().shape({
-    //     email: Yup.string()
-    //         .email(`${emailValid}`)
-    //         .required(`${requiredValid}`),
-    //     fullname: Yup.string()
-    //         .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
-    //     phone_number: Yup.string()
-    //         .min(9, translate("Номер должен состоять из 9 чисел","Номер 9 сандан турушу керек","Raqam 9 raqamdan iborat bo'lishi kerak"))
-    //         .max(9, translate("Номер не должен превышать 9 чисел","Номер 9 сандан ашпашы керек","Raqam 9 raqamdan oshmasligi kerak"))
-    //         .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
-    //     whatsapp_number: Yup.string()
-    //         .min(9, translate("Номер должен состоять из 9 чисел","Номер 9 сандан турушу керек","Raqam 9 raqamdan iborat bo'lishi kerak"))
-    //         .max(9, translate("Номер не должен превышать 9 чисел","Номер 9 сандан ашпашы керек","Raqam 9 raqamdan oshmasligi kerak"))
-    //         .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
-    //     instagram: Yup.string()
-    //         .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
-    //     password: Yup.string()
-    //         .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
-    // });
+    const emailValid = translate("Введите правильный формат почты","Туура почта форматын киргизиңиз", "To'g'ri pochta formatini kiriting")
+    const requiredValid = translate("Обязательное поле","Милдеттүү","Majburiy")
 
     const AccessSchema = Yup.object().shape({
         email: Yup.string()
-            .email("Введите правильный формат почты")
-            .required("Обязательное поле"),
+            .email(`${emailValid}`)
+            .required(`${requiredValid}`),
         fullname: Yup.string()
-            .required("Обязательное поле"),
+            .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
         phone_number: Yup.string()
-            .min(9, "Номер должен состоять из 9 чисел")
-            .max(9, "Номер не должен превышать 9 чисел")
-            .required("Обязательное поле"),
+            .min(9, translate("Номер должен состоять из 9 чисел","Номер 9 сандан турушу керек","Raqam 9 raqamdan iborat bo'lishi kerak"))
+            .max(9, translate("Номер не должен превышать 9 чисел","Номер 9 сандан ашпашы керек","Raqam 9 raqamdan oshmasligi kerak"))
+            .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
         whatsapp_number: Yup.string()
-            .min(9, "Номер должен состоять из 9 чисел")
-            .max(9, "Номер не должен превышать 9 чисел")
-            .required("Обязательное поле"),
+            .min(9, translate("Номер должен состоять из 9 чисел","Номер 9 сандан турушу керек","Raqam 9 raqamdan iborat bo'lishi kerak"))
+            .max(9, translate("Номер не должен превышать 9 чисел","Номер 9 сандан ашпашы керек","Raqam 9 raqamdan oshmasligi kerak"))
+            .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
         instagram: Yup.string()
-            .required("Обязательное поле"),
+            .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
         password: Yup.string()
-            .required("Обязательное поле")
+            .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
     });
+
+    // const AccessSchema = Yup.object().shape({
+    //     email: Yup.string()
+    //         .email("Введите правильный формат почты")
+    //         .required("Обязательное поле"),
+    //     fullname: Yup.string()
+    //         .required("Обязательное поле"),
+    //     phone_number: Yup.string()
+    //         .min(9, "Номер должен состоять из 9 чисел")
+    //         .max(9, "Номер не должен превышать 9 чисел")
+    //         .required("Обязательное поле"),
+    //     whatsapp_number: Yup.string()
+    //         .min(9, "Номер должен состоять из 9 чисел")
+    //         .max(9, "Номер не должен превышать 9 чисел")
+    //         .required("Обязательное поле"),
+    //     instagram: Yup.string()
+    //         .required("Обязательное поле"),
+    //     password: Yup.string()
+    //         .required("Обязательное поле")
+    // });
 
     const formik = useFormik({
         initialValues: {

@@ -26,7 +26,7 @@ const Lesson = ({lesson, onClick, id}) => {
                         {language === 'kyrgyz' && 'Cабакта:'}
                         {language === "o'zbekcha" && 'Darsta:'}
                     </p>
-                    <p  className={id !== lesson.id ? lessonStyles.text2 : lessonStyles.active_text2}>
+                    <p style={{width: '73%'}} className={id !== lesson.id ? lessonStyles.text2 : lessonStyles.active_text2}>
                         {language === 'russian' && lesson.description_ru}
                         {language === 'kyrgyz' && lesson.description_kg}
                         {language === "o'zbekcha" && lesson.description_uz}
