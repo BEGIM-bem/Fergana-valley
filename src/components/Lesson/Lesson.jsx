@@ -7,13 +7,17 @@ const Lesson = ({lesson, onClick, id}) => {
 
     const {language} = useSelector(state => state.localization)
 
+    function truncate(str, n){
+        return (str.length > n) ? str.slice(0, n-1) + '...' : str;
+    };
+
     return (
         <div onClick={onClick} className={id !== lesson.id ? lessonStyles.card : lessonStyles.active_card}>
             <p className={id !== lesson.id ? lessonStyles.number : lessonStyles.active_number}>
-                {language === 'russian' && 'Урок'}
-                {language === 'kyrgyz' && 'Cабак'}
-                {language === "o'zbekcha" && 'Dars'}
-                {lesson.lesson_number}</p>
+                {language === 'russian' && 'Урок '}
+                {language === 'kyrgyz' && 'Cабак '}
+                {language === "o'zbekcha" && 'Dars '}
+                 {lesson.lesson_number}</p>
             <div>
                 <p className={id !== lesson.id ? lessonStyles.text1 : lessonStyles.active_text1}>
                     {language === 'russian' && lesson.title_ru}
@@ -27,7 +31,7 @@ const Lesson = ({lesson, onClick, id}) => {
                         {language === "o'zbekcha" && 'Darsta:'}
                     </p>
                     <p style={{width: '73%'}} className={id !== lesson.id ? lessonStyles.text2 : lessonStyles.active_text2}>
-                        {language === 'russian' && lesson.description_ru}
+                        {language === 'russian' && truncate(lesson.description_ru, 35)}
                         {language === 'kyrgyz' && lesson.description_kg}
                         {language === "o'zbekcha" && lesson.description_uz}
                     </p>

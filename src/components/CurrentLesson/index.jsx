@@ -61,18 +61,16 @@ const CurrentsLesson = ({lesson}) => {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen>
                 </iframe>
-
-                {/*<video width="100%" height="640px" controls>*/}
-                {/*    <source src={lesson?.video} type="video/mp4"/>*/}
-                {/*    /!*<source src="mov_bbb.ogg" type="video/ogg">*!/*/}
-                {/*</video>*/}
             </div>
             <div className={commentsStyles.admintext_cont}>
                 Учитывая ключевые сценарии поведения, начало повседневной работы по формированию позиции в значительной степени обусловливает важность приоретизации разума над эмоциями. Лишь ключевые особенности структуры проекта, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут в равной степени предоставлены сами себе. Каждый из нас понимает очевидную вещь: консультация с широким активом однозначно фиксирует необходимость направлений прогрессивного развития. В своём стремлении повысить качество жизни, они забывают, что экономическая повестка сегодняшнего дня однозначно фиксирует необходимость приоретизации разума над эмоциями. А также ключевые особенности структуры проекта неоднозначны и будут своевременно верифицированы.
             </div>
             <div className={currentStyles.file_cont}>
                 <FcFile/>
-                <a target="_blank" href={lesson?.excel_link} download="My_File.pdf">Download</a>
+                <a target="_blank" href={lesson?.excel_link} download="My_File.pdf">
+                    {language === 'russian' && 'Презентация и Инструменты'}
+                    {language === 'kyrgyz' && 'Презентация жана куралдар'}
+                    {language === "o'zbekcha" && "Taqdimot va asboblar"}</a>
             </div>
             <hr style={{width: '100%'}}/>
         </div>
