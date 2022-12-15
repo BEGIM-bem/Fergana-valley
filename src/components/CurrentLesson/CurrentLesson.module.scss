@@ -14,11 +14,16 @@
 .text {
   @extend %text;
 }
-
+.pract__text_cont {
+  display: flex;
+  align-items: center;
+}
 .blue_text_cont {
   margin-bottom: 10px;
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .blue_text {

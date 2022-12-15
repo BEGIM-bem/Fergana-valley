@@ -13,12 +13,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getComments, getCourse, sendComment } from "../api/course";
 import AuthModal from "../components/Modal/AuthModal";
 import { useFormik } from "formik";
-import { authUser } from "../api/user";
 import * as Yup from "yup";
-import { getCookie } from "../utils/Cookies";
+import {getCookie, setCookie} from "../utils/Cookies";
 import swal from 'sweetalert';
-import { getUser } from "../redux/usersSlice";
-import Registration from "../components/Modal/Regist2";
 
 export default function Course() {
 
@@ -32,15 +29,11 @@ export default function Course() {
 
     const [modal, setModal] = useState(false);
 
-    const closeModal = () => setModal(false);
-    const openModal = () => setModal(true);
-
     const [lessonId, setLessonId] = React.useState(1);
 
     const dispatch = useDispatch()
     const { course, comments } = useSelector(state => state.course)
     const { language } = useSelector(state => state.localization)
-    const users = useSelector(state => state.users.users)
 
     const translate = (ru, kg, uz) => {
         return `${language === 'russian' ? ru : ''}${language === 'kyrgyz' ? kg : ''}${language === "o'zbekcha" ? uz : ''}`
@@ -49,7 +42,6 @@ export default function Course() {
     useEffect(() => {
         window.scrollTo(0, 0);
         !getCookie('jwt-token') && handleOpenAuth()
-        // openModal()
         dispatch(getCourse())
         dispatch(getComments())
     }, [])
@@ -61,11 +53,15 @@ export default function Course() {
             .required("Обязательное поле")
     });
 
-    const course1 = course.find(i => i)
+    const [course1, setCourse1] = useState();
     let current_lesson = course1?.lessons.find(i => i.id === lessonId)
     useEffect(() => {
-        current_lesson = course1?.lessons.find(i => i.id === lessonId)
-    }, [lessonId])
+        const course11 = course.find(i => i)
+        setCookie("course_id", course11?.id, 1)
+        setCourse1(course11)
+    }, [course])
+
+    const course_id = getCookie('course_id')
 
     if (modal) {
         document.body.style.overflow = 'hidden';
@@ -74,7 +70,6 @@ export default function Course() {
 
     const id = getCookie('userId')
     const { userId } = useSelector(state => state.users)
-    console.log("iddd:", userId)
 
     const alert = () => {
         swal(translate('Ваш комментарий опубликовали!', "Сиздин комментарийиниз жарыяланды!", "Fikringiz chop etildi!"))
@@ -84,12 +79,12 @@ export default function Course() {
         initialValues: {
             text: "",
             user: id,
-            course: 1
+            course: course_id
         },
         validationSchema: AccessSchema,
         onSubmit: (datas, { resetForm }) => {
             const data = { data: datas, alert: alert }
-            console.log(data)
+            console.log("jjj", data)
             dispatch(sendComment(data))
             resetForm({ data: '' })
         }
@@ -104,6 +99,13 @@ export default function Course() {
     const add_comment_text = `${language === 'russian' ? 'Добавить' : ''}
                                 ${language === 'kyrgyz' ? 'Kошуу' : ''}
                                 ${language === "o'zbekcha" ? "Qo'shish" : ''}`
+
+    const [clicked, setClicked] = useState(false);
+
+    const handleClick = (id) => {
+        setClicked(true)
+        setLessonId(id)
+    }
 
     return (
         <>
@@ -126,15 +128,14 @@ export default function Course() {
                             </p>
                         </div>
                         {
-                            course1?.lessons.length !== 0 ? <CurrentsLesson lesson={current_lesson} />
-                                : <h2 style={{ marginTop: '80px', textAlign: 'center' }}>{translate('Пока нет опубликованных уроков', 'Азырынча жарыяланган сабактар жок', "Hali chop etilgan darslar yo'q")}</h2>
+                            clicked && <CurrentsLesson lesson={current_lesson} />
                         }
 
                         {screenWidth <= 600 ? (
-                            <Pagination lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
+                            <Pagination onCLick={handleClick} lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
                         ) : (
                             <div className={courseStyles.lessons_cont}>
-                                {course1?.lessons.map(lesson => <Lesson onClick={() => setLessonId(lesson.id)}
+                                {course1?.lessons.map(lesson => <Lesson onClick={() => handleClick(lesson.id)}
                                     id={lessonId} lesson={lesson} />)}
                             </div>)}
                         {/*}*/}

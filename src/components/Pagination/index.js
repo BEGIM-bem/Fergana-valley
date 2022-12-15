@@ -1,9 +1,9 @@
 import react, { useEffect } from "react";
 import Lesson from "../Lesson/Lesson";
 import paginationStyles from './Pagination.module.css'
-import API from "../../utils/axiosConfig";
+import API from "../../utils/axiosConfigTOKEN";
 
-export default function Pagination({lessons, setLessonId, id}) {
+export default function Pagination({lessons, setLessonId, id, onCLick}) {
     const [array, setArray] = react.useState([]);
     const [currentPage, setCurrentPage] = react.useState(0);
     const [count, setCount] = react.useState(0);
@@ -20,16 +20,16 @@ export default function Pagination({lessons, setLessonId, id}) {
     }, [currentPage]);
 
     function decrement() {
-        setCurrentPage(currentPage - 1);
+        setCurrentPage(currentPage - 4);
     }
     function increment() {
-        setCurrentPage(currentPage + 1);
+        setCurrentPage(currentPage + 4);
     }
 
     return (
         <div>
             <div className={paginationStyles.content_block}>
-                {array?.map((item) => <Lesson key={item.id} id={id} onClick={() => setLessonId(item.id)} lesson={item} time={10}/>)}
+                {array?.map((item) => <Lesson key={item.id} id={id} onClick={() => onCLick(item.id)} lesson={item} time={10}/>)}
             </div>
             <div className={paginationStyles.arrows_cont}>
                 <button  className={paginationStyles.arrow} disabled={currentPage === 0 ? true : false} onClick={decrement}>
