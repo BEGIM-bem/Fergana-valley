@@ -73,6 +73,7 @@
 
 
 
+
 .languagesBar {
     position: absolute;
     top: 114%;
@@ -87,12 +88,22 @@
 
 
 
+.blocks {
+    display: flex;
 
+    // // max-width: 1300px;
+    // width: ;
+    // margin: 0 auto;
+    width: 80%;
+
+}
 
 
 .linkBar__link {
     font-weight: 400;
-
+    // background: red;
+    // display: flex;
+    // padding: 50px;
     font-size: 14px;
     line-height: 17px;
     color: #333333;
@@ -120,18 +131,19 @@
 
     width: 100%;
     padding-top: 15px;
-    padding-bottom: 10px;
-    // background: rebeccapurple;
+    height: 99px;
+
 }
 
 .Navbar3 {
+    //Стиль для больщих размеров
     position: absolute;
     z-index: 5;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(7.5px);
 
     padding-top: 15px;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
     min-width: 1300px;
 }
 
@@ -174,6 +186,7 @@
 .navbar__log {
     // background: rebeccapurple;
     margin-right: 15px;
+    // margin-left: 25px;
 }
 
 .active {
@@ -189,6 +202,15 @@
     color: #1959AB;
     text-decoration: none;
 }
+
+.Navbar__navMenu {
+    display: flex;
+    align-items: center;
+
+    // background: red;
+
+}
+
 
 
 .navbar_item_to {
@@ -224,21 +246,14 @@
 
 
 
-
 .menuIcon {
     display: none;
-    // background: rebeccapurple;
-    // margin-top: -vh;
+
     margin-right: -30px;
 }
 
 
 
-.Navbar__navMenu {
-    display: flex;
-    align-items: center;
-
-}
 
 
 
@@ -256,6 +271,7 @@
 
 .languagesBarOpacity {
     display: block;
+
 }
 
 
@@ -289,6 +305,7 @@
         font-size: 12px;
         line-height: 15px;
         white-space: nowrap;
+
     }
 
 }
@@ -298,6 +315,13 @@
     .d {
         width: 100%;
     }
+
+    .navbar__log {
+        // background: rebeccapurple;
+        // margin-right: 15px;
+        margin-left: 23px;
+    }
+
 
     .Navbar {
         position: relative;
@@ -344,6 +368,7 @@
     }
 
     .Navbar__navMenu {
+
         white-space: nowrap;
         display: flex;
         flex-direction: column;
@@ -375,9 +400,19 @@
         white-space: nowrap;
         color: #000000;
         text-decoration: none;
+        margin-left: 23px;
+
         padding-bottom: 32px;
     }
 
+    .navbar_item_to {
+        margin-left: 23px;
+    }
+
+    .linkBar__link {
+        margin-left: 23px;
+
+    }
 
     .Navbar__active {
         position: absolute;

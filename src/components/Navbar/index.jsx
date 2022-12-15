@@ -21,14 +21,17 @@ export default function Navbar() {
 
     const [pathss, setPathss] = useState('')
     const location = useLocation();
+    const lang = useSelector(state => state.localization.language)
 
     useEffect(() => {
 
         setPathss(location.pathname);
 
     }, [location.pathname])
-    console.log("Pathss: ", pathss)
 
+    useEffect(() => {
+        setIsOpenLanguages(false)
+    }, [lang])
 
     const { height, width } = useWindowDimensions();
 
@@ -61,7 +64,9 @@ export default function Navbar() {
             : setIsOpenLanguages(true)
     }
 
-
+    useEffect(() => {
+        setClicked(false)
+    }, [lang])
 
     const handleList = () => {
 
@@ -78,6 +83,7 @@ export default function Navbar() {
     }
 
 
+
     const handleclose = () => {
         setIsOpenList(false)
 
@@ -90,20 +96,30 @@ export default function Navbar() {
 
     return (
         <div>
-            <div className={clicked === true ? styles.Navbar : width > 1700 ? styles.Navbar3 : styles.Navbar1} >
-                <div className={styles.navbar__conteinerss}>
+            <div className={clicked === true ?
+                styles.Navbar : width > 1700 ?
+                    styles.Navbar3 : styles.Navbar1} >
+
+
+
+                <div className={width > 800 ? styles.navbar__conteinerss
+                    : styles.blocks
+                }>
                     <NavLink to='/*'> <img src={LogoTip} alt='not find'
                         className={styles.navbar__log} />  </NavLink>
 
-                    <div className={styles.menuIcon}>
-                        {clicked ?
-                            <img src={close} alt='/' onClick={handleClickClose} />
-                            :
-                            <img src={open} alt='/' onClick={handleClickOpen} />}
+                    <div className={styles.menuIcon} >
+                        {
+                            clicked ?
+                                <img src={close} onClick={handleClickClose} alt='/' className={styles.icons} />
+                                // onClick={handleClickClose}
+                                :
+                                <img src={open} alt='/' onClick={handleClickOpen} />}
+                        {/* onClick={handleClickOpen} */}
 
                     </div>
 
-
+                    {/* <div className={styles.f1}> */}
                     {
                         !isOpenList &&
                         <nav className={clicked ?
@@ -124,7 +140,7 @@ export default function Navbar() {
                                         <NavLink onClick={handleList}
                                             className={(navDate) => navDate.isActive ?
                                                 styles.active : styles.navbar_item_to}
-                                            // onClick={handleClickClose}
+
                                             to={'/products_services'}>{translate('Продукты и Услуги', 'Продукциялар', 'Mahsulotlar va xizmatlar')}
                                         </NavLink>
                                         :
@@ -193,11 +209,12 @@ export default function Navbar() {
                         isOpenList &&
                         < nav className={clicked ?
                             styles.Navbar__active
-                            : styles.Navbar__navMenu}
+                            : styles.Navbar__navMenu1}
                         >
-                            <p style={{ paddingTop: '30px', paddingBottom: '32px' }} onClick={handleclose} > <a className={styles.linkBar__link} href="#buzness">
-                                {translate('Бизнес управление', 'Бизнести башкаруу', 'Biznes boshqaruvi')}
-                            </a> </p>
+                            <p style={{ paddingTop: '30px', paddingBottom: '32px' }} onClick={handleclose} >
+                                <a className={styles.linkBar__link} href="#buzness">
+                                    {translate('Бизнес управление', 'Бизнести башкаруу', 'Biznes boshqaruvi')}
+                                </a> </p>
                             <p style={{ paddingBottom: '32px' }} onClick={handleclose}  > <a className={styles.linkBar__link} href="#finans">
                                 {translate('Финансирование', 'Каржылоо', 'Moliyalashtirish')}
                             </a> </p>
@@ -236,10 +253,10 @@ export default function Navbar() {
                             }
                         </div>
                     }
-                </div>
+                    {/* </div> */}
 
-            </div >
-
+                </div >
+            </div>
 
 
         </div >

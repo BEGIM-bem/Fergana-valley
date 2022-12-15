@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function Address() {
 
     const { status, error, contacts } = useSelector(state => state.contacts)
-    const {language} = useSelector(state => state.localization)
+    const { language } = useSelector(state => state.localization)
 
     return (
         <div className={styles.adress}>
@@ -28,8 +28,16 @@ export default function Address() {
                             {language === 'kyrgyz' && item?.city_country_kg}
                             {language === "o'zbekcha" && item?.city_country_uz}
                         </p>
-                        <p className={styles.adress__text_number}>Эл.почта: {item.email} </p>
-                        <p className={styles.adress__text_number}>Тел: {item.phone_number} </p>
+                        <p className={styles.adress__text_number}>
+                            {language === 'russian' && 'Эл.почта:'}
+                            {language === 'kyrgyz' && 'Электрондук почта:'}
+                            {language === "o'zbekcha" && "Email:"}
+                            {item.email} </p>
+                        <p className={styles.adress__text_number}>
+                            {language === 'russian' && 'Тел:'}
+                            {language === 'kyrgyz' && 'Тел:'}
+                            {language === "o'zbekcha" && "Tel:"}
+                            {item.phone_number} </p>
                     </div>
                 ))
             }
