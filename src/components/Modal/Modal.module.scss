@@ -168,6 +168,10 @@ input[type=number] {
     line-height: 13px;
   }
 
+  .input {
+    width: 100%;
+  }
+
   .input::placeholder {
     font-size: 14px;
     line-height: 17px;
