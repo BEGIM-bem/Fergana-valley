@@ -18,6 +18,11 @@ import {
     ex2, ex3,
     ex4, ex5,
 } from '../imagesProduct/index.js'
+
+
+import pro2 from '../imagesProduct/pro2.svg'
+import pro3 from '../imagesProduct/pro3.svg'
+import pro4 from '../imagesProduct/pro4.svg'
 import {
     mainAboutImg,
     blokMain1,
@@ -67,6 +72,18 @@ import textOZ2 from '../imagesProduct/eventOZ2.svg'
 import textOZ3 from '../imagesProduct/eventOZ3.svg'
 import textOZ4 from '../imagesProduct/eventOZ4.svg'
 
+import proEx3 from '../imagesProduct/pro3s.svg'
+import proEx4 from '../imagesProduct/pro4s.svg'
+
+import exportGood from '../imagesProduct/export43d.svg'
+import icon1Pro from '../imagesProduct/icons1.svg'
+import iconText from '../imagesProduct/textIcon1.svg'
+
+import iconPro22 from '../imagesProduct/icons22.svg'
+import iconTexts1 from '../imagesProduct/icontext2.svg'
+import char1 from '../imagesProduct/chart.svg'
+
+import Product from '../imagesProduct/Product1.svg'
 // Главная страница Продукты и Услиги 
 export let sliderImageProductRus = [
     {
@@ -94,10 +111,6 @@ export let sliderImageProductOZ = [
         icon: Main1,
     },
     {
-        id: 2,
-        icon: Main2,
-    },
-    {
         id: 3,
         icon: Main3,
     },
@@ -105,6 +118,12 @@ export let sliderImageProductOZ = [
         id: 4,
         icon: Main4,
     },
+
+    {
+        id: 2,
+        icon: Main2,
+    },
+
 
 ]
 
@@ -181,24 +200,28 @@ export let sliderADImageProductKG = [
 export let sliderADImageProductOZ = [
     {
         id: 1,
-        icon: iconProduct1,
-        text: textOZ1
+        icon: char1,
+        text: Product
     },
+
     {
         id: 2,
-        icon: iconProduct2,
-        text: textOZ1
+        icon: icon1Pro,
+        text: iconText
     },
     {
         id: 3,
-        icon: iconExport,
-        text: textOZ1
+        icon: exportGood,
+        text: proEx4
     },
+    // exportGood
+
     {
         id: 4,
-        icon: iconEvent,
-        text: textOZ1
+        icon: iconPro22,
+        text: iconTexts1
     },
+
 
 ]
 
@@ -461,24 +484,23 @@ export let RusExport = [
     {
         id: 4,
         icon: bis1,
-        title: 'Юридическое Сопровождение',
-        text: 'Для экспорта нужно слишком документов? Запутались как и когда они нужны? Ищете нужного юриста, но не можете найти? Слишком требований от обоих (или же несколько) государств? Наша компания предлагает вам юридическое сопровождение при экспорте.',
+        title: 'Консультации по экспорту',
+        text: 'Понимаете что пора экспортировать свой товар, но не знаете с чего начать и по какому порядку идти? Не знаете как подготовить свою компанию к новому этапу развития? Приходите к нам и наши консультанты вам помогут в решения этих вопросов.',
         br: ' Нажмите кнопку внизу для получения подробной информации'
     },
     {
         id: 5,
         icon: ex4,
-        title: 'Курсы финансовой грамотности',
-        text: "Начали готовиться к экспорту, но нет опыта работы с таежной системой? Отсутствие информации также мешает? Не знаете и к кому идти для консультации и помощи? Приходите в ОсОО Бизнес Академия Ферганской Долины. Мы вам поможем.",
-
+        title: 'Юридическое Сопровождение',
+        text: "Для экспорта нужно слишком документов? Запутались как и когда они нужны? Ищете нужного юриста, но не можете найти? Слишком много требований от обоих (или же несколько) государств? Наша компания предлагает вам юридическое сопровождение при экспорте.",
         br: ' Нажмите кнопку внизу для получения подробной информации.'
 
     },
     {
         id: 5,
         icon: ex5,
-        title: 'Как найти деньги для бизнеса',
-        text: "Начали поиски денежных средств для запуска бизнеса или масштабирования бизнеса? Не знаете куда и как подавать? Не знаете как оформить документы? Нужна помощь с написанием бизнес плана или инвестиционного проекта? Наши финансовые консультанты предоставят вам поддержку в виде консультаций, наставничества и сопровождения.",
+        title: 'Курс Таможенных Экспертов',
+        text: "Начали готовиться к экспорту, но нет опыта работы с таможенной системой? Отсутствие информации также мешает? Не знаете к кому идти для консультации и помощи? Приходите в ОсОО Бизнес Академия Ферганской Долины. Мы вам поможем.",
         br: ' Нажмите кнопку внизу для получения подробной информации'
     }
 ]
@@ -513,14 +535,14 @@ export let KGExport = [
         id: 4,
         icon: bis1,
         title: 'Экспорт боюнча кеңеш',
-        text: 'Товарларды экспорттоо мезгили келгенин түшүндүңбү, бирок эмнеден баштоо жана кандай тартипте кирүүнү билбей жатасызбы? Компанияңызды өнүгүүнүн жаны этабына кантип даярдоону билбей жатасызбы? Бизге келининиз жана биздин консультант сизге бул маселелелерди чечууго жардам берет.',
+        text: 'Товарыңызды экспорттоо мезгили келгенин түшүндүңүзбү, бирок эмнеден баштоону жана кандай тартипте барарыңызды билбей жатасызбы? Компанияңызды өнүгүүнүн жаңы этабына кантип даярдоону билбей жатасызбы? Бизге келиңиз жана биздин консультанттар сизге бул маселелерди чечүүгө жардам беришет.',
         br: 'Чоо-жайын билүү үчүн төмөнкү баскычты басыңыз.'
     },
     {
         id: 5,
         icon: ex4,
-        title: 'Укуктук колдоо',
-        text: 'Экспорттоо үчүн өтө көп документтер керекпи? Алар кантип жана качан керек экенин түшүнбөй жатасызбы? Туура юрист издеп, бирок таба албай жатасызбы? Эки (же бир нече) мамлекеттерден өтө көп талаптар барбы? Биздин компания сизге экспорт учурунда юридикалык колдоо көрсөтөт.',
+        title: 'Юридикалык колдоо',
+        text: 'Экспорттоо үчүн өтө көп документтер керекпи? Аларды кантип жана качан керек деп түшүндүңүзбү? Туура юрист издеп, бирок таба албай жатасызбы? Эки (же бир нече) мамлекеттерден өтө көп талаптар барбы? Биздин компания сизге экспорт учурунда юридикалык колдоо көрсөтөт.',
 
         br: 'Чоо-жайын билүү үчүн төмөнкү баскычты басыңыз.'
 
@@ -529,7 +551,7 @@ export let KGExport = [
         id: 5,
         icon: ex5,
         title: 'Бажы эксперттеринин курсу',
-        text: "Экспортко даярдана баштадыңызбы, бирок тайга системасы боюнча тажрыйбаңыз жокпу? Маалыматтын жетишсиздиги да тоскоол болууда? Кимден кеңеш жана жардам сурап кайрыларыңды билбей жатасыңбы? Фергана өрөөнүндөгү ЖЧК Бизнес Академиясына келиңиз. Биз сага жардам беребиз.",
+        text: "Экспортко даярдана баштадыңызбы, бирок бажы системасы боюнча тажрыйбаңыз жокпу? Маалыматтын жетишсиздиги да тоскоол болууда? Кеңеш жана жардам алуу үчүн кайда кайрылууну билбей жатасызбы? Фергана өрөөнүндөгү ЖЧК Бизнес Академиясына келиңиз. Биз сага жардам беребиз.",
         br: 'Чоо-жайын билүү үчүн төмөнкү баскычты басыңыз.'
     }
 ]
@@ -562,26 +584,27 @@ export let OZExport = [
     {
         id: 4,
         icon: bis1,
-        title: 'Huquqiy yordam',
-        text: "Eksport qilish uchun sizga juda ko'p hujjatlar kerakmi? Ular sizga qanday va qachon kerakligi haqida bosh qotirdingizmi? To'g'ri advokat qidiryapsizmi, lekin topa olmayapsizmi? Ikkala (yoki bir nechta) davlatdan juda ko'p talablar bormi? Bizning kompaniyamiz sizga eksport paytida huquqiy yordam taklif qiladi.",
+        title: 'Eksport konsalting',
+        text: "Tovaringizni eksport qilish vaqti kelganini tushunyapsizmi, lekin nimadan boshlashni va qanday tartibda borishni bilmayapsizmi? Kompaniyangizni rivojlanishning yangi bosqichiga qanday tayyorlashni bilmayapsizmi? Bizga keling va maslahatchilarimiz sizga ushbu muammolarni hal qilishda yordam berishadi.",
         br: 'Choo-zhayyn biluuchun tömonku baskychty basynyz.'
     },
+
     {
         id: 5,
         icon: ex4,
-        title: 'Moliyaviy savodxonlik kurslari',
-        text: "Eksportga tayyorgarlik ko'rishni boshladingizmi, lekin tayga tizimi bilan tajribangiz yo'qmi? Axborotning etishmasligi ham to'sqinlik qiladimi? Maslahat va yordam uchun kimga murojaat qilishni bilmayapsizmi? Farg'ona vodiysi MChJ Biznes Akademiyasiga keling. Biz sizga yordam beramiz.",
+        title: 'Huquqiy yordam',
+        text: "Eksport qilish uchun sizga juda ko'p hujjatlar kerakmi? Ular sizga qanday va qachon kerakligi haqida bosh qotirdingizmi? To'g'ri advokat qidiryapsiz, lekin topa olmayapsizmi? Ikkala (yoki bir nechta) davlatdan juda ko'p talablar bormi? Bizning kompaniyamiz sizga eksport paytida huquqiy yordam taklif qiladi.",
+        br: 'Choo-zhayyn biluuchun tömonku baskychty basynyz.'
+    },
+    {
+        id: 6,
+        icon: ex5,
+        title: 'Bojxona mutaxassislari kursi',
+        text: "Eksportga tayyorgarlik ko'rishni boshladingiz, lekin bojxona tizimida tajribangiz yo'qmi? Axborot etishmasligi ham to'sqinlik qiladimi? Maslahat va yordam uchun qayerga borishni bilmayapsizmi? Farg'ona vodiysi MChJ Biznes Akademiyasiga keling. Biz sizga yordam beramiz.",
 
         br: 'Choo-zhayyn biluuchun tömonku baskychty basynyz.'
 
     },
-    {
-        id: 5,
-        icon: ex5,
-        title: 'Biznes uchun pulni qanday topish mumkin',
-        text: "Начали поиски денежных средств для запуска бизнеса или масштабирования бизнеса? Не знаете куда и как подавать? Не знаете как оформить документы? Нужна помощь с написанием бизнес плана или инвестиционного проекта? Наши финансовые консультанты предоставят вам поддержку в виде консультаций, наставничества и сопровождения.",
-        br: 'Choo-zhayyn biluuchun tömonku baskychty basynyz.'
-    }
 ]
 
 // Мероприятие  

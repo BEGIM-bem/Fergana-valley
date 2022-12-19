@@ -4,7 +4,7 @@ import { iconFacbook, iconInstagram, iconTelegram, iconWatsap } from "../../imag
 import { useDispatch, useSelector } from "react-redux";
 import { getCookie } from "../../utils/Cookies";
 import { getAddress } from "../../api/course";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // import aboutStyles from './../../Styles/About.module.scss'
 
 const Footer = () => {
@@ -104,10 +104,7 @@ const Footer = () => {
                             //</div>
                         )
                     })}
-                    {/*<img src={iconInstagram} alt="/" />*/}
-                    {/*<img src={iconTelegram} alt="/" />*/}
-                    {/*<img src={iconFacbook} alt="/" />*/}
-                    {/*<img src={iconWatsap} alt="/" />*/}
+
                 </div>
             </div>
         </div>

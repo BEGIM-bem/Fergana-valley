@@ -168,9 +168,9 @@ export default function Contacts() {
                     <div className={styles.link__blocks} >
                         <h1 className={styles.link__block_title}>
 
-                            {language === 'russian' && "Следите за последними новостями на наших страницах"}
-                            {language === 'kyrgyz' && "Акыркы жаңылыктарды биздин баракчалардан көрүңүз"}
-                            {language === "o'zbekcha" && "So'nggi yangiliklarni bizning sahifalarimizda kuzatib boring"}
+                            {language === 'russian' && "Подпишитесь на наш инстаграм и следите за нашими новостями."}
+                            {language === 'kyrgyz' && "Биздин инстаграмга жазылыңыз жана жаңылыктарыбызды байкаңыз."}
+                            {language === "o'zbekcha" && "Bizning instagramimizga obuna bo'ling va yangiliklarimizni kuzatib boring."}
                         </h1>
                         <p className={styles.link__block_text}>
                             {language === 'russian' && "(для перехода нажмите на иконку)"}
@@ -188,8 +188,16 @@ export default function Contacts() {
 
                 <div className={styles.link__block}>
                     <div className={styles.link__blocks} >
-                        <h1 className={styles.link__block_title}>Франция намерена исследовать, почему чистосердечное признание облегчает душу </h1>
-                        <p className={styles.link__block_text}>(для перехода нажмите на иконку) </p>
+                        <h1 className={styles.link__block_title}>
+                            {language === 'russian' && "Ищете себе единомышленников и бизнес консультантов? Подпишитесь и станьте частью нашего сообщества предпринимателей"}
+                            {language === 'kyrgyz' && "Сиз пикирлеш адамдарды жана бизнес консультанттарды издеп жатасызбы? Катталыңыз жана биздин ишкерлер коомчулугубуздун мүчөсү болуңуз"}
+                            {language === "o'zbekcha" && "Siz hamfikrlar va biznes maslahatchilarni qidiryapsizmi?Roʻyxatdan oʻting va tadbirkorlar hamjamiyatimizga aʼzo boʻling"}
+                        </h1>
+                        <p className={styles.link__block_text}>
+                            {language === 'russian' && "(для перехода нажмите на иконку)"}
+                            {language === 'kyrgyz' && "(баруу үчүн сөлөкөтүн чыкылдатыңыз)"}
+                            {language === "o'zbekcha" && "  (o'tish uchun belgini bosing) "}
+                        </p>
                     </div>
 
                     <a href={TelegramLink} target="_blank" rel="noreferrer" >
@@ -199,8 +207,16 @@ export default function Contacts() {
 
                 <div className={styles.link__block}>
                     <div className={styles.link__blocks} >
-                        <h1 className={styles.link__block_title}>Франция намерена исследовать, почему чистосердечное признание облегчает душу </h1>
-                        <p className={styles.link__block_text}>(для перехода нажмите на иконку) </p>
+                        <h1 className={styles.link__block_title}>
+                            {language === 'russian' && "Также следите за новостями и на нашей фейсбук странице"}
+                            {language === 'kyrgyz' && "Ошондой эле биздин Facebook баракчабыздагы жаңылыктарга көз салыңыз"}
+                            {language === "o'zbekcha" && "Shuningdek, yangiliklarni facebook sahifamiz orqali kuzatib boring"}
+                        </h1>
+                        <p className={styles.link__block_text}>
+                            {language === 'russian' && "(для перехода нажмите на иконку)"}
+                            {language === 'kyrgyz' && "(баруу үчүн сөлөкөтүн чыкылдатыңыз)"}
+                            {language === "o'zbekcha" && "  (o'tish uchun belgini bosing) "}
+                        </p>
                     </div>
 
                     <a href={FacbookLink} target="_blank" rel="noreferrer" >
@@ -210,8 +226,16 @@ export default function Contacts() {
 
                 <div className={styles.link__block}>
                     <div className={styles.link__blocks} >
-                        <h1 className={styles.link__block_title}>Франция намерена исследовать, почему чистосердечное признание облегчает душу </h1>
-                        <p className={styles.link__block_text}>(для перехода нажмите на иконку) </p>
+                        <h1 className={styles.link__block_title}>
+                            {language === 'russian' && "Если у вас будут вопросы, пишите нам в WhatsApp-e. Будем рады вашему звонку или сообщению."}
+                            {language === 'kyrgyz' && "Суроолоруңуз болсо бизге whatsappтан жазыңыз. Чалуу же билдирүүңүздү чыдамсыздык менен күтөбүз."}
+                            {language === "o'zbekcha" && "Savollaringiz bo'lsa whatsapp orqali bizga yozing. Sizning qo'ng'iroq yoki xabaringizni kutamiz."}
+                        </h1>
+                        <p className={styles.link__block_text}>
+                            {language === 'russian' && "(для перехода нажмите на иконку)"}
+                            {language === 'kyrgyz' && "(баруу үчүн сөлөкөтүн чыкылдатыңыз)"}
+                            {language === "o'zbekcha" && "  (o'tish uchun belgini bosing) "}
+                        </p>
                     </div>
 
                     <a href={WatsapLink} target="_blank" rel="noreferrer" >

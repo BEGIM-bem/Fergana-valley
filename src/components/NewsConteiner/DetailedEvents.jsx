@@ -104,7 +104,7 @@ export default function DetailedEvents() {
                         {lang === 'kyrgyz' && <p className={styles.detailes__text1}>{idEvents.second_text_kg}</p>}
                         {lang === "o'zbekcha" && <p className={styles.detailes__text1}>{idEvents.second_text_uz}</p>}
 
-                        <h1 className={styles.detailes__text_Title}>Не следует забывать, что спикеры палаты госдумы негодуют</h1>
+                        {/* <h1 className={styles.detailes__text_Title}>Не следует забывать, что спикеры палаты госдумы негодуют</h1> */}
 
                         {lang === 'russian' &&
                             <a href={idEvents.link} className={styles.detailes__text_link}

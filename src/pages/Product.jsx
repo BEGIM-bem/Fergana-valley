@@ -68,7 +68,7 @@ export default function Product() {
                             ${language === 'kyrgyz' ? 'Каржылоо' : ""}
                             ${language === "o'zbekcha" ? "Moliyalashtirish" : ''}`
 
-    const eventt = `${language === 'russian' ? 'Новости' : ''}
+    const eventt = `${language === 'russian' ? 'Мероприятия' : ''}
                             ${language === 'kyrgyz' ? 'Жаңылыктар' : ""}
                             ${language === "o'zbekcha" ? "Yangiliklar" : ''}`
 

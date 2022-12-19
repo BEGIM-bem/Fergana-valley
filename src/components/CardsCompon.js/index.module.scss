@@ -35,7 +35,7 @@
 }
 
 .contents__title1 {
-    word-break: break-all;
+    // word-break: break-all;
     // font-weight: 700;
     font-size: 24px;
     line-height: 29px;
@@ -46,9 +46,13 @@
     padding-bottom: 14px;
     color: #1959AB;
 
+    white-space: pre-line;
+
 }
 
 .contents__text1 {
+    white-space: pre-line;
+
     word-break: break-all;
     font-size: 15px;
     line-height: 19px;
@@ -85,10 +89,11 @@
 }
 
 .contents__text {
-    word-break: break-all;
+    // word-break: break-all;
     font-size: 16px;
     line-height: 19px;
     // text-align: justify;
+    white-space: pre-line;
 
     color: #000000;
 }

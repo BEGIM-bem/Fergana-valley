@@ -12,6 +12,11 @@
     // background: rebeccapurple;
 }
 
+.d1 {
+
+    // background: rebeccapurple;
+}
+
 .slideshow {
     width: 90%;
     position: relative;
@@ -61,8 +66,29 @@
     box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
 }
 
+
+.inactive {
+
+    background: #FFFFFF;
+    background: rebeccapurple;
+    min-height: 420px;
+
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+    border-radius: 5px;
+    padding-top: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 18px;
+
+    // width: 320px;
+    display: none;
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+}
+
+
 .active {
     background: #FFFFFF;
+    // background: ;
     /* тень больших карточек */
     box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
     border-radius: 5px;
@@ -108,28 +134,11 @@
 
 }
 
-.inactive {
-
-    background: #FFFFFF;
-
-    min-height: 420px;
-
-    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
-    border-radius: 5px;
-    padding-top: 16px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-bottom: 18px;
-
-    // width: 320px;
-    display: none;
-    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
-}
 
 .inactives {
 
     background: #FFFFFF;
-
+    // background: red;
     min-height: 420px;
 
     box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
@@ -172,6 +181,25 @@
     color: #333333;
 }
 
+.actives1 {
+    height: 480px;
+    width: 343px;
+
+    padding: 16px;
+    background: #FFFFFF;
+    /* тень больших карточек */
+    // background: rebeccapurple;
+    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+    border-radius: 5px;
+    // background: rebeccapurple;
+    padding-bottom: 18px;
+
+    margin: 0 auto;
+    display: inline-block;
+
+}
+
+
 .inactivesMain {
     background: #FFFFFF;
     /* тень больших карточек */
@@ -194,23 +222,6 @@
     padding-bottom: 15px;
 }
 
-.actives1 {
-    height: 400px;
-    width: 343px;
-
-    padding: 16px;
-    background: #FFFFFF;
-    /* тень больших карточек */
-    // background: rebeccapurple;
-    box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
-    border-radius: 5px;
-
-    padding-bottom: 18px;
-
-    margin: 0 auto;
-    display: inline-block;
-
-}
 
 
 

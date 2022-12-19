@@ -7,6 +7,7 @@
     text-decoration: none;
     outline: none;
     //overflow: auto;
+    // white-space: pre-line;
 }
 
 ul {
@@ -22,7 +23,8 @@ body::-webkit-scrollbar {
 /*Стили чтобы уменьшить вертикальный скрол в body  */
 
 
-body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb {
     background: #c4c4c4;
 
     border-radius: 4px;
@@ -71,7 +73,8 @@ body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
     display: none !important;
     background: red !important;
 }
-.MuiModal-root .MuiBox-root css-91gk30{
+
+.MuiModal-root .MuiBox-root css-91gk30 {
     overflow: scroll !important;
     height: 100% !important;
 }
@@ -103,11 +106,13 @@ body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
     //top: 100px !important;
 }
 
-.css-79ws1d-MuiModal-root::-webkit-scrollbar, div::-webkit-scrollbar {
+.css-79ws1d-MuiModal-root::-webkit-scrollbar,
+div::-webkit-scrollbar {
     width: 0.1em;
 }
 
-.css-79ws1d-MuiModal-root::-webkit-scrollbar-track, div::-webkit-scrollbar-track {
+.css-79ws1d-MuiModal-root::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 

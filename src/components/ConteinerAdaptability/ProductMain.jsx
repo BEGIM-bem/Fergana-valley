@@ -20,7 +20,7 @@ function AdaptivMainProduct({ prevSlide, screenWidth, activeIndex, data, vid, sl
                         <img src={item.icon} alt='/'
                             className={styles.imgs} />
                         <br />
-                        <img src={item.text} alt='/' />
+                        <img src={item.text} className={styles.d1} alt='/' />
 
                     </div>
                 )
