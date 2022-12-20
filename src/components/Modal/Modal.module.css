@@ -1,0 +1,189 @@
+.f {
+  background: rebeccapurple;
+}
+
+.open_modal {
+  left: 0;
+  top: 90px;
+  width: 100%;
+  height: 100%;
+}
+
+.open_modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+  overflow: auto;
+  padding: 3%;
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  border: none;
+  shadow: 24px;
+}
+
+.modal_title {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  margin-bottom: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.auth_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.input_cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.input::-moz-placeholder, .error_input::-moz-placeholder {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.input:-ms-input-placeholder, .error_input:-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.error, .phone_code, .label, .input::placeholder, .error_input::placeholder, .error_input, .input {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.error_input, .input {
+  width: 430px;
+  padding: 10px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  outline: none;
+}
+
+.input {
+  border: 1px solid #BDBDBD;
+}
+
+.error_input {
+  border: 1.5px solid #EB5757;
+}
+
+.error_input::-moz-placeholder {
+  color: #BDBDBD;
+}
+
+.error_input:-ms-input-placeholder {
+  color: #BDBDBD;
+}
+
+.error_input::placeholder {
+  color: #BDBDBD;
+}
+
+.input::-moz-placeholder {
+  color: #BDBDBD;
+}
+
+.input:-ms-input-placeholder {
+  color: #BDBDBD;
+}
+
+.input::placeholder {
+  color: #BDBDBD;
+}
+
+.label {
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.sub_label {
+  font-size: 13px;
+  line-height: 16px;
+  color: #BDBDBD;
+  margin-bottom: 8px;
+}
+
+.insta_input_cont {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inst_icon {
+  position: absolute;
+  width: 60px;
+  border-right: 1px solid #BDBDBD;
+  padding: 0 13px;
+  height: 100%;
+}
+
+.phone_code {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  border-right: 1px solid #BDBDBD;
+  padding: 0 9px;
+  color: #BDBDBD;
+  display: flex;
+  align-items: center;
+}
+
+.error {
+  color: #EB5757;
+  font-size: 12px;
+  padding: 2px 0 0 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+@media screen and (max-width: 500px) {
+  .label {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .sub_label {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .input::-moz-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .input:-ms-input-placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .input::placeholder {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}/*# sourceMappingURL=Modal.module.css.map */

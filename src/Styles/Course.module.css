@@ -1,0 +1,143 @@
+.banner {
+  background-image: url(../images/CoursesBanner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -220px;
+  width: 100%;
+  height: 420px;
+}
+
+.content_bg {
+  background-image: url(../images/imgCourseBg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 64px;
+}
+
+.text_cont {
+  background: #FFFFFF;
+  box-shadow: 3px 5px 20px rgba(51, 51, 51, 0.1);
+  border-radius: 5px;
+  padding: 47px;
+}
+
+.lessons_cont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 55px;
+  flex-basis: 100%;
+  margin-top: 64px;
+}
+
+.comments_cont {
+  margin: 120px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.comments_title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.comments_input {
+  background: #FFFFFF;
+  border-radius: 5px;
+  padding: 16px;
+  width: 100%;
+  height: 200px;
+  outline: none;
+  border: none;
+  resize: vertical;
+}
+
+.comments_input::-moz-placeholder {
+  font-size: 16px;
+  line-height: 150%;
+  text-align: justify;
+  color: #BDBDBD;
+}
+
+.comments_input:-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 150%;
+  text-align: justify;
+  color: #BDBDBD;
+}
+
+.comments_input::placeholder {
+  font-size: 16px;
+  line-height: 150%;
+  text-align: justify;
+  color: #BDBDBD;
+}
+
+.all_comments_cont {
+  margin: -32px;
+  padding-bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.comment_button {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  width: 142px;
+  height: 52px;
+  background: #BDBDBD;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.comment_inp_cont {
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .lessons_cont {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .banner {
+    height: 240px;
+  }
+  .text_cont {
+    margin: 16px 0 32px;
+    padding: 47px;
+  }
+  .comments_cont {
+    margin: 40px 0 0;
+    gap: 32px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .banner {
+    background-position-y: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .banner {
+    background-position-y: 0;
+    height: 141px;
+  }
+  .content_bg {
+    padding-top: 1px;
+  }
+  .text_cont {
+    padding: 8px;
+  }
+  .comments_cont {
+    gap: 10px;
+  }
+}/*# sourceMappingURL=Course.module.css.map */

@@ -1,0 +1,63 @@
+.title_blue_text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1959AB;
+  margin-bottom: 21px;
+}
+
+.blue_text, .text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 18px;
+}
+
+.pract__text_cont {
+  display: flex;
+  align-items: center;
+}
+
+.blue_text_cont {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.blue_text {
+  color: #1959AB;
+  vertical-align: middle;
+}
+
+.icon {
+  color: #1959AB;
+  margin: 0 7px 0 37px;
+  font-size: 26px;
+  vertical-align: middle;
+}
+
+.file_cont {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.file_icon {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  .icon {
+    margin: 0 7px 0 0;
+    width: 35px;
+  }
+  .blue_text {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+    width: 90%;
+  }
+}/*# sourceMappingURL=CurrentLesson.module.css.map */

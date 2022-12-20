@@ -1,0 +1,13 @@
+.spinner {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  background: rebeccapurple;
+}
+
+.errors {
+  color: red;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=actions.module.css.map */

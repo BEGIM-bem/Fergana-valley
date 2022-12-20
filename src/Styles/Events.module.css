@@ -1,0 +1,54 @@
+.event__headers {
+  background-image: url(./../images/eventMain.svg);
+  padding-top: 220px;
+  padding-bottom: 120px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event__headers__title {
+  text-align: center;
+  font-size: 48px;
+  line-height: 58px;
+  color: #FFFFFF;
+}
+
+.contents {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contents__text {
+  font-size: 29px;
+  line-height: 44px;
+  padding-top: 20px;
+  color: #000000;
+}
+
+@media screen and (max-width: 1000px) {
+  .containerFor {
+    margin-bottom: 20px;
+  }
+  .contents__text {
+    padding-top: 5px;
+  }
+}
+@media screen and (max-width: 765px) {
+  .event__headers__title {
+    font-size: 34px;
+    line-height: 41px;
+  }
+  .contents__text {
+    font-size: 21px;
+    line-height: 26px;
+  }
+  .event__headers {
+    padding-top: 150px;
+    padding-bottom: 64px;
+  }
+}/*# sourceMappingURL=Events.module.css.map */

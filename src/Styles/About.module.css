@@ -1,0 +1,250 @@
+.mainTitle {
+  position: absolute;
+  font-family: "Verdana";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  color: #FFFFFF;
+  text-align: center;
+  bottom: 120px;
+}
+
+.banner_image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #333333;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  color: #1959AB;
+  margin-bottom: 16px;
+}
+
+.text_container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0 4rem;
+  width: 55%;
+}
+
+.img_block {
+  position: relative;
+  width: 39.75rem;
+}
+
+.img {
+  position: absolute;
+  top: -19px;
+  width: 100%;
+}
+
+.desc_cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.second_section {
+  background-image: url(./../images/imgAbout2banner.svg);
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 4rem;
+}
+
+.white_title {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  padding: 4rem 0 2rem;
+  color: #FFFFFF;
+}
+
+.card_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.blue_card, .white_card {
+  width: 246px;
+  height: 220px;
+  box-shadow: 3px 3px 6px rgba(51, 51, 51, 0.25);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2rem;
+  margin: 0 0 64px 0;
+}
+
+.white_card {
+  background-color: white;
+}
+
+.blue_card {
+  background-color: #1959AB;
+  margin-top: 1rem;
+}
+
+.card_num, .card_num_blue {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.card_num_blue {
+  color: white;
+}
+
+.card_num {
+  color: #1959AB;
+}
+
+.card_white_text, .card_blue_text {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.card_blue_text {
+  color: #1959AB;
+}
+
+.card_white_text {
+  color: white;
+}
+
+.partner_logo {
+  height: 100%;
+}
+
+.img2 {
+  width: 636px;
+}
+
+.icons_cont {
+  overflow-x: auto;
+  padding: 130px 0 66px;
+  align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .mainTitle {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    bottom: 64px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .mainTitle {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    bottom: 64px;
+  }
+  .banner_image {
+    height: 280px;
+  }
+  .text_container {
+    width: 100%;
+    padding: 0 0 34px;
+    margin: auto;
+  }
+  .img_block {
+    position: relative;
+  }
+  .text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 33px;
+    text-align: start;
+    padding: 1rem 0;
+  }
+  .img {
+    position: inherit;
+    top: -24px;
+    max-width: 100%;
+  }
+  .img2 {
+    max-width: 100%;
+  }
+  .desc_cont {
+    flex-direction: column-reverse;
+    align-items: end;
+    margin-top: 0 !important;
+  }
+  .second_section {
+    margin: 24px 0;
+  }
+  .white_title {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 33px;
+    text-align: start;
+    padding: 32px 0;
+  }
+  .card_container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .white_card, .blue_card {
+    width: 300px;
+    height: 260px;
+    padding: 0 16px;
+    margin: 0 0 30px 0;
+  }
+  .card_num_blue, .card_num {
+    font-size: 27px;
+    line-height: 33px;
+  }
+  .card_blue_text, .card_white_text {
+    font-size: 21px;
+    line-height: 26px;
+  }
+  .icons_cont {
+    padding: 53px 0 53px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .partner_logo {
+    width: 25%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .img_block {
+    width: 100%;
+  }
+  .mainTitle {
+    font-size: 24px;
+    line-height: 29px;
+    top: 100px;
+  }
+}/*# sourceMappingURL=About.module.css.map */

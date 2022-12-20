@@ -1,0 +1,109 @@
+.active_card, .card {
+  height: 370px;
+  width: 30.3%;
+  background: #1959AB;
+  border-radius: 5px;
+  color: white;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.active_card {
+  background: #FFFFFF;
+  border: 2px solid #1959AB;
+}
+
+.active_number, .number {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #1959AB;
+  background: white;
+  width: 125px;
+  height: 61px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active_number {
+  background: #1959AB;
+  color: white;
+}
+
+.text2, .active_text2, .active_text1, .text1 {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+}
+
+.text1 {
+  margin-bottom: 16px;
+}
+
+.active_text1 {
+  color: #1959AB;
+  margin-bottom: 16px;
+}
+
+.active_text2 {
+  color: #1959AB;
+}
+
+.time_cont {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.active_time_cont {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  color: #1959AB;
+}
+
+.time_icon {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+    width: 46%;
+    flex: auto;
+  }
+  .active_card {
+    width: 46%;
+    flex: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .active_text2, .active_text1, .text2, .text1 {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .card {
+    padding: 8px;
+    height: 272px;
+  }
+  .active_card {
+    padding: 8px;
+    height: 272px;
+  }
+  .number {
+    width: 108px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .active_number {
+    width: 108px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}/*# sourceMappingURL=Lesson.module.css.map */

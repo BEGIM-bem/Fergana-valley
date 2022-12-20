@@ -1,0 +1,131 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Verdana";
+  font-style: normal;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+ul {
+  padding-left: 25px;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/*Стили чтобы уменьшить вертикальный скрол в body  */
+body::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container1 {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.containerFor {
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 64px;
+}
+
+.containerForNew {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.ytp-pause-overlay-container {
+  display: none !important;
+  background: red !important;
+}
+
+.MuiModal-root .MuiBox-root css-91gk30 {
+  overflow: scroll !important;
+  height: 100% !important;
+}
+
+.flex_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block_padding {
+  padding: 4rem 0;
+}
+
+.white_text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.css-79ws1d-MuiModal-root {
+  position: fixed;
+  z-index: 0 !important;
+  margin-top: 100px;
+}
+
+.css-79ws1d-MuiModal-root::-webkit-scrollbar,
+div::-webkit-scrollbar {
+  width: 0.1em;
+}
+
+.css-79ws1d-MuiModal-root::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.css-79ws1d-MuiModal-root::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+@media screen and (max-width: 1000px) {
+  .containerFor {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .flex_between {
+    display: initial;
+  }
+  .container {
+    margin: 0 auto;
+    padding: 0;
+  }
+  .white_text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .white_text {
+    font-size: 17px;
+    line-height: 21px;
+  }
+  .MuiBox-root,
+.css-91gk30 {
+    width: 93% !important;
+    padding: 16px !important;
+  }
+  .css-a056yg-MuiTypography-root {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}/*# sourceMappingURL=App.css.map */
