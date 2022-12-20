@@ -78,12 +78,8 @@ export default function AccessModal({ open, handleClose, openAuthModal }) {
         fullname: Yup.string()
             .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
         phone_number: Yup.string()
-            .min(9, translate("Номер должен состоять из 9 чисел","Номер 9 сандан турушу керек","Raqam 9 raqamdan iborat bo'lishi kerak"))
-            .max(9, translate("Номер не должен превышать 9 чисел","Номер 9 сандан ашпашы керек","Raqam 9 raqamdan oshmasligi kerak"))
             .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
         whatsapp_number: Yup.string()
-            .min(9, translate("Номер должен состоять из 9 чисел","Номер 9 сандан турушу керек","Raqam 9 raqamdan iborat bo'lishi kerak"))
-            .max(9, translate("Номер не должен превышать 9 чисел","Номер 9 сандан ашпашы керек","Raqam 9 raqamdan oshmasligi kerak"))
             .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
         instagram: Yup.string()
             .required(translate("Обязательное поле","Милдеттүү","Majburiy")),
@@ -131,20 +127,16 @@ export default function AccessModal({ open, handleClose, openAuthModal }) {
                                 {formik.errors.fullname && <p className={modalStyles.error}>{formik.errors.fullname}</p>}
                             </div>
                             <div className={modalStyles.input_cont}>
-                                <label className={modalStyles.label}>{translate("Введите номер вашего телефона","Телефон номериңизди киргизиңиз","Telefon raqamingizni kiriting")}<span style={{ color: '#EB5757' }}>*</span></label>
-                                <div className={modalStyles.insta_input_cont}>
-                                    <p className={modalStyles.phone_code}>+996</p>
-                                    <input name='phone_number' onChange={formik.handleChange} style={{ paddingLeft: '70px' }} placeholder={translate('номер телефона',"телефон номери","telefon raqami")} className={(formik.errors.phone_number) ? modalStyles.error_input : modalStyles.input} type="number" />
-                                </div>
+                                <label className={modalStyles.label}>{translate(`Введите номер вашего телефона`,"Телефон номериңизди киргизиңиз","Telefon raqamingizni kiriting")}<span style={{ color: '#EB5757' }}>*</span></label>
+                                <label className={modalStyles.label}>{translate(`(укажите телефонный код страны)`,"(өлкө кодун киргизиңиз)","(mamlakat kodini kiriting)")}<span style={{ color: '#EB5757' }}>*</span></label>
+                                <input name='phone_number' onChange={formik.handleChange} placeholder={translate('Номер телефона',"Телефон номери","Тelefon raqami")} className={(formik.errors.phone_number) ? modalStyles.error_input : modalStyles.input} type="number" />
                                 {formik.errors.phone_number && <p className={modalStyles.error}>{formik.errors.phone_number}</p>}
                             </div>
                             <div className={modalStyles.input_cont}>
                                 <label style={{ marginBottom: '4px' }} className={modalStyles.label}>{translate("Введите номер вашего WhatsApp","WhatsApp телефон номериңизди киргизиңиз","WhatsApp telefon raqamingizni kiriting")}<span style={{ color: '#EB5757' }}>*</span></label>
+                                <label className={modalStyles.label}>{translate(`(укажите телефонный код страны)`,"(өлкө кодун киргизиңиз)","(mamlakat kodini kiriting)")}<span style={{ color: '#EB5757' }}>*</span></label>
                                 <p className={modalStyles.sub_label}>{translate("Если его нет введите номер вашего телефона","Эгер жок болсо телефонуңуздун номерин киргизиңиз", "Agar yo'q bo'lsa, telefon raqamingizni kiriting")}</p>
-                                <div className={modalStyles.insta_input_cont}>
-                                    <p className={modalStyles.phone_code}>+996</p>
-                                    <input name='whatsapp_number' onChange={formik.handleChange} style={{ paddingLeft: '70px' }} placeholder={translate('номер телефона',"телефон номери","telefon raqami")} className={(formik.errors.whatsapp_number) ? modalStyles.error_input : modalStyles.input} type="number" />
-                                </div>
+                                <input name='whatsapp_number' onChange={formik.handleChange} placeholder={translate('Номер телефона',"Телефон номери","Тelefon raqami")} className={(formik.errors.whatsapp_number) ? modalStyles.error_input : modalStyles.input} type="number" />
                                 {formik.errors.whatsapp_number && <p className={modalStyles.error}>{formik.errors.whatsapp_number}</p>}
                             </div>
                             <div className={modalStyles.input_cont}>

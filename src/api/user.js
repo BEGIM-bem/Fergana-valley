@@ -25,14 +25,7 @@ export const createUser = createAsyncThunk(
     'users/createUser',
     async (data, { rejectWithValue }) => {
         try {
-            await API.post('users/', {
-                phone_number: `+996${data.datas.phone_number}`,
-                whatsapp_number: `+996${data.datas.whatsapp_number}`,
-                fullname: data.datas.fullname,
-                email: data.datas.email,
-                instagram: data.datas.instagram,
-                password: data.datas.password
-            });
+            await API.post('users/', data.datas);
             data.closeRegistrationModal()
             data.openAuthModal()
         } catch (e) {
