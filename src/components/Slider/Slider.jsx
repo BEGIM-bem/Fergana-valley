@@ -39,7 +39,7 @@ export default function Slider() {
             arrows1: paginationsArrows1,
             arrows2: paginationsArrows2,
             titleSmoll: translate('Случайный текст похож на ласковый перезвон вертикали власти', 'Кокус текст күч вертикалынын мээримдүү чакыруусуна окшош', "Tasodifiy matn kuch vertikalining yumshoq qo'ng'irog'iga o'xshaydi"),
-            textImages: translate('Главное действие', 'Негизги аракет', 'Asosiy harakat'),
+            textImages: translate('Подробнее', 'Толугураак', "Ko'proq"),
             titleBig2: translate('Мы создаём легкие решения сложных задач и проблем', 'Биз татаал маселелерди жана проблемаларды жеңил чечимдерди түзүү', 'Biz murakkab muammolar va muammolarga oson echimlarni yaratamiz'),
             top: '55%',
         },

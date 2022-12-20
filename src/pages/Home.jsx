@@ -239,7 +239,7 @@ export default function Home() {
                         <a href={WatsapLink} target='_blank'
                             style={{ textDecoration: 'none' }}
                             rel='noreferrer'>
-                            <Button text={mainb} />
+                            <Button text={moreb} />
                         </a>
                 }
 
