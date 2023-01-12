@@ -56,7 +56,7 @@ const CurrentsLesson = ({lesson}) => {
                 </div>
             </div>
             <div style={{margin: '32px 0'}}>
-                <iframe width="100%" height="640px" src={lesson?.video}
+                <iframe width="100%" height="640px" src={(language === 'russian' && lesson?.video_ru) || (language === 'kyrgyz' && lesson?.video_kg) || (language === "o\'zbekcha" && lesson?.video_uz)}
                         title="YouTube video player" frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen>

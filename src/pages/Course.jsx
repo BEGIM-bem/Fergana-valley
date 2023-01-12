@@ -131,13 +131,16 @@ export default function Course() {
                             clicked && <CurrentsLesson lesson={current_lesson} />
                         }
 
-                        {screenWidth <= 600 ? (
-                            <Pagination onCLick={handleClick} lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
+                        {screenWidth <= 1000 ? (
+                            <Pagination num_words={60} number_pag={4} onCLick={handleClick} lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
                         ) : (
-                            <div className={courseStyles.lessons_cont}>
-                                {course1?.lessons.map(lesson => <Lesson onClick={() => handleClick(lesson.id)}
-                                    id={lessonId} lesson={lesson} />)}
-                            </div>)}
+                            <Pagination num_words={100} number_pag={6} onCLick={handleClick} lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
+
+                            // <div className={courseStyles.lessons_cont}>
+                            //                             //     {course1?.lessons.map(lesson => <Lesson onClick={() => handleClick(lesson.id)}
+                            //                             //         id={lessonId} lesson={lesson} />)}
+                            //                             // </div>
+                            )}
                         {/*}*/}
                         <div className={courseStyles.comments_cont}>
                             <h4 className={courseStyles.comments_title}>

@@ -3,7 +3,7 @@ import {CiClock2} from "react-icons/ci";
 import lessonStyles from './Lesson.module.scss'
 import {useSelector} from "react-redux";
 
-const Lesson = ({lesson, onClick, id}) => {
+const Lesson = ({lesson, onClick, id, num_words}) => {
 
     const {language} = useSelector(state => state.localization)
 
@@ -31,7 +31,7 @@ const Lesson = ({lesson, onClick, id}) => {
                         {language === "o'zbekcha" && 'Darsta:'}
                     </p>
                     <p style={{width: '73%'}} className={id !== lesson.id ? lessonStyles.text2 : lessonStyles.active_text2}>
-                        {language === 'russian' && truncate(lesson.description_ru, 50)}
+                        {language === 'russian' && truncate(lesson.description_ru, num_words)}
                         {language === 'kyrgyz' && lesson.description_kg}
                         {language === "o'zbekcha" && lesson.description_uz}
                     </p>

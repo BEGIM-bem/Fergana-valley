@@ -1,7 +1,7 @@
 %card {
   //width: 370px;
   height: 370px;
-  width: 30.3%;
+  width: 33%;
   //flex: auto;
   background: #1959AB;
   border-radius: 5px;
@@ -46,7 +46,7 @@
 
 %text {
   font-size: 16px;
-  line-height: 19px;
+  line-height: 22px;
   font-weight: bold;
 }
 
@@ -88,28 +88,50 @@
   .card {
     width: 46%;
     flex: auto;
+    padding: 20px;
   }
   .active_card{
     width: 46%;
     flex: auto;
   }
 }
-@media screen and (max-width: 500px) {
-  %textt {
+
+@media screen and (max-width: 850px) {
+  %textt8 {
     font-size: 14px;
+    line-height: 17px;
+  }
+  .text1{
+    @extend %textt8
+  }
+  .text2 {
+    @extend %textt8;
+  }
+  .active_text1{
+    @extend %textt8
+  }
+  .active_text2{
+    @extend %textt8;
+  }
+}
+@media screen and (max-width: 670px) {
+  %textt {
+    font-size: 12px;
     line-height: 17px;
   }
   .text1{
     @extend %textt
   }
   .text2 {
-    @extend %textt
+    @extend %textt;
+    margin-bottom: 15px;
   }
   .active_text1{
     @extend %textt
   }
   .active_text2{
-    @extend %textt
+    @extend %textt;
+    margin-bottom: 15px;
   }
   .card {
     padding: 8px;

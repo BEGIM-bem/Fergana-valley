@@ -3,7 +3,7 @@ import Lesson from "../Lesson/Lesson";
 import paginationStyles from './Pagination.module.css'
 import API from "../../utils/axiosConfigTOKEN";
 
-export default function Pagination({lessons, setLessonId, id, onCLick}) {
+export default function Pagination({lessons, setLessonId, id, onCLick, number_pag, num_words}) {
     const [array, setArray] = react.useState([]);
     const [currentPage, setCurrentPage] = react.useState(0);
     const [count, setCount] = react.useState(0);
@@ -12,7 +12,7 @@ export default function Pagination({lessons, setLessonId, id, onCLick}) {
     }, []);
 
     useEffect(() => {
-        API.get('lessons/', { params: { limit: 4, offset: currentPage } })
+        API.get('lessons/', { params: { limit: number_pag, offset: currentPage } })
             .then((result) => {
                 setArray(result.data.results)
                 setCount(result.data.count)
@@ -20,22 +20,22 @@ export default function Pagination({lessons, setLessonId, id, onCLick}) {
     }, [currentPage]);
 
     function decrement() {
-        setCurrentPage(currentPage - 4);
+        setCurrentPage(currentPage - number_pag);
     }
     function increment() {
-        setCurrentPage(currentPage + 4);
+        setCurrentPage(currentPage + number_pag);
     }
 
     return (
         <div>
             <div className={paginationStyles.content_block}>
-                {array?.map((item) => <Lesson key={item.id} id={id} onClick={() => onCLick(item.id)} lesson={item} time={10}/>)}
+                {array?.map((item) => <Lesson num_words={num_words} key={item.id} id={id} onClick={() => onCLick(item.id)} lesson={item} time={10}/>)}
             </div>
             <div className={paginationStyles.arrows_cont}>
-                <button  className={paginationStyles.arrow} disabled={currentPage === 0 ? true : false} onClick={decrement}>
+                <button style={currentPage ? {cursor: 'pointer'} : null} className={paginationStyles.arrow} disabled={currentPage === 0 ? true : false} onClick={decrement}>
                     &#8592;
                 </button>
-                <button  className={paginationStyles.arrow} disabled={currentPage === count-4 ? true : false} onClick={increment}>
+                <button style={currentPage !== count-number_pag ? {cursor: 'pointer'} : null} className={paginationStyles.arrow} disabled={currentPage === count-number_pag ? true : false} onClick={increment}>
                     &#8594;
                 </button>
             </div>

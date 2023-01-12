@@ -133,7 +133,7 @@ div::-webkit-scrollbar-track {
 
 @media screen and (max-width: 1000px) {
     .flex_between {
-        display: initial;
+        //display: initial;
         //justify-content:center;
     }
 
@@ -169,4 +169,12 @@ div::-webkit-scrollbar-track {
         font-size: 16px;
         line-height: 150%;
     }
+}
+
+@media screen and (max-width: 670px) {
+
+    .flex_between {
+        display: initial;
+    }
+
 }
