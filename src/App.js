@@ -35,7 +35,6 @@ function App() {
 
     dispatch(getLinkSocialNetwork())
 
-    console.log("    window.location.pathname: ", window.location.pathname)
   }, [dispatch, window.location.pathname])
 
 

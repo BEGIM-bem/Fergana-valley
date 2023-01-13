@@ -12,8 +12,6 @@ const CurrentsLesson = ({lesson}) => {
 
     const {language} = useSelector(state => state.localization)
 
-    console.log(lesson)
-
     return (
         <div>
             <hr style={{width: '100%'}}/>

@@ -11,7 +11,6 @@ export const getUser = createAsyncThunk(
     async (data, { rejectWithValue, dispatch }) => {
         try {
             const response = await API.get('users/');
-            console.log("users: ", response)
              const user = await response.data.find(i => i.email === data.email)
             dispatch(setUserId(user.id))
             setCookie('userId', user.id, 1)

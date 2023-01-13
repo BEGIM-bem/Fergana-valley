@@ -16,7 +16,6 @@ const Comments = ({comment}) => {
     const { language } = useSelector(state => state.localization)
 
     const user = users?.find(user => user.id === comment.user)
-    console.log('userIddd: ', user)
     return (
         <div className={commentsStyles.coments_cont}>
             <p className={commentsStyles.comment_username}>{user?.fullname} |{comment.created_at}</p>

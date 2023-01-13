@@ -50,7 +50,6 @@ export default function Home() {
     const [adaptivChangeLangues, setAdaptivChangeLangues] = useState()
 
     useEffect(() => {
-        console.log(changeLangues)
         if (language === 'russian') {
             setChangeLangues(sliderImageProductRus)
         }
@@ -75,7 +74,6 @@ export default function Home() {
 
     }, [language, changeLangues])
 
-    console.log("changeLangues: ", changeLangues)
 
     const mainb = `${language === 'russian' ? 'Главное действие' : ''}
                             ${language === 'kyrgyz' ? 'Негизги аракет' : ""}

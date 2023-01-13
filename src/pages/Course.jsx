@@ -85,7 +85,6 @@ export default function Course() {
         validationSchema: AccessSchema,
         onSubmit: (datas, { resetForm }) => {
             const data = { data: datas, alert: alert }
-            console.log("jjj", data)
             dispatch(sendComment(data))
             resetForm({ data: '' })
         }

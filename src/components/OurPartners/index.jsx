@@ -14,7 +14,6 @@ const OurPartners = () => {
         dispatch(getPartners())
     }, [])
 
-    console.log("part: ", partners)
 
     return (
         <div className='block_padding container1'>
