@@ -3,7 +3,7 @@ import Lesson from "../Lesson/Lesson";
 import paginationStyles from './Pagination.module.css'
 import API from "../../utils/axiosConfigTOKEN";
 
-export default function Pagination({lessons, setLessonId, id, onCLick, number_pag, num_words}) {
+export default function Pagination({lessons, setLessonId, id, onCLick, number_pag, arr_pag, num_words}) {
     const [array, setArray] = react.useState([]);
     const [currentPage, setCurrentPage] = react.useState(0);
     const [count, setCount] = react.useState(0);
@@ -35,7 +35,7 @@ export default function Pagination({lessons, setLessonId, id, onCLick, number_pa
                 <button style={currentPage ? {cursor: 'pointer'} : null} className={paginationStyles.arrow} disabled={currentPage === 0 ? true : false} onClick={decrement}>
                     &#8592;
                 </button>
-                <button style={currentPage !== count-number_pag ? {cursor: 'pointer'} : null} className={paginationStyles.arrow} disabled={currentPage === count-number_pag ? true : false} onClick={increment}>
+                <button style={currentPage !== count-number_pag ? {cursor: 'pointer'} : null} className={paginationStyles.arrow} disabled={currentPage+arr_pag > count ? true : false} onClick={increment}>
                     &#8594;
                 </button>
             </div>

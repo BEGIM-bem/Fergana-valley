@@ -41,13 +41,11 @@ export const authUser = createAsyncThunk(
             const response = await API.post('token/', data.datas);
             await setCookie("jwt-token", response.data.access, 3)
             await dispatch(getUser(data.datas))
+            await data.closeAuth()
+            await data.alertSuccess()
+            await dispatch(getCourse())
             document.location.reload();
-            dispatch(getCourse())
-            data.closeAuth()
-            data.alertSuccess()
-            console.log("auth: ", response)
         } catch (e) {
-            // alert('Incorrect password')
             data.alert()
             data.openRegist()
             return rejectWithValue(e.response.data.message);

@@ -32,8 +32,8 @@ const Lesson = ({lesson, onClick, id, num_words}) => {
                     </p>
                     <p style={{width: '73%'}} className={id !== lesson.id ? lessonStyles.text2 : lessonStyles.active_text2}>
                         {language === 'russian' && truncate(lesson.description_ru, num_words)}
-                        {language === 'kyrgyz' && lesson.description_kg}
-                        {language === "o'zbekcha" && lesson.description_uz}
+                        {language === 'kyrgyz' && truncate(lesson.description_kg, num_words)}
+                        {language === "o'zbekcha" && truncate(lesson.description_uz, num_words)}
                     </p>
                 </div>
             </div>
