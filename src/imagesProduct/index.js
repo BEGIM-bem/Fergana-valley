@@ -18,8 +18,11 @@ import events2 from './events2.svg'
 import events3 from './events3.svg'
 import events4 from './events4.svg'
 
+import change from './change.svg'
+
 
 export {
+    change,
     events1,
     events2,
     events3,

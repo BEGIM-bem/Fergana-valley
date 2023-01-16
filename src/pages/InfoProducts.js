@@ -83,7 +83,10 @@ import iconPro22 from '../imagesProduct/icons22.svg'
 import iconTexts1 from '../imagesProduct/icontext2.svg'
 import char1 from '../imagesProduct/chart.svg'
 
+import change from '../imagesProduct/index.js'
 import Product from '../imagesProduct/Product1.svg'
+
+import changeIcon from '../imagesProduct/change.svg'
 // Главная страница Продукты и Услиги 
 export let sliderImageProductRus = [
     {
@@ -92,7 +95,7 @@ export let sliderImageProductRus = [
     },
     {
         id: 2,
-        icon: blokMain2,
+        icon: changeIcon
     },
     {
         id: 3,

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .contents1 {
   background: #FFFFFF;
   /* тень больших карточек */
@@ -40,20 +41,26 @@
   white-space: pre-line;
 }
 
+
+
 .contents__text1 {
-  white-space: pre-line;
+
   word-break: break-all;
+
   font-size: 15px;
   line-height: 19px;
   color: #333333;
   padding-left: 16px;
   padding-right: 10px;
+
 }
+
+
 
 .contents__br1 {
   padding-top: 12px;
   padding-bottom: 10px;
-  word-break: break-all;
+  /* word-break: break-all; */
   font-size: 15px;
   line-height: 19px;
   color: #333333;
@@ -72,6 +79,8 @@
 }
 
 .contents__text {
+
+
   font-size: 16px;
   line-height: 19px;
   white-space: pre-line;
@@ -95,15 +104,18 @@
     font-size: 20px;
     line-height: 24px;
   }
+
   .contents__text {
     font-size: 14px;
     line-height: 17px;
   }
+
   .contents__br {
     font-size: 14px;
     line-height: 17px;
   }
 }
+
 @media screen and (max-width: 1272px) {
   .container2 {
     display: flex;
@@ -111,18 +123,24 @@
     justify-content: center;
     margin-top: 16px;
   }
+
   .contents__title1 {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 21px;
   }
+
   .contents__text1 {
     font-size: 14px;
   }
+
   .contents__br1 {
     font-size: 14px;
   }
+
   .contents1 {
     margin: 17px;
   }
-}/*# sourceMappingURL=index.module.css.map */
+}
+
+/*# sourceMappingURL=index.module.css.map */

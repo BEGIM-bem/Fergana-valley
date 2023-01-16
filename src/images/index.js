@@ -2,14 +2,19 @@ import About2_img from './About2_img.svg';
 import About3_img from './About3_img.svg';
 import ArrowsWhitsLeft from './стрелки (1).svg';
 import ArrowsWhitsRight from './стрелки.svg'
-import MainImages from './фото1 (2).svg'
+
+
 import LogoTip from './LogoTip.svg'
 import iconLangusges from './iconLangusges.svg'
 import iconRussions from './ЯзыкиRusion.svg'
 import iconKyrgyzstan from './Языки (1)Ryrgyz.svg'
 import iconOzbekstan from './Языки (2)Ozbekstan.svg'
-import imageSlider2 from './фото1.svg'
-import imagesSlider3 from './фото1 (1).svg'
+
+import imageSlider2 from './mainChange1.svg' // 1
+import imagesSlider3 from './mainChange2.svg'//2
+import MainImages from './mainChange3.svg' //3
+
+
 import iconInstagram from './instagram.svg'
 import iconTelegram from './telegram.svg'
 import iconFacbook from './facbook.svg'
