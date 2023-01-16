@@ -15,7 +15,7 @@ import { useSelector, } from "react-redux";
 import useWindowDimensions from '../../pages/with.jsx';
 
 import { useRouteMatch, Route } from 'react-router-dom';
-
+import zIcon from './замен.png'
 
 export default function Navbar() {
 
@@ -105,6 +105,7 @@ export default function Navbar() {
                 <div className={width > 800 ? styles.navbar__conteinerss
                     : styles.blocks
                 }>
+                    {/* LogoTip */}
                     <NavLink to='/*'> <img src={LogoTip} alt='not find'
                         className={styles.navbar__log} />  </NavLink>
 
