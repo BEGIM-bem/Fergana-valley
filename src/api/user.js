@@ -11,7 +11,6 @@ export const getUser = createAsyncThunk(
     async (data, { rejectWithValue, dispatch }) => {
         try {
             const response = await API.get('users/');
-            console.log("users: ", response)
              const user = await response.data.find(i => i.email === data.email)
             dispatch(setUserId(user.id))
             setCookie('userId', user.id, 1)
@@ -41,13 +40,11 @@ export const authUser = createAsyncThunk(
             const response = await API.post('token/', data.datas);
             await setCookie("jwt-token", response.data.access, 3)
             await dispatch(getUser(data.datas))
+            await data.closeAuth()
+            await data.alertSuccess()
+            await dispatch(getCourse())
             document.location.reload();
-            dispatch(getCourse())
-            data.closeAuth()
-            data.alertSuccess()
-            console.log("auth: ", response)
         } catch (e) {
-            // alert('Incorrect password')
             data.alert()
             data.openRegist()
             return rejectWithValue(e.response.data.message);

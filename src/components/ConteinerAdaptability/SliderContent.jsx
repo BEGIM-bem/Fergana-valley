@@ -4,7 +4,6 @@ import { switchs, switchsBlack } from '../../images/index.js'
 import styless from '../CardsCompon.js/index.module.scss'
 import { whiteStrellka } from '../../imagesProduct/index.js'
 function SliderForContent({ prevSlide, screenWidth, activeIndex, vid, sliderImage, colorArrow }) {
-    console.log("vid: ", vid)
 
     return (
 

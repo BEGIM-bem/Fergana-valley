@@ -27,7 +27,6 @@ export default function DetailedEvents() {
 
 
 
-    console.log("lang: ", lang)
 
     return (
         <div className={styles.detailes} >

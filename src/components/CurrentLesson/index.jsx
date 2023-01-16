@@ -12,8 +12,6 @@ const CurrentsLesson = ({lesson}) => {
 
     const {language} = useSelector(state => state.localization)
 
-    console.log(lesson)
-
     return (
         <div>
             <hr style={{width: '100%'}}/>
@@ -56,14 +54,16 @@ const CurrentsLesson = ({lesson}) => {
                 </div>
             </div>
             <div style={{margin: '32px 0'}}>
-                <iframe width="100%" height="640px" src={lesson?.video}
+                <iframe width="100%" height="640px" src={(language === 'russian' && lesson?.video_ru) || (language === 'kyrgyz' && lesson?.video_kg) || (language === "o\'zbekcha" && lesson?.video_uz)}
                         title="YouTube video player" frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen>
                 </iframe>
             </div>
             <div className={commentsStyles.admintext_cont}>
-                Учитывая ключевые сценарии поведения, начало повседневной работы по формированию позиции в значительной степени обусловливает важность приоретизации разума над эмоциями. Лишь ключевые особенности структуры проекта, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут в равной степени предоставлены сами себе. Каждый из нас понимает очевидную вещь: консультация с широким активом однозначно фиксирует необходимость направлений прогрессивного развития. В своём стремлении повысить качество жизни, они забывают, что экономическая повестка сегодняшнего дня однозначно фиксирует необходимость приоретизации разума над эмоциями. А также ключевые особенности структуры проекта неоднозначны и будут своевременно верифицированы.
+                {language === 'russian' && lesson.description_ru}
+                {language === 'kyrgyz' && lesson.description_kg}
+                {language === "o'zbekcha" && lesson.description_uz}
             </div>
             <div className={currentStyles.file_cont}>
                 <FcFile/>

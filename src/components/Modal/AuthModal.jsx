@@ -75,7 +75,6 @@ export default function AuthModal({ openAuth, handleCloseAuth, handleOpen }) {
         validationSchema: AccessSchema,
         onSubmit: (datas) => {
             const data = {datas: datas, closeAuth: handleCloseAuth, alert: alert, alertSuccess: alertSuccess}
-            console.log(datas)
             dispatch(authUser(data))
         }
     })

@@ -44,6 +44,7 @@ export default function Course() {
         !getCookie('jwt-token') && handleOpenAuth()
         dispatch(getCourse())
         dispatch(getComments())
+        // !open && !openAuth && document.location.reload();
     }, [])
 
     const screenWidth = window.screen.width
@@ -84,7 +85,6 @@ export default function Course() {
         validationSchema: AccessSchema,
         onSubmit: (datas, { resetForm }) => {
             const data = { data: datas, alert: alert }
-            console.log("jjj", data)
             dispatch(sendComment(data))
             resetForm({ data: '' })
         }
@@ -131,14 +131,11 @@ export default function Course() {
                             clicked && <CurrentsLesson lesson={current_lesson} />
                         }
 
-                        {screenWidth <= 600 ? (
-                            <Pagination onCLick={handleClick} lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
+                        {screenWidth <= 1000 ? (
+                            <Pagination arr_pag={4} num_words={60} number_pag={4} onCLick={handleClick} lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
                         ) : (
-                            <div className={courseStyles.lessons_cont}>
-                                {course1?.lessons.map(lesson => <Lesson onClick={() => handleClick(lesson.id)}
-                                    id={lessonId} lesson={lesson} />)}
-                            </div>)}
-                        {/*}*/}
+                            <Pagination arr_pag={6} num_words={100} number_pag={6} onCLick={handleClick} lessons={course1?.lessons} setLessonId={setLessonId} id={lessonId} />
+                            )}
                         <div className={courseStyles.comments_cont}>
                             <h4 className={courseStyles.comments_title}>
                                 {language === 'russian' && 'Комментарий'}

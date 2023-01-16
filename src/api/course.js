@@ -6,6 +6,7 @@ export const getCourse = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await API.get('course/');
+            // document.location.reload();
             return response.data
         } catch (e) {
             return rejectWithValue(e.response.data.message);
@@ -34,6 +35,7 @@ export const sendComment = createAsyncThunk(
             dispatch(getComments())
             // return response.data
         } catch (e) {
+            document.location.reload();
             return rejectWithValue(e.response.data.message);
         }
     }

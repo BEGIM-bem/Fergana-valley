@@ -2,7 +2,6 @@ import { switchsBlack } from '../../images';
 import styles from './index.module.scss'
 
 function AdaptivMainProduct({ prevSlide, screenWidth, activeIndex, data, vid, sliderImage, colorArrow }) {
-    console.log("data: ", data)
 
     return (
         <div className={styles.slideshow1}>

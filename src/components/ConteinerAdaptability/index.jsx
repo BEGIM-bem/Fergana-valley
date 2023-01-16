@@ -11,7 +11,6 @@ sliderImage - данные каторые приходять из разных �
 Это массив данных  с карточками
 */
 export default function SliderAdaptability({ text, data, vid, withs, colorArrow }) {
-    console.log("vid11:: ", vid)
     let len = 0
     if (data?.length > 0) {
         len = data.length - 1
