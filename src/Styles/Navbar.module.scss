@@ -124,7 +124,7 @@
 .Navbar1 {
     position: absolute;
     //position: fixed;
-    z-index: 5;
+    z-index: 10;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(7.5px);
 
@@ -132,7 +132,7 @@
     width: 100%;
     padding-top: 15px;
     height: 99px;
-
+    position: fixed;
 }
 
 .Navbar3 {
@@ -333,14 +333,16 @@
         position: relative;
         // z-index: 5;
         background: white;
+        // background: rebeccapurple;
         position: absolute;
-        z-index: 5;
+        z-index: 8;
         height: 100%;
 
         padding-top: 15px;
         padding-bottom: 10px;
-        z-index: 5;
+        // z-index: 5;
         width: 100%;
+        position: fixed;
         // background: rebeccapurple;
     }
 
