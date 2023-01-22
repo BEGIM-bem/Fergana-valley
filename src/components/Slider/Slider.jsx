@@ -38,7 +38,7 @@ export default function Slider() {
             urls: imagesSlider3,
             arrows1: paginationsArrows1,
             arrows2: paginationsArrows2,
-            titleSmoll: translate('Случайный текст похож на ласковый перезвон вертикали власти', 'Кокус текст күч вертикалынын мээримдүү чакыруусуна окшош', "Tasodifiy matn kuch vertikalining yumshoq qo'ng'irog'iga o'xshaydi"),
+            titleSmoll: translate('', '', ""),
             textImages: translate('Подробнее', 'Толугураак', "Ko'proq"),
             titleBig2: translate('Мы создаём легкие решения сложных задач и проблем', 'Биз татаал маселелерди жана проблемаларды жеңил чечимдерди түзүү', 'Biz murakkab muammolar va muammolarga oson echimlarni yaratamiz'),
             top: '55%',
@@ -47,7 +47,7 @@ export default function Slider() {
             urls: MainImages,
             arrows1: paginationsArrows1,
             arrows2: paginationsArrows2,
-            events: translate('Только сложившаяся структура организации сделала своё дело', 'Уюмдун түзүлгөн структурасы гана өз ишин аткарды', 'Faqat tashkilotning o\'rnatilgan tuzilmasi o\'z vazifasini bajardi'),
+            events: translate('Для получения информации о последних событиях  нажмите на кнопку', 'Акыркы окуялар жөнүндө маалымат алуу үчүн, баскычты чыкылдатыңыз', "Eng so'nggi voqealar haqida ma'lumot olish uchun tugmani bosing"),
             titleEvents: translate('События', 'Oкуялар ', 'Hodisalar'),
             btnText: translate('Подробнее', 'Толугураак', "Ko'proq"),
             data: translate('29 сентября 2022', '29-сентябрь, 2022-жыл', '2022 yil 29 sentyabr')

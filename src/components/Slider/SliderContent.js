@@ -75,7 +75,7 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
                         {
                             slide.events && (
                                 <div className={styles.events__block}>
-                                    <h1 className={styles.events__title}>{slide.titleEvents}</h1>
+                                    <h1 style={{ opacity: 0 }} className={styles.events__title}>{slide.titleEvents}</h1>
 
                                     <div className={styles.events_contents}>
                                         <h1 className={styles.events_contents_title}>
@@ -86,7 +86,7 @@ function SliderContent({ activeIndex, sliderImage, prevSlide, nextSlide, }) {
                                             <button className={styles.events__btn} >{slide.btnText} </button>
                                         </NavLink>
                                     </div>
-                                    <button className={styles.events_data}>{slide.data}</button>
+                                    {/* <button style={{ opacity: 0 }} className={styles.events_data}>{slide.data}</button> */}
                                 </div>)
                         }
                     </div>
