@@ -8,11 +8,11 @@ services:
       dockerfile: ./docker/nginx/Dockerfile
     ports:
       - 80:80
-      # - 443:443
+      - 443:443
     volumes:
-      - ./docker/nginx/dev:/etc/nginx/conf.d
-      # - ./docker/nginx/certbot/conf:/etc/letsencrypt
-      # - ./docker/nginx/certbot/www:/var/www/certbot
+      - ./docker/nginx/prod:/etc/nginx/conf.d
+      - ./docker/nginx/certbot/conf:/etc/letsencrypt
+      - ./docker/nginx/certbot/www:/var/www/certbot
     networks:
       - my-network
 
